@@ -21,7 +21,7 @@ public class Tabs_main extends FragmentActivity {
 
         final FragmentManager fragmentManager = getSupportFragmentManager();
 
-        SelectFragment.open(0, fragmentManager, activity);
+        SelectFragment.open(2, fragmentManager, activity);
 
 
     }
