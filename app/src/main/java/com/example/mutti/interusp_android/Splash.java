@@ -26,7 +26,7 @@ public class Splash extends AppCompatActivity {
             public void run() {
 
                     activity.finish();
-                    Intent intent1 = new Intent(activity, Tabs_main.class);
+                    Intent intent1 = new Intent(activity, Selecionar_Atletica.class);
                     startActivity(intent1);
 
             }

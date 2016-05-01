@@ -31,6 +31,10 @@ public class Mapa extends Fragment {
         context = getContext();
 
 
+
+
+
+
         View rootview =  inflater.inflate(R.layout.fragment_mapa, container, false);
 
         return rootview;
