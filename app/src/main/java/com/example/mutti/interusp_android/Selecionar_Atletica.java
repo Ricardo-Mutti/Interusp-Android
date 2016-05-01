@@ -150,8 +150,8 @@ public class Selecionar_Atletica extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
-                editor.putString(cor1, "#0000ff");
-                editor.putString(cor2, "#ffffffx");
+                editor.putString(cor1, Constants.kCorTodos1);
+                editor.putString(cor2, Constants.kCorTodos2);
                 editor.commit();
                 activity.finish();
                 Intent intent = new Intent(activity, Tabs_main.class);

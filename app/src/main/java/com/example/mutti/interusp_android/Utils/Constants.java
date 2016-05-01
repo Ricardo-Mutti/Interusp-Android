@@ -47,5 +47,6 @@ public class Constants {
     public static final String kCorOdonto2 = "#A0522D";
     public static final String kCorFea1 = "#0000CC";
     public static final String kCorFea2 = "#ffffff";
-
+    public static final String kCorTodos1 = "#000033";
+    public static final String kCorTodos2 = "#ffffff";
 }

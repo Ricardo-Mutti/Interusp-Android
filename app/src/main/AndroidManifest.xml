@@ -70,7 +70,9 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".PontuacaoModalidade" />
-        <activity android:name=".Pontuacao"></activity>
+        <activity android:name=".Pontuacao"/>
+        <activity android:name=".PontuacaoAtletica"/>
+        <activity android:name=".DetalheInformacao"/>
     </application>
 
 </manifest>
