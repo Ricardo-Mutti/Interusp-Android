@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.mutti.interusp_android.InterUspInfo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtinfo01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="\tEm 2016 será realizada a 32º edição do InterUSP. Tão tradicional quanto as atléticas que delas participam, o InterUSP é uma das competições universitárias mais competitivas do país. ESALQ, Farmácia, FEA, Medicina, Pinheiros, Medicina Ribeirão, Odontologia, Poli e São Fransico disputam, durante quatr dias, em uma cidade do interior de São Paulo, 25 modalidades."/>
+
+            <TextView
+                android:id="@+id/txtinfo02"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="\tNenhuma competição tem tanto esporte em tão alto nivel quanto a InterUSP. Todas as modalidades são obrigatórias e em cada uma dela uma rivalidade particular se destaca tornando todas elas atrativas. A parte social também se destaca: o público cresce a cada ano tanto tanto nas arquibancadas quanto nas festas. As torcidas apaixonadas deixam a rivalidade de lado nas duas festas organizadas pelas Atléticas."
+                android:layout_width="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtinfo03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:text="Como os Jogos Funcionam?"/>
+
+            <TextView
+                android:id="@+id/txtinfo04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="A contagem de pontos da Inter/usp é feita por modalidade, de acordo com a classificação atlética. \n1º - 13 Pontos \n2º - 10 Pontos \n3º - 8 Pontos \n4º - 6 Pontos \n5º - 4 Pontos \n6º - 3 Pontos \n7º - 2 Pontos \n8º - 1 Ponto"/>
+
+            <TextView
+                android:id="@+id/txtinfo05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_marginBottom="15dp"
+                android:text="Os perdedores nas semifinais e quartas de final para o campeão serão, respectivamente 3º e 5° colocados."/>
+
+            <TextView
+                android:id="@+id/txtinfo06"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_marginBottom="15dp"
+                android:text="Os perdedores nas semifinais e quartas de final para o vice-campeão serão, respectivamente 4º e 6° colocados."/>
+
+            <TextView
+                android:id="@+id/txtinfo07"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_marginBottom="15dp"
+                android:text="Os perdedores nas quartas de final para o 3° e 4° colocados serão, respectivamente 7º e 8° colocados."/>
+
+            <TextView
+                android:id="@+id/txtinfo08"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_marginBottom="15dp"
+                android:text="A atlética vencedora é aquela que somar mais pontos considerando todas as modadlidades."/>
+
+            <TextView
+                android:id="@+id/txtinfo09"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_marginBottom="15dp"
+                android:text="Em caso de empate, a campeã será a com maior número de primeiros lugares, em seguida, segundos lugares e assim por diante."/>
+
+            <TextView
+                android:id="@+id/txtinfo10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_marginBottom="15dp"
+                android:text="Caso o empate persista, será a atlética com maior número de vitórias em confrontos diretos entre as duas atléticas empatadas."/>
+
+            <TextView
+                android:id="@+id/txtinfo11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_marginBottom="15dp"
+                android:text="Caso o empate ainda persista, ambas serão declaradas campeãs."/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
