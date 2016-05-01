@@ -13,15 +13,83 @@
         android:src="@drawable/logo_iusp_splash"
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
-        />
+        android:id="@+id/imageView" />
 
-    <GridView
-        android:id="@+id/seletor_atleticas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <Button
+        android:layout_width= "120px"
+        android:layout_height= "120px"
+        android:id="@+id/botaoPoli"
+        android:layout_marginTop="47dp"
+        android:background="@drawable/rato"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp" />
 
+    <Button
+        android:layout_width= "120px"
+        android:layout_height= "120px"
+        android:id="@+id/botaoFea"
+        android:background="@drawable/fea"
+        android:layout_alignTop="@+id/botaoPoli"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView" />
 
-    </GridView>
+    <Button
+        android:layout_width="120px"
+        android:layout_height="120px"
+        android:background="@drawable/esalq"
+        android:id="@+id/botaoEsalq"
+        android:layout_alignTop="@+id/botaoFea"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView" />
+
+    <Button
+        android:layout_width="120px"
+        android:layout_height="120px"
+        android:background="@drawable/odonto"
+        android:id="@+id/botaoOdonto"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/botaoPoli"
+        android:layout_alignStart="@+id/botaoPoli" />
+
+    <Button
+        android:layout_width="120px"
+        android:layout_height="120px"
+        android:background="@drawable/farma"
+        android:id="@+id/botaoFarma"
+        android:layout_alignTop="@+id/botaoOdonto"
+        android:layout_alignLeft="@+id/botaoFea"
+        android:layout_alignStart="@+id/botaoFea" />
+
+    <Button
+        android:layout_width="120px"
+        android:layout_height="120px"
+        android:background="@drawable/pinheiros"
+        android:id="@+id/botaoPinheiros"
+        android:layout_alignBottom="@+id/botaoFarma"
+        android:layout_alignLeft="@+id/botaoEsalq"
+        android:layout_alignStart="@+id/botaoEsalq" />
+
+    <Button
+        android:layout_width="120px"
+        android:layout_height="120px"
+        android:background="@drawable/ribeirao"
+        android:id="@+id/botaoRibeirao"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/botaoOdonto"
+        android:layout_alignLeft="@+id/botaoOdonto"
+        android:layout_alignStart="@+id/botaoOdonto" />
+
+    <Button
+        android:layout_width="120px"
+        android:layout_height="120px"
+        android:background="@drawable/sanfran"
+        android:id="@+id/botaoSanfran"
+        android:layout_alignBottom="@+id/botaoRibeirao"
+        android:layout_alignLeft="@+id/botaoFarma"
+        android:layout_alignStart="@+id/botaoFarma" />
 
 
 </RelativeLayout>
