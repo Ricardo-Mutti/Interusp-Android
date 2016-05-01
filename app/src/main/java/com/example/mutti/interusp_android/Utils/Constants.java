@@ -34,8 +34,8 @@ public class Constants {
     public static final String[] kFiltroJogoLocal = {"G1","G2","G3"};
 
     //CORES DAS FACULDADES
-    public static final String kCorPoli1 = "#FDA405";
-    public static final String kCorPoli2 = "#171B40";
+    public static final String kCorPoli1 = "#171B40";
+    public static final String kCorPoli2 = "#FDA405";
     public static final String kCorFarma1 = "#A0522D";
     public static final String kCorFarma2 = "#ffffff";
     public static final String kCorEsalq1 = "#FF0000";
@@ -58,7 +58,6 @@ public class Constants {
     public static final String MY_PREFS_NAME = "my_prefs";
 
     //DONE
-
     public static final String kLoginDone = "com.appsimples.swapped.login-done";
     public static final String kGetJogosDone = "com.appsimples.swapped.login-done";
     public static final String kGetLocaisDone = "com.appsimples.swapped.login-done";

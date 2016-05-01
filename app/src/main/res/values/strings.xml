@@ -95,4 +95,16 @@
         <item>Voleibol Masculino</item>
         <item>Xadrez</item>
     </string-array>
+
+    <string-array name="faculadade">
+        <item> </item>
+        <item>Poli</item>
+        <item>Farmácia</item>
+        <item>FEA</item>
+        <item>Odonto</item>
+        <item>SanFran</item>
+        <item>MedUsp</item>
+        <item>MedRib</item>
+        <item>ESALQ</item>
+    </string-array>
 </resources>

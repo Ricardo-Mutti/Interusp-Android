@@ -11,12 +11,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.mutti.interusp_android.Historico;
+import com.example.mutti.interusp_android.InterUspInfo;
 import com.example.mutti.interusp_android.LoginAdm;
 import com.example.mutti.interusp_android.Pontuacao;
 import com.example.mutti.interusp_android.PontuacaoAtletica;
 import com.example.mutti.interusp_android.Gritos;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Torcidometro;
+import com.example.mutti.interusp_android.atualizar_colocacao_jogos;
 
 /**
  * Created by Mutti on 30/04/16.
@@ -63,7 +65,8 @@ public class Mais extends Fragment {
         txtInterUsp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(activity, InterUspInfo.class);
+                startActivity(intent);
             }
         });
 

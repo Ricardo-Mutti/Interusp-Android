@@ -36,177 +36,175 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/txtPrimeiro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1º"
-                    android:layout_marginTop="10dp"
-                    android:textAlignment="gravity"
                     android:textSize="25dp"/>
 
-                <EditText
-                    android:id="@+id/edtPrimeiro"
+                <Spinner
+                    android:id="@+id/spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="15dp"/>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/txtSegundo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2º"
-                    android:layout_marginTop="10dp"
                     android:textAlignment="gravity"
                     android:textSize="25dp"/>
 
-                <EditText
-                    android:id="@+id/edtSegundo"
+                <Spinner
+                    android:id="@+id/spinner2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="15dp"/>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/txtTerceiro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3º"
-                    android:layout_marginTop="10dp"
                     android:textAlignment="gravity"
                     android:textSize="25dp"/>
 
-                <EditText
-                    android:id="@+id/edtTerceiro"
+                <Spinner
+                    android:id="@+id/spinner3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="15dp"/>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/txtQuarto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4º"
-                    android:layout_marginTop="10dp"
                     android:textAlignment="gravity"
                     android:textSize="25dp"/>
 
-                <EditText
-                    android:id="@+id/edtQuarto"
+                <Spinner
+                    android:id="@+id/spinner4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="15dp"/>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/txtQuinto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5º"
-                    android:layout_marginTop="10dp"
                     android:textAlignment="gravity"
                     android:textSize="25dp"/>
 
-                <EditText
-                    android:id="@+id/edQuinto"
+                <Spinner
+                    android:id="@+id/spinner5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="15dp"/>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/txtSexto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="6º"
-                    android:layout_marginTop="10dp"
                     android:textAlignment="gravity"
                     android:textSize="25dp"/>
 
-                <EditText
-                    android:id="@+id/edtSexto"
+                <Spinner
+                    android:id="@+id/spinner6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="15dp"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/txtSetimo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="7º"
-                    android:layout_marginTop="10dp"
                     android:textAlignment="gravity"
                     android:textSize="25dp"/>
 
-                <EditText
-                    android:id="@+id/edtSetimo"
+                <Spinner
+                    android:id="@+id/spinner7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="15dp"/>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/txtOitavo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="8º"
-                    android:layout_marginTop="10dp"
                     android:textAlignment="gravity"
                     android:textSize="25dp"/>
 
-                <EditText
-                    android:id="@+id/edtOitavo"
+                <Spinner
+                    android:id="@+id/spinner8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="15dp"/>
+
             </LinearLayout>
 
             <LinearLayout

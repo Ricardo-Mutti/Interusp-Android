@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import java.util.Locale;
 
-public class mapas_waze extends AppCompatActivity {
+public class MapasWaze extends AppCompatActivity {
     private String lat;
     private String longi;
     private String label;

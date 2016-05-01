@@ -72,8 +72,11 @@ public class Mapa extends Fragment  {
         activity = getActivity();
         context = getContext();
 
-        GetLocal getLocal = new GetLocal(context);
-        getLocal.getLocais();
+        locais = DataHolder.getInstance().getLocaisSalvos();
+        if(locais.size()==0) {
+            GetLocal getLocal = new GetLocal(context);
+            getLocal.getLocais();
+        }
 
         View rootview =  inflater.inflate(R.layout.fragment_mapa, container, false);
         mMapView = (MapView) rootview.findViewById(R.id.map);
@@ -168,7 +171,7 @@ public class Mapa extends Fragment  {
         //Criador de markers
         for (Local local: locais) {
             MarkerOptions marker = new MarkerOptions().position(
-                    new LatLng(local.getCoordenadas()[0], local.getCoordenadas()[1]))
+                    new LatLng(local.getCoordenadas()[1], local.getCoordenadas()[0]))
                     .title(local.getNome());
 
             switch (local.getTipo()) {
