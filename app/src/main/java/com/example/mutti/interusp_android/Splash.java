@@ -17,21 +17,14 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-
-
-
-
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-
                     activity.finish();
                     Intent intent1 = new Intent(activity, Selecionar_Atletica.class);
+                    intent1.putExtra("Nome", "WendlerEis");
                     startActivity(intent1);
-
             }
         }, 3000);
-
-
     }
 }

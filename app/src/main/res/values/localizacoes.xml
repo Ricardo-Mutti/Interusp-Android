@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="latG1">-23.0927945</string>
+    <string name="longG1">-48.9358952</string>
+    <string name="latG2">-23.0927945</string>
+    <string name="longG2">-48.9358952</string>
+    <string name="latCampo1">-23.1046455</string>
+    <string name="longCampo1">-48.9540658</string>
+    <string name="latCampo2">-23.103757</string>
+    <string name="longCampo2">-48.930512</string>
+</resources>
