@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.mutti.interusp_android.Pontuacao;
 import com.example.mutti.interusp_android.PontuacaoAtletica;
+import com.example.mutti.interusp_android.Gritos;
 import com.example.mutti.interusp_android.R;
 
 /**
@@ -22,7 +23,7 @@ public class Mais extends Fragment {
     Activity activity;
     Context context;
 
-    TextView txtPontuacao, txtAdm, txtInterUsp;
+    TextView txtPontuacao, txtAdm, txtInterUsp, gritos;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class Mais extends Fragment {
 
         activity = getActivity();
         context = getContext();
-
+       final String faculdade = "poli";
         View rootview =  inflater.inflate(R.layout.fragment_mais, container, false);
 
         txtPontuacao = (TextView) rootview.findViewById(R.id.txtPontuacao);
@@ -50,14 +51,24 @@ public class Mais extends Fragment {
         txtAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(context, Pontuacao.class);
-//                startActivity(intent);
+
             }
         });
         txtInterUsp = (TextView) rootview.findViewById(R.id.txtInterUsp);
         txtInterUsp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+            }
+        });
+
+        gritos = (TextView) rootview.findViewById(R.id.gritos);
+        gritos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, Gritos.class);
+                intent.putExtra("atletica", faculdade);
+                startActivity(intent);
 
             }
         });

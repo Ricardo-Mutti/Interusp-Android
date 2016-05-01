@@ -24,12 +24,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PontuacaoAtletica" />
+        <activity android:name=".PontuacaoTabela" />
         <activity
             android:name=".Selecionar_Atletica"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Historico"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Vencedores"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".Torcidometro"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+
         <activity
             android:name=".Tabs_main"
             android:screenOrientation="portrait"
@@ -50,6 +65,10 @@
         <activity android:name=".teste" />
         <activity android:name=".Informacoes" />
         <activity android:name=".Local" />
+        <activity android:name=".Gritos"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".PontuacaoModalidade" />
         <activity android:name=".Pontuacao"></activity>
     </application>
