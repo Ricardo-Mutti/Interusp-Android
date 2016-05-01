@@ -45,13 +45,9 @@ public class WebServiceAPI { private Context context;
 //        Log.d("Request:",request.toString());
 //    }
 
-    public void getLocation (String userId, String lat, String lng
-            , Response.Listener successListener) {
+    public void getLocais (Response.Listener successListener) {
 
         Map<String, String> params = new HashMap<>();
-        params.put("userID", userId);
-        params.put("lat", lat);
-        params.put("lng", lng);
 
         String url = Constants.kServiceURL + Constants.kServiceGetLocation;
 
