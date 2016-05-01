@@ -1,27 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/branco"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.mutti.interusp_android.Selecionar_Atletica">
+    android:orientation="vertical"
+    android:gravity="center"
+>
 
 
     <ImageView
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:src="@drawable/logo_iusp_splash"
         android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
         />
 
-    <GridView
-        android:id="@+id/seletor_atleticas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_iusp_splash"/>
 
 
-    </GridView>
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_iusp_splash"/>
 
 
-</RelativeLayout>
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_iusp_splash"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_iusp_splash"/>
+
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_iusp_splash"/>
+
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_iusp_splash"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_iusp_splash"/>
+
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_iusp_splash"/>
+
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_iusp_splash"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>
