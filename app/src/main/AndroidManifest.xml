@@ -80,7 +80,8 @@
         <activity android:name=".PontuacaoModalidade" />
         <activity android:name=".Pontuacao"/>
         <activity android:name=".menu_adm"/>
-
+        <activity android:name=".atualizar_jogos"/>
+>>>>>>> Tela - Atualizar Jogos
     </application>
 
 </manifest>
