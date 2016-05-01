@@ -15,7 +15,7 @@ public class PontuacaoAtletica extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pontuacao_tabela);
+        setContentView(R.layout.activity_pontuacao_atletica);
 
         listPontuacao = (ListView) findViewById(R.id.listPontuacao);
         ArrayList<com.example.mutti.interusp_android.Model.PontuacaoAtletica> list = new ArrayList<>();
