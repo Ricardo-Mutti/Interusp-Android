@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.mutti.interusp_android.Informacoes">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="LOCAIS"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="42dp"
+                    android:layout_marginTop="15dp"
+                    android:clickable="true"
+                    android:onClick="abrirginasio"
+                    android:src="@drawable/ginasios"
+                    android:text="Ginásio"
+
+                    />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="15dp"
+                    android:clickable="true"
+                    android:onClick="abrirtenda"
+                    android:src="@drawable/tenda"
+                    android:text="Tenda"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="42dp"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:onClick="abrirbalada"
+                    android:src="@drawable/baladas"
+                    android:text="Balada"
+
+                    />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:onClick="abrironibus"
+                    android:src="@drawable/onibus"
+                    android:text="Ônibus"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="42dp"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:onClick="abriralojamentos"
+                    android:src="@drawable/alojamento"
+                    android:text="Alojamentos"
+
+                    />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:onClick="abrirhospital"
+                    android:src="@drawable/hospital"
+                    android:text="Hospital"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="42dp"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:onClick="abrirdelegacia"
+                    android:src="@drawable/delegacia"
+                    android:text="Delegacia"
+
+                    />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:onClick="abrirrestaurantes"
+                    android:src="@drawable/comidas"
+                    android:text="Restaurantes"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

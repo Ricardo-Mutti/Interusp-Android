@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.mutti.interusp_android.R;
 
@@ -17,6 +18,8 @@ public class Mais extends Fragment {
 
     Activity activity;
     Context context;
+
+    TextView txtPontuacao, txtAdm, txtInterUsp;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,8 +33,30 @@ public class Mais extends Fragment {
         activity = getActivity();
         context = getContext();
 
-
         View rootview =  inflater.inflate(R.layout.fragment_mais, container, false);
+
+        txtPontuacao = (TextView) rootview.findViewById(R.id.txtPontuacao);
+        txtPontuacao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        txtAdm = (TextView) rootview.findViewById(R.id.txtAdm);
+        txtAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        txtInterUsp = (TextView) rootview.findViewById(R.id.txtInterUsp);
+        txtInterUsp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
         return rootview;
     }

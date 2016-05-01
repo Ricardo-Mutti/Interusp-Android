@@ -3,23 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/tabmain_actionbar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/preto"
-        >
-
-
-        <ImageView
-            android:layout_centerInParent="true"
-            android:layout_width="170dp"
-            android:layout_height="35dp"
-            android:layout_gravity="center"
-            android:src="@drawable/logo_iusp_splash" />
-
-    </RelativeLayout>
-
+   <include android:id="@+id/action_bar"
+       layout="@layout/action_bar"/>
 
 
     <FrameLayout
@@ -34,9 +19,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/preto"
+        android:background="@color/branco"
         android:orientation="horizontal"
-        android:weightSum="5">
+        >
 
 
         <ImageView
@@ -44,12 +29,8 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:src="@drawable/logo_iusp_splash" />
+            android:src="@drawable/tabicon_azul_info" />
 
 
         <ImageView
@@ -57,37 +38,25 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:src="@drawable/logo_iusp_splash" />
+            android:src="@drawable/tabicon_azul_chave" />
 
 
         <ImageView
-            android:id="@+id/tab_pontuacao"
+            android:id="@+id/tab_mapa"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:src="@drawable/logo_iusp_splash" />
+            android:src="@drawable/tabicon_azul_mapa" />
 
         <ImageView
             android:id="@+id/tab_jogos"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:src="@drawable/logo_iusp_splash" />
+            android:src="@drawable/tabicon_azul_jogos" />
 
 
         <ImageView
@@ -95,12 +64,8 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
             android:layout_weight="1"
-            android:src="@drawable/logo_iusp_splash" />
+            android:src="@drawable/tabicon_azul_mais" />
 
 
     </LinearLayout>

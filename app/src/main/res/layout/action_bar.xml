@@ -1,42 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    android:background="@color/preto"
+    android:background="@color/azul_tema"
     android:orientation="horizontal"
     android:weightSum="1">
 
     <ImageView
-        android:id="@+id/back_button"
+        android:id="@+id/btnVoltar"
         android:layout_width="40dp"
-        android:layout_height="30dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
+        android:src="@drawable/voltar"
         android:layout_margin="10dp"
-        android:padding="3dp"
-        android:src="@drawable/logo_iusp_splash" />
-
-    <ImageView
-        android:layout_width="170dp"
-        android:layout_height="35dp"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:paddingRight="10dp"
-        android:src="@drawable/logo_iusp_splash" />
+        android:visibility="invisible"
+        android:padding="5dp"/>
 
     <TextView
-        android:id="@+id/save_filters"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right|center_vertical"
-        android:layout_marginRight="10dp"
-        android:text="SALVAR"
-        android:textColor="@color/branco"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:visibility="gone" />
+        android:id="@+id/txtActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginRight="60dp"
+        android:layout_marginEnd="60dp"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textSize="22sp" />
 
 
 </LinearLayout>

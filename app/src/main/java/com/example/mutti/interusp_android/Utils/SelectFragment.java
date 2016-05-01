@@ -1,12 +1,9 @@
 package  com.example.mutti.interusp_android.Utils;
 
 import android.app.Activity;
-import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.mutti.interusp_android.Fragments.Chaveamento;
@@ -25,41 +22,109 @@ public class SelectFragment {
 
     public static void open(int i, FragmentManager fragmentManager, Activity activity) {
 
-        ImageView informacoes_tab, chaveamento_tab, pontuacao_tab, jogos_tab, mais_tab;
+        ImageView informacoes_tab, chaveamento_tab, mapa_tab, jogos_tab, mais_tab;
 
         informacoes_tab = (ImageView) activity.findViewById(R.id.tab_info);
         chaveamento_tab = (ImageView) activity.findViewById(R.id.tab_chaveamento);
-        pontuacao_tab = (ImageView) activity.findViewById(R.id.tab_pontuacao);
+        mapa_tab = (ImageView) activity.findViewById(R.id.tab_mapa);
         jogos_tab = (ImageView) activity.findViewById(R.id.tab_jogos);
         mais_tab = (ImageView) activity.findViewById(R.id.tab_mais);
+
+        TextView title = (TextView) activity.findViewById(R.id.txtActionBar);
 
         Fragment fragment = new Fragment();
 
         switch (i) {
 
             case 0:
-                informacoes_tab.setBackgroundColor(activity.getResources().getColor(R.color.preto));
                 fragment = new Informacoes();
+
+                title.setText("Informações");
+
+                informacoes_tab.setImageResource(R.drawable.tabicon_branco_info);
+                chaveamento_tab.setImageResource(R.drawable.tabicon_azul_chave);
+                mapa_tab.setImageResource(R.drawable.tabicon_azul_mapa);
+                jogos_tab.setImageResource(R.drawable.tabicon_azul_jogos);
+                mais_tab.setImageResource(R.drawable.tabicon_azul_mais);
+
+                informacoes_tab.setBackgroundColor(activity.getResources().getColor(R.color.azul_tema));
+                chaveamento_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                mapa_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                jogos_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                mais_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 break;
 
             case 1:
-                chaveamento_tab.setBackgroundColor(activity.getResources().getColor(R.color.preto));
                 fragment = new Chaveamento();
+
+                title.setText("Chaveamento");
+
+                informacoes_tab.setImageResource(R.drawable.tabicon_azul_info);
+                chaveamento_tab.setImageResource(R.drawable.tabicon_branco_chave);
+                mapa_tab.setImageResource(R.drawable.tabicon_azul_mapa);
+                jogos_tab.setImageResource(R.drawable.tabicon_azul_jogos);
+                mais_tab.setImageResource(R.drawable.tabicon_azul_mais);
+
+                informacoes_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                chaveamento_tab.setBackgroundColor(activity.getResources().getColor(R.color.azul_tema));
+                mapa_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                jogos_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                mais_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+
                 break;
 
             case 2:
-                pontuacao_tab.setBackgroundColor(activity.getResources().getColor(R.color.preto));
                 fragment = new Mapa();
+
+                title.setText("Mapa");
+
+                informacoes_tab.setImageResource(R.drawable.tabicon_azul_info);
+                chaveamento_tab.setImageResource(R.drawable.tabicon_azul_chave);
+                mapa_tab.setImageResource(R.drawable.tabicon_branco_mapa);
+                jogos_tab.setImageResource(R.drawable.tabicon_azul_jogos);
+                mais_tab.setImageResource(R.drawable.tabicon_azul_mais);
+
+                informacoes_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                chaveamento_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                mapa_tab.setBackgroundColor(activity.getResources().getColor(R.color.azul_tema));
+                jogos_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                mais_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 break;
 
             case 3:
-                jogos_tab.setBackgroundColor(activity.getResources().getColor(R.color.preto));
                 fragment = new Jogos();
+
+                title.setText("Jogos");
+
+                informacoes_tab.setImageResource(R.drawable.tabicon_azul_info);
+                chaveamento_tab.setImageResource(R.drawable.tabicon_azul_chave);
+                mapa_tab.setImageResource(R.drawable.tabicon_azul_mapa);
+                jogos_tab.setImageResource(R.drawable.tabicon_branco_jogos);
+                mais_tab.setImageResource(R.drawable.tabicon_azul_mais);
+
+                informacoes_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                chaveamento_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                mapa_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                jogos_tab.setBackgroundColor(activity.getResources().getColor(R.color.azul_tema));
+                mais_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 break;
 
             case 4:
-                mais_tab.setBackgroundColor(activity.getResources().getColor(R.color.preto));
                 fragment = new Mais();
+
+                title.setText("Mais");
+
+                informacoes_tab.setImageResource(R.drawable.tabicon_azul_info);
+                chaveamento_tab.setImageResource(R.drawable.tabicon_azul_chave);
+                mapa_tab.setImageResource(R.drawable.tabicon_azul_mapa);
+                jogos_tab.setImageResource(R.drawable.tabicon_azul_jogos);
+                mais_tab.setImageResource(R.drawable.tabicon_branco_mais);
+
+                informacoes_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                chaveamento_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                mapa_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                jogos_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+                mais_tab.setBackgroundColor(activity.getResources().getColor(R.color.azul_tema));
                 break;
 
         }
