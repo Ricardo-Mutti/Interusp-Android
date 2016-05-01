@@ -17,7 +17,13 @@
             android:name=".Splash"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Selecionar_Atletica"
             android:screenOrientation="portrait"
@@ -28,11 +34,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".PontuacaoAtletica" />
         <activity
@@ -81,7 +82,11 @@
         <activity android:name=".Pontuacao"/>
         <activity android:name=".menu_adm"/>
         <activity android:name=".atualizar_jogos"/>
->>>>>>> Tela - Atualizar Jogos
+
+        <activity android:name=".atualizar_colocacao_jogos"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"/>
     </application>
 
 </manifest>
