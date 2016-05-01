@@ -21,13 +21,10 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                     activity.finish();
-<<<<<<< Updated upstream
                     Intent intent1 = new Intent(activity, Selecionar_Atletica.class);
                     intent1.putExtra("Nome", "WendlerEis");
-=======
-                    Intent intent1 = new Intent(activity, Informacoes.class);
->>>>>>> Stashed changes
-                    startActivity(intent1);
+                startActivity(intent1);
+
             }
         }, 3000);
     }
