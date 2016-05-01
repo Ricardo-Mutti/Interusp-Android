@@ -61,7 +61,7 @@ public class Selecionar_Atletica extends AppCompatActivity {
                 editor.putString(cor2, Constants.kCorPoli2);
                 editor.commit();
                 GetLocal getLocation = new GetLocal(context);
-                getLocation.getLocation("233123","21312312");
+                getLocation.getLocais();
                 activity.finish();
                 Intent intent = new Intent(activity, Tabs_main.class);
                 startActivity(intent);

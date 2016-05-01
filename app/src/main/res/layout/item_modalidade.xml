@@ -3,18 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingTop="5dp"
+    android:paddingTop="10dp"
     android:paddingBottom="5dp"
     android:paddingRight="30dp"
     android:paddingLeft="10dp">
-
-    <ImageView
-        android:id="@+id/imgModalidade"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:src="@drawable/basquete"
-        android:layout_weight="1"
-        android:layout_marginRight="5dp"/>
 
     <TextView
         android:id="@+id/txtPosicao"
@@ -25,6 +17,17 @@
         android:textSize="40sp"
         android:textColor="@color/azul_tema"
         android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"/>
+
+
+    <ImageView
+        android:id="@+id/imgAtletica"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:src="@drawable/icon_poli"
         android:gravity="center"
         android:layout_marginLeft="2.5dp"
         android:layout_marginRight="2.5dp" />
@@ -39,6 +42,7 @@
         android:textColor="@color/azul_tema"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginLeft="5dp" />
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp" />
 
 </LinearLayout>

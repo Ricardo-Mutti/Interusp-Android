@@ -1,4 +1,103 @@
+
+    <resources>
+        <string name="title_activity_maps">Map</string>
+        <string name="app_name">Interusp-android</string>
+        <string name="titulo1Poli">Guerreiro </string>
+        <string name="titulo2Poli">Poli Maravilha </string>
+        <string name="titulo3Poli">Horto Mágico</string>
+        <string name="titulo4Poli">Bata Amarela </string>
+    <string name="grito1Poli">Eu sou um guerreiro que sozinho bate em mil\nEu sou da POLI a mais fudida do Brasil\n\nSe é pra matar
+\nSe é pra morrer\nOs ratos da POLI tão botando pra fuder\n\nPorrada! Porrada! Porrada!\n\nEu sou, eu sou da POLI, eu sou\nVou dar porrada, eu vou\nE ninguém vai me segurar (nem a PM)</string>
+        <string name="grito2Poli">E na InterUSP,\nSempre que você jogava\nToda torcida enlouquecida\nTe empurrava (2x)\n\nPoli Maravilha,\nNós torcemos por você\nPoli Maravilha,\nTraz o troféu pra gente ver (2x)</string>
+        <string name="grito3Poli">ÔÔÔÔÔ\nPOLI ÔÔÔÔ\nCanto por ti o meu amor\n\nTemida és tu\nMinha Paixão\nSou tua torcida, tua voz e coração..\n\nPOLI chegou\nPreste atenção\nEu vim aqui para ser o campeão\n\nTemida és tu\nMinha Paixão\nSou tua torcida, tua voz e coração!</string>
+        <string name="grito4Poli">POLI\nEstaremos contigo\nTu és minha paixão!\nNão importa o que digam\nSempre levarei comigo\n\nMinha bata amarela\nE a caneca na mão!\nA InterUSP me espera\nVai começar a guerra!\n\nXalaialaiaaaaa (3x)\nPOLI do meu coração!\nXalaialaiaaaaa (3x)\nNa Med só tem cuzão!</string>
+        <string name="titulo1Fea">Incessante </string>
+        <string name="titulo2Fea">Funk do Cachorro </string>
+        <string name="titulo3Fea">Tralalalaô</string>
+        <string name="titulo4Fea">Fea USP Maravilhosa </string>
+        <string name="texto1Fea">Viemos de São Paulo\nE muitas vezes tivemos que parar\nParar, parar, parar pra dá porrada\nDá porrada na GV\nDá porrada na GV\nGV, vai se fuder!\nÉ a TOFUUUU, pau no seu c*\n\nLelele, leleleo\nTOFU tá vindo ai pra botar muito terror (x2)\n\nLevanta a arquibancada\nNão para de agitar\nNão tem medo de morrer\nDá porrada sem parar\n\nE no Economíadas\nO esquema é sem noção\nTOFU é incessante\nDá porrada de montão!</string>
+        <string name="texto2Fea">TOFU\n(palmas)\nTOFU\n(palmas)\nTOFU\n(palmas)\nTOFUUUUUU\n\nÉ o Funk do Cachorro!\nAh, aqui só tem cachorro loco\nAh, quero beber, quero cheirar\nCuidado, PUC, INSPER e GV,\nPorque, a TOFU vai te pegar\n\nÔ pega ela TOFU\nPegs Pegs\nÔ pega ela TOFU\nPegs Pegs\nÔ pega ela TOFU\nPegs Pegs\nÔ pega ela TOFU\nPegs Pegs</string>
+        <string name="texto3Fea">Ô, tralalalaô\nÔ, tralalalaô\nÔ, tralalalala, hey\nTralalalala, hey, tralalalalaô\nAs flores já não crescem mais\nAté o alecrim murchou\nA sapo se mandou\nO lambari morreu\nPorque o ribeirão secou</string>
+        <string name="texto4Fea">FEA-USP Maravilhosa, cheia de encantos mil\nFEA-USP Maravilhosa, melhor escola do Brasil (x2)\n\nEssa é a escola que todos desejam\nMas nem todos podem entrar\nVocê que tentou\nE não conseguiu\nQue vá pra p*** que o pariu</string>
+        <string name="titulo1Esalq">Hino do Agricolão</string>
+        <string name="titulo2Esalq">titulo2esalq(provisório)</string>
+        <string name="titulo3Esalq">titulo3esalq(provisório(</string>
+        <string name="titulo4Esalq">titulo4esalq(provisório)</string>
+        <string name="texto1Esalq">Nós somos da agronomia\nFiés paus d’água\nQue porcaria\nAndamos sempre de bonde\nCom o juízo não sei aonde\nMas quando as coisas se apertam\nE nós pensamos no amanhã\nA turma toda padece\nQuando floresce\nO flamboyant!\nPã rã pã pã\n\nA pinga queremos com limão!\nMulheres, com muita animação!\nPorém se a Pátria amada\nPrecisar do Agricolão\nAi ai ai que papelão!\nPã rã pã pã\n\nComo é sublime bebe uma Brahma\nE depois fumar uma palha\nnuma bela duma grama\nAMOR FEBRIL, Ô Ô Ô Ô\nPelo barril, ôôôô\nNão há quem possa\nCom a turma nossa!\n\nA Pinga queremos com fervor\nMulheres! com muito mais amor\nPorém se a Patria amada\nPrecisar de agricolada\nPuta merda que cagada!\n \nArei, gradeei, aduba que adubando dá! ESALQ! ESALQ! Rá rá rá! (2x</string>
+        <string name="texto2Esalq">texto2esalq(provisório)</string>
+        <string name="texto3Esalq">texto3esalq(provisório)</string>
+        <string name="texto4Esalq">texto4esalq(provisório)</string>
+        <string name="titulo1Odonto">FOUSP Maravilhosa</string>
+        <string name="titulo2Odonto">Odonto Minha Paixão</string>
+        <string name="titulo3Odonto">titulo3odonto(provisório)</string>
+        <string name="titulo4Odonto">titulo4odonto(provisório)</string>
+        <string name="texto1Odonto">FOUSP maravilhosa\nCheia de encantos mil\nFOUSP maravilhosa\nMelhor escola do Brasil!\n\nEssa é a escola\nQue todos desejam\nMas poucos podem entrar\nVocê que tentou \nE não conseguiu\nVai pra p*** que pariu!</string>
+        <string name="texto2Odonto">Odonto\nEstaremos contigo \nSomos uma nação \nNão importa onde esteja\nSempre levarei comigo\n\nO meu manto sagrado \nE a cachaça na mão \nA torcida me espera \nPra começar a festa \n\nXa laia laia, xa laia laia, xa laia laia\nOdonto minha paixao (2x)\n</string>
+        <string name="texto3Odonto">texto3odonto(provisório)</string>
+        <string name="texto4Odonto">texto4odonto(provisório)</string>
+        <string name="titulo1Farma">Ami</string>
+        <string name="titulo2Farma">titulo2farma(provisório)</string>
+        <string name="titulo3Farma">titulo3farma(provisório)</string>
+        <string name="titulo4Farma">titulo4farma(provisório)</string>
+        <string name="texto1Farma">Miiiiiiii....\nVamos nessa\nVamos beber essa cerveja\nFarmácia mi, farmácia mi, farmacia miiiii (2x)\n\nVamos beber essa cerveja\nÉ testa é mi, é nariz mi, é boca é mi, é queixo é mi, é peito é mi, é sexo é mi, É GULA!</string>
+        <string name="texto2Farma">texto2farma(provisório)</string>
+        <string name="texto3Farma">texto3farma(provisório)</string>
+        <string name="texto4Farma">texto4farma(provisório)</string>
+        <string name="titulo1Pinheiros">titulo1pinheiros(provisorio)</string>
+        <string name="titulo2Pinheiros">titulo2pinheiros(provisório)</string>
+        <string name="titulo3Pinheiros">titulo3pinheiros(provisório)</string>
+        <string name="titulo4Pinheiros">titulo4pinheiros(provisório)</string>
+        <string name="texto1Pinheiros">texto1pinheiros(provisório)</string>
+        <string name="texto2Pinheiros">texto2pinheiros(provisório)</string>
+        <string name="texto3Pinheiros">texto3pinheiros(provisório)</string>
+        <string name="texto4Pinheiros">texto4pinheiros(provisório)</string>
+        <string name="titulo1Ribeirao">titulo1ribeirao(provisorio)</string>
+        <string name="titulo2Ribeirao">titulo2ribeirao(provisório)</string>
+        <string name="titulo3Ribeirao">titulo3ribeirao(provisório)</string>
+        <string name="titulo4Ribeirao">titulo4ribeirao(provisório)</string>
+        <string name="texto1Ribeirao">texto1ribeirao(provisório)</string>
+        <string name="texto2Ribeirao">texto2ribeirao(provisório)</string>
+        <string name="texto3Ribeirao">texto3ribeirao(provisório)</string>
+        <string name="texto4Ribeirao">texto4ribeirao(provisório)</string>
+        <string name="titulo1Sanfran">titulo1sanfran(provisorio)</string>
+        <string name="titulo2Sanfran">titulo2sanfran(provisório)</string>
+        <string name="titulo3Sanfran">titulo3sanfran(provisório)</string>
+        <string name="titulo4Sanfran">titulo4sanfran(provisório)</string>
+        <string name="texto1Sanfran">texto1sanfran(provisório)</string>
+        <string name="texto2Sanfran">texto2sanfran(provisório)</string>
+        <string name="texto3Sanfran">texto3sanfran(provisório)</string>
+        <string name="texto4Sanfran">texto4sanfran(provisório)</string>
+    </resources>
 <resources>
     <string name="app_name">Interusp-android</string>
+
+    <string-array name="modalidades">
+        <item>Atletismo Feminino</item>
+        <item>Atletismo Masculino</item>
+        <item>Beisebol</item>
+        <item>Basquete Feminino</item>
+        <item>Basquete Masculino</item>
+        <item>Futebol de Campo</item>
+        <item>Futsal Feminino</item>
+        <item>Futsal Masculino</item>
+        <item>Handebol Feminino</item>
+        <item>Handebol Masculino</item>
+        <item>Judô</item>
+        <item>Karatê Kata</item>
+        <item>Karatê Kumite</item>
+        <item>Natação Feminino</item>
+        <item>Natação Masculino</item>
+        <item>Polo Aquático</item>
+        <item>Rugby Feminino</item>
+        <item>Rugby Masculino</item>
+        <item>Softbol</item>
+        <item>Tênis de Campo Feminino</item>
+        <item>Tênis de Campo Masculino</item>
+        <item>Tênis de Mesa Feminino</item>
+        <item>Tênis de Mesa Masculino</item>
+        <item>Voleibol Feminino</item>
+        <item>Voleibol Masculino</item>
+        <item>Xadrez</item>
+    </string-array>
     <string name="title_activity_maps">Map</string>
 </resources>
