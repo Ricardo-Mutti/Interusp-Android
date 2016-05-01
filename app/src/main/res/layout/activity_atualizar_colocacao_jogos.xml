@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.mutti.interusp_android.atualizar_colocacao_jogos">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modalidade"
+        android:textAlignment="center"
+        android:textSize="30dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Colocação"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:layout_marginTop="35dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtPrimeiro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1º"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="gravity"
+                    android:textSize="25dp"/>
+
+                <EditText
+                    android:id="@+id/edtPrimeiro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtSegundo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2º"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="gravity"
+                    android:textSize="25dp"/>
+
+                <EditText
+                    android:id="@+id/edtSegundo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtTerceiro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3º"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="gravity"
+                    android:textSize="25dp"/>
+
+                <EditText
+                    android:id="@+id/edtTerceiro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtQuarto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4º"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="gravity"
+                    android:textSize="25dp"/>
+
+                <EditText
+                    android:id="@+id/edtQuarto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtQuinto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5º"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="gravity"
+                    android:textSize="25dp"/>
+
+                <EditText
+                    android:id="@+id/edQuinto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtSexto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6º"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="gravity"
+                    android:textSize="25dp"/>
+
+                <EditText
+                    android:id="@+id/edtSexto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtSetimo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7º"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="gravity"
+                    android:textSize="25dp"/>
+
+                <EditText
+                    android:id="@+id/edtSetimo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtOitavo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8º"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="gravity"
+                    android:textSize="25dp"/>
+
+                <EditText
+                    android:id="@+id/edtOitavo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtLocal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Local"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="gravity"
+                    android:textSize="25dp"/>
+
+                <EditText
+                    android:id="@+id/edtLocal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtHorario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Horário"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="gravity"
+                    android:textSize="25dp"/>
+
+                <EditText
+                    android:id="@+id/edtHorario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnAtualizar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Atualizar"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -84,6 +84,11 @@
         <activity android:name=".DetalheInformacao"/>
         <activity android:name=".menu_adm"/>
         <activity android:name=".atualizar_jogos"/>
+
+        <activity android:name=".atualizar_colocacao_jogos"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"/>
     </application>
 
 </manifest>
