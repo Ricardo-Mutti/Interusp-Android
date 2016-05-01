@@ -51,7 +51,7 @@ public class WebServiceAPI { private Context context;
 
         String url = Constants.kServiceURL + Constants.kServiceGetLocation;
 
-        Request request = new InteruspWSRequest(Request.Method.POST, this.context,
+        Request request = new InteruspWSRequest(Request.Method.GET, this.context,
                 url,
                 params, successListener);
 

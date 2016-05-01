@@ -1,6 +1,7 @@
 package com.example.mutti.interusp_android.Manager;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.Response;
@@ -24,7 +25,7 @@ public class GetLocal {
         this.context = context;
     }
 
-    public void getLocais(final String lat, final String lng) {
+    public void getLocais() {
         wsAPI = new WebServiceAPI(context);
 
         wsAPI.getLocais(new Response.Listener<String>() {
@@ -35,6 +36,7 @@ public class GetLocal {
 
                 if (serverResponse.isSuccess()) {
                     Locais locais = gson.fromJson(serverResponse.getResponse(), Locais.class);
+
 
                 } else {
                     Toast.makeText(context, serverResponse.getMessage(),
