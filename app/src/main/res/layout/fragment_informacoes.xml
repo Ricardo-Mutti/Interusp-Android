@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:layout_centerInParent="true"
-    >
+    android:layout_centerInParent="true">
 
 
     <ScrollView
@@ -34,27 +33,22 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/imgGinasio"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="15dp"
-                    android:clickable="true"
-                    android:onClick="abrirginasio"
                     android:src="@drawable/ginasios"
-                    android:text="Ginásio"
-
-                    />
+                    android:text="Ginásio" />
 
                 <ImageView
+                    android:id="@+id/imgTenda"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="15dp"
-                    android:clickable="true"
-                    android:onClick="abrirtenda"
                     android:src="@drawable/tenda"
-                    android:text="Tenda"
+                    android:text="Tenda" />
 
-                    />
             </LinearLayout>
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -65,27 +59,22 @@
 
 
                 <ImageView
+                    android:id="@+id/imgBalada"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:onClick="abrirbalada"
                     android:src="@drawable/baladas"
-                    android:text="Balada"
-
-                    />
+                    android:text="Balada"  />
 
                 <ImageView
+                    android:id="@+id/imgOnibus"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:onClick="abrironibus"
                     android:src="@drawable/onibus"
-                    android:text="Ônibus"
+                    android:text="Ônibus" />
 
-                    />
             </LinearLayout>
 
             <LinearLayout
@@ -96,27 +85,22 @@
 
 
                 <ImageView
+                    android:id="@+id/imgAlojamento"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:onClick="abriralojamentos"
                     android:src="@drawable/alojamento"
-                    android:text="Alojamentos"
-
-                    />
+                    android:text="Alojamentos" />
 
                 <ImageView
+                    android:id="@+id/imgHospital"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:onClick="abrirhospital"
                     android:src="@drawable/hospital"
-                    android:text="Hospital"
+                    android:text="Hospital" />
 
-                    />
             </LinearLayout>
 
             <LinearLayout
@@ -127,29 +111,26 @@
 
 
                 <ImageView
+                    android:id="@+id/imgDelegacia"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:onClick="abrirdelegacia"
                     android:src="@drawable/delegacia"
-                    android:text="Delegacia"
-
-                    />
+                    android:text="Delegacia" />
 
                 <ImageView
+                    android:id="@+id/imgRestaurante"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:onClick="abrirrestaurantes"
                     android:src="@drawable/comidas"
-                    android:text="Restaurantes"
+                    android:text="Restaurantes" />
 
-                    />
             </LinearLayout>
+
         </LinearLayout>
+
     </ScrollView>
 
 </RelativeLayout>

@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.mutti.interusp_android.Local;
 import com.example.mutti.interusp_android.R;
@@ -32,67 +33,90 @@ public class Informacoes extends Fragment {
         activity = getActivity();
         context = getContext();
 
-
-
         View rootview =  inflater.inflate(R.layout.fragment_informacoes, container, false);
+
+        ImageView imgGinasio = (ImageView) rootview.findViewById(R.id.imgGinasio);
+        imgGinasio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, Local.class);
+                intent.putExtra("nome","Ginásios");
+                startActivity(intent);
+            }
+        });
+
+        ImageView imgTenda = (ImageView) rootview.findViewById(R.id.imgTenda);
+        imgTenda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, Local.class);
+                intent.putExtra("nome","Tenda");
+                startActivity(intent);
+
+            }
+        });
+
+        ImageView imgBalada = (ImageView) rootview.findViewById(R.id.imgBalada);
+        imgBalada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, Local.class);
+                intent.putExtra("nome","Baladas");
+                startActivity(intent);
+            }
+        });
+
+        ImageView imgOnibus = (ImageView) rootview.findViewById(R.id.imgOnibus);
+        imgOnibus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, Local.class);
+                intent.putExtra("nome","Ônibus");
+                startActivity(intent);
+            }
+        });
+
+        ImageView imgAlojamento = (ImageView) rootview.findViewById(R.id.imgAlojamento);
+        imgAlojamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, Local.class);
+                intent.putExtra("nome","Alojamentos");
+                startActivity(intent);
+
+            }
+        });
+
+        ImageView imgHospital = (ImageView) rootview.findViewById(R.id.imgHospital);
+        imgHospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, Local.class);
+                intent.putExtra("nome","Hospital");
+                startActivity(intent);
+            }
+        });
+
+        ImageView imgDelegacia = (ImageView) rootview.findViewById(R.id.imgDelegacia);
+        imgDelegacia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, Local.class);
+                intent.putExtra("nome","Delegacia");
+                startActivity(intent);
+            }
+        });
+
+        ImageView imgRestaurante = (ImageView) rootview.findViewById(R.id.imgRestaurante);
+        imgRestaurante.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, Local.class);
+                intent.putExtra("nome","Restaurantes");
+                startActivity(intent);
+            }
+        });
 
         return rootview;
     }
-
-    public void abrirginasio(View view) {
-        Intent intent = new Intent(activity, Local.class);
-        intent.putExtra("nome","Ginásios");
-        startActivity(intent);
-
-    }
-
-    public void abrirtenda(View view) {
-        Intent intent = new Intent(activity, Local.class);
-        intent.putExtra("nome","Tenda");
-        startActivity(intent);
-
-    }
-
-    public void abrirbalada(View view) {
-        Intent intent = new Intent(activity, Local.class);
-        intent.putExtra("nome","Baladas");
-        startActivity(intent);
-
-    }
-
-    public void abrironibus(View view) {
-        Intent intent = new Intent(activity, Local.class);
-        intent.putExtra("nome","Ônibus");
-        startActivity(intent);
-
-    }
-
-    public void abriralojamentos(View view) {
-        Intent intent = new Intent(activity, Local.class);
-        intent.putExtra("nome","Alojamentos");
-        startActivity(intent);
-
-    }
-
-    public void abrirhospital(View view) {
-        Intent intent = new Intent(activity, Local.class);
-        intent.putExtra("nome","Hospital");
-        startActivity(intent);
-
-    }
-
-    public void abrirdelegacia(View view) {
-        Intent intent = new Intent(activity, Local.class);
-        intent.putExtra("nome","Delegacia");
-        startActivity(intent);
-
-    }
-
-    public void abrirrestaurantes(View view) {
-        Intent intent = new Intent(activity, Local.class);
-        intent.putExtra("nome","Restaurantes");
-        startActivity(intent);
-
-    }
-
 }
