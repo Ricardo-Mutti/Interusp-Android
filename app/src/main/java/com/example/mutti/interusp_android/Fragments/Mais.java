@@ -2,13 +2,16 @@ package com.example.mutti.interusp_android.Fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.mutti.interusp_android.PontuacaoTabela;
 import com.example.mutti.interusp_android.R;
 
 /**
@@ -39,7 +42,9 @@ public class Mais extends Fragment {
         txtPontuacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(context, "PONTUACAO", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, PontuacaoTabela.class);
+                startActivity(intent);
             }
         });
         txtAdm = (TextView) rootview.findViewById(R.id.txtAdm);

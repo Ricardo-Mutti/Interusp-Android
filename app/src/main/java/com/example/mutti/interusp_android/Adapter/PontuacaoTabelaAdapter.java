@@ -41,87 +41,112 @@ public class PontuacaoTabelaAdapter extends ArrayAdapter {
         TextView txtPonto = (TextView) convertView.findViewById(R.id.txtPonto);
         ImageView imgModalidade = (ImageView) convertView.findViewById(R.id.imgModalidade);
 
-        txtPosicao.setText(pontuacao.getPosicao());
-        txtPonto.setText(pontuacao.getPontos());
+        txtPosicao.setText(""+pontuacao.getPosicao());
+        txtPonto.setText(""+pontuacao.getPontos());
 
         switch (pontuacao.getModalidadeId()) {
             case 0:
-                imgModalidade.setImageResource(R.drawable.basquete);
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 1:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 2:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 3:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 4:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 5:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 6:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 7:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 8:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 9:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 10:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 11:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 12:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 13:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 14:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 15:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 16:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 17:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 18:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 19:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 20:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 21:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 22:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 23:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 24:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             case 25:
-                imgModalidade.setImageResource(R.drawable.basquete);
+
+                imgModalidade.getContext().getResources().getDrawable(R.drawable.basquete);
                 break;
             default:
                 break;
