@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.mutti.interusp_android.Model.Pontuacao;
+import com.example.mutti.interusp_android.Model.PontuacaoAtletica;
 import com.example.mutti.interusp_android.R;
 
 import java.util.ArrayList;
@@ -16,12 +16,12 @@ import java.util.ArrayList;
 /**
  * Created by Victor on 01/05/2016.
  */
-public class PontuacaoTabelaAdapter extends ArrayAdapter {
+public class PontuacaoAtleticaAdapter extends ArrayAdapter {
 
     Context context;
-    ArrayList<Pontuacao> list;
+    ArrayList<PontuacaoAtletica> list;
 
-    public PontuacaoTabelaAdapter(Context context, ArrayList<Pontuacao> list) {
+    public PontuacaoAtleticaAdapter(Context context, ArrayList<PontuacaoAtletica> list) {
         super(context, 0, list);
         this.context = context;
         this.list = list;
@@ -30,7 +30,7 @@ public class PontuacaoTabelaAdapter extends ArrayAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        Pontuacao pontuacao = list.get(position);
+        PontuacaoAtletica pontuacaoAtletica = list.get(position);
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -41,10 +41,10 @@ public class PontuacaoTabelaAdapter extends ArrayAdapter {
         TextView txtPonto = (TextView) convertView.findViewById(R.id.txtPonto);
         ImageView imgModalidade = (ImageView) convertView.findViewById(R.id.imgModalidade);
 
-        txtPosicao.setText(""+pontuacao.getPosicao());
-        txtPonto.setText(""+pontuacao.getPontos());
+        txtPosicao.setText(""+ pontuacaoAtletica.getPosicao());
+        txtPonto.setText(""+ pontuacaoAtletica.getPontos());
 
-        switch (pontuacao.getModalidadeId()) {
+        switch (pontuacaoAtletica.getModalidadeId()) {
             case 0:
                 imgModalidade.setImageResource(R.drawable.modalidade_atletismo);
                 imgModalidade.setBackgroundResource(R.color.transparente);

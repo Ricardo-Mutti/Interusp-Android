@@ -3,14 +3,14 @@ package com.example.mutti.interusp_android.Model;
 /**
  * Created by Victor on 01/05/2016.
  */
-public class Pontuacao {
+public class PontuacaoAtletica {
 
     private int modalidadeId;
     private String nome;
     private int posicao;
     private int pontos;
 
-    public Pontuacao(int modalidadeId, String nome, int posicao, int pontos) {
+    public PontuacaoAtletica(int modalidadeId, String nome, int posicao, int pontos) {
         this.modalidadeId = modalidadeId;
         this.nome = nome;
         this.posicao = posicao;

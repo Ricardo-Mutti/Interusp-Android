@@ -9,11 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.mutti.interusp_android.Model.PontuacaoModalidade;
-import com.example.mutti.interusp_android.PontuacaoModalidadeTabela;
-import com.example.mutti.interusp_android.PontuacaoTabela;
+import com.example.mutti.interusp_android.PontuacaoAtletica;
 import com.example.mutti.interusp_android.R;
 
 /**
@@ -44,7 +41,7 @@ public class Mais extends Fragment {
         txtPontuacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, PontuacaoTabela.class);
+                Intent intent = new Intent(context, PontuacaoAtletica.class);
                 startActivity(intent);
             }
         });
