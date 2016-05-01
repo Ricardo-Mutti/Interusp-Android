@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.mutti.interusp_android.Historico;
+import com.example.mutti.interusp_android.Pontuacao;
 import com.example.mutti.interusp_android.PontuacaoAtletica;
 import com.example.mutti.interusp_android.Gritos;
 import com.example.mutti.interusp_android.R;

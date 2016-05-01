@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mutti.interusp_android.DetalheInformacao;
+import com.example.mutti.interusp_android.Model.Local;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.teste;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -25,6 +27,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+
 /**
  * Created by Mutti on 30/04/16.
  */
@@ -38,6 +42,8 @@ public class Mapa extends Fragment  {
     private GoogleMap map;
     MapView mMapView;
     String selectedMarker;
+
+    ArrayList<Local> locais;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,9 +82,19 @@ public class Mapa extends Fragment  {
 
                 } else {
 
-                    Intent intent = new Intent(getActivity(), teste.class);
-                    intent.putExtra("nome", markerTitle);
-                    getActivity().startActivity(intent);
+                    Local local = null;
+                    for (Local l : locais) {
+                        if (markerTitle.equals(l.getNome())) {
+                            local = l;
+                            break;
+                        }
+                    }
+
+                    if (local != null) {
+                        Intent intent = new Intent(getActivity(), DetalheInformacao.class);
+                        intent.putExtra("local", local);
+                        getActivity().startActivity(intent);
+                    }
 
                 }
 
@@ -92,27 +108,16 @@ public class Mapa extends Fragment  {
             }
         });
 
-
-
         // latitude and longitude
         double latitude = -23.1072;
         double longitude = -48.9255;
 
-        // create marker
-        MarkerOptions marker = new MarkerOptions().position(
-                new LatLng(latitude, longitude)).title("Ginasio");
-
-        // Changing marker icon
-        marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
-
-        // adding marker
-        map.addMarker(marker);
         CameraPosition cameraPosition = new CameraPosition.Builder()
                 .target(new LatLng(latitude, longitude)).zoom(14).build();
         map.animateCamera(CameraUpdateFactory
                 .newCameraPosition(cameraPosition));
 
-        criarPontos();
+        criarMarkers();
 
         return rootview;
     }
@@ -141,35 +146,30 @@ public class Mapa extends Fragment  {
         mMapView.onLowMemory();
     }
 
-    public void criarPontos() {
-        double latitude = -23.1072;
-        double longitude = -48.9255;
-
-
-        // create marker
-        MarkerOptions marker = new MarkerOptions().position(
-                new LatLng(-23.1075, -48.9346)).title("Hospital");
-
-        // Changing marker icon
-        marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
-
-        // adding marker
-        map.addMarker(marker);
-
-        // create marker
-        MarkerOptions marker2 = new MarkerOptions().position(
-                new LatLng(-23.1100, -48.9257)).title("Alojamento Poli");
-
-        // Changing marker icon
-        marker2.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
-
-        // adding marker
-        map.addMarker(marker2);
-    }
-
     public void criarMarkers () {
         //Criador de markers
+        locais = Local.getLocaisProvisorios();
+        for (Local local: locais) {
+            MarkerOptions marker = new MarkerOptions().position(
+                    new LatLng(local.getCoordenadas()[0], local.getCoordenadas()[1]))
+                    .title(local.getNome());
 
+            switch (local.getTipo()) {
+                case 1:
+                    marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+                    break;
+                case 2:
+                    marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+                    break;
+                case 3:
+                    marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
+                    break;
+                default:
+                    break;
+            }
+
+            map.addMarker(marker);
+        }
 
 
     }

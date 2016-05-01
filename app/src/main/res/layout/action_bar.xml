@@ -5,7 +5,8 @@
     android:layout_height="60dp"
     android:background="@color/azul_tema"
     android:orientation="horizontal"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:id="@+id/action_bar">
 
     <ImageView
         android:id="@+id/btnVoltar"
