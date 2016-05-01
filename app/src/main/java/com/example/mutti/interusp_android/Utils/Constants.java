@@ -12,6 +12,8 @@ public class Constants {
 
     public static final String kServiceGetLocation = "/v1/locais/";
     public static final String kServiceLogin = "/v1/user/login";
+    public static final String kServiceGetJogos = "/jogo";
+    public static final String kServiceUpdateJogos = "/jogo/getTodos";
 
     //Keys de jogo
     public static final String kTipoJogoHorario = "tipo.jogo.horario";
@@ -24,11 +26,11 @@ public class Constants {
     public static final String kTipoJogoModalidade = "tipo.jogo.modalidade";
 
     //FILTROS DE JOGOS
-    public static final String[] kFiltroJogoDia = {"26/05","27/05","28/05","29/05"};
-    public static final String[] kFiltroJogoModalidade = {"ATL","BQM","BQF","FC","FSM", "FSF", "HM",
+    public static final String[] kFiltroJogoDia = {"Todos","26/05","27/05","28/05","29/05"};
+    public static final String[] kFiltroJogoModalidade = {"Todos","ATL","BQM","BQF","FC","FSM", "FSF", "HM",
             "HF", "JUDO", "KRT", "NTM","NTF","PA","RGF","RGM","SB","TCM","TCF","TMM","TMF","VM","VF","XDZ"};
-    public static final String[] kFiltroJogoAtletica = {"POLI","FEA","ODONTO","MED RIBEIRÃO","POLI",
-            "FEA","ODONTO","MED RIBEIRÃO"};
+    public static final String[] kFiltroJogoAtletica = {"Todos","POLI","FEA","ODONTO","MED RIBEIRÃO","POLI",
+            "FEA","ODONTO","MED PINHEIROS"};
     public static final String[] kFiltroJogoLocal = {"G1","G2","G3"};
 
     //CORES DAS FACULDADES
@@ -58,5 +60,6 @@ public class Constants {
     //DONE
 
     public static final String kLoginDone = "com.appsimples.swapped.login-done";
+    public static final String kGetJogosDone = "com.appsimples.swapped.login-done";
 
 }
