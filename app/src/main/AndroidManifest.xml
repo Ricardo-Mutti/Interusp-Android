@@ -80,7 +80,6 @@
         <activity android:name=".PontuacaoModalidade" />
         <activity android:name=".Pontuacao"/>
         <activity android:name=".menu_adm"/>
-
     </application>
 
 </manifest>
