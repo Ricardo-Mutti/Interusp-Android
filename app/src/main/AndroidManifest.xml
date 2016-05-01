@@ -24,9 +24,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PontuacaoTabela" />
+        <activity android:name=".PontuacaoAtletica" />
         <activity
             android:name=".Selecionar_Atletica"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".mapas_waze"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
@@ -44,7 +49,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
-
         <activity
             android:name=".Tabs_main"
             android:screenOrientation="portrait"
@@ -61,6 +65,10 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+        <activity android:name=".LoginAdm"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"/>
 
         <activity android:name=".teste" />
         <activity android:name=".Informacoes" />
@@ -70,7 +78,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".PontuacaoModalidade" />
-        <activity android:name=".Pontuacao"></activity>
+        <activity android:name=".Pontuacao"/>
     </application>
 
 </manifest>
