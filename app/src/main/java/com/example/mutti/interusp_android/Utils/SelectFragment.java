@@ -1,6 +1,9 @@
 package  com.example.mutti.interusp_android.Utils;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.widget.ImageView;
@@ -19,6 +22,10 @@ import com.example.mutti.interusp_android.R;
  */
 public class SelectFragment {
 
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String cor1 = "cor1";
+    public static final String cor2 = "cor2";
+
 
     public static void open(int i, FragmentManager fragmentManager, Activity activity) {
 
@@ -31,6 +38,10 @@ public class SelectFragment {
         mais_tab = (ImageView) activity.findViewById(R.id.tab_mais);
 
         TextView title = (TextView) activity.findViewById(R.id.txtActionBar);
+
+        SharedPreferences sharedpreferences = activity.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        //String backgroundColor = sharedpreferences.getString(cor1, "#000000");
+        int backgroundColor = Color.parseColor(sharedpreferences.getString(cor1, "#000000"));
 
         Fragment fragment = new Fragment();
 
@@ -47,7 +58,7 @@ public class SelectFragment {
                 jogos_tab.setImageResource(R.drawable.tabicon_azul_jogos);
                 mais_tab.setImageResource(R.drawable.tabicon_azul_mais);
 
-                informacoes_tab.setBackgroundColor(activity.getResources().getColor(R.color.azul_tema));
+                informacoes_tab.setBackgroundColor(backgroundColor);
                 chaveamento_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 mapa_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 jogos_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
@@ -66,7 +77,7 @@ public class SelectFragment {
                 mais_tab.setImageResource(R.drawable.tabicon_azul_mais);
 
                 informacoes_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
-                chaveamento_tab.setBackgroundColor(activity.getResources().getColor(R.color.azul_tema));
+                chaveamento_tab.setBackgroundColor(backgroundColor);
                 mapa_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 jogos_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 mais_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
@@ -86,7 +97,7 @@ public class SelectFragment {
 
                 informacoes_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 chaveamento_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
-                mapa_tab.setBackgroundColor(activity.getResources().getColor(R.color.azul_tema));
+                mapa_tab.setBackgroundColor(backgroundColor);
                 jogos_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 mais_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 break;
@@ -105,7 +116,7 @@ public class SelectFragment {
                 informacoes_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 chaveamento_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 mapa_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
-                jogos_tab.setBackgroundColor(activity.getResources().getColor(R.color.azul_tema));
+                jogos_tab.setBackgroundColor(backgroundColor);
                 mais_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 break;
 
@@ -124,7 +135,7 @@ public class SelectFragment {
                 chaveamento_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 mapa_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 jogos_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
-                mais_tab.setBackgroundColor(activity.getResources().getColor(R.color.azul_tema));
+                mais_tab.setBackgroundColor(backgroundColor);
                 break;
 
         }
