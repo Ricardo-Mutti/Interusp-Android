@@ -52,8 +52,8 @@ public class Mais extends Fragment {
         txtAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, PontuacaoModalidadeTabela.class);
-                startActivity(intent);
+//                Intent intent = new Intent(context, PontuacaoModalidadeTabela.class);
+//                startActivity(intent);
             }
         });
         txtInterUsp = (TextView) rootview.findViewById(R.id.txtInterUsp);
