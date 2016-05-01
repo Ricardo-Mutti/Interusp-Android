@@ -17,6 +17,16 @@
             android:name=".Splash"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Selecionar_Atletica"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".mapas_waze"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,16 +35,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".PontuacaoAtletica" />
-        <activity
-            android:name=".Selecionar_Atletica"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity
-            android:name=".mapas_waze"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".Historico"
             android:screenOrientation="portrait"
@@ -79,6 +79,8 @@
             android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".PontuacaoModalidade" />
         <activity android:name=".Pontuacao"/>
+        <activity android:name=".menu_adm"/>
+
     </application>
 
 </manifest>
