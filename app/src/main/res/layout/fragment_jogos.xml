@@ -4,8 +4,63 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="jogos"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dia"
+            android:textAllCaps="false"
+            android:textSize="10sp"
+            android:background="#000000"
+            android:textColor="#ffffff"
+            android:id="@+id/jogos_btn_dia"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Modalidade"
+            android:textAllCaps="false"
+            android:textSize="10sp"
+            android:background="#000000"
+            android:textColor="#ffffff"
+            android:id="@+id/jogos_btn_modalidade"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Atletica"
+            android:textAllCaps="false"
+            android:textSize="10sp"
+            android:background="#000000"
+            android:textColor="#ffffff"
+            android:id="@+id/jogos_btn_dia_atletica"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Local"
+            android:textAllCaps="false"
+            android:textSize="10sp"
+            android:background="#000000"
+            android:textColor="#ffffff"
+            android:id="@+id/jogos_btn_local"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/list"
+        android:background="#0000ff"/>
+
+
 </LinearLayout>
