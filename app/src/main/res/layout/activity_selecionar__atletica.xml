@@ -1,27 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/branco"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.mutti.interusp_android.Selecionar_Atletica">
+    android:orientation="vertical"
+    android:gravity="center"
+>
 
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:textColor="@color/preto"
+    android:textSize="23sp"
+    android:textStyle="bold"
+    android:text="INTERUSP 2016"
+    />
 
     <ImageView
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:src="@drawable/logo_iusp_splash"
         android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true"
+      android:layout_marginBottom="20dp"
         />
 
-    <GridView
-        android:id="@+id/seletor_atleticas"
+    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/preto"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Selecione sua atlética:"
+        android:layout_marginBottom="25dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/atletica_poli"
+            android:layout_weight="1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/icon_poli"/>
 
 
-    </GridView>
+        <ImageView
+            android:id="@+id/atletica_farma"
+            android:layout_weight="1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/icon_farma"/>
 
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/atletica_fea"
+            android:layout_weight="1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/icon_fea"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/atletica_esalq"
+            android:layout_weight="1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/icon_esalq"/>
+
+
+        <ImageView
+            android:id="@+id/atletica_odonto"
+            android:layout_weight="1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/icon_odonto"/>
+
+
+        <ImageView
+            android:id="@+id/atletica_riberao"
+            android:layout_weight="1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/icon_riberao"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/atletica_sanfran"
+            android:layout_weight="1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/icon_sanfran"/>
+
+
+        <ImageView
+            android:id="@+id/atletica_pinheiros"
+            android:layout_weight="1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/icon_pinheiros"/>
+
+
+        <TextView
+            android:id="@+id/atletica_todos"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/preto"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="TODOS"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
