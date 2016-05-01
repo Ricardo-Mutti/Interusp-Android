@@ -1,6 +1,7 @@
 package com.example.mutti.interusp_android.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,8 +9,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.Fragments.Mapa;
 import com.example.mutti.interusp_android.Model.Pontuacao;
+import com.example.mutti.interusp_android.Model.PontuacaoModalidade;
+import com.example.mutti.interusp_android.PontuacaoAtletica;
 import com.example.mutti.interusp_android.R;
+import com.example.mutti.interusp_android.Utils.SetListAtletica;
 
 import java.util.ArrayList;
 
@@ -27,50 +32,52 @@ public class PontuacaoAdapter extends ArrayAdapter<Pontuacao> {
         this.list = list;
     }
 
+    //Logica pra retornar o layout
+    @Override
+    public int getItemViewType(int position) {
+        int type=0;
+        if (position == 7) {
+            type = 1;
+        }
+
+        return type;
+    }
+
+    //Precisa dar override no getViewTypeCount pq se nao ele nao retorna os layouts direito
+    @Override
+    public int getViewTypeCount() {
+        return 2;
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
         Pontuacao pontuacao = list.get(position);
+        int type = getItemViewType(position);
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.item_placar, null);
-        }
+            if(type==1){
+                convertView = inflater.inflate(R.layout.layout_modalidades_placar, null);
 
-        TextView txtPontoAtual = (TextView) convertView.findViewById(R.id.txtPontoAtual);
-        TextView txtPontoMin = (TextView) convertView.findViewById(R.id.txtPontoMin);
-        TextView txtPontoMax = (TextView) convertView.findViewById(R.id.txtPontoMax);
-        ImageView imgAtletica = (ImageView) convertView.findViewById(R.id.imgAtletica);
+                ImageView pontuacao1 = (ImageView) convertView.findViewById(R.id.pontuacao_atletismo);
 
-        txtPontoAtual.setText(""+pontuacao.getPontoAtual());
-        txtPontoMin.setText(""+pontuacao.getPontoMin());
-        txtPontoMax.setText(""+pontuacao.getPontoMax());
 
-        switch (pontuacao.getAtleticaId()) {
-            case 0:
-                imgAtletica.setImageResource(R.drawable.icon_poli);
-                break;
-            case 1:
-                imgAtletica.setImageResource(R.drawable.icon_esalq);
-                break;
-            case 2:
-                imgAtletica.setImageResource(R.drawable.icon_farma);
-                break;
-            case 3:
-                imgAtletica.setImageResource(R.drawable.icon_riberao);
-                break;
-            case 4:
-                imgAtletica.setImageResource(R.drawable.icon_odonto);
-                break;
-            case 5:
-                imgAtletica.setImageResource(R.drawable.icon_fea);
-                break;
-            case 6:
-                imgAtletica.setImageResource(R.drawable.icon_sanfran);
-                break;
-            case 7:
-                imgAtletica.setImageResource(R.drawable.icon_pinheiros);
-                break;
+                pontuacao1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(context, PontuacaoModalidade.class);
+                        context.startActivity(intent);
+                    }
+                });
+
+
+
+            }else{
+                convertView = inflater.inflate(R.layout.item_placar, null);
+                SetListAtletica.setCell(convertView,context,pontuacao);
+            }
+
         }
 
         return convertView;
