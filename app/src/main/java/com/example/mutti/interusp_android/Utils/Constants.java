@@ -57,6 +57,7 @@ public class Constants {
 
     //DONE
 
-    public static final String kLoginDone = "com.appsimples.swapped.login-done";
+    public static final String kLoginDone = "com.appsimples.interusp.login-done";
+    public static final String kGetLocaisDone = "com.appsimples.interusp.getlocais-done";
 
 }
