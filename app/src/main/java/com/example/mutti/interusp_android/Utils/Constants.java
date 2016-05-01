@@ -11,6 +11,7 @@ public class Constants {
     public static final String kServiceURL = "http://ec2-52-201-135-248.compute-1.amazonaws.com:3000";
 
     public static final String kServiceGetLocation = "/v1/locais/";
+    public static final String kServiceLogin = "/v1/user/login";
 
     //Keys de jogo
     public static final String kTipoJogoHorario = "tipo.jogo.horario";
@@ -49,4 +50,9 @@ public class Constants {
     public static final String kCorFea2 = "#ffffff";
     public static final String kCorTodos1 = "#000033";
     public static final String kCorTodos2 = "#ffffff";
+
+    //CONSTANTES GLOBAIS
+
+    public static final String MY_PREFS_NAME = "my_prefs";
+
 }

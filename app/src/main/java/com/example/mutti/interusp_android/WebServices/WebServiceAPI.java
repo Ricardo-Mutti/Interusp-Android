@@ -60,6 +60,22 @@ public class WebServiceAPI { private Context context;
     }
 
 
+    public void userLogin (String username, String password, Response.Listener successListener) {
+
+        Map<String, String> params = new HashMap<>();
+        params.put("username", username);
+        params.put("password", password);
+
+        String url = Constants.kServiceURL + Constants.kServiceLogin;
+
+        Request request = new InteruspWSRequest(Request.Method.POST, this.context,
+                url,
+                params, successListener);
+
+        WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
+        Log.d("Request:",request.toString());
+    }
+
 
 
 
