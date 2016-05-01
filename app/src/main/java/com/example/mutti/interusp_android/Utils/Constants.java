@@ -30,4 +30,22 @@ public class Constants {
             "FEA","ODONTO","MED RIBEIRÃO"};
     public static final String[] kFiltroJogoLocal = {"G1","G2","G3"};
 
+    //CORES DAS FACULDADES
+    public static final String kCorPoli1 = "#FDA405";
+    public static final String kCorPoli2 = "#171B40";
+    public static final String kCorFarma1 = "#A0522D";
+    public static final String kCorFarma2 = "#ffffff";
+    public static final String kCorEsalq1 = "#FF0000";
+    public static final String kCorEsalq2 = "#ffffff";
+    public static final String kCorRibeirao1 = "#093B24";
+    public static final String kCorRibeirao2 = "#ffffff";
+    public static final String kCorSanFran1 = "#d4251e";
+    public static final String kCorSanFran2 = "#ffffff";
+    public static final String kCorMed1 = "#006400";
+    public static final String kCorMed2 = "#ffffff";
+    public static final String kCorOdonto1 = "#4682B4";
+    public static final String kCorOdonto2 = "#A0522D";
+    public static final String kCorFea1 = "#0000CC";
+    public static final String kCorFea2 = "#ffffff";
+
 }

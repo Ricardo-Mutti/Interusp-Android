@@ -2,6 +2,8 @@ package com.example.mutti.interusp_android.Fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.mutti.interusp_android.Adapter.FilterAdapter;
 import com.example.mutti.interusp_android.Adapter.JogoAdapter;
@@ -46,6 +49,10 @@ public class Jogos extends Fragment {
     String stringLocalToFilter;
 
     RelativeLayout containerFilter;
+
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String cor1 = "cor1";
+    public static final String cor2 = "cor2";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -106,6 +113,16 @@ public class Jogos extends Fragment {
         listView = (ListView) rootview.findViewById(R.id.list);
         jogoAdapter = new JogoAdapter(getActivity(), TipoJogo.getJogosHardcoded());
         listView.setAdapter(jogoAdapter);
+
+        SharedPreferences sharedpreferences = getActivity().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        filtroDia.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
+        filtroDia.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
+        filtroModalidade.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
+        filtroModalidade.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
+        filtroAtletica.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
+        filtroAtletica.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
+        filtroLocal.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
+        filtroLocal.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
 
         return rootview;
     }
