@@ -23,7 +23,8 @@ public class Splash extends AppCompatActivity {
                     activity.finish();
                     Intent intent1 = new Intent(activity, Selecionar_Atletica.class);
                     intent1.putExtra("Nome", "WendlerEis");
-                    startActivity(intent1);
+                startActivity(intent1);
+
             }
         }, 3000);
     }

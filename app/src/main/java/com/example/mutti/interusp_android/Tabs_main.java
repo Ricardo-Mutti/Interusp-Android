@@ -2,6 +2,7 @@ package com.example.mutti.interusp_android;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -30,11 +31,19 @@ public class Tabs_main extends FragmentActivity {
         ImageView mais_tab = (ImageView) findViewById(R.id.tab_mais);
 
         SelectFragment.open(0, fragmentManager, activity);
+        activity.finish();
+        Intent intent1 = new Intent(activity, Informacoes.class);
+        intent1.putExtra("Nome", "WendlerEis");
+        startActivity(intent1);
 
         info_tab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SelectFragment.open(0, fragmentManager, activity);
+                activity.finish();
+                Intent intent1 = new Intent(activity, Informacoes.class);
+                intent1.putExtra("Nome", "WendlerEis");
+                startActivity(intent1);
             }
         });
 
