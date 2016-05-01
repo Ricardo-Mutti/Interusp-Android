@@ -6,45 +6,40 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.Response;
-import com.example.mutti.interusp_android.Model.Locais;
-import com.example.mutti.interusp_android.Model.Local;
+import com.example.mutti.interusp_android.Model.Jogo;
 import com.example.mutti.interusp_android.Model.ServerResponse;
+import com.example.mutti.interusp_android.Model.Token;
 import com.example.mutti.interusp_android.Utils.Constants;
-import com.example.mutti.interusp_android.Utils.DataHolder;
 import com.example.mutti.interusp_android.WebServices.WebServiceAPI;
 import com.google.gson.Gson;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by Mutti on 01/05/16.
  */
-public class GetLocal {
+public class GetJogos {
 
     private WebServiceAPI wsAPI;
     Context context;
 
-    public GetLocal(Context context) {
+    Intent intent = new Intent(Constants.kGetJogosDone);
+
+    public GetJogos(Context context) {
         this.context = context;
     }
 
-    public void getLocais() {
+    public void GetJogos() {
         wsAPI = new WebServiceAPI(context);
 
-        wsAPI.getLocais(new Response.Listener<String>() {
+        wsAPI.getJogos( new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {//Callback da resposta  pode ser um erro
                 Gson gson = new Gson();
                 ServerResponse serverResponse = gson.fromJson(response, ServerResponse.class);//Parse do json segundo o modelo SeverResponse
 
                 if (serverResponse.isSuccess()) {
-                    Locais locais = gson.fromJson(serverResponse.getResponse(), Locais.class);
-                    ArrayList<Local> locaisSalvos = new ArrayList<Local>(Arrays.asList(locais.getLocais()));
-                    DataHolder.getInstance().setLocaisSalvos(locaisSalvos);
 
-                    Intent intent = new Intent(Constants.kGetLocaisDone);
+                    Jogo jogo = gson.fromJson(response, Jogo.class);//Parse do json segundo o modelo SeverResponse
+
                     context.sendBroadcast(intent);
 
                 } else {
@@ -55,6 +50,4 @@ public class GetLocal {
         });
 
     }
-
-
 }

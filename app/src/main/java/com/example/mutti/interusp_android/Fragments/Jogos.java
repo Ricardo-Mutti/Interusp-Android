@@ -1,7 +1,10 @@
 package com.example.mutti.interusp_android.Fragments;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -20,6 +23,7 @@ import com.example.mutti.interusp_android.Adapter.JogoAdapter;
 import com.example.mutti.interusp_android.Model.TipoJogo;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
+import com.example.mutti.interusp_android.menu_adm;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,6 +57,17 @@ public class Jogos extends Fragment {
     public static final String MyPREFERENCES = "MyPrefs" ;
     public static final String cor1 = "cor1";
     public static final String cor2 = "cor2";
+
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            activity.finish();
+            Intent intent1 = new Intent(activity, menu_adm.class);
+            startActivity(intent1);
+
+        }
+    };
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -130,7 +145,6 @@ public class Jogos extends Fragment {
     public void showFiltroDia () {
 
         final ArrayList<String> filters = new ArrayList<String>(Arrays.asList(Constants.kFiltroJogoDia));
-        filters.add("Todos");
         filterAdapter = new FilterAdapter(getActivity(), filters);
         filterListView.setAdapter(filterAdapter);
         containerFilter.setVisibility(View.VISIBLE);
@@ -155,7 +169,6 @@ public class Jogos extends Fragment {
     public void showFiltroModalidade () {
 
         final ArrayList<String> filters = new ArrayList<String>(Arrays.asList(Constants.kFiltroJogoModalidade));
-        filters.add("Todos");
         filterAdapter = new FilterAdapter(getActivity(), filters);
         filterListView.setAdapter(filterAdapter);
         containerFilter.setVisibility(View.VISIBLE);
@@ -180,7 +193,6 @@ public class Jogos extends Fragment {
     public void showFiltroAtletica () {
 
         final ArrayList<String> filters = new ArrayList<String>(Arrays.asList(Constants.kFiltroJogoAtletica));
-        filters.add("Todos");
         filterAdapter = new FilterAdapter(getActivity(), filters);
         filterListView.setAdapter(filterAdapter);
         containerFilter.setVisibility(View.VISIBLE);
@@ -205,7 +217,6 @@ public class Jogos extends Fragment {
     public void showFiltroLocal () {
 
         final ArrayList<String> filters = new ArrayList<String>(Arrays.asList(Constants.kFiltroJogoLocal));
-        filters.add("Todos");
         filterAdapter = new FilterAdapter(getActivity(), filters);
         filterListView.setAdapter(filterAdapter);
         containerFilter.setVisibility(View.VISIBLE);
@@ -237,6 +248,7 @@ public class Jogos extends Fragment {
                     listFinal.add(jogo);
                 }
             }
+            listToFilter.clear();
             listToFilter = listFinal;
         }
 
@@ -246,6 +258,7 @@ public class Jogos extends Fragment {
                     listFinal.add(jogo);
                 }
             }
+            listToFilter.clear();
             listToFilter = listFinal;
         }
 
@@ -257,6 +270,7 @@ public class Jogos extends Fragment {
                     }
                 }
             }
+            listToFilter.clear();
             listToFilter = listFinal;
         }
 
@@ -266,12 +280,29 @@ public class Jogos extends Fragment {
                     listFinal.add(jogo);
                 }
             }
+            listToFilter.clear();
             listToFilter = listFinal;
         }
 
+        jogoAdapter.jogos.clear();
         jogoAdapter.jogos = listToFilter;
         jogoAdapter.notifyDataSetChanged();
 
     }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        activity.registerReceiver(receiver, new IntentFilter(Constants.kGetJogosDone));
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        activity.unregisterReceiver(receiver);
+    }
+
+
 
 }

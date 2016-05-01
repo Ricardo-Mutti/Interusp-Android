@@ -6,6 +6,9 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -16,6 +19,9 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
+        ImageLoader.getInstance().init(config);
 
         new Timer().schedule(new TimerTask() {
             @Override
