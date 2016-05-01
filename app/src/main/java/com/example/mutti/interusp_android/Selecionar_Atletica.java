@@ -44,7 +44,7 @@ public class Selecionar_Atletica extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 GetLocal getLocation = new GetLocal(context);
-                getLocation.getLocation("233123","21312312");
+                getLocation.getLocais();
                 activity.finish();
                 Intent intent = new Intent(activity, Tabs_main.class);
                 startActivity(intent);
