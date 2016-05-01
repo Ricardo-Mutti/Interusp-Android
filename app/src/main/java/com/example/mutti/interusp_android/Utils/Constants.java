@@ -5,8 +5,8 @@ package com.example.mutti.interusp_android.Utils;
  */
 public class Constants {
 
-    public static final String kServiceURL = "http://ec2-54-210-71-210.compute-1.amazonaws.com:3000";
+    public static final String kServiceURL = "http://ec2-52-201-135-248.compute-1.amazonaws.com:3000";
 
-    public static final String kServiceGetLocation = "/api/getLocation/";
+    public static final String kServiceGetLocation = "/v1/locais/";
 
 }
