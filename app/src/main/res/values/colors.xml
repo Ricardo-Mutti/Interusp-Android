@@ -5,6 +5,14 @@
     <color name="colorAccent">#FF4081</color>
     <color name="branco">#FFFFFF</color>
     <color name="preto">#000000</color>
+    <color name="POLI">#FDA405</color>
+    <color name="FEA">#0000CC</color>
+    <color name="FARMA">#A0522D</color>
+    <color name="ESALQ">#FF0000</color>
+    <color name="RIBEIRAO">#093B24</color>
+    <color name="SANFRAN">#d4251e</color>
+    <color name="ODONTO">#4682B4</color>
+    <color name="PINHEIROS">#006400</color>
     <color name="azul_tema">#000033</color>
     <color name="rosa_tema">#ff0099</color>
 
