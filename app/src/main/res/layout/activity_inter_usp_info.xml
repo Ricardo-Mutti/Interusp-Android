@@ -27,7 +27,6 @@
 
             <TextView
                 android:id="@+id/txtinfo02"
-                android:ayout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:text="\tNenhuma competição tem tanto esporte em tão alto nivel quanto a InterUSP. Todas as modalidades são obrigatórias e em cada uma dela uma rivalidade particular se destaca tornando todas elas atrativas. A parte social também se destaca: o público cresce a cada ano tanto tanto nas arquibancadas quanto nas festas. As torcidas apaixonadas deixam a rivalidade de lado nas duas festas organizadas pelas Atléticas."
@@ -38,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18dp"
-                android:layout_margintop="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="15dp"
                 android:text="Como os Jogos Funcionam?"/>
 
