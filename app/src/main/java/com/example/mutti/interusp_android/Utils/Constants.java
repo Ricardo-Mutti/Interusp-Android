@@ -22,4 +22,12 @@ public class Constants {
     public static final String kTipoJogoSubtitle = "tipo.jogo.subtitle";
     public static final String kTipoJogoModalidade = "tipo.jogo.modalidade";
 
+    //FILTROS DE JOGOS
+    public static final String[] kFiltroJogoDia = {"26/05","27/05","28/05","29/05"};
+    public static final String[] kFiltroJogoModalidade = {"ATL","BQM","BQF","FC","FSM", "FSF", "HM",
+            "HF", "JUDO", "KRT", "NTM","NTF","PA","RGF","RGM","SB","TCM","TCF","TMM","TMF","VM","VF","XDZ"};
+    public static final String[] kFiltroJogoAtletica = {"POLI","FEA","ODONTO","MED RIBEIRÃO","POLI",
+            "FEA","ODONTO","MED RIBEIRÃO"};
+    public static final String[] kFiltroJogoLocal = {"G1","G2","G3"};
+
 }
