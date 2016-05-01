@@ -3,15 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/branco"
+    android:background="@color/azul_tema"
     tools:context="com.example.mutti.interusp_android.Splash">
 
 <ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@drawable/logo_iusp_splash"
-    android:padding="30dp"
+    android:id="@+id/logo"
+    android:layout_centerInParent="true"
+    android:paddingBottom="100dp"
+    android:layout_width="200dp"
+    android:layout_height="300dp"
+    android:layout_marginBottom="15dp"
+    android:src="@drawable/inter_logo"
     />
+
+    <ImageView
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/appsimples"
+        />
 
 
 </RelativeLayout>
