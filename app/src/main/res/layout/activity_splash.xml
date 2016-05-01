@@ -13,7 +13,7 @@
     android:layout_width="200dp"
     android:layout_height="300dp"
     android:layout_marginBottom="15dp"
-    android:src="@drawable/inter_logo"
+    android:src="@drawable/logo_iusp_splash"
     />
 
     <ImageView
