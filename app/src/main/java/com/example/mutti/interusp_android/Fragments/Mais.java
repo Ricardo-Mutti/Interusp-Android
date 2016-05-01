@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mutti.interusp_android.Model.PontuacaoModalidade;
+import com.example.mutti.interusp_android.PontuacaoModalidadeTabela;
 import com.example.mutti.interusp_android.PontuacaoTabela;
 import com.example.mutti.interusp_android.R;
 
@@ -42,7 +44,6 @@ public class Mais extends Fragment {
         txtPontuacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "PONTUACAO", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, PontuacaoTabela.class);
                 startActivity(intent);
             }
@@ -51,7 +52,8 @@ public class Mais extends Fragment {
         txtAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(context, PontuacaoModalidadeTabela.class);
+                startActivity(intent);
             }
         });
         txtInterUsp = (TextView) rootview.findViewById(R.id.txtInterUsp);
