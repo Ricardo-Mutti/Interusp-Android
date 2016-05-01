@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical">
 
 
@@ -14,7 +15,6 @@
 
 
         <LinearLayout
-            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -31,7 +31,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:gravity="center"
-                        android:layout_height="36dp"
+                        android:layout_height="40dp"
                         android:background="@drawable/borda_chaveamento"
                         android:padding="7dp"
                         android:textColor="@color/azul_tema"
@@ -85,7 +85,7 @@
                     <View
                         android:layout_width="10dp"
                         android:layout_height="3dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="14dp"
                         android:background="@color/azul_tema"
                         />
 
@@ -359,6 +359,7 @@
                         android:textColor="@color/azul_tema"
                         android:textStyle="bold"
                         android:textSize="20sp"
+                        android:layout_marginTop="54dp"
                         android:layout_marginBottom="10dp"
                         android:text="POLI" />
 
@@ -366,7 +367,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:gravity="center"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="30dp"
                         android:layout_height="36dp"
                         android:background="@drawable/borda_chaveamento"
                         android:padding="7dp"
@@ -378,6 +379,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="36dp"
+                        android:layout_marginTop="53dp"
                         android:background="@drawable/borda_chaveamento"
                         android:padding="7dp"
                         android:textColor="@color/azul_tema"
@@ -398,14 +400,14 @@
                     <View
                         android:layout_width="10dp"
                         android:layout_height="3dp"
-                        android:layout_marginTop="18dp"
+                        android:layout_marginTop="36dp"
                         android:background="@color/azul_tema"
                         />
 
                     <View
                         android:layout_width="10dp"
                         android:layout_height="3dp"
-                        android:layout_marginTop="44dp"
+                        android:layout_marginTop="88dp"
                         android:background="@color/azul_tema"
                         />
 
@@ -417,14 +419,14 @@
                         <View
                             android:layout_width="10dp"
                             android:layout_height="3dp"
-                            android:layout_marginTop="41dp"
+                            android:layout_marginTop="73dp"
                             android:background="@color/azul_tema"
                             />
 
                         <View
                             android:layout_width="10dp"
                             android:layout_height="3dp"
-                            android:layout_marginTop="44dp"
+                            android:layout_marginTop="85dp"
                             android:background="@color/azul_tema"
                             />
 
@@ -438,17 +440,17 @@
                     android:orientation="vertical">
 
                     <View
-                        android:layout_marginTop="18dp"
+                        android:layout_marginTop="36dp"
                         android:layout_width="3dp"
-                        android:layout_height="50dp"
+                        android:layout_height="94dp"
                         android:background="@color/azul_tema"
                         />
 
 
                     <View
-                        android:layout_marginTop="41dp"
+                        android:layout_marginTop="73dp"
                         android:layout_width="3dp"
-                        android:layout_height="50dp"
+                        android:layout_height="91dp"
                         android:background="@color/azul_tema"
                         />
 
@@ -463,7 +465,7 @@
                     <View
                         android:layout_width="10dp"
                         android:layout_height="3dp"
-                        android:layout_marginTop="41dp"
+                        android:layout_marginTop="80dp"
                         android:background="@color/azul_tema"
                         />
 
@@ -473,7 +475,7 @@
                     <View
                         android:layout_width="10dp"
                         android:layout_height="3dp"
-                        android:layout_marginTop="87dp"
+                        android:layout_marginTop="167dp"
                         android:background="@color/azul_tema"
                         />
 
@@ -486,7 +488,123 @@
         </LinearLayout>
 
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="65dp"
+                android:layout_height="36dp"
+                android:background="@drawable/borda_chaveamento"
+                android:padding="7dp"
+                android:textColor="@color/azul_tema"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="POLI" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="134dp"
+                android:layout_height="36dp"
+                android:background="@drawable/borda_chaveamento"
+                android:padding="7dp"
+                android:textColor="@color/azul_tema"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="POLI" />
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="80dp"
+                android:background="@color/azul_tema"
+                />
+
+
+
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="167dp"
+                android:background="@color/azul_tema"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <View
+                android:layout_marginTop="80dp"
+                android:layout_width="3dp"
+                android:layout_height="173dp"
+                android:background="@color/azul_tema"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="167dp"
+                android:background="@color/azul_tema"
+                />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="143dp"
+                android:layout_height="50dp"
+                android:background="@drawable/borda_chaveamento"
+                android:padding="7dp"
+                android:textColor="@color/azul_tema"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:text="POLI" />
+
+
+        </LinearLayout>
+
+
+
+
     </LinearLayout>
+
 
 
 
