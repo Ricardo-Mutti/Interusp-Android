@@ -1,7 +1,10 @@
 package com.example.mutti.interusp_android;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +12,23 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.mutti.interusp_android.Manager.Login;
+import com.example.mutti.interusp_android.Utils.Constants;
 
 public class LoginAdm extends AppCompatActivity {
+
+    Activity activity = this;
+    Context context = this;
+
+
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            activity.finish();
+            Intent intent1 = new Intent(activity, menu_adm.class);
+            startActivity(intent1);
+
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +56,19 @@ public class LoginAdm extends AppCompatActivity {
             }
         });
 
-
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        activity.registerReceiver(receiver, new IntentFilter(Constants.kLoginDone));
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        activity.unregisterReceiver(receiver);
+    }
+
+
 }

@@ -35,7 +35,11 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden">
         </activity>
-        <activity android:name=".PontuacaoAtletica" />
+        <activity android:name=".PontuacaoAtletica"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"
+            />
         <activity
             android:name=".Historico"
             android:screenOrientation="portrait"
@@ -72,19 +76,50 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden"/>
 
-        <activity android:name=".teste" />
-        <activity android:name=".Informacoes" />
-        <activity android:name=".Local" />
+        <activity android:name=".teste"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".Informacoes"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".Local"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"
+            />
         <activity android:name=".Gritos"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".PontuacaoModalidade" />
-        <activity android:name=".Pontuacao"/>
-        <activity android:name=".DetalheInformacao"/>
-        <activity android:name=".menu_adm"/>
-        <activity android:name=".atualizar_jogos"/>
-
+        <activity android:name=".PontuacaoModalidade"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".Pontuacao"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".DetalheInformacao"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".menu_adm"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".atualizar_jogos"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"
+            />
         <activity android:name=".atualizar_colocacao_jogos"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"

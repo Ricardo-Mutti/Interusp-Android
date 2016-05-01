@@ -55,4 +55,8 @@ public class Constants {
 
     public static final String MY_PREFS_NAME = "my_prefs";
 
+    //DONE
+
+    public static final String kLoginDone = "com.appsimples.swapped.login-done";
+
 }

@@ -40,11 +40,11 @@ public class Tabs_main extends FragmentActivity {
 
         ImageView info_tab = (ImageView) findViewById(R.id.tab_info);
         ImageView chaveamento_tab = (ImageView) findViewById(R.id.tab_chaveamento);
-        ImageView pontuacao_tab = (ImageView) findViewById(R.id.tab_mapa);
+        ImageView mapa_tab = (ImageView) findViewById(R.id.tab_mapa);
         ImageView jogos_tab = (ImageView) findViewById(R.id.tab_jogos);
         ImageView mais_tab = (ImageView) findViewById(R.id.tab_mais);
 
-        SelectFragment.open(0, fragmentManager, activity);
+        SelectFragment.open(2, fragmentManager, activity);
 
 
         info_tab.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +61,7 @@ public class Tabs_main extends FragmentActivity {
             }
         });
 
-        pontuacao_tab.setOnClickListener(new View.OnClickListener() {
+        mapa_tab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SelectFragment.open(2, fragmentManager, activity);

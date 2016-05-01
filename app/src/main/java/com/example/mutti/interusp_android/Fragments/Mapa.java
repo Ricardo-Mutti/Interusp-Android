@@ -156,7 +156,8 @@ public class Mapa extends Fragment  {
 
             switch (local.getTipo()) {
                 case 1:
-                    marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+//                    marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.alojamento));
                     break;
                 case 2:
                     marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));

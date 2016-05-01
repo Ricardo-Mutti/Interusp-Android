@@ -118,6 +118,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/chave_12"
                         android:layout_width="wrap_content"
                         android:layout_height="36dp"
                         android:background="@drawable/borda_chaveamento"
@@ -129,6 +130,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/chave_13"
                         android:layout_width="wrap_content"
                         android:layout_height="36dp"
                         android:layout_marginBottom="10dp"
@@ -141,6 +143,7 @@
 
 
                     <TextView
+                        android:id="@+id/chave_14"
                         android:layout_width="wrap_content"
                         android:layout_height="36dp"
                         android:background="@drawable/borda_chaveamento"
@@ -152,6 +155,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/chave_15"
                         android:layout_width="wrap_content"
                         android:layout_height="36dp"
                         android:background="@drawable/borda_chaveamento"
@@ -266,18 +270,20 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/chave_4"
+                        android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="26dp"
                         android:background="@drawable/borda_chaveamento"
                         android:gravity="center"
                         android:padding="7dp"
-                        android:text="POLI"
+                        android:text="POLIT"
                         android:textColor="@color/azul_tema"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/chave_5"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_marginBottom="10dp"
@@ -292,6 +298,7 @@
 
 
                     <TextView
+                        android:id="@+id/chave_6"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_marginTop="47dp"
@@ -304,6 +311,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/chave_7"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_marginTop="40dp"
@@ -409,6 +417,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/chave_2"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
                 android:layout_marginTop="75dp"
@@ -422,6 +431,7 @@
 
 
             <TextView
+                android:id="@+id/chave_3"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
                 android:layout_marginTop="146dp"
@@ -492,6 +502,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/chave_1"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="150dp"

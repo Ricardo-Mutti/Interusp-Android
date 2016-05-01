@@ -22,6 +22,8 @@ public class Login {
     private WebServiceAPI wsAPI;
     Context context;
 
+    Intent intent = new Intent(Constants.kLoginDone);
+
     public Login(Context context) {
         this.context = context;
     }
@@ -45,9 +47,7 @@ public class Login {
                     editor.putString("token", token.getToken());
                     editor.commit();
 
-//                    Intent intent = new Intent(context, LocationAddManager.class);
-//                    intent.putExtra("change_screen", true);
-//                    context.startService(intent);
+                    context.sendBroadcast(intent);
 
                 } else {
                     Toast.makeText(context, serverResponse.getMessage(),
