@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mutti.interusp_android.Model.*;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class DetalheInformacao extends AppCompatActivity {
 
@@ -33,5 +34,6 @@ public class DetalheInformacao extends AppCompatActivity {
         txtTitulo.setText(local.getNome());
         txtInfo.setText(local.getPrincipaisModalidades());
         txtEnderecos.setText(local.getEndereco());
+        ImageLoader.getInstance().displayImage(local.getFoto(), imgFoto);
     }
 }
