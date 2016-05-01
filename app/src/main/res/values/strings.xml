@@ -67,9 +67,6 @@
         <string name="texto2Sanfran">texto2sanfran(provisório)</string>
         <string name="texto3Sanfran">texto3sanfran(provisório)</string>
         <string name="texto4Sanfran">texto4sanfran(provisório)</string>
-    </resources>
-<resources>
-    <string name="app_name">Interusp-android</string>
 
     <string-array name="modalidades">
         <item>Atletismo Feminino</item>
@@ -99,5 +96,4 @@
         <item>Voleibol Masculino</item>
         <item>Xadrez</item>
     </string-array>
-    <string name="title_activity_maps">Map</string>
 </resources>
