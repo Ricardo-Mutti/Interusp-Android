@@ -11,10 +11,10 @@
         android:layout_marginTop="5dp">
 
         <Button
-            android:id="@+id/btnAlojamento"
+            android:id="@+id/btnG2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Alojamentos"/>
+            android:text="G2"/>
     </LinearLayout>
 
     <LinearLayout
@@ -24,10 +24,10 @@
         android:layout_marginTop="5dp">
 
         <Button
-            android:id="@+id/btnGinasio1"
+            android:id="@+id/btnG1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ginasio"/>
+            android:text="G1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -37,10 +37,23 @@
         android:layout_marginTop="5dp">
 
         <Button
-            android:id="@+id/btnBaladas"
+            android:id="@+id/btnCampo1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Baladas"/>
+            android:text="Campo"/>
     </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="5dp">
+
+    <Button
+        android:id="@+id/btnCampo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Campo de Futebol"/>
+</LinearLayout>
 
 </LinearLayout>
