@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="latG1">-23.0927945</string>
+    <string name="longG1">-48.9358952</string>
+    <string name="latG2">-23.0927945</string>
+    <string name="longG2">-48.9358952</string>
+    <string name="latCampo1">-23.1046455</string>
+    <string name="longCampo1">-48.9540658</string>
+    <string name="latCampo2">-23.103757</string>
+    <string name="longCampo2">-48.930512</string>
+    <string name="latPoli"></string>
+    <string name="longPoli"></string>
+    <string name="latFarma"></string>
+    <string name="longFarma"></string>
+    <string name="latFea"></string>
+    <string name="longFea"></string>
+    <string name="latOdonto"></string>
+    <string name="longOdonto"></string>
+    <string name="latRibeirao"></string>
+    <string name="longRibeirao"></string>
+    <string name="latEsalq"></string>
+    <string name="longEsalq"></string>
+    <string name="latMed"></string>
+    <string name="longMed"></string>
+    <string name="latSanFran"></string>
+    <string name="longSanFran"></string>
+</resources>
