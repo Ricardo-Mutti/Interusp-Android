@@ -17,7 +17,7 @@ public class PontuacaoModalidade extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pontuacao_modalidade_tabela);
+        setContentView(R.layout.activity_pontuacao_modalidade);
 
         ImageView imgModalidade = (ImageView) findViewById(R.id.imgModalidade);
         TextView txtEsporte = (TextView) findViewById(R.id.txtEsporte);
