@@ -19,21 +19,49 @@ public class mapas_waze extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapas_waze);
 
-        Button btnAlojamento = (Button) findViewById(R.id.btnAlojamento);
-        btnAlojamento.setOnClickListener(new View.OnClickListener() {
+        Button btnCampo1 = (Button) findViewById(R.id.btnCampo1);
+        btnCampo1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                lat = getResources().getString(R.string.latCampo1);
+                longi = getResources().getString(R.string.longCampo1);
+                label = "Campo";
 
+                openMap(lat, longi, label);
             }
         });
 
-        Button btnGinasio1 = (Button) findViewById(R.id.btnGinasio1);
-        btnGinasio1.setOnClickListener(new View.OnClickListener() {
+        Button btnCampo2 = (Button) findViewById(R.id.btnCampo2);
+        btnCampo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lat = getResources().getString(R.string.latCampo2);
+                longi = getResources().getString(R.string.longCampo2);
+                label = "Campo de Futebol";
+
+                openMap(lat, longi, label);
+            }
+        });
+
+        Button btnG1 = (Button) findViewById(R.id.btnG1);
+        btnG1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 lat = getResources().getString(R.string.latG1);
                 longi = getResources().getString(R.string.longG1);
                 label = "G1";
+
+                openMap(lat, longi, label);
+            }
+        });
+
+        Button btnG2 = (Button) findViewById(R.id.btnG2);
+        btnG2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lat = getResources().getString(R.string.latG2);
+                longi = getResources().getString(R.string.longG2);
+                label = "G2";
 
                 openMap(lat, longi, label);
             }
