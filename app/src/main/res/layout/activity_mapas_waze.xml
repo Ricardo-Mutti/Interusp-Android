@@ -14,8 +14,7 @@
             android:id="@+id/btnAlojamento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Alojamentos"
-            android:onClick="showMap"/>
+            android:text="Alojamentos"/>
     </LinearLayout>
 
     <LinearLayout
@@ -25,7 +24,7 @@
         android:layout_marginTop="5dp">
 
         <Button
-            android:id="@+id/btnGinasio"
+            android:id="@+id/btnGinasio1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ginasio"/>

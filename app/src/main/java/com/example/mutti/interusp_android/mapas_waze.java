@@ -7,28 +7,41 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Locale;
+
 public class mapas_waze extends AppCompatActivity {
-    private double current_lat = 23.868192;
-    private double current_longi = -46.7297060;
-    private double dest_address = 23.868192;
+    private String lat;
+    private String longi;
+    private String label;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapas_waze);
 
-        Button button = (Button) findViewById(R.id.btnAlojamento);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button btnAlojamento = (Button) findViewById(R.id.btnAlojamento);
+        btnAlojamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http:/a/maps.google.com/maps?"
-                        + "saddr="+ current_lat+","+current_longi + "&daddr="+dest_address));
-
-                intent.setClassName("com.google.android.apps.maps","com.google.android.maps.MapsActivity");
-                startActivity(intent);
             }
         });
+
+        Button btnGinasio1 = (Button) findViewById(R.id.btnGinasio1);
+        btnGinasio1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lat = getResources().getString(R.string.latG1);
+                longi = getResources().getString(R.string.longG1);
+                label = "G1";
+
+                openMap(lat, longi, label);
+            }
+        });
+    }
+
+    public void openMap(String lat, String longi, String label){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + label + "@" + lat + "," + longi));
+        startActivity(intent);
     }
 }
