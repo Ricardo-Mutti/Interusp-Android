@@ -101,15 +101,6 @@ public class Mais extends Fragment {
             }
         });
 
-        TextView add = (TextView) rootview.findViewById(R.id.add);
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(activity, atualizar_colocacao_jogos.class);
-                startActivity(intent);
-            }
-        });
-
 
         return rootview;
     }
