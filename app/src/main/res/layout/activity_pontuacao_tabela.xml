@@ -13,17 +13,57 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:orientation="vertical">
 
-            <TextView
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Poli"
-                android:textColor="@android:color/black"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:gravity="center"/>
+                android:src="@drawable/icon_poli"
+                android:padding="20dp"/>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Modalidade"
+                    android:textColor="@color/azul_tema"
+                    android:textSize="16sp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Posição"
+                    android:textColor="@color/azul_tema"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="2.5dp"
+                    android:layout_marginRight="2.5dp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pontos"
+                    android:textColor="@color/azul_tema"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
 
             <ListView
                 android:id="@+id/listPontuacao"
