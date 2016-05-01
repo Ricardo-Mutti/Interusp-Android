@@ -82,6 +82,7 @@
         <activity android:name=".Pontuacao"/>
         <activity android:name=".DetalheInformacao"/>
         <activity android:name=".menu_adm"/>
+        <activity android:name=".atualizar_jogos"/>
     </application>
 
 </manifest>
