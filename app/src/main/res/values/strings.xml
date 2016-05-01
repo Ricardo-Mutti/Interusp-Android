@@ -68,3 +68,36 @@
         <string name="texto3Sanfran">texto3sanfran(provisório)</string>
         <string name="texto4Sanfran">texto4sanfran(provisório)</string>
     </resources>
+<resources>
+    <string name="app_name">Interusp-android</string>
+
+    <string-array name="modalidades">
+        <item>Atletismo Feminino</item>
+        <item>Atletismo Masculino</item>
+        <item>Beisebol</item>
+        <item>Basquete Feminino</item>
+        <item>Basquete Masculino</item>
+        <item>Futebol de Campo</item>
+        <item>Futsal Feminino</item>
+        <item>Futsal Masculino</item>
+        <item>Handebol Feminino</item>
+        <item>Handebol Masculino</item>
+        <item>Judô</item>
+        <item>Karatê Kata</item>
+        <item>Karatê Kumite</item>
+        <item>Natação Feminino</item>
+        <item>Natação Masculino</item>
+        <item>Polo Aquático</item>
+        <item>Rugby Feminino</item>
+        <item>Rugby Masculino</item>
+        <item>Softbol</item>
+        <item>Tênis de Campo Feminino</item>
+        <item>Tênis de Campo Masculino</item>
+        <item>Tênis de Mesa Feminino</item>
+        <item>Tênis de Mesa Masculino</item>
+        <item>Voleibol Feminino</item>
+        <item>Voleibol Masculino</item>
+        <item>Xadrez</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+</resources>

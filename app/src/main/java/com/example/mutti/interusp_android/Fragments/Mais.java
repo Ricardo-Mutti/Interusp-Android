@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.PontuacaoAtletica;
 import com.example.mutti.interusp_android.Gritos;
 import com.example.mutti.interusp_android.R;
 
@@ -41,7 +42,8 @@ public class Mais extends Fragment {
         txtPontuacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(context, PontuacaoAtletica.class);
+                startActivity(intent);
             }
         });
         txtAdm = (TextView) rootview.findViewById(R.id.txtAdm);
