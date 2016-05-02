@@ -9,7 +9,7 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class atualizar_colocacao_jogos extends AppCompatActivity {
+public class AtualizarProvas extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

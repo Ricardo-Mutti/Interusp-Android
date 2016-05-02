@@ -20,8 +20,9 @@ public class Chaveamento extends Fragment {
     Activity activity;
     Context context;
 
-    ImageView chave_1, chave_2,chave_3, chave_4, chave_5, chave_6, chave_7, chave_8,
+    ImageView chave_1, chave_2, chave_3, chave_4, chave_5, chave_6, chave_7, chave_8,
             chave_9, chave_10, chave_11, chave_12, chave_13, chave_14, chave_15;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,21 +36,24 @@ public class Chaveamento extends Fragment {
         activity = getActivity();
         context = getContext();
 
-        chave_1.findViewById(R.id.chave_1);
-        chave_2.findViewById(R.id.chave_2);
-        chave_3.findViewById(R.id.chave_3);
-        chave_4.findViewById(R.id.chave_4);
-        chave_5.findViewById(R.id.chave_5);
-        chave_6.findViewById(R.id.chave_6);
-        chave_7.findViewById(R.id.chave_7);
-        chave_8.findViewById(R.id.chave_8);
-        chave_9.findViewById(R.id.chave_9);
-        chave_10.findViewById(R.id.chave_10);
-        chave_11.findViewById(R.id.chave_11);
-        chave_12.findViewById(R.id.chave_12);
-        chave_13.findViewById(R.id.chave_13);
-        chave_14.findViewById(R.id.chave_14);
-        chave_15.findViewById(R.id.chave_15);
+        View rootview = inflater.inflate(R.layout.fragment_chaveamento, container, false);
+
+
+        chave_1 = (ImageView) rootview.findViewById(R.id.chave_1);
+        chave_2 = (ImageView) rootview.findViewById(R.id.chave_2);
+        chave_3 = (ImageView) rootview.findViewById(R.id.chave_3);
+        chave_4 = (ImageView) rootview.findViewById(R.id.chave_4);
+        chave_5 = (ImageView) rootview.findViewById(R.id.chave_5);
+        chave_6 = (ImageView) rootview.findViewById(R.id.chave_6);
+        chave_7 = (ImageView) rootview.findViewById(R.id.chave_7);
+        chave_8 = (ImageView) rootview.findViewById(R.id.chave_8);
+        chave_9 = (ImageView) rootview.findViewById(R.id.chave_9);
+        chave_10 = (ImageView) rootview.findViewById(R.id.chave_10);
+        chave_11 = (ImageView) rootview.findViewById(R.id.chave_11);
+        chave_12 = (ImageView) rootview.findViewById(R.id.chave_12);
+        chave_13 = (ImageView) rootview.findViewById(R.id.chave_13);
+        chave_14 = (ImageView) rootview.findViewById(R.id.chave_14);
+        chave_15 = (ImageView) rootview.findViewById(R.id.chave_15);
 
         chave_1.setImageResource(R.drawable.icon_sanfran);
         chave_2.setImageResource(R.drawable.icon_sanfran);
@@ -67,24 +71,8 @@ public class Chaveamento extends Fragment {
         chave_14.setImageResource(R.drawable.icon_sanfran);
         chave_15.setImageResource(R.drawable.icon_sanfran);
 
+        //TODO if resultado maior que 99 diminuir a fonte para 11sp
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        View rootview =  inflater.inflate(R.layout.fragment_chaveamento, container, false);
 
         return rootview;
     }

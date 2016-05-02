@@ -8,7 +8,7 @@ import com.example.mutti.interusp_android.Adapter.PontuacaoAtleticaAdapter;
 
 import java.util.ArrayList;
 
-public class PontuacaoAtletica extends AppCompatActivity {
+public class PontuacaoFaculdade extends AppCompatActivity {
 
     ListView listPontuacao;
 

@@ -6,10 +6,10 @@ import android.widget.ProgressBar;
 
 public class Torcidometro extends AppCompatActivity {
 
-    String total;
+    String total = "100";
 
     String  progresso_poli,progresso_pinheiro,progresso_farma,progresso_esalq,progresso_fea,
-            progresso_riberao,progresso_sanfran,progresso_odonto;
+            progresso_riberao,progresso_sanfran,progresso_odonto ;
 
 
     @Override

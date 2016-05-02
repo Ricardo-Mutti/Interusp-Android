@@ -10,7 +10,7 @@ import com.example.mutti.interusp_android.Adapter.PontuacaoAdapter;
 
 import java.util.ArrayList;
 
-public class Pontuacao extends AppCompatActivity {
+public class PontuacaoGeral extends AppCompatActivity {
 
     Activity activity = this;
     Context context = this;

@@ -24,7 +24,7 @@ public class LoginAdm extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             activity.finish();
-            Intent intent1 = new Intent(activity, MenuAdm.class);
+            Intent intent1 = new Intent(activity, AtualizarMenu.class);
             startActivity(intent1);
 
         }

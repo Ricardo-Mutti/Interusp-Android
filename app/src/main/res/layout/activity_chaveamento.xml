@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -82,20 +83,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center_horizontal"
-                            android:layout_marginBottom="2dp"
-                            android:text="99"
-                            android:textColor="@color/azul_tema"
-                            android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|center_horizontal"
+                                android:layout_marginBottom="2dp"
+                                android:text="99"
+                                android:textColor="@color/azul_tema"
+                                android:textStyle="bold" />
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="3dp"
-                            android:layout_marginTop="57dp"
-                            android:background="@color/azul_tema" />
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="3dp"
+                                android:layout_marginTop="57dp"
+                                android:background="@color/azul_tema" />
 
                         </FrameLayout>
 
@@ -103,19 +104,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center_horizontal"
-                            android:layout_marginBottom="2dp"
-                            android:text="99"
-                            android:textColor="@color/azul_tema"
-                            android:textStyle="bold" />
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="3dp"
-                            android:layout_marginTop="43dp"
-                            android:background="@color/azul_tema" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|center_horizontal"
+                                android:layout_marginBottom="2dp"
+                                android:text="99"
+                                android:textColor="@color/azul_tema"
+                                android:textStyle="bold" />
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="3dp"
+                                android:layout_marginTop="43dp"
+                                android:background="@color/azul_tema" />
 
                         </FrameLayout>
 
@@ -245,20 +246,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|center_horizontal"
-                        android:layout_marginBottom="2dp"
-                        android:text="99"
-                        android:textColor="@color/azul_tema"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_marginBottom="2dp"
+                            android:text="99"
+                            android:textColor="@color/azul_tema"
+                            android:textStyle="bold" />
 
-                    <View
-                        android:layout_width="24dp"
-                        android:layout_height="3dp"
-                        android:layout_marginTop="28dp"
-                        android:background="@color/azul_tema" />
+                        <View
+                            android:layout_width="24dp"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="28dp"
+                            android:background="@color/azul_tema" />
 
                     </FrameLayout>
 
@@ -266,20 +267,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|center_horizontal"
-                        android:layout_marginBottom="2dp"
-                        android:text="99"
-                        android:textColor="@color/azul_tema"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_marginBottom="2dp"
+                            android:text="99"
+                            android:textColor="@color/azul_tema"
+                            android:textStyle="bold" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="3dp"
-                        android:layout_marginTop="40dp"
-                        android:background="@color/azul_tema" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="40dp"
+                            android:background="@color/azul_tema" />
 
                     </FrameLayout>
 
@@ -292,38 +293,38 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center_horizontal"
-                            android:layout_marginBottom="2dp"
-                            android:text="99"
-                            android:textColor="@color/azul_tema"
-                            android:textStyle="bold" />
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="3dp"
-                            android:layout_marginTop="58dp"
-                            android:background="@color/azul_tema" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|center_horizontal"
+                                android:layout_marginBottom="2dp"
+                                android:text="99"
+                                android:textColor="@color/azul_tema"
+                                android:textStyle="bold" />
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="3dp"
+                                android:layout_marginTop="58dp"
+                                android:background="@color/azul_tema" />
                         </FrameLayout>
 
                         <FrameLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center_horizontal"
-                            android:layout_marginBottom="2dp"
-                            android:text="99"
-                            android:textColor="@color/azul_tema"
-                            android:textStyle="bold" />
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="3dp"
-                            android:layout_marginTop="44dp"
-                            android:background="@color/azul_tema" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|center_horizontal"
+                                android:layout_marginBottom="2dp"
+                                android:text="99"
+                                android:textColor="@color/azul_tema"
+                                android:textStyle="bold" />
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="3dp"
+                                android:layout_marginTop="44dp"
+                                android:background="@color/azul_tema" />
                         </FrameLayout>
 
                     </LinearLayout>
@@ -447,39 +448,39 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|center_horizontal"
-                        android:layout_marginBottom="2dp"
-                        android:text="99"
-                        android:textColor="@color/azul_tema"
-                        android:textStyle="bold" />
-                    <View
-                        android:layout_width="wrap_content"
-                        android:layout_height="3dp"
-                        android:layout_marginTop="50dp"
-                        android:background="@color/azul_tema" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_marginBottom="2dp"
+                            android:text="99"
+                            android:textColor="@color/azul_tema"
+                            android:textStyle="bold" />
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="50dp"
+                            android:background="@color/azul_tema" />
                     </FrameLayout>
 
                     <FrameLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|center_horizontal"
-                        android:layout_marginBottom="2dp"
-                        android:text="99"
-                        android:textColor="@color/azul_tema"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_marginBottom="2dp"
+                            android:text="99"
+                            android:textColor="@color/azul_tema"
+                            android:textStyle="bold" />
 
-                    <View
-                        android:layout_width="wrap_content"
-                        android:layout_height="3dp"
-                        android:layout_marginTop="102dp"
-                        android:background="@color/azul_tema" />
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="102dp"
+                            android:background="@color/azul_tema" />
 
                     </FrameLayout>
 
@@ -492,20 +493,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center_horizontal"
-                            android:layout_marginBottom="2dp"
-                            android:text="99"
-                            android:textColor="@color/azul_tema"
-                            android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|center_horizontal"
+                                android:layout_marginBottom="2dp"
+                                android:text="99"
+                                android:textColor="@color/azul_tema"
+                                android:textStyle="bold" />
 
-                        <View
-                            android:layout_width="wrap_content"
-                            android:layout_height="3dp"
-                            android:layout_marginTop="117dp"
-                            android:background="@color/azul_tema" />
+                            <View
+                                android:layout_width="wrap_content"
+                                android:layout_height="3dp"
+                                android:layout_marginTop="117dp"
+                                android:background="@color/azul_tema" />
 
                         </FrameLayout>
 
@@ -514,19 +515,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center_horizontal"
-                            android:layout_marginBottom="2dp"
-                            android:text="99"
-                            android:textColor="@color/azul_tema"
-                            android:textStyle="bold" />
-                        <View
-                            android:layout_width="wrap_content"
-                            android:layout_height="3dp"
-                            android:layout_marginTop="100dp"
-                            android:background="@color/azul_tema" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|center_horizontal"
+                                android:layout_marginBottom="2dp"
+                                android:text="99"
+                                android:textColor="@color/azul_tema"
+                                android:textStyle="bold" />
+                            <View
+                                android:layout_width="wrap_content"
+                                android:layout_height="3dp"
+                                android:layout_marginTop="100dp"
+                                android:background="@color/azul_tema" />
                         </FrameLayout>
 
                     </LinearLayout>
@@ -618,20 +619,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center_horizontal"
-                android:layout_marginBottom="2dp"
-                android:text="99"
-                android:textColor="@color/azul_tema"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="2dp"
+                    android:text="99"
+                    android:textColor="@color/azul_tema"
+                    android:textStyle="bold" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginTop="100dp"
-                android:background="@color/azul_tema" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="100dp"
+                    android:background="@color/azul_tema" />
             </FrameLayout>
 
 
@@ -639,19 +640,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center_horizontal"
-                android:layout_marginBottom="2dp"
-                android:text="99"
-                android:textColor="@color/azul_tema"
-                android:textStyle="bold" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginTop="220dp"
-                android:background="@color/azul_tema" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="2dp"
+                    android:text="99"
+                    android:textColor="@color/azul_tema"
+                    android:textStyle="bold" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="220dp"
+                    android:background="@color/azul_tema" />
             </FrameLayout>
 
         </LinearLayout>

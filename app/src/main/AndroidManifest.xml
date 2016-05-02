@@ -30,12 +30,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".MapasWaze"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden">
-        </activity>
-        <activity android:name=".PontuacaoAtletica"
+            android:name=".PontuacaoFaculdade"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
@@ -54,7 +49,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
-
         <activity
             android:name=".TabsMain"
             android:screenOrientation="portrait"
@@ -76,58 +70,55 @@
             android:name=".LoginAdm"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden"/>
-
-        <activity android:name=".Informacoes"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ListaLocais"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden"
-            />
-        <activity android:name=".ListaLocais"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Gritos"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden"
-            />
-        <activity android:name=".Gritos"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".PontuacaoModalidade"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden"
-            />
-        <activity android:name=".PontuacaoModalidade"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".PontuacaoGeral"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden"
-            />
-        <activity android:name=".Pontuacao"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DetalheInformacao"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden"
-            />
-        <activity android:name=".DetalheInformacao"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".AtualizarMenu"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden"
-            />
-        <activity android:name=".MenuAdm"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".AtualizarJogos"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden"
-            />
-        <activity android:name=".atualizar_jogos"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".AtualizarProvas"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden"
-            />
-        <activity android:name=".atualizar_colocacao_jogos"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".InterUspInfo"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden"
-            />
-        <activity android:name=".InterUspInfo"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden"
-            />
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".Chaveamento" />
+        <activity android:name=".AtualizarModalidade" />
+        <activity android:name=".AtualizarOnibus"></activity>
     </application>
 
 </manifest>

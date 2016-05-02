@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MenuAdm extends AppCompatActivity {
+public class AtualizarMenu extends AppCompatActivity {
 
     Activity activity = this;
     Context context = this;
@@ -35,7 +35,8 @@ public class MenuAdm extends AppCompatActivity {
         natacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent1 = new Intent(activity, AtualizarProvas.class);
+                startActivity(intent1);
             }
         });
         Button atletismo = (Button) findViewById(R.id.btnAtletismo_adm);
@@ -43,12 +44,26 @@ public class MenuAdm extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Intent intent1 = new Intent(activity, AtualizarProvas.class);
+                startActivity(intent1);
+
+            }
+        });
+        Button modalidade = (Button) findViewById(R.id.btnModalidade);
+        modalidade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(activity, AtualizarModalidade.class);
+                startActivity(intent1);
+
             }
         });
         Button onibus = (Button) findViewById(R.id.btnOnibus_adm);
         onibus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent1 = new Intent(activity, AtualizarOnibus.class);
+                startActivity(intent1);
 
             }
         });
@@ -56,7 +71,6 @@ public class MenuAdm extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                activity.finish();
                 Intent intent1 = new Intent(activity, TabsMain.class);
                 startActivity(intent1);
 

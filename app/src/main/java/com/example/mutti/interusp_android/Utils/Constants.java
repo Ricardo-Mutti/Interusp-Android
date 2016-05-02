@@ -1,5 +1,7 @@
 package com.example.mutti.interusp_android.Utils;
 
+import com.example.mutti.interusp_android.R;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -62,4 +64,16 @@ public class Constants {
     public static final String kGetJogosDone = "com.appsimples.swapped.login-done";
     public static final String kGetLocaisDone = "com.appsimples.swapped.login-done";
 
+
+    //ICONES DAS ATLETICAS
+
+    public static  int poli = R.drawable.icon_sanfran;
+    public static  int fea = R.drawable.icon_sanfran;
+    public static  int farma = R.drawable.icon_sanfran;
+    public static  int esalq = R.drawable.icon_sanfran;
+    public static  int riberao = R.drawable.icon_sanfran;
+    public static  int sanfra = R.drawable.icon_sanfran;
+    public static  int odonto = R.drawable.icon_sanfran;
+    public static  int pinheiros = R.drawable.icon_sanfran;
+    
 }

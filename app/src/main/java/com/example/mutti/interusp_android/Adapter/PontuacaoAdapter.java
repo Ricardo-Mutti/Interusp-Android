@@ -7,12 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.example.mutti.interusp_android.Fragments.Mapa;
 import com.example.mutti.interusp_android.Model.Pontuacao;
 import com.example.mutti.interusp_android.Model.PontuacaoModalidade;
-import com.example.mutti.interusp_android.PontuacaoAtletica;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.SetListAtletica;
 

@@ -6,8 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.mutti.interusp_android.Pontuacao;
-import com.example.mutti.interusp_android.PontuacaoAtletica;
+import com.example.mutti.interusp_android.PontuacaoFaculdade;
 import com.example.mutti.interusp_android.R;
 
 /**
@@ -59,7 +58,7 @@ public class SetListAtletica {
             @Override
             public void onClick(View view) {
                 //TODO Fazer a requisao pra chamar os pontos da atletica selecionada
-                Intent intent = new Intent(context, PontuacaoAtletica.class);
+                Intent intent = new Intent(context, PontuacaoFaculdade.class);
                 context.startActivity(intent);
             }
         });

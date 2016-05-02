@@ -54,7 +54,7 @@ public class Vencedores extends AppCompatActivity {
         tvModalidade.setText(modalidade);
 
         ListView lv = (ListView)findViewById(R.id.vencedoresListView);
-        lv.setAdapter(new ArrayAdapter<String>(this, R.layout.historico_list_element, mapaModalidades.get(modalidade)));
+        lv.setAdapter(new ArrayAdapter<>(this, R.layout.historico_list_element, mapaModalidades.get(modalidade)));
 
     }
 }

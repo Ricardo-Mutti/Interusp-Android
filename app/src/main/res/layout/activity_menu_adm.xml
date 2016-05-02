@@ -4,43 +4,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MenuAdm">
+    tools:context=".AtualizarMenu">
 
-    <include layout="@layout/action_bar"/>
+    <include layout="@layout/action_bar" />
 
     <Button
         android:id="@+id/btnJogos_adm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Jogos"/>
+        android:text="Jogos" />
 
     <Button
         android:id="@+id/btnNatacao_adm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Natação"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:text="Provas de Natação" />
 
     <Button
         android:id="@+id/btnAtletismo_adm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Atletismo"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:text="Provas de Atletismo" />
+
+    <Button
+        android:id="@+id/btnModalidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:text="Modalidade" />
 
     <Button
         android:id="@+id/btnOnibus_adm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ônibus"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:text="ônibus" />
 
     <Button
         android:id="@+id/btnLogout_adm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Logout"/>
+        android:text="Logout" />
+
+
 
 </LinearLayout>
