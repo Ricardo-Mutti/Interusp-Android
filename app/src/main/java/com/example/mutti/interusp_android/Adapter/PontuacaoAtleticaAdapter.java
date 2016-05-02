@@ -50,7 +50,7 @@ public class PontuacaoAtleticaAdapter extends ArrayAdapter {
                 imgModalidade.setBackgroundResource(R.color.transparente);
                 break;
             case 1:
-                imgModalidade.setImageResource(R.drawable.campo);
+                imgModalidade.setImageResource(R.drawable.modalidade_campo);
                 imgModalidade.setBackgroundResource(R.color.transparente);
                 break;
             case 2:
@@ -58,7 +58,7 @@ public class PontuacaoAtleticaAdapter extends ArrayAdapter {
                 imgModalidade.setBackgroundResource(R.color.transparente);
                 break;
             case 3:
-                imgModalidade.setImageResource(R.drawable.basquete);
+                imgModalidade.setImageResource(R.drawable.modalidade_basquete);
                 imgModalidade.setBackgroundResource(R.color.transparente);
                 break;
             case 4:
@@ -82,7 +82,7 @@ public class PontuacaoAtleticaAdapter extends ArrayAdapter {
                 imgModalidade.setBackgroundResource(R.color.transparente);
                 break;
             case 9:
-                imgModalidade.setImageResource(R.drawable.basquete);
+                imgModalidade.setImageResource(R.drawable.modalidade_basquete);
                 imgModalidade.setBackgroundResource(R.color.transparente);
                 break;
             case 10:
@@ -110,7 +110,7 @@ public class PontuacaoAtleticaAdapter extends ArrayAdapter {
                 imgModalidade.setBackgroundResource(R.color.rosa_tema);
                 break;
             case 16:
-                imgModalidade.setImageResource(R.drawable.basquete);
+                imgModalidade.setImageResource(R.drawable.modalidade_basquete);
                 imgModalidade.setBackgroundResource(R.color.rosa_tema);
                 break;
             case 17:
@@ -122,7 +122,7 @@ public class PontuacaoAtleticaAdapter extends ArrayAdapter {
                 imgModalidade.setBackgroundResource(R.color.rosa_tema);
                 break;
             case 19:
-                imgModalidade.setImageResource(R.drawable.basquete);
+                imgModalidade.setImageResource(R.drawable.modalidade_basquete);
                 imgModalidade.setBackgroundResource(R.color.rosa_tema);
                 break;
             case 20:

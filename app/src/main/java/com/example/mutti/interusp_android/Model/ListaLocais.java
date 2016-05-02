@@ -3,12 +3,10 @@ package com.example.mutti.interusp_android.Model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
-
 /**
  * Created by AppSimples on 01/05/16.
  */
-public class Local implements Parcelable {
+public class ListaLocais implements Parcelable {
 
     private String id;
     private String nome;
@@ -44,7 +42,7 @@ public class Local implements Parcelable {
     public void setPrincipaisModalidades(String principaisModalidades) {
         this.principaisModalidades = principaisModalidades;}
 
-    public Local() {
+    public ListaLocais() {
 
     }
 
@@ -67,18 +65,18 @@ public class Local implements Parcelable {
     }
 
     // this is used to regenerate your object. All Parcelables must have a CREATOR that implements these two methods
-    public static final Parcelable.Creator<Local> CREATOR = new Parcelable.Creator<Local>() {
-        public Local createFromParcel(Parcel in) {
-            return new Local(in);
+    public static final Parcelable.Creator<ListaLocais> CREATOR = new Parcelable.Creator<ListaLocais>() {
+        public ListaLocais createFromParcel(Parcel in) {
+            return new ListaLocais(in);
         }
 
-        public Local[] newArray(int size) {
-            return new Local[size];
+        public ListaLocais[] newArray(int size) {
+            return new ListaLocais[size];
         }
     };
 
     // example constructor that takes a Parcel and gives you an object populated with it's values
-    private Local(Parcel in) {
+    private ListaLocais(Parcel in) {
         id = in.readString();
         nome = in.readString();
         foto = in.readString();

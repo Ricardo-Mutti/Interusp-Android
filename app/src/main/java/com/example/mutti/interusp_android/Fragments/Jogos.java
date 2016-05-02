@@ -41,10 +41,10 @@ public class Jogos extends Fragment {
     JogoAdapter jogoAdapter;
     ListView listView;
 
-//    Button filtroDia;
-//    Button filtroModalidade;
-//    Button filtroAtletica;
-//    Button filtroLocal;
+    Button filtroDia;
+    Button filtroModalidade;
+    Button filtroAtletica;
+    Button filtroLocal;
 
     String stringDiaToFilter;
     String stringModalidadeToFilter;
@@ -92,7 +92,7 @@ public class Jogos extends Fragment {
             }
         });
 
-//        filtroDia = (Button) rootview.findViewById(R.id.jogos_btn_dia);
+        filtroDia = (Button) rootview.findViewById(R.id.jogos_btn_dia);
 //        filtroDia.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -100,7 +100,7 @@ public class Jogos extends Fragment {
 //            }
 //        });
 //
-//        filtroModalidade = (Button) rootview.findViewById(R.id.jogos_btn_modalidade);
+        filtroModalidade = (Button) rootview.findViewById(R.id.jogos_btn_modalidade);
 //        filtroModalidade.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -108,7 +108,7 @@ public class Jogos extends Fragment {
 //            }
 //        });
 //
-//        filtroAtletica = (Button) rootview.findViewById(R.id.jogos_btn_atletica);
+        filtroAtletica = (Button) rootview.findViewById(R.id.jogos_btn_atletica);
 //        filtroAtletica.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -116,7 +116,7 @@ public class Jogos extends Fragment {
 //            }
 //        });
 //
-//        filtroLocal = (Button) rootview.findViewById(R.id.jogos_btn_local);
+        filtroLocal = (Button) rootview.findViewById(R.id.jogos_btn_local);
 //        filtroLocal.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -130,14 +130,14 @@ public class Jogos extends Fragment {
         listView.setAdapter(jogoAdapter);
 
         SharedPreferences sharedpreferences = getActivity().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-//        filtroDia.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
-//        filtroDia.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
-//        filtroModalidade.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
-//        filtroModalidade.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
-//        filtroAtletica.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
-//        filtroAtletica.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
-//        filtroLocal.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
-//        filtroLocal.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
+        filtroDia.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
+        filtroDia.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
+        filtroModalidade.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
+        filtroModalidade.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
+        filtroAtletica.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
+        filtroAtletica.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
+        filtroLocal.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
+        filtroLocal.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
 
         return rootview;
     }
@@ -226,7 +226,7 @@ public class Jogos extends Fragment {
 //                containerFilter.setVisibility(View.GONE);
 //                String chosen = filters.get(position);
 //                if (chosen.equals("Todos")) {
-//                    filtroLocal.setText("Local");
+//                    filtroLocal.setText("ListaLocais");
 //                    stringLocalToFilter = null;
 //                } else {
 //                    filtroLocal.setText(chosen);

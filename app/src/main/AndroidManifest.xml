@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Selecionar_Atletica"
+            android:name=".SelecionarAtletica"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
@@ -56,7 +56,7 @@
             android:windowSoftInputMode="stateHidden" />
 
         <activity
-            android:name=".Tabs_main"
+            android:name=".TabsMain"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
@@ -78,11 +78,6 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden"/>
 
-        <activity android:name=".teste"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden"
-            />
         <activity android:name=".Informacoes"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
@@ -113,7 +108,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden"
             />
-        <activity android:name=".menu_adm"
+        <activity android:name=".MenuAdm"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden"

@@ -13,8 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.mutti.interusp_android.Manager.GetLocal;
-import com.example.mutti.interusp_android.Model.Locais;
-import com.example.mutti.interusp_android.Model.Local;
+import com.example.mutti.interusp_android.Model.ListaLocais;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
 import com.example.mutti.interusp_android.Utils.DataHolder;
@@ -28,7 +27,7 @@ public class Informacoes extends Fragment {
 
     Activity activity;
     Context context;
-    private ArrayList<Local> locais = new ArrayList<>();
+    private ArrayList<ListaLocais> locais = new ArrayList<>();
     private boolean locaisReady = false;
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -69,7 +68,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, Local.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Ginásios");
                     intent.putExtra("tipo", 1);
                     startActivity(intent);
@@ -82,7 +81,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, Local.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Tenda");
                     intent.putExtra("tipo", 2);
                     startActivity(intent);
@@ -95,7 +94,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, Local.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Baladas");
                     intent.putExtra("tipo", 3);
                     startActivity(intent);
@@ -108,7 +107,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, Local.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Ônibus");
                     intent.putExtra("tipo", 4);
                     startActivity(intent);
@@ -121,7 +120,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, Local.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Alojamentos");
                     intent.putExtra("tipo", 5);
                     startActivity(intent);
@@ -135,7 +134,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, Local.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Hospital");
                     intent.putExtra("tipo", 6);
                     startActivity(intent);
@@ -148,7 +147,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, Local.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Delegacia");
                     intent.putExtra("tipo", 7);
                     startActivity(intent);
@@ -161,7 +160,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, Local.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Restaurantes");
                     intent.putExtra("tipo", 8);
                     startActivity(intent);

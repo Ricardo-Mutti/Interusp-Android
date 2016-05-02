@@ -38,7 +38,7 @@
                     android:layout_marginTop="15dp"
                     android:clickable="true"
                     android:onClick="abrirginasio"
-                    android:src="@drawable/ginasios"
+                    android:src="@drawable/info_ginasios"
                     android:text="Ginásio"
 
                     />
@@ -50,7 +50,7 @@
                     android:layout_marginTop="15dp"
                     android:clickable="true"
                     android:onClick="abrirtenda"
-                    android:src="@drawable/tenda"
+                    android:src="@drawable/info_tenda"
                     android:text="Tenda"
 
                     />
@@ -70,7 +70,7 @@
                     android:layout_marginTop="20dp"
                     android:clickable="true"
                     android:onClick="abrirbalada"
-                    android:src="@drawable/baladas"
+                    android:src="@drawable/info_baladas"
                     android:text="Balada"
 
                     />
@@ -82,7 +82,7 @@
                     android:layout_marginTop="20dp"
                     android:clickable="true"
                     android:onClick="abrironibus"
-                    android:src="@drawable/onibus"
+                    android:src="@drawable/info_onibus"
                     android:text="Ônibus"
 
                     />
@@ -102,7 +102,7 @@
                     android:layout_marginTop="20dp"
                     android:clickable="true"
                     android:onClick="abriralojamentos"
-                    android:src="@drawable/alojamento"
+                    android:src="@drawable/info_alojamento"
                     android:text="Alojamentos"
 
                     />
@@ -114,7 +114,7 @@
                     android:layout_marginTop="20dp"
                     android:clickable="true"
                     android:onClick="abrirhospital"
-                    android:src="@drawable/hospital"
+                    android:src="@drawable/info_hospital"
                     android:text="Hospital"
 
                     />
@@ -134,7 +134,7 @@
                     android:layout_marginTop="20dp"
                     android:clickable="true"
                     android:onClick="abrirdelegacia"
-                    android:src="@drawable/delegacia"
+                    android:src="@drawable/info_delegacia"
                     android:text="Delegacia"
 
                     />
@@ -146,7 +146,7 @@
                     android:layout_marginTop="20dp"
                     android:clickable="true"
                     android:onClick="abrirrestaurantes"
-                    android:src="@drawable/comidas"
+                    android:src="@drawable/info_comidas"
                     android:text="Restaurantes"
 
                     />

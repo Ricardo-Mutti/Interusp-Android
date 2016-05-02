@@ -1,19 +1,15 @@
 package com.example.mutti.interusp_android;
 
 import android.app.Activity;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.mutti.interusp_android.Utils.Constants;
-
-public class menu_adm extends AppCompatActivity {
+public class MenuAdm extends AppCompatActivity {
 
     Activity activity = this;
     Context context = this;
@@ -61,7 +57,7 @@ public class menu_adm extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 activity.finish();
-                Intent intent1 = new Intent(activity, Tabs_main.class);
+                Intent intent1 = new Intent(activity, TabsMain.class);
                 startActivity(intent1);
 
             }

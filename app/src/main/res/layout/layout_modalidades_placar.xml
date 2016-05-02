@@ -35,7 +35,7 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/campo"
+                android:src="@drawable/modalidade_campo"
                 android:layout_weight="1" />
             <ImageView
                 android:layout_width="0dp"
@@ -45,7 +45,7 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/basquete"
+                android:src="@drawable/modalidade_basquete"
                 android:layout_weight="1" />
             <ImageView
                 android:layout_width="0dp"

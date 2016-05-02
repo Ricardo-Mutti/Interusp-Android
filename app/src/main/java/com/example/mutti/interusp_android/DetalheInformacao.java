@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.mutti.interusp_android.Fragments.Jogos;
-import com.example.mutti.interusp_android.Model.*;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class DetalheInformacao extends AppCompatActivity {
@@ -26,7 +24,7 @@ public class DetalheInformacao extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhe_informacao);
 
-        final com.example.mutti.interusp_android.Model.Local local = getIntent().getParcelableExtra("local");
+        final com.example.mutti.interusp_android.Model.ListaLocais listaLocais = getIntent().getParcelableExtra("listaLocais");
 
         imgFoto = (ImageView) findViewById(R.id.imgFoto);
 
@@ -37,17 +35,17 @@ public class DetalheInformacao extends AppCompatActivity {
         txtInfo = (TextView) findViewById(R.id.txtInfo);
         txtEnderecos = (TextView) findViewById(R.id.txtEndereco);
 
-        txtTitulo.setText(local.getNome());
-        txtInfo.setText(local.getPrincipaisModalidades());
-        txtEnderecos.setText(local.getEndereco());
-        ImageLoader.getInstance().displayImage(local.getFoto(), imgFoto);
+        txtTitulo.setText(listaLocais.getNome());
+        txtInfo.setText(listaLocais.getPrincipaisModalidades());
+        txtEnderecos.setText(listaLocais.getEndereco());
+        ImageLoader.getInstance().displayImage(listaLocais.getFoto(), imgFoto);
 
         if(btnMapa!=null){
             btnMapa.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + local.getNome()
-                            + "@" + local.getCoordenadas()[1] + "," + local.getCoordenadas()[0]));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + listaLocais.getNome()
+                            + "@" + listaLocais.getCoordenadas()[1] + "," + listaLocais.getCoordenadas()[0]));
                     startActivity(intent);
                 }
             });
@@ -56,7 +54,7 @@ public class DetalheInformacao extends AppCompatActivity {
             btnJogos.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(activity, Tabs_main.class);
+                    Intent intent = new Intent(activity, TabsMain.class);
                     intent.putExtra("tab", 3);
                     startActivity(intent);
                 }

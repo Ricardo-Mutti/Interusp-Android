@@ -2,10 +2,10 @@ package com.example.mutti.interusp_android;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.mutti.interusp_android.Utils.StatusBarColor;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
@@ -19,6 +19,7 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        StatusBarColor.setColorStatusBar(activity,"#000033");
 
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
         ImageLoader.getInstance().init(config);
@@ -27,7 +28,7 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                     activity.finish();
-                    Intent intent1 = new Intent(activity, Selecionar_Atletica.class);
+                    Intent intent1 = new Intent(activity, SelecionarAtletica.class);
                     intent1.putExtra("Nome", "WendlerEis");
                 startActivity(intent1);
 

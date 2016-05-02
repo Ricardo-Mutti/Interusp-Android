@@ -12,7 +12,7 @@
         android:id="@+id/imgModalidade"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:src="@drawable/basquete"
+        android:src="@drawable/modalidade_basquete"
         android:layout_weight="1"
         android:layout_marginRight="5dp"/>
 

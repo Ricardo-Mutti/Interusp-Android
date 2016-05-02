@@ -10,10 +10,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.mutti.interusp_android.Manager.GetLocal;
 import com.example.mutti.interusp_android.Utils.Constants;
+import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
-public class Selecionar_Atletica extends AppCompatActivity {
+public class SelecionarAtletica extends AppCompatActivity {
 
     Activity activity = this;
     Context context = this;
@@ -48,7 +48,7 @@ public class Selecionar_Atletica extends AppCompatActivity {
                 editor.putString(cor2, Constants.kCorEsalq2);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, Tabs_main.class);
+                Intent intent = new Intent(activity, TabsMain.class);
                 startActivity(intent);
             }
         });
@@ -61,7 +61,7 @@ public class Selecionar_Atletica extends AppCompatActivity {
                 editor.putString(cor2, Constants.kCorPoli2);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, Tabs_main.class);
+                Intent intent = new Intent(activity, TabsMain.class);
                 startActivity(intent);
             }
         });
@@ -74,7 +74,7 @@ public class Selecionar_Atletica extends AppCompatActivity {
                 editor.putString(cor2, Constants.kCorFea2);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, Tabs_main.class);
+                Intent intent = new Intent(activity, TabsMain.class);
                 startActivity(intent);
             }
         });
@@ -87,7 +87,7 @@ public class Selecionar_Atletica extends AppCompatActivity {
                 editor.putString(cor1, Constants.kCorFarma1);
                 editor.putString(cor2, Constants.kCorFarma2);
                 editor.commit();
-                Intent intent = new Intent(activity, Tabs_main.class);
+                Intent intent = new Intent(activity, TabsMain.class);
                 startActivity(intent);
             }
         });
@@ -100,7 +100,7 @@ public class Selecionar_Atletica extends AppCompatActivity {
                 editor.putString(cor2, Constants.kCorSanFran2);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, Tabs_main.class);
+                Intent intent = new Intent(activity, TabsMain.class);
                 startActivity(intent);
             }
         });
@@ -113,7 +113,7 @@ public class Selecionar_Atletica extends AppCompatActivity {
                 editor.putString(cor2, Constants.kCorOdonto2);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, Tabs_main.class);
+                Intent intent = new Intent(activity, TabsMain.class);
                 startActivity(intent);
             }
         });
@@ -126,7 +126,7 @@ public class Selecionar_Atletica extends AppCompatActivity {
                 editor.putString(cor2, Constants.kCorRibeirao2);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, Tabs_main.class);
+                Intent intent = new Intent(activity, TabsMain.class);
                 startActivity(intent);
             }
         });
@@ -139,7 +139,7 @@ public class Selecionar_Atletica extends AppCompatActivity {
                 editor.putString(cor2, Constants.kCorMed2);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, Tabs_main.class);
+                Intent intent = new Intent(activity, TabsMain.class);
                 startActivity(intent);
             }
         });
@@ -152,7 +152,7 @@ public class Selecionar_Atletica extends AppCompatActivity {
                 editor.putString(cor2, Constants.kCorTodos2);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, Tabs_main.class);
+                Intent intent = new Intent(activity, TabsMain.class);
                 startActivity(intent);
             }
         });

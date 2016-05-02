@@ -29,8 +29,7 @@
                     android:id="@+id/imgGinasio"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="15dp"
-                    android:src="@drawable/ginasios"
+                    android:src="@drawable/info_ginasios"
                     android:text="Ginásio" />
 
                 <ImageView
@@ -38,8 +37,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="60dp"
-                    android:layout_marginTop="15dp"
-                    android:src="@drawable/tenda"
+                    android:src="@drawable/info_tenda"
                     android:text="Tenda" />
 
             </LinearLayout>
@@ -56,7 +54,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/baladas"
+                    android:src="@drawable/info_baladas"
                     android:text="Balada"  />
 
                 <ImageView
@@ -65,7 +63,7 @@
                     android:layout_height="100dp"
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/onibus"
+                    android:src="@drawable/info_onibus"
                     android:text="Ônibus" />
 
             </LinearLayout>
@@ -82,7 +80,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/alojamento"
+                    android:src="@drawable/info_alojamento"
                     android:text="Alojamentos" />
 
                 <ImageView
@@ -91,7 +89,7 @@
                     android:layout_height="100dp"
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/hospital"
+                    android:src="@drawable/info_hospital"
                     android:text="Hospital" />
 
             </LinearLayout>
@@ -108,7 +106,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/delegacia"
+                    android:src="@drawable/info_delegacia"
                     android:text="Delegacia" />
 
                 <ImageView
@@ -117,7 +115,7 @@
                     android:layout_height="100dp"
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/comidas"
+                    android:src="@drawable/info_comidas"
                     android:text="Restaurantes" />
 
             </LinearLayout>

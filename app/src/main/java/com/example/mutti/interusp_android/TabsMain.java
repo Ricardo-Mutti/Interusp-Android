@@ -15,8 +15,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.mutti.interusp_android.Utils.SelectFragment;
+import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
-public class Tabs_main extends FragmentActivity {
+public class TabsMain extends FragmentActivity {
 
     Activity activity = this;
     Context context = this;
@@ -37,6 +38,7 @@ public class Tabs_main extends FragmentActivity {
         title.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
         LinearLayout actionBar = (LinearLayout) activity.findViewById(R.id.action_bar);
         actionBar.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
+        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString(cor1, "#000000"));
 
         ImageView info_tab = (ImageView) findViewById(R.id.tab_info);
         ImageView chaveamento_tab = (ImageView) findViewById(R.id.tab_chaveamento);
@@ -47,7 +49,6 @@ public class Tabs_main extends FragmentActivity {
         int tab = getIntent().getIntExtra("tab", 2);
 
         SelectFragment.open(tab, fragmentManager, activity);
-
 
         info_tab.setOnClickListener(new View.OnClickListener() {
             @Override

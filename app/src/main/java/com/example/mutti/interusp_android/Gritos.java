@@ -1,11 +1,9 @@
 package com.example.mutti.interusp_android;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -82,7 +80,7 @@ public class Gritos extends AppCompatActivity {
         final TextView texto3 = (TextView) findViewById(R.id.textView7);
         final TextView titulo4 = (TextView) findViewById(R.id.textView8);
         final TextView texto4 = (TextView) findViewById(R.id.textView9);
-        Selecionar_Atletica selecionar = new Selecionar_Atletica();
+        SelecionarAtletica selecionar = new SelecionarAtletica();
         scroll = (ScrollView) findViewById(R.id.scrollView);
         botao = (ImageView) findViewById(R.id.button50);
         switch (atletica){

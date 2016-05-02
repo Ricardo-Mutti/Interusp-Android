@@ -3,18 +3,38 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
     <color name="branco">#FFFFFF</color>
     <color name="preto">#000000</color>
-    <color name="POLI">#FDA405</color>
-    <color name="FEA">#0000CC</color>
-    <color name="FARMA">#A0522D</color>
-    <color name="ESALQ">#FF0000</color>
-    <color name="RIBEIRAO">#093B24</color>
-    <color name="SANFRAN">#d4251e</color>
-    <color name="ODONTO">#4682B4</color>
-    <color name="PINHEIROS">#006400</color>
     <color name="azul_tema">#000033</color>
     <color name="rosa_tema">#ff0099</color>
+
+
+    <!--Faculdades  1-Fundo 2-Letra -->
+
+    <color name="POLI1">#171B40</color>
+    <color name="POLI2">#fdf105</color>
+
+    <color name="FEA1">#0000CC</color>
+    <color name="FEA2">#ffffff</color>
+
+    <color name="FARMA1">#821518</color>
+    <color name="FARMA2">#ffffff</color>
+
+    <color name="ESALQ1">#FF0000</color>
+    <color name="ESALQ2">#ffffff</color>
+
+    <color name="RIBEIRAO1">#093B24</color>
+    <color name="RIBEIRAO2">#ffffff</color>
+
+    <color name="SANFRAN1">#d4251e</color>
+    <color name="SANFRAN2">#ffffff</color>
+
+    <color name="ODONTO1">#02284e</color>
+    <color name="ODONTO2">#ffffff</color>
+
+    <color name="PINHEIROS1">#006400</color>
+    <color name="PINHEIROS2">#ffffff</color>
 
     <color name="transparente">#00ffffff</color>
 

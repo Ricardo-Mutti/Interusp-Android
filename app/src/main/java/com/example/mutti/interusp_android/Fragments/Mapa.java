@@ -13,20 +13,14 @@ import android.view.ViewGroup;
 
 import com.example.mutti.interusp_android.DetalheInformacao;
 import com.example.mutti.interusp_android.Manager.GetLocal;
-import com.example.mutti.interusp_android.Model.Locais;
-import com.example.mutti.interusp_android.Model.Local;
+import com.example.mutti.interusp_android.Model.ListaLocais;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
 import com.example.mutti.interusp_android.Utils.DataHolder;
-import com.example.mutti.interusp_android.teste;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -49,7 +43,7 @@ public class Mapa extends Fragment  {
     MapView mMapView;
     String selectedMarker;
 
-    ArrayList<Local> locais;
+    ArrayList<ListaLocais> locais;
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
@@ -103,17 +97,17 @@ public class Mapa extends Fragment  {
 
                 } else {
 
-                    Local local = null;
-                    for (Local l : locais) {
+                    ListaLocais listaLocais = null;
+                    for (ListaLocais l : locais) {
                         if (markerTitle.equals(l.getNome())) {
-                            local = l;
+                            listaLocais = l;
                             break;
                         }
                     }
 
-                    if (local != null) {
+                    if (listaLocais != null) {
                         Intent intent = new Intent(getActivity(), DetalheInformacao.class);
-                        intent.putExtra("local", local);
+                        intent.putExtra("listaLocais", listaLocais);
                         getActivity().startActivity(intent);
                     }
 
@@ -169,32 +163,32 @@ public class Mapa extends Fragment  {
 
     public void criarMarkers () {
         //Criador de markers
-        for (Local local: locais) {
+        for (ListaLocais listaLocais : locais) {
             MarkerOptions marker = new MarkerOptions().position(
-                    new LatLng(local.getCoordenadas()[1], local.getCoordenadas()[0]))
-                    .title(local.getNome());
+                    new LatLng(listaLocais.getCoordenadas()[1], listaLocais.getCoordenadas()[0]))
+                    .title(listaLocais.getNome());
 
-            switch (local.getTipo()) {
+            switch (listaLocais.getTipo()) {
                 case 1:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.ginasios));
+                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_ginasios));
                     break;
                 case 2:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.tenda));
+                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_tenda));
                     break;
                 case 3:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.baladas));
+                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_baladas));
                     break;
                 case 5:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.alojamento));
+                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_alojamento));
                     break;
                 case 6:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.hospital));
+                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_hospital));
                     break;
                 case 7:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.delegacia));
+                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_delegacia));
                     break;
                 case 8:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.comidas));
+                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_comidas));
                     break;
                 default:
                     break;
