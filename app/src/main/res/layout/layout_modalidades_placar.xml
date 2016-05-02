@@ -27,6 +27,7 @@
             android:layout_weight="2">
 
             <ImageView
+                android:id="@+id/pontuacao_atletismo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/modalidade_atletismo"

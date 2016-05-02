@@ -16,56 +16,56 @@ public class Informacoes extends AppCompatActivity {
     }
 
     public void abrirginasio(View view) {
-        Intent intent = new Intent(this, Local.class);
+        Intent intent = new Intent(this, ListaLocais.class);
         intent.putExtra("nome","Ginásios");
         startActivity(intent);
 
     }
 
     public void abrirtenda(View view) {
-        Intent intent = new Intent(this, Local.class);
+        Intent intent = new Intent(this, ListaLocais.class);
         intent.putExtra("nome","Tenda");
         startActivity(intent);
 
     }
 
     public void abrirbalada(View view) {
-        Intent intent = new Intent(this, Local.class);
+        Intent intent = new Intent(this, ListaLocais.class);
         intent.putExtra("nome","Baladas");
         startActivity(intent);
 
     }
 
     public void abrironibus(View view) {
-        Intent intent = new Intent(this, Local.class);
+        Intent intent = new Intent(this, ListaLocais.class);
         intent.putExtra("nome","Ônibus");
         startActivity(intent);
 
     }
 
     public void abriralojamentos(View view) {
-        Intent intent = new Intent(this, Local.class);
+        Intent intent = new Intent(this, ListaLocais.class);
         intent.putExtra("nome","Alojamentos");
         startActivity(intent);
 
     }
 
     public void abrirhospital(View view) {
-        Intent intent = new Intent(this, Local.class);
+        Intent intent = new Intent(this, ListaLocais.class);
         intent.putExtra("nome","Hospital");
         startActivity(intent);
 
     }
 
     public void abrirdelegacia(View view) {
-        Intent intent = new Intent(this, Local.class);
+        Intent intent = new Intent(this, ListaLocais.class);
         intent.putExtra("nome","Delegacia");
         startActivity(intent);
 
     }
 
     public void abrirrestaurantes(View view) {
-        Intent intent = new Intent(this, Local.class);
+        Intent intent = new Intent(this, ListaLocais.class);
         intent.putExtra("nome","Restaurantes");
         startActivity(intent);
 

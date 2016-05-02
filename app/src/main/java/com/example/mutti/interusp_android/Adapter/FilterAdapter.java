@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.mutti.interusp_android.Model.TipoJogo;
 import com.example.mutti.interusp_android.R;
 
 import java.util.ArrayList;

@@ -48,7 +48,7 @@ public class Mais extends Fragment {
         txtPontuacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, PontuacaoAtletica.class);
+                Intent intent = new Intent(context, Pontuacao.class);
                 startActivity(intent);
             }
         });

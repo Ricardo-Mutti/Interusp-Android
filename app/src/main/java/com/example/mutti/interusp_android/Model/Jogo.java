@@ -12,6 +12,7 @@ public class Jogo {
     String colocacao;//1 ganhou 2 perdeu
     String placar;
     String data;
+    String hora;
     String local_id;
     String chaveamento;//posicao na chave
 
@@ -87,5 +88,11 @@ public class Jogo {
         this.chaveamento = chaveamento;
     }
 
+    public String getHora() {
+        return hora;
+    }
 
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
 }

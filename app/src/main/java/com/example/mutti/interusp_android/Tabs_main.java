@@ -44,7 +44,9 @@ public class Tabs_main extends FragmentActivity {
         ImageView jogos_tab = (ImageView) findViewById(R.id.tab_jogos);
         ImageView mais_tab = (ImageView) findViewById(R.id.tab_mais);
 
-        SelectFragment.open(2, fragmentManager, activity);
+        int tab = getIntent().getIntExtra("tab", 2);
+
+        SelectFragment.open(tab, fragmentManager, activity);
 
 
         info_tab.setOnClickListener(new View.OnClickListener() {

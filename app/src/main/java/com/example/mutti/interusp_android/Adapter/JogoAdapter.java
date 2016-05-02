@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.mutti.interusp_android.Model.TipoJogo;
+import com.example.mutti.interusp_android.Model.Jogo;
 import com.example.mutti.interusp_android.R;
 
 import java.util.ArrayList;
@@ -18,9 +18,9 @@ import java.util.ArrayList;
 public class JogoAdapter extends BaseAdapter{
 
     Context context;
-    public ArrayList<TipoJogo> jogos;
+    public ArrayList<Jogo> jogos;
 
-    public JogoAdapter (Context context, ArrayList<TipoJogo> jogos) {
+    public JogoAdapter (Context context, ArrayList<Jogo> jogos) {
         this.context = context;
         this.jogos = jogos;
     }
@@ -43,7 +43,7 @@ public class JogoAdapter extends BaseAdapter{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        TipoJogo jogo = (TipoJogo) getItem(position);
+        Jogo jogo = (Jogo) getItem(position);
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -57,12 +57,12 @@ public class JogoAdapter extends BaseAdapter{
         TextView horario = (TextView) convertView.findViewById(R.id.cell_jogo_horario);
         TextView local = (TextView) convertView.findViewById(R.id.cell_jogo_local);
 
-        modalidade.setText(jogo.getModalidade());
-        title.setText(jogo.getTitle());
-        subtitle.setText(jogo.getSubtitle());
-        data.setText(jogo.getDataString());
-        horario.setText(jogo.getHorario());
-        local.setText(jogo.getLocal());
+        modalidade.setText(jogo.getId_modalidade());
+        title.setText(jogo.getParticipantes());
+        subtitle.setText(jogo.getNome());
+        data.setText(jogo.getData());
+        horario.setText(jogo.getHora());
+        local.setText(jogo.getLocal_id());
 
         return convertView;
     }

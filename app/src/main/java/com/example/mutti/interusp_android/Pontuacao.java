@@ -1,5 +1,7 @@
 package com.example.mutti.interusp_android;
 
+import android.app.Activity;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -10,6 +12,9 @@ import java.util.ArrayList;
 
 public class Pontuacao extends AppCompatActivity {
 
+    Activity activity = this;
+    Context context = this;
+
     ListView listPontuacao;
 
     @Override
@@ -18,7 +23,9 @@ public class Pontuacao extends AppCompatActivity {
         setContentView(R.layout.activity_pontuacao);
 
         listPontuacao = (ListView) findViewById(R.id.listPontuacao);
+
         ArrayList<com.example.mutti.interusp_android.Model.Pontuacao> list = new ArrayList<>();
+
         list.add(new com.example.mutti.interusp_android.Model.Pontuacao(0, 130, 140, 180));
         list.add(new com.example.mutti.interusp_android.Model.Pontuacao(1, 110, 120, 160));
         list.add(new com.example.mutti.interusp_android.Model.Pontuacao(2, 100, 120, 160));
@@ -27,7 +34,16 @@ public class Pontuacao extends AppCompatActivity {
         list.add(new com.example.mutti.interusp_android.Model.Pontuacao(5, 70, 87, 100));
         list.add(new com.example.mutti.interusp_android.Model.Pontuacao(6, 60, 68, 99));
         list.add(new com.example.mutti.interusp_android.Model.Pontuacao(7, 50, 56, 99));
+
         PontuacaoAdapter adapter = new PontuacaoAdapter(this, list);
         listPontuacao.setAdapter(adapter);
+
+
+
+
+
+
+
+
     }
 }
