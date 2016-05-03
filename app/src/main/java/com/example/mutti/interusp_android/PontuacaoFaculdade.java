@@ -34,15 +34,16 @@ public class PontuacaoFaculdade extends AppCompatActivity {
         list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(12, "Tênis masculino", 13, 95));
         list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(13, "Tênis de Mesa masculino", 14, 95));
         list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(14, "Xadrez", 15, 95));
-        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(15, "Futebol Futsal feminino", 16, 95));
-        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(16, "Basquete feminino", 17, 95));
-        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(17, "Natação feminino", 18, 95));
-        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(18, "Handebol feminino", 19, 95));
-        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(19, "Rugby feminino", 20, 95));
-        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(20, "Softbol", 21, 95));
-        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(21, "Volei feminino", 22, 95));
-        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(22, "Tênis feminino", 23, 95));
-        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(23, "Tênis de Mesa feminino", 24, 95));
+        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(15, "Atletismo feminino", 16, 95));
+        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(16, "Futebol Futsal feminino", 17, 95));
+        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(17, "Basquete feminino", 18, 95));
+        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(18, "Natação feminino", 19, 95));
+        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(19, "Handebol feminino", 20, 95));
+        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(20, "Rugby feminino", 21, 95));
+        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(21, "Softbol", 22, 95));
+        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(22, "Volei feminino", 23, 95));
+        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(23, "Tênis feminino", 24, 95));
+        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(24, "Tênis de Mesa feminino", 25, 95));
 
         PontuacaoAtleticaAdapter adapter = new PontuacaoAtleticaAdapter(this, list);
         listPontuacao.setAdapter(adapter);

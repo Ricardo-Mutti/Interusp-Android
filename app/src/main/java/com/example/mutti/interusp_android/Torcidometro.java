@@ -8,7 +8,7 @@ public class Torcidometro extends AppCompatActivity {
 
     String total = "100";
 
-    String  progresso_poli,progresso_pinheiro,progresso_farma,progresso_esalq,progresso_fea,
+    String progresso_poli,progresso_pinheiro,progresso_farma,progresso_esalq,progresso_fea,
             progresso_riberao,progresso_sanfran,progresso_odonto ;
 
 
@@ -35,6 +35,14 @@ public class Torcidometro extends AppCompatActivity {
         torcida_odonto.setScaleY(2f);
         torcida_pinheiros.setScaleY(2f);
 
+        progresso_poli = "34";
+        progresso_pinheiro = "34";
+        progresso_farma = "34";
+        progresso_esalq = "34";
+        progresso_fea = "34";
+        progresso_riberao = "34";
+        progresso_sanfran = "34";
+        progresso_odonto = "34";
 
         torcida_poli.setMax(Integer.parseInt(total));
         torcida_poli.setProgress(Integer.parseInt(progresso_poli));

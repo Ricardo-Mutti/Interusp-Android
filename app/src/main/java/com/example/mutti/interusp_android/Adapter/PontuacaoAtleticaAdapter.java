@@ -82,7 +82,7 @@ public class PontuacaoAtleticaAdapter extends ArrayAdapter {
                 imgModalidade.setBackgroundResource(R.color.transparente);
                 break;
             case 9:
-                imgModalidade.setImageResource(R.drawable.modalidade_basquete);
+                imgModalidade.setImageResource(R.drawable.modalidade_rugby);
                 imgModalidade.setBackgroundResource(R.color.transparente);
                 break;
             case 10:
@@ -106,40 +106,34 @@ public class PontuacaoAtleticaAdapter extends ArrayAdapter {
                 imgModalidade.setBackgroundResource(R.color.transparente);
                 break;
             case 15:
-                imgModalidade.setImageResource(R.drawable.modalidade_futsal);
-                imgModalidade.setBackgroundResource(R.color.rosa_tema);
+                imgModalidade.setImageResource(R.drawable.corrida_rosa);
                 break;
             case 16:
-                imgModalidade.setImageResource(R.drawable.modalidade_basquete);
-                imgModalidade.setBackgroundResource(R.color.rosa_tema);
+                imgModalidade.setImageResource(R.drawable.futsal_rosa);
                 break;
             case 17:
-                imgModalidade.setImageResource(R.drawable.modalidade_natacao);
-                imgModalidade.setBackgroundResource(R.color.rosa_tema);
+                imgModalidade.setImageResource(R.drawable.basquete_rosa);
                 break;
             case 18:
-                imgModalidade.setImageResource(R.drawable.modalidade_handball);
-                imgModalidade.setBackgroundResource(R.color.rosa_tema);
+                imgModalidade.setImageResource(R.drawable.natacao_rosa);
                 break;
             case 19:
-                imgModalidade.setImageResource(R.drawable.modalidade_basquete);
-                imgModalidade.setBackgroundResource(R.color.rosa_tema);
+                imgModalidade.setImageResource(R.drawable.handball_rosa);
                 break;
             case 20:
-                imgModalidade.setImageResource(R.drawable.modalidade_soft);
-                imgModalidade.setBackgroundResource(R.color.rosa_tema);
+                imgModalidade.setImageResource(R.drawable.rugby_rosa);
                 break;
             case 21:
-                imgModalidade.setImageResource(R.drawable.modalidade_volei);
-                imgModalidade.setBackgroundResource(R.color.rosa_tema);
+                imgModalidade.setImageResource(R.drawable.soft_rosa);
                 break;
             case 22:
-                imgModalidade.setImageResource(R.drawable.modalidade_tenis);
-                imgModalidade.setBackgroundResource(R.color.rosa_tema);
+                imgModalidade.setImageResource(R.drawable.volei_rosa);
                 break;
             case 23:
-                imgModalidade.setImageResource(R.drawable.modalidade_tenismesa);
-                imgModalidade.setBackgroundResource(R.color.rosa_tema);
+                imgModalidade.setImageResource(R.drawable.tenis_rosa);
+                break;
+            case 24:
+                imgModalidade.setImageResource(R.drawable.tenismesa_rosa);
                 break;
             default:
                 break;

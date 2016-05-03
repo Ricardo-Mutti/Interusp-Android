@@ -37,13 +37,5 @@ public class PontuacaoGeral extends AppCompatActivity {
 
         PontuacaoAdapter adapter = new PontuacaoAdapter(this, list);
         listPontuacao.setAdapter(adapter);
-
-
-
-
-
-
-
-
     }
 }
