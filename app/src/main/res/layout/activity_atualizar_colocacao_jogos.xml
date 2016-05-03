@@ -10,9 +10,10 @@
     tools:context=".AtualizarProvas">
 
     <TextView
+        android:id="@+id/provas_nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Modalidade"
+        android:text="Prova"
         android:textAlignment="center"
         android:textSize="30dp" />
 
@@ -216,13 +217,13 @@
                     android:id="@+id/txtLocal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Local"
+                    android:text="Local:"
                     android:layout_marginTop="10dp"
                     android:textAlignment="gravity"
                     android:textSize="25dp"/>
 
                 <EditText
-                    android:id="@+id/edtLocal"
+                    android:id="@+id/prova_local"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -238,18 +239,32 @@
                     android:id="@+id/txtHorario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Horário"
+                    android:text="Horário:"
                     android:layout_marginTop="10dp"
                     android:textAlignment="gravity"
                     android:textSize="25dp"/>
 
                 <EditText
-                    android:id="@+id/edtHorario"
+                    android:id="@+id/prova_horario"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:inputType="time"
                     android:layout_marginLeft="15dp"/>
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Data:"
+                android:textAlignment="gravity"
+                android:textSize="25dp" />
+
+            <Spinner
+                android:id="@+id/prova_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -257,7 +272,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnAtualizar"
+                    android:id="@+id/atualizar_prova"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Atualizar"

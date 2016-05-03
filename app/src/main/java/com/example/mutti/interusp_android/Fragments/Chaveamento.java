@@ -2,15 +2,23 @@ package com.example.mutti.interusp_android.Fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
+import com.example.mutti.interusp_android.ChaveamentoModalidade;
+import com.example.mutti.interusp_android.DetalheInformacao;
 import com.example.mutti.interusp_android.R;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by Mutti on 30/04/16.
@@ -19,10 +27,6 @@ public class Chaveamento extends Fragment {
 
     Activity activity;
     Context context;
-
-    ImageView chave_1, chave_2, chave_3, chave_4, chave_5, chave_6, chave_7, chave_8,
-            chave_9, chave_10, chave_11, chave_12, chave_13, chave_14, chave_15;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,43 +39,24 @@ public class Chaveamento extends Fragment {
 
         activity = getActivity();
         context = getContext();
+        ArrayList list = new ArrayList();
+        list.addAll(Arrays.asList(getResources().getStringArray(R.array.modalidades_com_chaveamento)));
 
         View rootview = inflater.inflate(R.layout.fragment_chaveamento, container, false);
 
+        ListView list_info = (ListView) rootview.findViewById(R.id.chaveamento_modalidade);
 
-        chave_1 = (ImageView) rootview.findViewById(R.id.chave_1);
-        chave_2 = (ImageView) rootview.findViewById(R.id.chave_2);
-        chave_3 = (ImageView) rootview.findViewById(R.id.chave_3);
-        chave_4 = (ImageView) rootview.findViewById(R.id.chave_4);
-        chave_5 = (ImageView) rootview.findViewById(R.id.chave_5);
-        chave_6 = (ImageView) rootview.findViewById(R.id.chave_6);
-        chave_7 = (ImageView) rootview.findViewById(R.id.chave_7);
-        chave_8 = (ImageView) rootview.findViewById(R.id.chave_8);
-        chave_9 = (ImageView) rootview.findViewById(R.id.chave_9);
-        chave_10 = (ImageView) rootview.findViewById(R.id.chave_10);
-        chave_11 = (ImageView) rootview.findViewById(R.id.chave_11);
-        chave_12 = (ImageView) rootview.findViewById(R.id.chave_12);
-        chave_13 = (ImageView) rootview.findViewById(R.id.chave_13);
-        chave_14 = (ImageView) rootview.findViewById(R.id.chave_14);
-        chave_15 = (ImageView) rootview.findViewById(R.id.chave_15);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(activity, android.R.layout.simple_spinner_dropdown_item, list);
+        list_info.setAdapter(adapter3);
 
-        chave_1.setImageResource(R.drawable.icon_sanfran);
-        chave_2.setImageResource(R.drawable.icon_sanfran);
-        chave_3.setImageResource(R.drawable.icon_sanfran);
-        chave_4.setImageResource(R.drawable.icon_sanfran);
-        chave_5.setImageResource(R.drawable.icon_sanfran);
-        chave_6.setImageResource(R.drawable.icon_sanfran);
-        chave_7.setImageResource(R.drawable.icon_sanfran);
-        chave_8.setImageResource(R.drawable.icon_sanfran);
-        chave_9.setImageResource(R.drawable.icon_sanfran);
-        chave_10.setImageResource(R.drawable.icon_sanfran);
-        chave_11.setImageResource(R.drawable.icon_sanfran);
-        chave_12.setImageResource(R.drawable.icon_sanfran);
-        chave_13.setImageResource(R.drawable.icon_sanfran);
-        chave_14.setImageResource(R.drawable.icon_sanfran);
-        chave_15.setImageResource(R.drawable.icon_sanfran);
+        list_info.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        //TODO if resultado maior que 99 diminuir a fonte para 11sp
+                Intent intent = new Intent(activity, ChaveamentoModalidade.class);
+                intent.putExtra("id", 1 );
+                startActivity(intent);
+            }
+        });
 
 
         return rootview;

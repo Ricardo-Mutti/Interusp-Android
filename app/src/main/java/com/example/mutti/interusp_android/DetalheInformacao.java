@@ -6,10 +6,14 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.Model.Locais;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class DetalheInformacao extends AppCompatActivity {
@@ -24,9 +28,10 @@ public class DetalheInformacao extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhe_informacao);
 
-        final com.example.mutti.interusp_android.Model.ListaLocais listaLocais = getIntent().getParcelableExtra("listaLocais");
+        final Locais locais = getIntent().getParcelableExtra("locais");
 
         imgFoto = (ImageView) findViewById(R.id.imgFoto);
+        setIcon(locais.getTipo(), imgFoto);
 
         btnJogos = (Button) findViewById(R.id.btnJogos);
         btnMapa = (Button) findViewById(R.id.btnMapa);
@@ -35,22 +40,34 @@ public class DetalheInformacao extends AppCompatActivity {
         txtInfo = (TextView) findViewById(R.id.txtInfo);
         txtEnderecos = (TextView) findViewById(R.id.txtEndereco);
 
-        txtTitulo.setText(listaLocais.getNome());
-        txtInfo.setText(listaLocais.getPrincipaisModalidades());
-        txtEnderecos.setText(listaLocais.getEndereco());
-        ImageLoader.getInstance().displayImage(listaLocais.getFoto(), imgFoto);
+        txtTitulo.setText(locais.getNome());
+        txtInfo.setText(locais.getPrincipaisModalidades());
+        txtEnderecos.setText(locais.getEndereco());
 
-        if(btnMapa!=null){
+        ImageLoader.getInstance().displayImage(locais.getFoto(), imgFoto);
+
+        if (btnMapa != null) {
             btnMapa.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + listaLocais.getNome()
-                            + "@" + listaLocais.getCoordenadas()[1] + "," + listaLocais.getCoordenadas()[0]));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + locais.getNome()
+                            + "@" + locais.getCoordenadas()[1] + "," + locais.getCoordenadas()[0]));
                     startActivity(intent);
                 }
             });
         }
-        if(btnJogos!=null){
+
+        if (locais.getTipo() != 1) {
+            btnJogos.setVisibility(View.GONE);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT
+            );
+            params.setMargins(0, 0, 0, 0);
+            btnMapa.setPadding(50,0,50,0);
+            btnMapa.setLayoutParams(params);
+        }
+        if (btnJogos != null) {
             btnJogos.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -61,4 +78,36 @@ public class DetalheInformacao extends AppCompatActivity {
             });
         }
     }
+
+    public void setIcon(int id, ImageView icon) {
+
+        switch (id) {
+
+            case 1:
+                icon.setImageResource(R.drawable.info_ginasios);
+                break;
+            case 2:
+                icon.setImageResource(R.drawable.info_tenda);
+                break;
+            case 3:
+                icon.setImageResource(R.drawable.info_baladas);
+                break;
+            case 4:
+                icon.setImageResource(R.drawable.info_onibus);
+                break;
+            case 5:
+                icon.setImageResource(R.drawable.info_alojamento);
+                break;
+            case 6:
+                icon.setImageResource(R.drawable.info_hospital);
+                break;
+            case 7:
+                icon.setImageResource(R.drawable.info_delegacia);
+                break;
+            case 8:
+                icon.setImageResource(R.drawable.info_restaurantes);
+                break;
+        }
+    }
+
 }

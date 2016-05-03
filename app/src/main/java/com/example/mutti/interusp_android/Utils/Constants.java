@@ -60,9 +60,14 @@ public class Constants {
     public static final String MY_PREFS_NAME = "my_prefs";
 
     //DONE
-    public static final String kLoginDone = "com.appsimples.swapped.login-done";
-    public static final String kGetJogosDone = "com.appsimples.swapped.login-done";
-    public static final String kGetLocaisDone = "com.appsimples.swapped.login-done";
+    public static final String kLoginDone = "com.appsimples.interusp.login-done";
+    public static final String kJogosDone = "com.appsimples.interusp.jogos-done";
+    public static final String kProvasNatacaoDone = "com.appsimples.interusp.provasnatacao-done";
+    public static final String kProvasAtletismoDone = "com.appsimples.interusp.provasatletismo-done";
+    public static final String kModalidadesDone = "com.appsimples.interusp.modalidades-done";
+    public static final String kOnibusDone = "com.appsimples.interusp.onibus-done";
+    public static final String kProvasDone = "com.appsimples.interusp.provas-done";
+    public static final String kGetLocaisDone = "com.appsimples.interusp.login-done";
 
 
     //ICONES DAS ATLETICAS

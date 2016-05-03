@@ -2,12 +2,17 @@ package com.example.mutti.interusp_android;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
-public class Chaveamento extends AppCompatActivity {
+import com.example.mutti.interusp_android.Utils.StatusBarColor;
+
+public class ChaveamentoModalidade extends AppCompatActivity {
 
     Activity activity = this;
     Context context = this;
@@ -18,7 +23,7 @@ public class Chaveamento extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chaveamento);
+        setContentView(R.layout.activity_chaveamento_modalidade);
 
 
         chave_1 = (ImageView) findViewById(R.id.chave_1);
@@ -55,6 +60,24 @@ public class Chaveamento extends AppCompatActivity {
 
         //TODO if resultado maior que 99 diminuir a fonte para 11sp
 
+
+
+
+
+        //ACTION BAR
+        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        TextView action_title = (TextView) findViewById(R.id.txtActionBar);
+        action_title.setText("Chave da Modalidade");
+        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
+        final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
+        back_button.setVisibility(View.VISIBLE);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.finish();
+            }
+        });
 
 
 

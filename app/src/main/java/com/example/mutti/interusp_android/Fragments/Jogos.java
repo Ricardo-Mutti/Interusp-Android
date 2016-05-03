@@ -226,7 +226,7 @@ public class Jogos extends Fragment {
 //                containerFilter.setVisibility(View.GONE);
 //                String chosen = filters.get(position);
 //                if (chosen.equals("Todos")) {
-//                    filtroLocal.setText("ListaLocais");
+//                    filtroLocal.setText("Locais");
 //                    stringLocalToFilter = null;
 //                } else {
 //                    filtroLocal.setText(chosen);
@@ -294,7 +294,7 @@ public class Jogos extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        activity.registerReceiver(receiver, new IntentFilter(Constants.kGetJogosDone));
+        activity.registerReceiver(receiver, new IntentFilter(Constants.kJogosDone));
     }
 
     @Override

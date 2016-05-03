@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.example.mutti.interusp_android.Historico;
 import com.example.mutti.interusp_android.InterUspInfo;
-import com.example.mutti.interusp_android.LoginAdm;
+import com.example.mutti.interusp_android.AtualizarLogin;
 import com.example.mutti.interusp_android.PontuacaoGeral;
 import com.example.mutti.interusp_android.Gritos;
 import com.example.mutti.interusp_android.R;
@@ -54,7 +54,7 @@ public class Mais extends Fragment {
         txtAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity, LoginAdm.class);
+                Intent intent = new Intent(activity, AtualizarLogin.class);
                 startActivity(intent);
 
             }

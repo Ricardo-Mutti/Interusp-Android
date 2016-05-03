@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import com.android.volley.Response;
-import com.example.mutti.interusp_android.Model.ListaLocais;
 import com.example.mutti.interusp_android.Model.Locais;
+import com.example.mutti.interusp_android.Model.ArrayLocais;
 import com.example.mutti.interusp_android.Model.ServerResponse;
 import com.example.mutti.interusp_android.Utils.Constants;
 import com.example.mutti.interusp_android.Utils.DataHolder;
@@ -38,8 +38,8 @@ public class GetLocal {
                 ServerResponse serverResponse = gson.fromJson(response, ServerResponse.class);//Parse do json segundo o modelo SeverResponse
 
                 if (serverResponse.isSuccess()) {
-                    Locais locais = gson.fromJson(serverResponse.getResponse(), Locais.class);
-                    ArrayList<ListaLocais> locaisSalvos = new ArrayList<ListaLocais>(Arrays.asList(locais.getLocais()));
+                    ArrayLocais locais = gson.fromJson(serverResponse.getResponse(), ArrayLocais.class);
+                    ArrayList<Locais> locaisSalvos = new ArrayList<Locais>(Arrays.asList(locais.getLocais()));
                     DataHolder.getInstance().setLocaisSalvos(locaisSalvos);
 
                     Intent intent = new Intent(Constants.kGetLocaisDone);

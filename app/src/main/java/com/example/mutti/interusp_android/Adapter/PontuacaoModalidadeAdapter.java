@@ -8,7 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.mutti.interusp_android.Model.PontuacaoModalidade;
+import com.example.mutti.interusp_android.Model.FaculdadePosicaoPontuacao;
+import com.example.mutti.interusp_android.Model.Modalidade;
 import com.example.mutti.interusp_android.R;
 
 import java.util.ArrayList;
@@ -16,12 +17,15 @@ import java.util.ArrayList;
 /**
  * Created by Victor on 01/05/2016.
  */
-public class PontuacaoModalidadeAdapter extends ArrayAdapter<PontuacaoModalidade> {
+public class PontuacaoModalidadeAdapter extends ArrayAdapter<FaculdadePosicaoPontuacao> {
+
+    //ADAPTER DA FACULDADEPOSICAOPONTUACAO COM A POSICAO DAS FACULS
+    // POSICAO-FACUL-PONTOS
 
     Context context;
-    ArrayList<PontuacaoModalidade> list;
+    ArrayList<FaculdadePosicaoPontuacao> list;
 
-    public PontuacaoModalidadeAdapter(Context context, ArrayList<PontuacaoModalidade> list) {
+    public PontuacaoModalidadeAdapter(Context context, ArrayList<FaculdadePosicaoPontuacao> list) {
         super(context, 0, list);
         this.context = context;
         this.list = list;
@@ -30,21 +34,21 @@ public class PontuacaoModalidadeAdapter extends ArrayAdapter<PontuacaoModalidade
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        PontuacaoModalidade modalidade = list.get(position);
+        FaculdadePosicaoPontuacao faculdade = list.get(position);
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.item_modalidade, null);
+            convertView = inflater.inflate(R.layout.item_pontuacao_modalidade, null);
         }
 
         TextView txtPosicao = (TextView) convertView.findViewById(R.id.txtPosicao);
-        TextView txtPonto = (TextView) convertView.findViewById(R.id.txtPonto);
         ImageView imgAtletica = (ImageView) convertView.findViewById(R.id.imgAtletica);
+        TextView txtPonto = (TextView) convertView.findViewById(R.id.txtPonto);
 
-        txtPosicao.setText(""+modalidade.getPosicao());
-        txtPonto.setText(""+modalidade.getPontos());
+        txtPosicao.setText(""+faculdade.getPosicao());
+        txtPonto.setText(""+faculdade.getPontuacao());
 
-        switch (modalidade.getAtleticaId()) {
+        switch (faculdade.getFaculdade()) {
             case 0:
                 imgAtletica.setImageResource(R.drawable.icon_poli);
                 break;

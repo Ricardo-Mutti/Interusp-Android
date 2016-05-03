@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.Model.Faculdade;
 import com.example.mutti.interusp_android.PontuacaoFaculdade;
 import com.example.mutti.interusp_android.R;
 
@@ -14,18 +15,18 @@ import com.example.mutti.interusp_android.R;
  */
 public class SetListAtletica {
 
-    public static void setCell(View convertView, final Context context, com.example.mutti.interusp_android.Model.Pontuacao pontuacao){
+    public static void setCell(View convertView, final Context context, Faculdade pontuacao){
 
         TextView txtPontoAtual = (TextView) convertView.findViewById(R.id.txtPontoAtual);
         TextView txtPontoMin = (TextView) convertView.findViewById(R.id.txtPontoMin);
         TextView txtPontoMax = (TextView) convertView.findViewById(R.id.txtPontoMax);
         ImageView imgAtletica = (ImageView) convertView.findViewById(R.id.imgAtletica);
 
-        txtPontoAtual.setText("" + pontuacao.getPontoAtual());
-        txtPontoMin.setText("" + pontuacao.getPontoMin());
-        txtPontoMax.setText("" + pontuacao.getPontoMax());
+        txtPontoAtual.setText("" + pontuacao.getPontuacao_atual());
+        txtPontoMin.setText("" + pontuacao.getPontuacao_min());
+        txtPontoMax.setText("" + pontuacao.getPontuacao_max());
 
-        switch (pontuacao.getAtleticaId()) {
+        switch (pontuacao.getId()) {
             case 0:
                 imgAtletica.setImageResource(R.drawable.icon_poli);
                 break;

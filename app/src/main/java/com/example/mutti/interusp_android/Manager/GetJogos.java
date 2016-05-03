@@ -21,7 +21,7 @@ public class GetJogos {
     private WebServiceAPI wsAPI;
     Context context;
 
-    Intent intent = new Intent(Constants.kGetJogosDone);
+    Intent intent = new Intent(Constants.kJogosDone);
 
     public GetJogos(Context context) {
         this.context = context;

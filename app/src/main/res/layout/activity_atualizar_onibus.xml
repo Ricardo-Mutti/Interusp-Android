@@ -1,56 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+<LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context="com.example.mutti.interusp_android.AtualizarOnibus">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:src="@drawable/info_onibus" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginTop="20dp"
+        android:text="Placa (XXX-9999):"
+        android:textAlignment="gravity"
+        android:textSize="25dp" />
 
-        <TextView
-            android:id="@+id/txtPrimeiro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/preto"
-            android:text="Placa:"
-            android:textSize="25dp"/>
+    <EditText
+        android:id="@+id/onibus_placa"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:layout_marginBottom="20dp"/>
 
-        <EditText
-            android:id="@+id/onibus_placa"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            />
-    </LinearLayout>
-
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Faculdade:"
+        android:textAlignment="gravity"
+        android:textSize="25dp" />
     <Spinner
         android:id="@+id/onibus_facul_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </Spinner>
-
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginBottom="20dp"/>
 
-        <TextView
-            android:textColor="@color/preto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Informações:"
-            android:textSize="25dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informações gerais:"
+        android:textAlignment="gravity"
+        android:textSize="25dp" />
 
-        <EditText
-            android:id="@+id/onibus_info"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            />
-    </LinearLayout>
+    <EditText
+        android:id="@+id/onibus_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data"
+        android:textAlignment="gravity"
+        android:textSize="25dp" />
+
+    <Spinner
+        android:id="@+id/onibus_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/onibus_atualizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Atualizar" />
 
 
 </LinearLayout>
+
+    </ScrollView>

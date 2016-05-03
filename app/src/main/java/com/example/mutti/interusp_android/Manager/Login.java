@@ -6,7 +6,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.Response;
-import com.example.mutti.interusp_android.Model.Locais;
 import com.example.mutti.interusp_android.Model.ServerResponse;
 import com.example.mutti.interusp_android.Model.Token;
 import com.example.mutti.interusp_android.Utils.Constants;

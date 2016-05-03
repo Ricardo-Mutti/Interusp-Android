@@ -45,6 +45,8 @@ public class TabsMain extends FragmentActivity {
         ImageView mapa_tab = (ImageView) findViewById(R.id.tab_mapa);
         ImageView jogos_tab = (ImageView) findViewById(R.id.tab_jogos);
         ImageView mais_tab = (ImageView) findViewById(R.id.tab_mais);
+        ImageView volta_btn = (ImageView) findViewById(R.id.btnVoltar);
+        volta_btn.setVisibility(View.INVISIBLE);
 
         int tab = getIntent().getIntExtra("tab", 2);
 

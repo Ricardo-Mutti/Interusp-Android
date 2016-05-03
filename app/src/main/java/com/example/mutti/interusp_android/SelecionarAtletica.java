@@ -18,7 +18,7 @@ public class SelecionarAtletica extends AppCompatActivity {
     Activity activity = this;
     Context context = this;
 
-    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String MyPREFERENCES = "MyPrefs";
     public static final String cor1 = "cor1";
     public static final String cor2 = "cor2";
     SharedPreferences sharedpreferences;
@@ -46,6 +46,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorEsalq1);
                 editor.putString(cor2, Constants.kCorEsalq2);
+                editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
                 Intent intent = new Intent(activity, TabsMain.class);
@@ -59,6 +60,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorPoli1);
                 editor.putString(cor2, Constants.kCorPoli2);
+                editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
                 Intent intent = new Intent(activity, TabsMain.class);
@@ -72,6 +74,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorFea1);
                 editor.putString(cor2, Constants.kCorFea2);
+                editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
                 Intent intent = new Intent(activity, TabsMain.class);
@@ -85,6 +88,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 activity.finish();
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorFarma1);
+                editor.putBoolean("selecionado", true);
                 editor.putString(cor2, Constants.kCorFarma2);
                 editor.commit();
                 Intent intent = new Intent(activity, TabsMain.class);
@@ -98,6 +102,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorSanFran1);
                 editor.putString(cor2, Constants.kCorSanFran2);
+                editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
                 Intent intent = new Intent(activity, TabsMain.class);
@@ -111,6 +116,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorOdonto1);
                 editor.putString(cor2, Constants.kCorOdonto2);
+                editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
                 Intent intent = new Intent(activity, TabsMain.class);
@@ -124,6 +130,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorRibeirao1);
                 editor.putString(cor2, Constants.kCorRibeirao2);
+                editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
                 Intent intent = new Intent(activity, TabsMain.class);
@@ -137,6 +144,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorMed1);
                 editor.putString(cor2, Constants.kCorMed2);
+                editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
                 Intent intent = new Intent(activity, TabsMain.class);
@@ -149,6 +157,7 @@ public class SelecionarAtletica extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorTodos1);
+                editor.putBoolean("selecionado", true);
                 editor.putString(cor2, Constants.kCorTodos2);
                 editor.commit();
                 activity.finish();

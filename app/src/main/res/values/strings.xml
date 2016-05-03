@@ -73,6 +73,7 @@
         <item>Beisebol</item>
         <item>Basquete Feminino</item>
         <item>Basquete Masculino</item>
+        <item>Beisebol</item>
         <item>Futebol de Campo</item>
         <item>Futsal Feminino</item>
         <item>Futsal Masculino</item>
@@ -96,7 +97,31 @@
         <item>Xadrez</item>
     </string-array>
 
-    <string-array name="faculadade">
+    <string-array name="modalidades_com_chaveamento">
+        <item>Beisebol</item>
+        <item>Basquete Feminino</item>
+        <item>Basquete Masculino</item>
+        <item>Beisebol</item>
+        <item>Futebol de Campo</item>
+        <item>Futsal Feminino</item>
+        <item>Futsal Masculino</item>
+        <item>Handebol Feminino</item>
+        <item>Handebol Masculino</item>
+        <item>Judô</item>
+        <item>Polo Aquático</item>
+        <item>Rugby Feminino</item>
+        <item>Rugby Masculino</item>
+        <item>Softbol</item>
+        <item>Tênis de Campo Feminino</item>
+        <item>Tênis de Campo Masculino</item>
+        <item>Tênis de Mesa Feminino</item>
+        <item>Tênis de Mesa Masculino</item>
+        <item>Voleibol Feminino</item>
+        <item>Voleibol Masculino</item>
+        <item>Xadrez</item>
+    </string-array>
+
+    <string-array name="provas_natacao">
         <item> </item>
         <item>Poli</item>
         <item>Farmácia</item>
@@ -107,4 +132,42 @@
         <item>MedRib</item>
         <item>ESALQ</item>
     </string-array>
+
+    <string-array name="provas_atletismo">
+        <item> </item>
+        <item>Poli</item>
+        <item>Farmácia</item>
+        <item>FEA</item>
+        <item>Odonto</item>
+        <item>SanFran</item>
+        <item>MedUsp</item>
+        <item>MedRib</item>
+        <item>ESALQ</item>
+    </string-array>
+
+    <string-array name="provas_karate">
+        <item>Karatê Kumite</item>
+        <item>Karatê Kata</item>
+    </string-array>
+
+    <string-array name="faculdade">
+        <item> </item>
+        <item>Poli</item>
+        <item>Farmácia</item>
+        <item>FEA</item>
+        <item>Odonto</item>
+        <item>SanFran</item>
+        <item>MedUsp</item>
+        <item>MedRib</item>
+        <item>ESALQ</item>
+    </string-array>
+
+    <string-array name="datas_jogos">
+        <item> </item>
+        <item>Quinta-feira</item>
+        <item>Sexta_feira</item>
+        <item>Sábado</item>
+        <item>Domingo</item>
+    </string-array>
+
 </resources>

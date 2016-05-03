@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.example.mutti.interusp_android.DetalheInformacao;
 import com.example.mutti.interusp_android.Manager.GetLocal;
-import com.example.mutti.interusp_android.Model.ListaLocais;
+import com.example.mutti.interusp_android.Model.Locais;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
 import com.example.mutti.interusp_android.Utils.DataHolder;
@@ -43,7 +43,7 @@ public class Mapa extends Fragment  {
     MapView mMapView;
     String selectedMarker;
 
-    ArrayList<ListaLocais> locais;
+    ArrayList<Locais> locais;
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
@@ -97,17 +97,17 @@ public class Mapa extends Fragment  {
 
                 } else {
 
-                    ListaLocais listaLocais = null;
-                    for (ListaLocais l : locais) {
+                    Locais locais = null;
+                    for (Locais l : Mapa.this.locais) {
                         if (markerTitle.equals(l.getNome())) {
-                            listaLocais = l;
+                            locais = l;
                             break;
                         }
                     }
 
-                    if (listaLocais != null) {
+                    if (locais != null) {
                         Intent intent = new Intent(getActivity(), DetalheInformacao.class);
-                        intent.putExtra("listaLocais", listaLocais);
+                        intent.putExtra("locais", locais);
                         getActivity().startActivity(intent);
                     }
 
@@ -139,6 +139,9 @@ public class Mapa extends Fragment  {
     public void onResume() {
         super.onResume();
         mMapView.onResume();
+        if(DataHolder.getInstance().getLocaisSalvos()!= null){
+            criarMarkers();
+        }
         activity.registerReceiver(receiver, new IntentFilter(Constants.kGetLocaisDone));
     }
 
@@ -163,12 +166,12 @@ public class Mapa extends Fragment  {
 
     public void criarMarkers () {
         //Criador de markers
-        for (ListaLocais listaLocais : locais) {
+        for (Locais locais : this.locais) {
             MarkerOptions marker = new MarkerOptions().position(
-                    new LatLng(listaLocais.getCoordenadas()[1], listaLocais.getCoordenadas()[0]))
-                    .title(listaLocais.getNome());
+                    new LatLng(locais.getCoordenadas()[1], locais.getCoordenadas()[0]))
+                    .title(locais.getNome());
 
-            switch (listaLocais.getTipo()) {
+            switch (locais.getTipo()) {
                 case 1:
                     marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_ginasios));
                     break;
@@ -188,7 +191,7 @@ public class Mapa extends Fragment  {
                     marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_delegacia));
                     break;
                 case 8:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_comidas));
+                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_restaurantes));
                     break;
                 default:
                     break;

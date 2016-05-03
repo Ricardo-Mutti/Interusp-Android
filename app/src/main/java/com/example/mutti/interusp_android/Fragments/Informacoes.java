@@ -12,8 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.mutti.interusp_android.ListaLocais;
 import com.example.mutti.interusp_android.Manager.GetLocal;
-import com.example.mutti.interusp_android.Model.ListaLocais;
+import com.example.mutti.interusp_android.Model.Locais;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
 import com.example.mutti.interusp_android.Utils.DataHolder;
@@ -27,7 +28,7 @@ public class Informacoes extends Fragment {
 
     Activity activity;
     Context context;
-    private ArrayList<ListaLocais> locais = new ArrayList<>();
+    private ArrayList<Locais> locais = new ArrayList<>();
     private boolean locaisReady = false;
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {

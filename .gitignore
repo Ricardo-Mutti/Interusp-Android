@@ -1,6 +1,6 @@
 *.iml
 .gradle
-/listaLocais.properties
+/locais.properties
 /.idea/workspace.xml
 /.idea/libraries
 .DS_Store

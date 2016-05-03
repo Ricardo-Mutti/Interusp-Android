@@ -14,7 +14,7 @@ import android.widget.EditText;
 import com.example.mutti.interusp_android.Manager.Login;
 import com.example.mutti.interusp_android.Utils.Constants;
 
-public class LoginAdm extends AppCompatActivity {
+public class AtualizarLogin extends AppCompatActivity {
 
     Activity activity = this;
     Context context = this;
