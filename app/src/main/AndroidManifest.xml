@@ -9,7 +9,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/appicon"
+        android:icon="@mipmap/interusp"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -116,9 +116,18 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".Chaveamento" />
-        <activity android:name=".AtualizarModalidade" />
-        <activity android:name=".AtualizarOnibus"></activity>
+        <activity android:name=".Chaveamento"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".AtualizarModalidade"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".AtualizarOnibus"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>

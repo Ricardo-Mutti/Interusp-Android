@@ -63,7 +63,7 @@ public class PontuacaoAdapter extends ArrayAdapter<Pontuacao> {
                 pontuacao1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(context, PontuacaoModalidade.class);
+                        Intent intent = new Intent(context, com.example.mutti.interusp_android.PontuacaoModalidade.class);
                         context.startActivity(intent);
                     }
                 });
