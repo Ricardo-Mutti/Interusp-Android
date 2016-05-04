@@ -1,8 +1,10 @@
-package com.example.mutti.interusp_android;
+package com.example.mutti.interusp_android.Mais;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ProgressBar;
+
+import com.example.mutti.interusp_android.R;
 
 public class Torcidometro extends AppCompatActivity {
 

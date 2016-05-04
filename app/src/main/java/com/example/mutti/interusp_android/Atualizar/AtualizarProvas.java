@@ -1,4 +1,4 @@
-package com.example.mutti.interusp_android;
+package com.example.mutti.interusp_android.Atualizar;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -8,12 +8,12 @@ import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
 
 import java.util.ArrayList;

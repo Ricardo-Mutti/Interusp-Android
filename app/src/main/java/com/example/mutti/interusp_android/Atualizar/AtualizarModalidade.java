@@ -1,4 +1,4 @@
-package com.example.mutti.interusp_android;
+package com.example.mutti.interusp_android.Atualizar;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -8,6 +8,7 @@ import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
 
 public class AtualizarModalidade extends AppCompatActivity {

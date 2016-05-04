@@ -1,4 +1,4 @@
-package com.example.mutti.interusp_android;
+package com.example.mutti.interusp_android.Mais;
 
 import android.support.v7.app.AppCompatActivity;
 import android.app.Activity;
@@ -10,6 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.mutti.interusp_android.R;
+import com.example.mutti.interusp_android.Vencedores;
 
 
 public class Historico extends AppCompatActivity {

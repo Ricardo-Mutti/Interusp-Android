@@ -1,4 +1,4 @@
-package com.example.mutti.interusp_android;
+package com.example.mutti.interusp_android.Atualizar;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -13,12 +13,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class AtualizarOnibus extends AppCompatActivity {
+public class AtualizarJogos extends AppCompatActivity {
 
     Activity activity = this;
     Context context = this;
@@ -33,50 +34,56 @@ public class AtualizarOnibus extends AppCompatActivity {
         }
     };
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_atualizar_onibus);
+        setContentView(R.layout.activity_atualizar_jogos);
 
-        EditText placa_edt = (EditText) findViewById(R.id.onibus_placa);
-        EditText info_edt = (EditText) findViewById(R.id.onibus_info);
+
+        EditText placar1_edt = (EditText) findViewById(R.id.atualizar_jogo_placar1);
+        EditText placar2_edt = (EditText) findViewById(R.id.atualizar_jogo_placar2);
+        EditText local_edt = (EditText) findViewById(R.id.atualizar_jogo_local);
+        EditText horario_edt = (EditText) findViewById(R.id.atualizar_jogo_horario);
 
         ArrayList list = new ArrayList();
-        list.addAll(Arrays.asList(getResources().getStringArray(R.array.faculdade)));
-        Spinner onibus_facul = (Spinner) findViewById(R.id.onibus_facul_spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, list);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        onibus_facul.setAdapter(adapter);
-
-        ArrayList datas = new ArrayList();
-        datas.addAll(Arrays.asList(getResources().getStringArray(R.array.datas_jogos)));
-        Spinner atualizar_data = (Spinner) findViewById(R.id.onibus_data);
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, datas);
+        list.addAll(Arrays.asList(getResources().getStringArray(R.array.datas_jogos)));
+        Spinner atualizar_data = (Spinner) findViewById(R.id.atualizar_jogo_data);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, list);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         atualizar_data.setAdapter(adapter3);
 
-        String placa = placa_edt.getText().toString();
-        String info = info_edt.getText().toString();
-
         String data = atualizar_data.getSelectedItem().toString();
-        String facul = onibus_facul.getSelectedItem().toString();
+
+        if (placar1_edt.getText() != null) {
+            String placar1 = placar1_edt.getText().toString();
+        }
+        if (placar2_edt.getText() != null) {
+            String placar2 = placar2_edt.getText().toString();
+        }
+        if (local_edt.getText() != null) {
+            String local = local_edt.getText().toString();
+        }
+        if (horario_edt.getText() != null) {
+            String horario = horario_edt.getText().toString();
+        }
 
 
-        Button atualizar = (Button) findViewById(R.id.onibus_atualizar);
+        Button atualizar = (Button) findViewById(R.id.atualizar_jogo_atualizar);
         atualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Atualizar onibus
+                //Atualizar jogo
             }
         });
 
     }
 
+
+
     @Override
     protected void onResume() {
         super.onResume();
-        activity.registerReceiver(receiver, new IntentFilter(Constants.kOnibusDone));
+        activity.registerReceiver(receiver, new IntentFilter(Constants.kJogosDone));
     }
 
     @Override
@@ -84,4 +91,6 @@ public class AtualizarOnibus extends AppCompatActivity {
         super.onStop();
         activity.unregisterReceiver(receiver);
     }
+
+
 }

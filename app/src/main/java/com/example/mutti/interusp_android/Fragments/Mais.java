@@ -10,13 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.mutti.interusp_android.Historico;
-import com.example.mutti.interusp_android.InterUspInfo;
-import com.example.mutti.interusp_android.AtualizarLogin;
+import com.example.mutti.interusp_android.Mais.Historico;
+import com.example.mutti.interusp_android.Mais.InterUspInfo;
+import com.example.mutti.interusp_android.Atualizar.AtualizarLogin;
 import com.example.mutti.interusp_android.PontuacaoGeral;
-import com.example.mutti.interusp_android.Gritos;
+import com.example.mutti.interusp_android.Mais.Gritos;
 import com.example.mutti.interusp_android.R;
-import com.example.mutti.interusp_android.Torcidometro;
+import com.example.mutti.interusp_android.Mais.Torcidometro;
 
 /**
  * Created by Mutti on 30/04/16.

@@ -1,4 +1,4 @@
-package com.example.mutti.interusp_android;
+package com.example.mutti.interusp_android.Atualizar;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.mutti.interusp_android.Manager.Login;
+import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
 
 public class AtualizarLogin extends AppCompatActivity {

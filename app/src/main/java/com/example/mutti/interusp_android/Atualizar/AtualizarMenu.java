@@ -1,4 +1,4 @@
-package com.example.mutti.interusp_android;
+package com.example.mutti.interusp_android.Atualizar;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.mutti.interusp_android.R;
+import com.example.mutti.interusp_android.TabsMain;
 
 public class AtualizarMenu extends AppCompatActivity {
 

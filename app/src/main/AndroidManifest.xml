@@ -36,7 +36,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Historico"
+            android:name=".Mais.Historico"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
@@ -46,7 +46,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Torcidometro"
+            android:name=".Mais.Torcidometro"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
@@ -56,7 +56,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".AtualizarLogin"
+            android:name=".Atualizar.AtualizarLogin"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
@@ -66,7 +66,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Gritos"
+            android:name=".Mais.Gritos"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
@@ -86,22 +86,22 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".AtualizarMenu"
+            android:name=".Atualizar.AtualizarMenu"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".AtualizarJogos"
+            android:name=".Atualizar.AtualizarJogos"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".AtualizarProvas"
+            android:name=".Atualizar.AtualizarProvas"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".InterUspInfo"
+            android:name=".Mais.InterUspInfo"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
@@ -109,11 +109,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".AtualizarModalidade"
+        <activity android:name=".Atualizar.AtualizarModalidade"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".AtualizarOnibus"
+        <activity android:name=".Atualizar.AtualizarOnibus"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />

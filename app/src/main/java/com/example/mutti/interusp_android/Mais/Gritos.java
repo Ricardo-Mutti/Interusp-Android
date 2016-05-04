@@ -1,4 +1,4 @@
-package com.example.mutti.interusp_android;
+package com.example.mutti.interusp_android.Mais;
 
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.R;
+import com.example.mutti.interusp_android.SelecionarAtletica;
 
 
 public class Gritos extends AppCompatActivity {
