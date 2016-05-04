@@ -69,7 +69,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, com.example.mutti.interusp_android.ListaLocais.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Ginásios");
                     intent.putExtra("tipo", 1);
                     startActivity(intent);
@@ -82,7 +82,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, com.example.mutti.interusp_android.ListaLocais.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Tenda");
                     intent.putExtra("tipo", 2);
                     startActivity(intent);
@@ -95,7 +95,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, com.example.mutti.interusp_android.ListaLocais.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Baladas");
                     intent.putExtra("tipo", 3);
                     startActivity(intent);
@@ -108,7 +108,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, com.example.mutti.interusp_android.ListaLocais.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Ônibus");
                     intent.putExtra("tipo", 4);
                     startActivity(intent);
@@ -121,7 +121,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, com.example.mutti.interusp_android.ListaLocais.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Alojamentos");
                     intent.putExtra("tipo", 5);
                     startActivity(intent);
@@ -135,7 +135,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, com.example.mutti.interusp_android.ListaLocais.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Hospital");
                     intent.putExtra("tipo", 6);
                     startActivity(intent);
@@ -148,7 +148,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, com.example.mutti.interusp_android.ListaLocais.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Delegacia");
                     intent.putExtra("tipo", 7);
                     startActivity(intent);
@@ -161,7 +161,7 @@ public class Informacoes extends Fragment {
             @Override
             public void onClick(View v) {
                 if(locaisReady) {
-                    Intent intent = new Intent(activity, com.example.mutti.interusp_android.ListaLocais.class);
+                    Intent intent = new Intent(activity, ListaLocais.class);
                     intent.putExtra("nome", "Restaurantes");
                     intent.putExtra("tipo", 8);
                     startActivity(intent);

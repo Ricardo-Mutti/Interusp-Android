@@ -3,7 +3,7 @@ package com.example.mutti.interusp_android.Model;
 /**
  * Created by AppSimples on 01/05/16.
  */
-public class ArrayLocais {
+public class LocaisArray {
     private Locais[] locais;
 
     public Locais[] getLocais() {return locais;}

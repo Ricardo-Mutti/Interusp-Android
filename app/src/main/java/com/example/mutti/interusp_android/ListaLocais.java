@@ -13,9 +13,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.mutti.interusp_android.Model.Locais;
+import com.example.mutti.interusp_android.Model.Onibus;
 import com.example.mutti.interusp_android.Utils.DataHolder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ListaLocais extends AppCompatActivity {
 
@@ -25,8 +27,10 @@ public class ListaLocais extends AppCompatActivity {
     private ArrayList<String> locais_nome = new ArrayList<>();
     private ArrayList<Locais> todos_locais = new ArrayList<>();//Todos os locais do banco
     private ArrayList<Locais> locais = new ArrayList<>();//Todos os locais desse tipo
+    private ArrayList<Onibus> onibuses = new ArrayList<>();//Todos os locais desse tipo
 
     Locais local_selecionado = new Locais();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,9 @@ public class ListaLocais extends AppCompatActivity {
         setContentView(R.layout.activity_lista_locais);
 
         todos_locais = DataHolder.getInstance().getLocaisSalvos();
+        onibuses=DataHolder.getInstance().getOnibus();
+
+
 
         final TextView local = (TextView) findViewById(R.id.local_title);
         ImageView info_icon = (ImageView) findViewById(R.id.icon_info);
@@ -51,11 +58,18 @@ public class ListaLocais extends AppCompatActivity {
         locais.clear();
         locais_nome.clear();
 
-        //Procura todos os locais desse tipo
-        for (Locais local1 : todos_locais) {
-            if (local1.getTipo() == info_id) {
-                locais.add(local1);
-                locais_nome.add(local1.getNome());
+        if(info_id==4){
+
+        }else {
+            //Procura todos os locais desse tipo
+            for (Locais local1 : todos_locais) {
+                if  ( local1.getTipo()!=4 && local1.getTipo() == info_id) {
+                    locais.add(local1);
+                    locais_nome.add(local1.getNome());
+                }
+                if(local1.getTipo()==4 && local1.getTipo() == info_id){
+                    locais_nome.addAll(Arrays.asList(getResources().getStringArray(R.array.faculdade)));
+                }
             }
         }
 
