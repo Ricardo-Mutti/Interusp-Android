@@ -10,60 +10,69 @@
     android:orientation="vertical"
     tools:context="com.example.mutti.interusp_android.Utils.Publicar_Resultado">
 
+    <include layout="@layout/action_bar" />
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Poli X Far 27/05 8:00"
-        android:id="@+id/txtJogo"
-        android:layout_marginTop="10dp"
-        android:textAlignment="center"
-        android:textSize="30dp"
+        android:layout_height="match_parent">
 
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Poli"
-        android:id="@+id/txtCasa"
-        android:layout_marginTop="50dp"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:id="@+id/edtCasa"
-        android:textAlignment="center"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Far"
-        android:id="@+id/txtVisitante"
-        android:layout_marginTop="50dp"
-        android:textAlignment="center"
-        android:textSize="30dp"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Poli X Far 27/05 8:00"
+                android:id="@+id/txtJogo"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:textSize="30dp" />
 
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:id="@+id/edtVisitante"
-        android:textAlignment="center"
-        />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Poli"
+                android:id="@+id/txtCasa"
+                android:layout_marginTop="50dp"
+                android:textAlignment="center"
+                android:textSize="30dp" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Atualizar"
-        android:id="@+id/btnAtualizar"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="60dp"
-        android:textSize="20dp"
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/edtCasa"
+                android:textAlignment="center" />
 
-        />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Far"
+                android:id="@+id/txtVisitante"
+                android:layout_marginTop="50dp"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/edtVisitante"
+                android:textAlignment="center" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Atualizar"
+                android:id="@+id/btnAtualizar"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>

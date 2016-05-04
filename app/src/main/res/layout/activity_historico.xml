@@ -3,11 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Mais.Historico">
+
+    <include layout="@layout/action_bar"
+        android:id="@+id/action_bar"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,8 +15,8 @@
         android:id="@+id/tvHistorico"
         android:textSize="30dp"
         android:padding="5dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/action_bar"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,7 +33,8 @@
         android:layout_height="fill_parent"
         android:layout_below="@+id/tvEscolhaModalidade"
         android:clickable="true"
-        android:layout_above="@+id/btCampeoes" />
+        android:layout_above="@+id/btCampeoes"
+        android:padding="10dp"/>
 
     <Button
         android:layout_width="wrap_content"

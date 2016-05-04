@@ -6,6 +6,8 @@
     tools:context="com.example.mutti.interusp_android.DetalheInformacao"
     android:orientation="vertical">
 
+    <include layout="@layout/action_bar" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

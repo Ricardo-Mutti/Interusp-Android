@@ -1,10 +1,18 @@
 package com.example.mutti.interusp_android.Mais;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.mutti.interusp_android.R;
+import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
 public class Torcidometro extends AppCompatActivity {
 
@@ -12,6 +20,11 @@ public class Torcidometro extends AppCompatActivity {
 
     String progresso_poli,progresso_pinheiro,progresso_farma,progresso_esalq,progresso_fea,
             progresso_riberao,progresso_sanfran,progresso_odonto ;
+
+    Activity activity = this;
+    Context context = this;
+
+    TextView action_title;
 
 
     @Override
@@ -70,6 +83,19 @@ public class Torcidometro extends AppCompatActivity {
         torcida_esalq.setMax(Integer.parseInt(total));
         torcida_esalq.setProgress(Integer.parseInt(progresso_esalq));
 
-
+        //ACTION BAR
+        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        action_title = (TextView) findViewById(R.id.txtActionBar);
+        action_title.setText("Torcidômetro");
+        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
+        final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
+        back_button.setVisibility(View.VISIBLE);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.finish();
+            }
+        });
     }
 }

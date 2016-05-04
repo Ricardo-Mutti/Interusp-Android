@@ -5,15 +5,20 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
+import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
 public class AtualizarModalidade extends AppCompatActivity {
 
@@ -50,6 +55,8 @@ public class AtualizarModalidade extends AppCompatActivity {
             max_sanfran,
             max_odonto,
             max_pinheiros;
+
+    TextView action_title;
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
@@ -150,6 +157,20 @@ public class AtualizarModalidade extends AppCompatActivity {
             }
         });
 
+        //ACTION BAR
+        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        action_title = (TextView) findViewById(R.id.txtActionBar);
+        action_title.setText("Atualizar Modalidade");
+        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
+        final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
+        back_button.setVisibility(View.VISIBLE);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.finish();
+            }
+        });
 
     }
 

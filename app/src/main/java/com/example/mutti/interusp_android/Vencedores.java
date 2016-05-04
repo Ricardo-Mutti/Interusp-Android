@@ -1,15 +1,30 @@
 package com.example.mutti.interusp_android;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.mutti.interusp_android.Utils.StatusBarColor;
+
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 
 public class Vencedores extends AppCompatActivity {
+
+    Activity activity = this;
+    Context context = this;
+
+    TextView action_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,5 +71,20 @@ public class Vencedores extends AppCompatActivity {
         ListView lv = (ListView)findViewById(R.id.vencedoresListView);
         lv.setAdapter(new ArrayAdapter<>(this, R.layout.historico_list_element, mapaModalidades.get(modalidade)));
 
+
+        //ACTION BAR
+        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        action_title = (TextView) findViewById(R.id.txtActionBar);
+        action_title.setText("Campeões Anteriores");
+        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
+        final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
+        back_button.setVisibility(View.VISIBLE);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.finish();
+            }
+        });
     }
 }
