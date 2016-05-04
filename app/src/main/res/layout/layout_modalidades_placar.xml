@@ -92,8 +92,9 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/modalidade_futsal" />
+                android:src="@drawable/modalidade_rugby"
+                android:layout_weight="1" />
+
 
 
         </LinearLayout>
@@ -169,6 +170,72 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="2">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/corrida_rosa"
+                android:layout_weight="1" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/futsal_rosa"
+                android:layout_weight="1" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/basquete_rosa"
+                android:layout_weight="1" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/natacao_rosa"
+                android:layout_weight="1" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/handball_rosa"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="2">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/rugby_rosa"
+                android:layout_weight="1" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/soft_rosa"
+                android:layout_weight="1" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/volei_rosa"
+                android:layout_weight="1" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tenis_rosa"
+                android:layout_weight="1" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tenismesa_rosa"
+                android:layout_weight="1" />
         </LinearLayout>
 
     </LinearLayout>

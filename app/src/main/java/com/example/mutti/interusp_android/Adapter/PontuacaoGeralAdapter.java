@@ -64,12 +64,9 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
 
             } else {//Modalidades
 
-
                 convertView = inflater.inflate(R.layout.layout_modalidades_placar, null);
 
                 ImageView pontuacao1 = (ImageView) convertView.findViewById(R.id.pontuacao_atletismo);
-
-
                 pontuacao1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
