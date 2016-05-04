@@ -46,6 +46,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorEsalq1);
                 editor.putString(cor2, Constants.kCorEsalq2);
+                editor.putInt("facul_id", 4);
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
@@ -60,6 +61,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorPoli1);
                 editor.putString(cor2, Constants.kCorPoli2);
+                editor.putInt("facul_id", 1);
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
@@ -74,6 +76,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorFea1);
                 editor.putString(cor2, Constants.kCorFea2);
+                editor.putInt("facul_id", 2);
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
@@ -88,6 +91,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 activity.finish();
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorFarma1);
+                editor.putInt("facul_id", 3);
                 editor.putBoolean("selecionado", true);
                 editor.putString(cor2, Constants.kCorFarma2);
                 editor.commit();
@@ -102,6 +106,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorSanFran1);
                 editor.putString(cor2, Constants.kCorSanFran2);
+                editor.putInt("facul_id", 6);
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
@@ -116,6 +121,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorOdonto1);
                 editor.putString(cor2, Constants.kCorOdonto2);
+                editor.putInt("facul_id", 7);
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
@@ -130,6 +136,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorRibeirao1);
                 editor.putString(cor2, Constants.kCorRibeirao2);
+                editor.putInt("facul_id", 5);
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
@@ -144,6 +151,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorMed1);
                 editor.putString(cor2, Constants.kCorMed2);
+                editor.putInt("facul_id", 8);
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
@@ -158,6 +166,7 @@ public class SelecionarAtletica extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorTodos1);
                 editor.putBoolean("selecionado", true);
+                editor.putInt("facul_id", 0);
                 editor.putString(cor2, Constants.kCorTodos2);
                 editor.commit();
                 activity.finish();

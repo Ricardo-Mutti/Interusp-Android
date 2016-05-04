@@ -95,7 +95,7 @@ public class WebServiceAPI { private Context context;
 
     public void getOnibus( Response.Listener successListener) {
 
-        String url = Constants.kServiceURL + Constants.kServiceLogin;
+        String url = Constants.kServiceURL + Constants.kServiceGetOnibus;
 
         Request request = new InteruspWSRequest(Request.Method.GET, this.context,
                 url,

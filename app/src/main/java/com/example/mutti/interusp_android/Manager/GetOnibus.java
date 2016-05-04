@@ -34,7 +34,7 @@ public class GetOnibus {
         this.context = context;
     }
 
-    public void getOnibus() {
+    public void GetOnibus() {
         wsAPI = new WebServiceAPI(context);
 
         wsAPI.getOnibus(new Response.Listener<String>() {
@@ -45,7 +45,7 @@ public class GetOnibus {
 
                 if (serverResponse.isSuccess()) {
 
-                    OnibusArray onibus = gson.fromJson(response, OnibusArray.class);//Parse do json segundo o modelo SeverResponse
+                    OnibusArray onibus = gson.fromJson(serverResponse.getResponse(), OnibusArray.class);//Parse do json segundo o modelo SeverResponse
                     ArrayList<Onibus> onibuses = new ArrayList<Onibus>(Arrays.asList(onibus.getOnibus()));
                     DataHolder.getInstance().setOnibus(onibuses);
 

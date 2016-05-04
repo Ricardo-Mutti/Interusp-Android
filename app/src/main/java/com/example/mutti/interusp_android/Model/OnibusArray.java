@@ -5,13 +5,13 @@ package com.example.mutti.interusp_android.Model;
  */
 public class OnibusArray {
 
-Onibus onibus;
+Onibus[] onibus;
 
-    public Onibus getOnibus() {
+    public Onibus[] getOnibus() {
         return onibus;
     }
 
-    public void setOnibus(Onibus onibus) {
+    public void setOnibus(Onibus[] onibus) {
         this.onibus = onibus;
     }
 }
