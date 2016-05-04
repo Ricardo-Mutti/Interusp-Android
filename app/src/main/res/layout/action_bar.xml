@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="60dp"
     android:background="@color/azul_tema"
     android:orientation="horizontal"
-    android:weightSum="1"
     android:id="@+id/action_bar">
 
     <ImageView
@@ -28,6 +26,5 @@
         android:text=""
         android:textColor="@android:color/white"
         android:textSize="22sp" />
-
 
 </LinearLayout>

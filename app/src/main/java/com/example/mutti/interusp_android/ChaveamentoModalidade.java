@@ -19,12 +19,12 @@ public class ChaveamentoModalidade extends AppCompatActivity {
 
     ImageView chave_1, chave_2, chave_3, chave_4, chave_5, chave_6, chave_7, chave_8,
             chave_9, chave_10, chave_11, chave_12, chave_13, chave_14, chave_15;
+    TextView action_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chaveamento_modalidade);
-
 
         chave_1 = (ImageView) findViewById(R.id.chave_1);
         chave_2 = (ImageView) findViewById(R.id.chave_2);
@@ -67,7 +67,7 @@ public class ChaveamentoModalidade extends AppCompatActivity {
         //ACTION BAR
         SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
-        TextView action_title = (TextView) findViewById(R.id.txtActionBar);
+        action_title = (TextView) findViewById(R.id.txtActionBar);
         action_title.setText("Chave da Modalidade");
         action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
         final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
@@ -79,7 +79,13 @@ public class ChaveamentoModalidade extends AppCompatActivity {
             }
         });
 
+    }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
     }
 }

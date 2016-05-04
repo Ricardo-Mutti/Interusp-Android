@@ -152,13 +152,13 @@
 
     <string-array name="faculdade">
         <item> </item>
-        <item>Poli</item>
+        <item>Politécnica</item>
         <item>Farmácia</item>
         <item>FEA</item>
-        <item>Odonto</item>
-        <item>SanFran</item>
-        <item>MedUsp</item>
-        <item>MedRib</item>
+        <item>Odontologia</item>
+        <item>São Francisco</item>
+        <item>Medicina - Pinheiros</item>
+        <item>Medicina - Ribeirão Preto</item>
         <item>ESALQ</item>
     </string-array>
 

@@ -28,6 +28,8 @@ public class SelecionarAtletica extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selecionar__atletica);
 
+        final boolean isChanging = getIntent().getBooleanExtra("isChanging", false);
+
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
         ImageView atletica_poli = (ImageView) findViewById(R.id.atletica_poli);
@@ -49,8 +51,10 @@ public class SelecionarAtletica extends AppCompatActivity {
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, TabsMain.class);
-                startActivity(intent);
+                if (!isChanging) {
+                    Intent intent = new Intent(activity, TabsMain.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -63,8 +67,10 @@ public class SelecionarAtletica extends AppCompatActivity {
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, TabsMain.class);
-                startActivity(intent);
+                if (!isChanging) {
+                    Intent intent = new Intent(activity, TabsMain.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -77,22 +83,26 @@ public class SelecionarAtletica extends AppCompatActivity {
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, TabsMain.class);
-                startActivity(intent);
+                if (!isChanging) {
+                    Intent intent = new Intent(activity, TabsMain.class);
+                    startActivity(intent);
+                }
             }
         });
 
         atletica_farma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                activity.finish();
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(cor1, Constants.kCorFarma1);
                 editor.putBoolean("selecionado", true);
                 editor.putString(cor2, Constants.kCorFarma2);
                 editor.commit();
-                Intent intent = new Intent(activity, TabsMain.class);
-                startActivity(intent);
+                activity.finish();
+                if (!isChanging) {
+                    Intent intent = new Intent(activity, TabsMain.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -105,8 +115,10 @@ public class SelecionarAtletica extends AppCompatActivity {
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, TabsMain.class);
-                startActivity(intent);
+                if (!isChanging) {
+                    Intent intent = new Intent(activity, TabsMain.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -119,8 +131,10 @@ public class SelecionarAtletica extends AppCompatActivity {
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, TabsMain.class);
-                startActivity(intent);
+                if (!isChanging) {
+                    Intent intent = new Intent(activity, TabsMain.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -133,8 +147,10 @@ public class SelecionarAtletica extends AppCompatActivity {
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, TabsMain.class);
-                startActivity(intent);
+                if (!isChanging) {
+                    Intent intent = new Intent(activity, TabsMain.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -147,8 +163,10 @@ public class SelecionarAtletica extends AppCompatActivity {
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, TabsMain.class);
-                startActivity(intent);
+                if (!isChanging) {
+                    Intent intent = new Intent(activity, TabsMain.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -161,8 +179,10 @@ public class SelecionarAtletica extends AppCompatActivity {
                 editor.putString(cor2, Constants.kCorTodos2);
                 editor.commit();
                 activity.finish();
-                Intent intent = new Intent(activity, TabsMain.class);
-                startActivity(intent);
+                if (!isChanging) {
+                    Intent intent = new Intent(activity, TabsMain.class);
+                    startActivity(intent);
+                }
             }
         });
 

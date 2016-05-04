@@ -26,29 +26,43 @@ public class TabsMain extends FragmentActivity {
     public static final String cor1 = "cor1";
     public static final String cor2 = "cor2";
 
+    SharedPreferences sharedpreferences;
+    TextView title;
+    LinearLayout actionBar;
+
+    ImageView info_tab;
+    ImageView chaveamento_tab;
+    ImageView mapa_tab;
+    ImageView jogos_tab;
+    ImageView mais_tab;
+    ImageView volta_btn;
+
+    FragmentManager fragmentManager;
+    int tab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabs_main);
 
-        final FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager = getSupportFragmentManager();
 
-        SharedPreferences sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        TextView title = (TextView) activity.findViewById(R.id.txtActionBar);
+        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        title = (TextView) activity.findViewById(R.id.txtActionBar);
         title.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
-        LinearLayout actionBar = (LinearLayout) activity.findViewById(R.id.action_bar);
+        actionBar = (LinearLayout) activity.findViewById(R.id.action_bar);
         actionBar.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
         StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString(cor1, "#000000"));
 
-        ImageView info_tab = (ImageView) findViewById(R.id.tab_info);
-        ImageView chaveamento_tab = (ImageView) findViewById(R.id.tab_chaveamento);
-        ImageView mapa_tab = (ImageView) findViewById(R.id.tab_mapa);
-        ImageView jogos_tab = (ImageView) findViewById(R.id.tab_jogos);
-        ImageView mais_tab = (ImageView) findViewById(R.id.tab_mais);
-        ImageView volta_btn = (ImageView) findViewById(R.id.btnVoltar);
+        info_tab = (ImageView) findViewById(R.id.tab_info);
+        chaveamento_tab = (ImageView) findViewById(R.id.tab_chaveamento);
+        mapa_tab = (ImageView) findViewById(R.id.tab_mapa);
+        jogos_tab = (ImageView) findViewById(R.id.tab_jogos);
+        mais_tab = (ImageView) findViewById(R.id.tab_mais);
+        volta_btn = (ImageView) findViewById(R.id.btnVoltar);
         volta_btn.setVisibility(View.INVISIBLE);
 
-        int tab = getIntent().getIntExtra("tab", 2);
+        tab = getIntent().getIntExtra("tab", 2);
 
         SelectFragment.open(tab, fragmentManager, activity);
 
@@ -89,5 +103,15 @@ public class TabsMain extends FragmentActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        title.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
+        actionBar.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
+        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString(cor1, "#000000"));
+        SelectFragment.open(tab, fragmentManager, activity);
     }
 }

@@ -9,7 +9,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.mutti.interusp_android.R;
-import com.example.mutti.interusp_android.SelecionarAtletica;
 
 
 public class Gritos extends AppCompatActivity {
@@ -82,11 +81,10 @@ public class Gritos extends AppCompatActivity {
         final TextView texto3 = (TextView) findViewById(R.id.textView7);
         final TextView titulo4 = (TextView) findViewById(R.id.textView8);
         final TextView texto4 = (TextView) findViewById(R.id.textView9);
-        SelecionarAtletica selecionar = new SelecionarAtletica();
         scroll = (ScrollView) findViewById(R.id.scrollView);
         botao = (ImageView) findViewById(R.id.button50);
         switch (atletica){
-            case "poli":
+            case "Politécnica":
                 titulo1.setText(getResources().getString(R.string.titulo1Poli));
                 titulo2.setText(getResources().getString(R.string.titulo2Poli));
                 titulo3.setText(getResources().getString(R.string.titulo3Poli));
@@ -97,7 +95,7 @@ public class Gritos extends AppCompatActivity {
                 texto4.setText(getResources().getString(R.string.grito4Poli));
                 botao.setImageResource(R.drawable.icon_poli);
                 break;
-            case "fea":
+            case "FEA":
                 titulo1.setText(getResources().getString(R.string.titulo1Fea));
                 titulo2.setText(getResources().getString(R.string.titulo2Fea));
                 titulo3.setText(getResources().getString(R.string.titulo3Fea));
@@ -109,7 +107,7 @@ public class Gritos extends AppCompatActivity {
                 botao.setImageResource(R.drawable.icon_fea);
 
                 break;
-            case "esalq":
+            case "ESALQ":
                 titulo1.setText((getResources().getString(R.string.titulo1Esalq)));
                 titulo2.setText((getResources().getString(R.string.titulo2Esalq)));
                 titulo3.setText((getResources().getString(R.string.titulo3Esalq)));
@@ -120,7 +118,7 @@ public class Gritos extends AppCompatActivity {
                 texto4.setText((getResources().getString(R.string.texto4Esalq)));
                 botao.setImageResource(R.drawable.icon_esalq);
                 break;
-            case "odonto":
+            case "Odontologia":
                 titulo1.setText((getResources().getString(R.string.titulo1Odonto)));
                 titulo2.setText((getResources().getString(R.string.titulo2Odonto)));
                 titulo3.setText((getResources().getString(R.string.titulo3Odonto)));
@@ -131,7 +129,7 @@ public class Gritos extends AppCompatActivity {
                 texto4.setText((getResources().getString(R.string.texto4Odonto)));
                 botao.setImageResource(R.drawable.icon_odonto);
                 break;
-            case "farma":
+            case "Farmácia":
                 titulo1.setText((getResources().getString(R.string.titulo1Farma)));
                 titulo2.setText((getResources().getString(R.string.titulo2Farma)));
                 titulo3.setText((getResources().getString(R.string.titulo3Farma)));
@@ -142,7 +140,7 @@ public class Gritos extends AppCompatActivity {
                 texto4.setText((getResources().getString(R.string.texto4Farma)));
                 botao.setImageResource(R.drawable.icon_farma);
                 break;
-            case "pinheiros":
+            case "Medicina - Pinheiros":
                 titulo1.setText((getResources().getString(R.string.titulo1Pinheiros)));
                 titulo2.setText((getResources().getString(R.string.titulo2Pinheiros)));
                 titulo3.setText((getResources().getString(R.string.titulo3Pinheiros)));
@@ -153,7 +151,7 @@ public class Gritos extends AppCompatActivity {
                 texto4.setText((getResources().getString(R.string.texto4Pinheiros)));
                 botao.setImageResource(R.drawable.icon_pinheiros);
                 break;
-            case "ribeirao":
+            case "Medicina - Ribeirão Preto":
                 titulo1.setText((getResources().getString(R.string.titulo1Ribeirao)));
                 titulo2.setText((getResources().getString(R.string.titulo2Ribeirao)));
                 titulo3.setText((getResources().getString(R.string.titulo3Ribeirao)));
@@ -164,7 +162,7 @@ public class Gritos extends AppCompatActivity {
                 texto4.setText((getResources().getString(R.string.texto4Ribeirao)));
                 botao.setImageResource(R.drawable.icon_riberao);
                 break;
-            case "sanfran":
+            case "São Francisco":
                 titulo1.setText((getResources().getString(R.string.titulo1Sanfran)));
                 titulo2.setText((getResources().getString(R.string.titulo2Sanfran)));
                 titulo3.setText((getResources().getString(R.string.titulo3Sanfran)));

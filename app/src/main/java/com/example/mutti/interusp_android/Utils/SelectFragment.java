@@ -63,6 +63,7 @@ public class SelectFragment {
                 mapa_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 jogos_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
                 mais_tab.setBackgroundColor(activity.getResources().getColor(R.color.branco));
+
                 break;
 
             case 1:
@@ -145,7 +146,4 @@ public class SelectFragment {
                 .replace(R.id.content_tabs_main, fragment, "Tab_open")
                 .commit();
     }
-
-
-
 }

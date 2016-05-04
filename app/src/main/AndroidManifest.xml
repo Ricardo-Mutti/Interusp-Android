@@ -105,21 +105,30 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".ChaveamentoModalidade"
+        <activity
+            android:name=".ChaveamentoModalidade"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".Atualizar.AtualizarModalidade"
+        <activity
+            android:name=".Atualizar.AtualizarModalidade"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".Atualizar.AtualizarOnibus"
+        <activity
+            android:name=".Atualizar.AtualizarOnibus"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
+        <activity android:name=".SelecaoAtletica"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>

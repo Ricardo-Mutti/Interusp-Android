@@ -17,6 +17,8 @@ import com.example.mutti.interusp_android.PontuacaoGeral;
 import com.example.mutti.interusp_android.Mais.Gritos;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Mais.Torcidometro;
+import com.example.mutti.interusp_android.SelecaoAtletica;
+import com.example.mutti.interusp_android.SelecionarAtletica;
 
 /**
  * Created by Mutti on 30/04/16.
@@ -26,7 +28,7 @@ public class Mais extends Fragment {
     Activity activity;
     Context context;
 
-    TextView txtPontuacao, txtAdm, txtInterUsp, gritos, torcidometro, historico;
+    TextView txtPontuacao, txtAdm, txtInterUsp, gritos, torcidometro, historico, trocarAtletica;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,8 +74,7 @@ public class Mais extends Fragment {
         gritos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity, Gritos.class);
-                intent.putExtra("atletica", faculdade);
+                Intent intent = new Intent(activity, SelecaoAtletica.class);
                 startActivity(intent);
 
             }
@@ -96,6 +97,16 @@ public class Mais extends Fragment {
                 Intent intent = new Intent(activity, Historico.class);
                 startActivity(intent);
 
+            }
+        });
+
+        trocarAtletica = (TextView) rootview.findViewById(R.id.txtAtletica);
+        trocarAtletica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, SelecionarAtletica.class);
+                intent.putExtra("isChanging", true);
+                startActivity(intent);
             }
         });
 

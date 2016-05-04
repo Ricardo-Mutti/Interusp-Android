@@ -23,7 +23,7 @@
             android:id="@+id/txtEsporte"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Basquete"
+            android:text=""
             android:textColor="@color/azul_tema"
             android:textSize="30sp"
             android:textStyle="bold"
