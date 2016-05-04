@@ -50,19 +50,13 @@ public class JogoAdapter extends BaseAdapter{
             convertView = inflater.inflate(R.layout.item_jogo, null);
         }
 
-        TextView modalidade = (TextView) convertView.findViewById(R.id.cell_jogo_modalidade);
-        TextView title = (TextView) convertView.findViewById(R.id.cell_jogo_title);
-        TextView subtitle = (TextView) convertView.findViewById(R.id.cell_jogo_subtitle);
-        TextView data = (TextView) convertView.findViewById(R.id.cell_jogo_data);
-        TextView horario = (TextView) convertView.findViewById(R.id.cell_jogo_horario);
-        TextView local = (TextView) convertView.findViewById(R.id.cell_jogo_local);
+        TextView jogos_informacoes = (TextView) convertView.findViewById(R.id.jogos_informacoes);
+        TextView jogos_competidores = (TextView) convertView.findViewById(R.id.jogos_competidores);
+        TextView jogos_nome = (TextView) convertView.findViewById(R.id.jogos_nome);
 
-        modalidade.setText(jogo.getId_modalidade());
-        title.setText(jogo.getParticipantes());
-        subtitle.setText(jogo.getNome());
-        data.setText(jogo.getData());
-        horario.setText(jogo.getHora());
-        local.setText(jogo.getLocal_id());
+        jogos_informacoes.setText(jogo.getId_modalidade());
+        jogos_competidores.setText(jogo.getParticipantes());
+        jogos_nome.setText(jogo.getNome());
 
         return convertView;
     }

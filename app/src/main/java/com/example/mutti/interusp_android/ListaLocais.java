@@ -13,9 +13,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.mutti.interusp_android.Model.Locais;
+import com.example.mutti.interusp_android.Model.Onibus;
 import com.example.mutti.interusp_android.Utils.DataHolder;
+import com.example.mutti.interusp_android.Utils.DetalheOnibus;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ListaLocais extends AppCompatActivity {
 
@@ -25,8 +28,10 @@ public class ListaLocais extends AppCompatActivity {
     private ArrayList<String> locais_nome = new ArrayList<>();
     private ArrayList<Locais> todos_locais = new ArrayList<>();//Todos os locais do banco
     private ArrayList<Locais> locais = new ArrayList<>();//Todos os locais desse tipo
+    private ArrayList<Onibus> onibuses = new ArrayList<>();//Todos os locais desse tipo
 
     Locais local_selecionado = new Locais();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +39,16 @@ public class ListaLocais extends AppCompatActivity {
         setContentView(R.layout.activity_lista_locais);
 
         todos_locais = DataHolder.getInstance().getLocaisSalvos();
+        onibuses=DataHolder.getInstance().getOnibus();
+
+
 
         final TextView local = (TextView) findViewById(R.id.local_title);
         ImageView info_icon = (ImageView) findViewById(R.id.icon_info);
         ListView list_info = (ListView) findViewById(R.id.lista_infos);
 
         String titulo = getIntent().getStringExtra("nome");
-        int info_id = getIntent().getIntExtra("tipo", 0);
+        final int info_id = getIntent().getIntExtra("tipo", 0);
 
         setIcon(info_id, info_icon);
 
@@ -51,13 +59,15 @@ public class ListaLocais extends AppCompatActivity {
         locais.clear();
         locais_nome.clear();
 
-        //Procura todos os locais desse tipo
-        for (Locais local1 : todos_locais) {
-            if (local1.getTipo() == info_id) {
-                locais.add(local1);
-                locais_nome.add(local1.getNome());
+
+            //Procura todos os locais desse tipo
+            for (Locais local1 : todos_locais) {
+                if  ( local1.getTipo() == info_id) {
+                    locais.add(local1);
+                    locais_nome.add(local1.getNome());
+                }
             }
-        }
+
 
         ArrayAdapter<String> adapter3 = new ArrayAdapter<>(this, R.layout.item_locais, locais_nome);
         list_info.setAdapter(adapter3);
@@ -66,15 +76,15 @@ public class ListaLocais extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 //Procura o local selecionado na lista de locais
-                for (Locais local : locais) {
-                    if (local.getNome().equals(locais_nome.get(position))) {
-                        local_selecionado=local;
-                    }
-                }
+                    for (Locais local : locais) {
+                        if (local.getNome().equals(locais_nome.get(position))) {
+                            local_selecionado=local;
 
-                Intent intent = new Intent(activity, DetalheInformacao.class);
-                intent.putExtra("locais", local_selecionado);
-                startActivity(intent);
+                        }
+                    }
+                    Intent intent = new Intent(activity, DetalheInformacao.class);
+                    intent.putExtra("locais", local_selecionado);
+                    startActivity(intent);
             }
         });
     }

@@ -13,6 +13,7 @@ public class Constants {
     public static final String kServiceURL = "http://ec2-52-201-135-248.compute-1.amazonaws.com:3000";
 
     public static final String kServiceGetLocation = "/v1/locais/";
+    public static final String kServiceGetOnibus = "/v1/onibus/";
     public static final String kServiceLogin = "/v1/user/login";
     public static final String kServiceGetJogos = "/jogo";
     public static final String kServiceUpdateJogos = "/jogo/getTodos";
@@ -61,6 +62,7 @@ public class Constants {
 
     //DONE
     public static final String kLoginDone = "com.appsimples.interusp.login-done";
+    public static final String kGetOnibusDone = "com.appsimples.interusp.getonibus-done";
     public static final String kJogosDone = "com.appsimples.interusp.jogos-done";
     public static final String kProvasNatacaoDone = "com.appsimples.interusp.provasnatacao-done";
     public static final String kProvasAtletismoDone = "com.appsimples.interusp.provasatletismo-done";

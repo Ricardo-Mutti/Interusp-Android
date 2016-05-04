@@ -76,7 +76,7 @@ public class WebServiceAPI { private Context context;
         Log.d("Request:",request.toString());
     }
 
-
+//TODO comecei e nao terminei
     public void getJogos( Response.Listener successListener) {
 
         Map<String, String> params = new HashMap<>();
@@ -86,6 +86,20 @@ public class WebServiceAPI { private Context context;
         Request request = new InteruspWSRequest(Request.Method.POST, this.context,
                 url,
                 params, successListener);
+
+        WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
+        Log.d("Request:",request.toString());
+    }
+
+
+
+    public void getOnibus( Response.Listener successListener) {
+
+        String url = Constants.kServiceURL + Constants.kServiceGetOnibus;
+
+        Request request = new InteruspWSRequest(Request.Method.GET, this.context,
+                url,
+                null, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
         Log.d("Request:",request.toString());
