@@ -3,6 +3,8 @@ package com.example.mutti.interusp_android;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,8 +17,11 @@ import android.widget.TextView;
 import com.example.mutti.interusp_android.Model.Locais;
 import com.example.mutti.interusp_android.Model.Onibus;
 import com.example.mutti.interusp_android.Utils.DataHolder;
+import com.example.mutti.interusp_android.Utils.DetalheOnibus;
+import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ListaLocais extends AppCompatActivity {
 
@@ -29,6 +34,7 @@ public class ListaLocais extends AppCompatActivity {
     private ArrayList<Onibus> onibuses = new ArrayList<>();//Todos os locais desse tipo
 
     Locais local_selecionado = new Locais();
+    TextView action_title;
 
 
     @Override
@@ -83,6 +89,21 @@ public class ListaLocais extends AppCompatActivity {
                     Intent intent = new Intent(activity, DetalheInformacao.class);
                     intent.putExtra("locais", local_selecionado);
                     startActivity(intent);
+            }
+        });
+
+        //ACTION BAR
+        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        action_title = (TextView) findViewById(R.id.txtActionBar);
+        action_title.setText("Informações");
+        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
+        final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
+        back_button.setVisibility(View.VISIBLE);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.finish();
             }
         });
     }

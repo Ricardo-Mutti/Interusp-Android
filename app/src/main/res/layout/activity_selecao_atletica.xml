@@ -6,6 +6,8 @@
     tools:context=".Mais.GritosAtletica"
     android:orientation="vertical">
 
+    <include layout="@layout/action_bar" />
+
     <ListView
         android:id="@+id/listAtletica"
         android:layout_width="match_parent"

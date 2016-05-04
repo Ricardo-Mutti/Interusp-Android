@@ -5,20 +5,27 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.mutti.interusp_android.Manager.Login;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
+import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
 public class AtualizarLogin extends AppCompatActivity {
 
     Activity activity = this;
     Context context = this;
+
+    TextView action_title;
 
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -36,9 +43,6 @@ public class AtualizarLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_adm);
 
-        Activity activity = this;
-        final Context context = this;
-
         final EditText username = (EditText) findViewById(R.id.edtLogin);
         final EditText senha = (EditText) findViewById(R.id.edtSenha);
 
@@ -54,6 +58,22 @@ public class AtualizarLogin extends AppCompatActivity {
                     Login login1 = new Login(context);
                     login1.user(username_txt, senha_txt);
                 }
+            }
+        });
+
+
+        //ACTION BAR
+        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        action_title = (TextView) findViewById(R.id.txtActionBar);
+        action_title.setText("Login");
+        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
+        final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
+        back_button.setVisibility(View.VISIBLE);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.finish();
             }
         });
 

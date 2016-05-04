@@ -6,6 +6,8 @@
     tools:context=".PontuacaoModalidade"
     android:orientation="vertical">
 
+    <include layout="@layout/action_bar" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

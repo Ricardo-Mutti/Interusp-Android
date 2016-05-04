@@ -1,7 +1,10 @@
 package com.example.mutti.interusp_android;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +19,7 @@ import android.widget.TextView;
 import com.example.mutti.interusp_android.Model.Locais;
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.example.mutti.interusp_android.Utils.StatusBarColor;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
@@ -27,6 +31,7 @@ public class DetalheInformacao extends AppCompatActivity {
     ImageView imgFoto;
     Button btnJogos, btnMapa;
     TextView txtTitulo, txtInfo, txtEnderecos;
+    TextView action_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +103,21 @@ public class DetalheInformacao extends AppCompatActivity {
                 }
             });
         }
+
+        //ACTION BAR
+        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        action_title = (TextView) findViewById(R.id.txtActionBar);
+        action_title.setText("Informações");
+        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
+        final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
+        back_button.setVisibility(View.VISIBLE);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.finish();
+            }
+        });
     }
 
     public void setIcon(int id, ImageView icon) {

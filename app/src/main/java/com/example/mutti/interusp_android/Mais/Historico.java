@@ -1,5 +1,8 @@
 package com.example.mutti.interusp_android.Mais;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
@@ -8,16 +11,20 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.mutti.interusp_android.R;
+import com.example.mutti.interusp_android.Utils.StatusBarColor;
 import com.example.mutti.interusp_android.Vencedores;
 
 
 public class Historico extends AppCompatActivity {
 
     Activity activity = this;
+
+    TextView action_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +55,20 @@ public class Historico extends AppCompatActivity {
             }
         });
 
+        //ACTION BAR
+        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        action_title = (TextView) findViewById(R.id.txtActionBar);
+        action_title.setText("Histórico");
+        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
+        final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
+        back_button.setVisibility(View.VISIBLE);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.finish();
+            }
+        });
+
     }
-
-
 }

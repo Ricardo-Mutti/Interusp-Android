@@ -91,7 +91,7 @@ public class AtualizarMenu extends AppCompatActivity {
         SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
         action_title = (TextView) findViewById(R.id.txtActionBar);
-        action_title.setText("Chave da Modalidade");
+        action_title.setText("Menu");
         action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
         final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
         back_button.setVisibility(View.VISIBLE);
