@@ -106,6 +106,25 @@ public class WebServiceAPI { private Context context;
     }
 
 
+    public void getTorcida( Response.Listener successListener) {
+
+        String url = Constants.kServiceURL + Constants.kServiceGetTorcidas;
+
+        Request request = new InteruspWSRequest(Request.Method.GET, this.context,
+                url,
+                null, successListener);
+
+        WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
+        Log.d("Request:",request.toString());
+    }
+
+
+
+
+
+
+
+
 
 
 

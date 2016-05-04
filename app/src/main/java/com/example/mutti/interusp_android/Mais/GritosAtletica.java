@@ -1,15 +1,16 @@
-package com.example.mutti.interusp_android;
+package com.example.mutti.interusp_android.Mais;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
 import com.example.mutti.interusp_android.Adapter.SelecaoAtleticaAdapter;
+import com.example.mutti.interusp_android.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class SelecaoAtletica extends AppCompatActivity {
+public class GritosAtletica extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

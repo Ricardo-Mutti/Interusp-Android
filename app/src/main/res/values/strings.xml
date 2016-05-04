@@ -133,16 +133,15 @@
         <item>ESALQ</item>
     </string-array>
 
-    <string-array name="provas_atletismo">
-        <item> </item>
-        <item>Poli</item>
-        <item>Farmácia</item>
+    <string-array name="facul_torcida">
+        <item>POLI</item>
         <item>FEA</item>
-        <item>Odonto</item>
-        <item>SanFran</item>
-        <item>MedUsp</item>
-        <item>MedRib</item>
+        <item>FARMA</item>
         <item>ESALQ</item>
+        <item>RIBERÃO</item>
+        <item>SANFRAN</item>
+        <item>ODONTO</item>
+        <item>PINHEIROS</item>
     </string-array>
 
     <string-array name="provas_karate">

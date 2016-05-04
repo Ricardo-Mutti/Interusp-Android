@@ -73,6 +73,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/torcida_primeira"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="25dp"
@@ -109,7 +110,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-
+                        android:id="@+id/torcida_segunda"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="25dp"
@@ -146,7 +147,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-
+                        android:id="@+id/torcida_terceira"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="25dp"
@@ -183,7 +184,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-
+                        android:id="@+id/torcida_quarta"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="25dp"
@@ -220,7 +221,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-
+                        android:id="@+id/torcida_quinta"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="25dp"
@@ -257,7 +258,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-
+                        android:id="@+id/torcida_sexta"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="25dp"
@@ -294,7 +295,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-
+                        android:id="@+id/torcida_setima"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="25dp"
@@ -331,6 +332,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/torcida_oitava"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="25dp"

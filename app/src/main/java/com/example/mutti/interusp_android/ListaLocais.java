@@ -15,10 +15,8 @@ import android.widget.TextView;
 import com.example.mutti.interusp_android.Model.Locais;
 import com.example.mutti.interusp_android.Model.Onibus;
 import com.example.mutti.interusp_android.Utils.DataHolder;
-import com.example.mutti.interusp_android.Utils.DetalheOnibus;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ListaLocais extends AppCompatActivity {
 

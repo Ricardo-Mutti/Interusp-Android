@@ -1,4 +1,4 @@
-package com.example.mutti.interusp_android.Utils;
+package com.example.mutti.interusp_android;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import com.example.mutti.interusp_android.Adapter.OnibusAdapter;
 import com.example.mutti.interusp_android.Model.Locais;
 import com.example.mutti.interusp_android.Model.Onibus;
 import com.example.mutti.interusp_android.R;
+import com.example.mutti.interusp_android.Utils.DataHolder;
 
 import java.util.ArrayList;
 

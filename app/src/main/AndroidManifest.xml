@@ -125,12 +125,12 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".SelecaoAtletica"
+        <activity android:name=".Mais.GritosAtletica"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
 
-        <activity android:name=".Utils.DetalheOnibus"
+        <activity android:name=".DetalheOnibus"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden"/>

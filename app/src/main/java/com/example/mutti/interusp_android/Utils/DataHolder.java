@@ -4,6 +4,7 @@ import com.example.mutti.interusp_android.Model.Jogo;
 import com.example.mutti.interusp_android.Model.Locais;
 import com.example.mutti.interusp_android.Model.Onibus;
 import com.example.mutti.interusp_android.Model.OnibusArray;
+import com.example.mutti.interusp_android.Model.Torcida;
 
 import java.util.ArrayList;
 
@@ -30,5 +31,18 @@ public class DataHolder {
     public void setOnibus(ArrayList<Onibus> onibus) {
         this.onibus = onibus;
     }
+
+    private ArrayList<Torcida>  torcidas = new ArrayList<>();
+    public ArrayList<Torcida> getTorcidas() {
+        return torcidas;
+    }
+    public void setTorcidas(ArrayList<Torcida> torcidas) {
+        this.torcidas = torcidas;
+    }
+
+
+
+
+
 
 }

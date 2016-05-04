@@ -71,6 +71,10 @@ public class Constants {
     public static final String kProvasDone = "com.appsimples.interusp.provas-done";
     public static final String kGetLocaisDone = "com.appsimples.interusp.login-done";
 
+    //END POINT
+    public static final String kGetTorcidaDone = "com.appsimples.interusp.torcidas-done";
+    public static final String kServiceGetTorcidas = "/v1/tracking/";
+
 
     //ICONES DAS ATLETICAS
 

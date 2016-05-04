@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.mutti.interusp_android.Atualizar.AtualizarMenu;
 import com.example.mutti.interusp_android.ListaLocais;
 import com.example.mutti.interusp_android.Manager.GetLocal;
 import com.example.mutti.interusp_android.Manager.GetOnibus;
@@ -21,8 +20,7 @@ import com.example.mutti.interusp_android.Model.Locais;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
 import com.example.mutti.interusp_android.Utils.DataHolder;
-import com.example.mutti.interusp_android.Utils.DetalheOnibus;
-import com.example.mutti.interusp_android.Utils.StatusBarColor;
+import com.example.mutti.interusp_android.DetalheOnibus;
 
 import java.util.ArrayList;
 
