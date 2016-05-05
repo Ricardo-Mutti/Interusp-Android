@@ -227,7 +227,6 @@ public class Jogos extends Fragment {
     public void showFiltroLocal() {
 
 
-
         filterAdapter = new FilterAdapter(getActivity(), filters_lugar);
         filterListView.setAdapter(filterAdapter);
         containerFilter.setVisibility(View.VISIBLE);
@@ -275,7 +274,8 @@ public class Jogos extends Fragment {
         if (stringModalidadeToFilter != null) {
             for (int i = aux.size() - 1; i >= 0; i--) {
                 Jogo jogo = aux.get(i);
-                if (jogo.getFaculdade_1().equals(String.valueOf(AtleticaToFilter))) {
+
+                if (!jogo.getFaculdade_1().equals(String.valueOf(AtleticaToFilter)) && !jogo.getFaculdade_2().equals(String.valueOf(AtleticaToFilter)) ) {
                     aux.remove(jogo);
                 }
             }
@@ -308,8 +308,7 @@ public class Jogos extends Fragment {
 
     public void setData() {
 
-        int k = 0;
-        filters_lugar.add(0,"Todos");
+        filters_lugar.add(0, "Todos");
 
         for (Jogo jogo : DataHolder.getInstance().getJogos()) {
 
@@ -337,11 +336,23 @@ public class Jogos extends Fragment {
                     break;
             }
 
+            if(jogo.getFaculdade_1()==null){
+                jogo.setFaculdade_1("---");
+            }
 
-            if (!jogo.getLocal().equals(filters_lugar.get(k))) {
+            if(jogo.getFaculdade_2()==null){
+                jogo.setFaculdade_2("---");
+            }
 
+            boolean novo_lugar = true;
+            for (int i = 0; i < filters_lugar.size(); i++) {
+                String lugar = filters_lugar.get(i);
+                if (lugar.equals(jogo.getLocal())) {
+                    novo_lugar = false;
+                }
+            }
+            if (novo_lugar) {
                 filters_lugar.add(jogo.getLocal());
-                k++;
             }
 
 

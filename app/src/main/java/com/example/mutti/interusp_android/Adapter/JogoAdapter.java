@@ -95,13 +95,13 @@ public class JogoAdapter extends BaseAdapter{
         jogos_informacoes.setText(dia_semana+" - "+dia+"/05"+" - "+horario+" - "+jogo.getLocal());
 
 
-        if(jogo.getFaculdade_1()==null){
+        if(jogo.getFaculdade_1().equals("---")){
             competidor_1="---";
         }else{
             competidor_1=list.get(Integer.parseInt(jogo.getFaculdade_1())-1).toString();
         }
 
-        if(jogo.getFaculdade_2()==null){
+        if(jogo.getFaculdade_2().equals("---")){
             competidor_2="---";
         }else{
             competidor_2=list.get(Integer.parseInt(jogo.getFaculdade_2())-1).toString();
