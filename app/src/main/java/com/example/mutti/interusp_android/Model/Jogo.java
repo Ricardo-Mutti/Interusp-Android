@@ -13,6 +13,8 @@ public class Jogo {
     String mandante;
     String faculdade_1;
     String faculdade_2;
+    String placar_1;
+    String placar_2;
     String chaveamento;//posicao na chave
     boolean is_vencendor;
     int dia;
@@ -88,6 +90,14 @@ public class Jogo {
     public void setFaculdade_2(String faculdade_2) {
         this.faculdade_2 = faculdade_2;
     }
+
+    public String getPlacar_1() {return placar_1;}
+
+    public void setPlacar_1(String placar_1) {this.placar_1 = placar_1;}
+
+    public String getPlacar_2() {return placar_2;}
+
+    public void setPlacar_2(String placar_2) {this.placar_2 = placar_2;}
 
     public String getChaveamento() {
         return chaveamento;

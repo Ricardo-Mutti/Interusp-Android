@@ -61,4 +61,32 @@ public class GetJogos {
         });
 
     }
+
+    public void GetChaveamento(int chaveamento) {
+        wsAPI = new WebServiceAPI(context);
+
+        wsAPI.getChaveamento(chaveamento, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {//Callback da resposta  pode ser um erro
+                Gson gson = new Gson();
+                ServerResponse serverResponse = gson.fromJson(response, ServerResponse.class);//Parse do json segundo o modelo SeverResponse
+
+                if (serverResponse.isSuccess()) {
+
+                    JogoArray jogoArray = gson.fromJson(serverResponse.getResponse(), JogoArray.class);
+                    ArrayList<Jogo> jogos = new ArrayList<Jogo>(Arrays.asList(jogoArray.getJogos()));
+                    DataHolder.getInstance().setChaveamento(jogos);
+
+                    Intent intent = new Intent(Constants.kChaveamentoDone);
+                    context.sendBroadcast(intent);
+
+
+                } else {
+                    Toast.makeText(context, serverResponse.getMessage(),
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+    }
 }

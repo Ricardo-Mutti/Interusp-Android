@@ -1,7 +1,10 @@
 package com.example.mutti.interusp_android;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +13,17 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.Manager.GetJogos;
+import com.example.mutti.interusp_android.Model.Jogo;
+import com.example.mutti.interusp_android.Model.Modalidade;
+import com.example.mutti.interusp_android.Utils.Constants;
+import com.example.mutti.interusp_android.Utils.DataHolder;
 import com.example.mutti.interusp_android.Utils.StatusBarColor;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class ChaveamentoModalidade extends AppCompatActivity {
 
@@ -19,7 +32,28 @@ public class ChaveamentoModalidade extends AppCompatActivity {
 
     ImageView chave_1, chave_2, chave_3, chave_4, chave_5, chave_6, chave_7, chave_8,
             chave_9, chave_10, chave_11, chave_12, chave_13, chave_14, chave_15;
+    TextView chave_1_txt, chave_2_txt, chave_3_txt, chave_4_txt, chave_5_txt, chave_6_txt, chave_7_txt, chave_8_txt,
+            chave_9_txt, chave_10_txt, chave_11_txt, chave_12_txt, chave_13_txt, chave_14_txt;
     TextView action_title;
+
+    private int modalidade;
+    private String nomeModalidade;
+    private ArrayList<Jogo> jogos = new ArrayList<>();
+
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            jogos.clear();
+            jogos.addAll(DataHolder.getInstance().getChaveamento());
+            Collections.sort(jogos, new Comparator<Jogo>() {
+                @Override
+                public int compare(Jogo j1, Jogo j2) {
+                    return j1.getChaveamento().compareTo(j2.getChaveamento());
+                }
+            });
+            setData();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,33 +76,25 @@ public class ChaveamentoModalidade extends AppCompatActivity {
         chave_14 = (ImageView) findViewById(R.id.chave_14);
         chave_15 = (ImageView) findViewById(R.id.chave_15);
 
-        chave_1.setImageResource(R.drawable.icon_sanfran);
-        chave_2.setImageResource(R.drawable.icon_sanfran);
-        chave_3.setImageResource(R.drawable.icon_sanfran);
-        chave_4.setImageResource(R.drawable.icon_sanfran);
-        chave_5.setImageResource(R.drawable.icon_sanfran);
-        chave_6.setImageResource(R.drawable.icon_sanfran);
-        chave_7.setImageResource(R.drawable.icon_sanfran);
-        chave_8.setImageResource(R.drawable.icon_sanfran);
-        chave_9.setImageResource(R.drawable.icon_sanfran);
-        chave_10.setImageResource(R.drawable.icon_sanfran);
-        chave_11.setImageResource(R.drawable.icon_sanfran);
-        chave_12.setImageResource(R.drawable.icon_sanfran);
-        chave_13.setImageResource(R.drawable.icon_sanfran);
-        chave_14.setImageResource(R.drawable.icon_sanfran);
-        chave_15.setImageResource(R.drawable.icon_sanfran);
-
-        //TODO if resultado maior que 99 diminuir a fonte para 11sp
-
-
-
-
+        chave_1_txt = (TextView) findViewById(R.id.chave_txt_1);
+        chave_2_txt = (TextView) findViewById(R.id.chave_txt_2);
+        chave_3_txt = (TextView) findViewById(R.id.chave_txt_3);
+        chave_4_txt = (TextView) findViewById(R.id.chave_txt_4);
+        chave_5_txt = (TextView) findViewById(R.id.chave_txt_5);
+        chave_6_txt = (TextView) findViewById(R.id.chave_txt_6);
+        chave_7_txt = (TextView) findViewById(R.id.chave_txt_7);
+        chave_8_txt = (TextView) findViewById(R.id.chave_txt_8);
+        chave_9_txt = (TextView) findViewById(R.id.chave_txt_9);
+        chave_10_txt = (TextView) findViewById(R.id.chave_txt_10);
+        chave_11_txt = (TextView) findViewById(R.id.chave_txt_11);
+        chave_12_txt = (TextView) findViewById(R.id.chave_txt_12);
+        chave_13_txt = (TextView) findViewById(R.id.chave_txt_13);
+        chave_14_txt = (TextView) findViewById(R.id.chave_txt_14);
 
         //ACTION BAR
         SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
         action_title = (TextView) findViewById(R.id.txtActionBar);
-        action_title.setText("Chave da Modalidade");
         action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
         final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
         back_button.setVisibility(View.VISIBLE);
@@ -79,6 +105,11 @@ public class ChaveamentoModalidade extends AppCompatActivity {
             }
         });
 
+        modalidade = getIntent().getIntExtra("modalidade", 0);
+        nomeModalidade = getIntent().getStringExtra("nomeModalidade");
+
+        GetJogos getJogos = new GetJogos(context);
+        getJogos.GetChaveamento(modalidade);
     }
 
     @Override
@@ -87,5 +118,151 @@ public class ChaveamentoModalidade extends AppCompatActivity {
         SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
         action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
+
+        activity.registerReceiver(receiver, new IntentFilter(Constants.kChaveamentoDone));
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        activity.unregisterReceiver(receiver);
+    }
+
+    private void setData(){
+        action_title.setText("Chaveamento " + nomeModalidade);
+
+        if(jogos.get(0).getFaculdade_1()!=null) setDrawable(chave_1, jogos.get(0).getFaculdade_1());
+        if(jogos.get(0).getFaculdade_2()!=null) setDrawable(chave_2, jogos.get(0).getFaculdade_2());
+        if(jogos.get(1).getFaculdade_1()!=null) setDrawable(chave_3, jogos.get(1).getFaculdade_1());
+        if(jogos.get(1).getFaculdade_2()!=null) setDrawable(chave_4, jogos.get(1).getFaculdade_2());
+        if(jogos.get(2).getFaculdade_1()!=null) setDrawable(chave_5, jogos.get(2).getFaculdade_1());
+        if(jogos.get(2).getFaculdade_2()!=null) setDrawable(chave_6, jogos.get(2).getFaculdade_2());
+        if(jogos.get(3).getFaculdade_1()!=null) setDrawable(chave_7, jogos.get(3).getFaculdade_1());
+        if(jogos.get(3).getFaculdade_2()!=null) setDrawable(chave_8, jogos.get(3).getFaculdade_2());
+        if(jogos.get(4).getFaculdade_1()!=null) setDrawable(chave_9, jogos.get(4).getFaculdade_1());
+        if(jogos.get(4).getFaculdade_2()!=null) setDrawable(chave_10, jogos.get(4).getFaculdade_2());
+        if(jogos.get(5).getFaculdade_1()!=null) setDrawable(chave_11, jogos.get(5).getFaculdade_1());
+        if(jogos.get(5).getFaculdade_2()!=null) setDrawable(chave_12, jogos.get(5).getFaculdade_2());
+        if(jogos.get(6).getFaculdade_1()!=null) setDrawable(chave_13, jogos.get(6).getFaculdade_1());
+        if(jogos.get(6).getFaculdade_2()!=null) setDrawable(chave_14, jogos.get(6).getFaculdade_2());
+        if(jogos.size()>7) {
+            if (jogos.get(7).getFaculdade_1() != null) setDrawable(chave_15, jogos.get(7).getFaculdade_1());
+        }
+
+        if(jogos.get(0).getPlacar_1()!=null) {
+            chave_1_txt.setText(jogos.get(0).getPlacar_1());
+            if(Integer.valueOf(jogos.get(0).getPlacar_1())>99){
+                chave_1_txt.setTextSize(11);
+            }
+        }
+        if(jogos.get(0).getPlacar_2()!=null) {
+            chave_2_txt.setText(jogos.get(0).getPlacar_2());
+            if(Integer.valueOf(jogos.get(0).getPlacar_2())>99){
+                chave_2_txt.setTextSize(11);
+            }
+        }
+        if(jogos.get(1).getPlacar_1()!=null) {
+            chave_3_txt.setText(jogos.get(1).getPlacar_1());
+            if(Integer.valueOf(jogos.get(1).getPlacar_1())>99){
+                chave_3_txt.setTextSize(11);
+            }
+        }
+        if(jogos.get(1).getPlacar_2()!=null) {
+            chave_4_txt.setText(jogos.get(1).getPlacar_2());
+            if(Integer.valueOf(jogos.get(1).getPlacar_2())>99){
+                chave_4_txt.setTextSize(11);
+            }
+        }
+        if(jogos.get(2).getPlacar_1()!=null) {
+            chave_5_txt.setText(jogos.get(2).getPlacar_1());
+            if(Integer.valueOf(jogos.get(2).getPlacar_1())>99){
+                chave_5_txt.setTextSize(11);
+            }
+        }
+        if(jogos.get(2).getPlacar_2()!=null) {
+            chave_6_txt.setText(jogos.get(2).getPlacar_2());
+            if(Integer.valueOf(jogos.get(2).getPlacar_2())>99){
+                chave_6_txt.setTextSize(11);
+            }
+        }
+        if(jogos.get(3).getPlacar_1()!=null) {
+            chave_7_txt.setText(jogos.get(3).getPlacar_1());
+            if(Integer.valueOf(jogos.get(3).getPlacar_1())>99){
+                chave_7_txt.setTextSize(11);
+            }
+        }
+        if(jogos.get(3).getPlacar_2()!=null) {
+            chave_8_txt.setText(jogos.get(3).getPlacar_2());
+            if(Integer.valueOf(jogos.get(3).getPlacar_2())>99){
+                chave_8_txt.setTextSize(11);
+            }
+        }
+        if(jogos.get(4).getPlacar_1()!=null) {
+            chave_9_txt.setText(jogos.get(4).getPlacar_1());
+            if(Integer.valueOf(jogos.get(4).getPlacar_1())>99){
+                chave_9_txt.setTextSize(11);
+            }
+        }
+        if(jogos.get(4).getPlacar_2()!=null) {
+            chave_10_txt.setText(jogos.get(4).getPlacar_2());
+            if(Integer.valueOf(jogos.get(4).getPlacar_2())>99){
+                chave_10_txt.setTextSize(11);
+            }
+        }
+        if(jogos.get(5).getPlacar_1()!=null) {
+            chave_11_txt.setText(jogos.get(5).getPlacar_1());
+            if(Integer.valueOf(jogos.get(5).getPlacar_1())>99){
+                chave_11_txt.setTextSize(11);
+            }
+        }
+        if(jogos.get(5).getPlacar_2()!=null) {
+            chave_12_txt.setText(jogos.get(5).getPlacar_2());
+            if(Integer.valueOf(jogos.get(5).getPlacar_2())>99){
+                chave_12_txt.setTextSize(11);
+            }
+        }
+        if(jogos.get(6).getPlacar_1()!=null) {
+            chave_13_txt.setText(jogos.get(6).getPlacar_1());
+            if(Integer.valueOf(jogos.get(6).getPlacar_1())>99){
+                chave_13_txt.setTextSize(11);
+            }
+        }
+        if(jogos.get(6).getPlacar_2()!=null) {
+            chave_14_txt.setText(jogos.get(6).getPlacar_2());
+            if(Integer.valueOf(jogos.get(6).getPlacar_2())>99){
+                chave_14_txt.setTextSize(11);
+            }
+        }
+    }
+
+    private void setDrawable(ImageView imgView, String faculdade){
+        switch (faculdade){
+            case "1":
+                imgView.setImageResource(R.drawable.icon_poli);
+                break;
+            case "2":
+                imgView.setImageResource(R.drawable.icon_fea);
+                break;
+            case "3":
+                imgView.setImageResource(R.drawable.icon_farma);
+                break;
+            case "4":
+                imgView.setImageResource(R.drawable.icon_esalq);
+                break;
+            case "5":
+                imgView.setImageResource(R.drawable.icon_riberao);
+                break;
+            case "6":
+                imgView.setImageResource(R.drawable.icon_sanfran);
+                break;
+            case "7":
+                imgView.setImageResource(R.drawable.icon_odonto);
+                break;
+            case "8":
+                imgView.setImageResource(R.drawable.icon_pinheiros);
+                break;
+            default:
+                break;
+        }
     }
 }
