@@ -88,6 +88,20 @@ public class WebServiceAPI { private Context context;
         Log.d("Request:",request.toString());
     }
 
+    public void getChaveamento(int modalidade, Response.Listener successListener) {
+
+        String url = Constants.kServiceURL + Constants.kServiceGetJogos;
+
+        url = url + "modalidade=" + modalidade;
+
+        Request request = new InteruspWSRequest(Request.Method.GET, this.context,
+                url,
+                null, successListener);
+
+        WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
+        Log.d("Request:",request.toString());
+    }
+
 
 
     public void getOnibus( Response.Listener successListener) {

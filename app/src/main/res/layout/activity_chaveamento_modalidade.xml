@@ -45,7 +45,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="bottom|center_horizontal"
                             android:layout_marginBottom="2dp"
-                            android:text="99"
+                            android:id="@+id/chave_txt_1"
                             android:textColor="@color/azul_tema"
                             android:textStyle="bold" />
 
@@ -67,7 +67,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="bottom|center_horizontal"
                             android:layout_marginBottom="2dp"
-                            android:text="99"
+                            android:id="@+id/chave_txt_2"
                             android:textColor="@color/azul_tema"
                             android:textStyle="bold" />
 
@@ -92,7 +92,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom|center_horizontal"
                                 android:layout_marginBottom="2dp"
-                                android:text="99"
+                                android:id="@+id/chave_txt_3"
                                 android:textColor="@color/azul_tema"
                                 android:textStyle="bold" />
 
@@ -113,7 +113,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom|center_horizontal"
                                 android:layout_marginBottom="2dp"
-                                android:text="99"
+                                android:id="@+id/chave_txt_4"
                                 android:textColor="@color/azul_tema"
                                 android:textStyle="bold" />
 
@@ -190,24 +190,22 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:id="@+id/chave_12"
+                            android:id="@+id/chave_5"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:background="@drawable/borda_chaveamento"
                             android:gravity="center"
-                            android:padding="7dp"
-                            android:src="@drawable/icon_esalq" />
+                            android:padding="7dp" />
 
                         <ImageView
-                            android:id="@+id/chave_13"
+                            android:id="@+id/chave_6"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginBottom="10dp"
                             android:layout_marginTop="47dp"
                             android:background="@drawable/borda_chaveamento"
                             android:gravity="center"
-                            android:padding="7dp"
-                            android:src="@drawable/icon_farma" />
+                            android:padding="7dp" />
 
 
                     </FrameLayout>
@@ -218,24 +216,22 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:id="@+id/chave_14"
+                            android:id="@+id/chave_7"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:background="@drawable/borda_chaveamento"
                             android:gravity="center"
-                            android:padding="7dp"
-                            android:src="@drawable/icon_poli" />
+                            android:padding="7dp" />
 
                         <ImageView
-                            android:id="@+id/chave_15"
+                            android:id="@+id/chave_8"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginBottom="10dp"
                             android:layout_marginTop="47dp"
                             android:background="@drawable/borda_chaveamento"
                             android:gravity="center"
-                            android:padding="7dp"
-                            android:src="@drawable/icon_pinheiros" />
+                            android:padding="7dp" />
 
                     </FrameLayout>
 
@@ -255,7 +251,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="bottom|center_horizontal"
                             android:layout_marginBottom="2dp"
-                            android:text="99"
+                            android:id="@+id/chave_txt_5"
                             android:textColor="@color/azul_tema"
                             android:textStyle="bold" />
 
@@ -276,7 +272,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="bottom|center_horizontal"
                             android:layout_marginBottom="2dp"
-                            android:text="99"
+                            android:id="@+id/chave_txt_6"
                             android:textColor="@color/azul_tema"
                             android:textStyle="bold" />
 
@@ -302,7 +298,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom|center_horizontal"
                                 android:layout_marginBottom="2dp"
-                                android:text="99"
+                                android:id="@+id/chave_txt_7"
                                 android:textColor="@color/azul_tema"
                                 android:textStyle="bold" />
 
@@ -322,7 +318,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom|center_horizontal"
                                 android:layout_marginBottom="2dp"
-                                android:text="99"
+                                android:id="@+id/chave_txt_8"
                                 android:textColor="@color/azul_tema"
                                 android:textStyle="bold" />
 
@@ -401,46 +397,42 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/chave_4"
+                        android:id="@+id/chave_9"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="27dp"
                         android:background="@drawable/borda_chaveamento"
                         android:gravity="center"
-                        android:padding="7dp"
-                        android:src="@drawable/icon_esalq" />
+                        android:padding="7dp" />
 
                     <ImageView
-                        android:id="@+id/chave_5"
+                        android:id="@+id/chave_10"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginBottom="10dp"
                         android:layout_marginTop="55dp"
                         android:background="@drawable/borda_chaveamento"
                         android:gravity="center"
-                        android:padding="7dp"
-                        android:src="@drawable/icon_esalq" />
+                        android:padding="7dp" />
 
 
                     <ImageView
-                        android:id="@+id/chave_6"
+                        android:id="@+id/chave_11"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="58dp"
                         android:background="@drawable/borda_chaveamento"
                         android:gravity="center"
-                        android:padding="7dp"
-                        android:src="@drawable/icon_esalq" />
+                        android:padding="7dp" />
 
                     <ImageView
-                        android:id="@+id/chave_7"
+                        android:id="@+id/chave_12"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="56dp"
                         android:background="@drawable/borda_chaveamento"
                         android:gravity="center"
-                        android:padding="7dp"
-                        android:src="@drawable/icon_esalq" />
+                        android:padding="7dp" />
 
 
                 </LinearLayout>
@@ -459,7 +451,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="bottom|center_horizontal"
                             android:layout_marginBottom="2dp"
-                            android:text="99"
+                            android:id="@+id/chave_txt_9"
                             android:textColor="@color/azul_tema"
                             android:textStyle="bold" />
 
@@ -479,7 +471,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="bottom|center_horizontal"
                             android:layout_marginBottom="2dp"
-                            android:text="99"
+                            android:id="@+id/chave_txt_10"
                             android:textColor="@color/azul_tema"
                             android:textStyle="bold" />
 
@@ -505,7 +497,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom|center_horizontal"
                                 android:layout_marginBottom="2dp"
-                                android:text="99"
+                                android:id="@+id/chave_txt_11"
                                 android:textColor="@color/azul_tema"
                                 android:textStyle="bold" />
 
@@ -527,7 +519,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom|center_horizontal"
                                 android:layout_marginBottom="2dp"
-                                android:text="99"
+                                android:id="@+id/chave_txt_12"
                                 android:textColor="@color/azul_tema"
                                 android:textStyle="bold" />
 
@@ -595,25 +587,23 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/chave_2"
+                android:id="@+id/chave_13"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="77dp"
                 android:background="@drawable/borda_chaveamento"
                 android:gravity="center"
-                android:padding="7dp"
-                android:src="@drawable/icon_esalq" />
+                android:padding="7dp" />
 
 
             <ImageView
-                android:id="@+id/chave_3"
+                android:id="@+id/chave_14"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="173dp"
                 android:background="@drawable/borda_chaveamento"
                 android:gravity="center"
-                android:padding="7dp"
-                android:src="@drawable/icon_esalq" />
+                android:padding="7dp" />
 
         </LinearLayout>
 
@@ -632,7 +622,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center_horizontal"
                     android:layout_marginBottom="2dp"
-                    android:text="99"
+                    android:id="@+id/chave_txt_13"
                     android:textColor="@color/azul_tema"
                     android:textStyle="bold" />
 
@@ -653,7 +643,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center_horizontal"
                     android:layout_marginBottom="2dp"
-                    android:text="99"
+                    android:id="@+id/chave_txt_14"
                     android:textColor="@color/azul_tema"
                     android:textStyle="bold" />
 
@@ -703,14 +693,13 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/chave_1"
+                android:id="@+id/chave_15"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginTop="185dp"
                 android:background="@drawable/borda_chaveamento"
                 android:gravity="center"
-                android:padding="7dp"
-                android:src="@drawable/icon_farma" />
+                android:padding="7dp" />
 
 
         </LinearLayout>

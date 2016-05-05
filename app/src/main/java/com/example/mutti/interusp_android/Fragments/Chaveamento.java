@@ -28,6 +28,8 @@ public class Chaveamento extends Fragment {
     Activity activity;
     Context context;
 
+    ArrayList list = new ArrayList();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,12 +41,11 @@ public class Chaveamento extends Fragment {
 
         activity = getActivity();
         context = getContext();
-        ArrayList list = new ArrayList();
         list.addAll(Arrays.asList(getResources().getStringArray(R.array.modalidades_com_chaveamento)));
 
         View rootview = inflater.inflate(R.layout.fragment_chaveamento, container, false);
 
-        ListView list_info = (ListView) rootview.findViewById(R.id.chaveamento_modalidade);
+        final ListView list_info = (ListView) rootview.findViewById(R.id.chaveamento_modalidade);
 
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(activity, android.R.layout.simple_spinner_dropdown_item, list);
         list_info.setAdapter(adapter3);
@@ -53,7 +54,11 @@ public class Chaveamento extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(activity, ChaveamentoModalidade.class);
-                intent.putExtra("id", 1 );
+                int modalidade;
+                if(position<9) modalidade = position + 3;
+                else modalidade = position + 6;
+                intent.putExtra("modalidade", modalidade );
+                intent.putExtra("nomeModalidade", String.valueOf(list.get(position)));
                 startActivity(intent);
             }
         });

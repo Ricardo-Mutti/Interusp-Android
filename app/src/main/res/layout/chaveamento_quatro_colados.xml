@@ -11,24 +11,22 @@
 
 
         <ImageView
-            android:id="@+id/chave_8"
+            android:id="@+id/chave_1"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/borda_chaveamento"
             android:gravity="center"
-            android:padding="7dp"
-            android:src="@drawable/icon_esalq" />
+            android:padding="7dp" />
 
         <ImageView
-            android:id="@+id/chave_9"
+            android:id="@+id/chave_2"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="47dp"
             android:background="@drawable/borda_chaveamento"
             android:gravity="center"
-            android:padding="7dp"
-            android:src="@drawable/icon_farma" />
+            android:padding="7dp" />
 
 
     </FrameLayout>
@@ -40,24 +38,22 @@
 
 
         <ImageView
-            android:id="@+id/chave_10"
+            android:id="@+id/chave_3"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/borda_chaveamento"
             android:gravity="center"
-            android:padding="7dp"
-            android:src="@drawable/icon_poli" />
+            android:padding="7dp" />
 
         <ImageView
-            android:id="@+id/chave_11"
+            android:id="@+id/chave_4"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="47dp"
             android:background="@drawable/borda_chaveamento"
             android:gravity="center"
-            android:padding="7dp"
-            android:src="@drawable/icon_pinheiros" />
+            android:padding="7dp" />
 
 
     </FrameLayout>

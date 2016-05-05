@@ -27,6 +27,7 @@ public class Constants {
 
     public static final String kServiceGetJogos = "/v1/jogo/";
     public static final String kJogosDone = "com.appsimples.interusp.jogos-done";
+    public static final String kChaveamentoDone = "com.appsimples.interusp.chaveamento-done";
 
     public static final String kServiceEditOnibus = "/v1/onibus/";
     public static final String kEditOnibusDone = "com.appsimples.interusp.edit-onibus-done";

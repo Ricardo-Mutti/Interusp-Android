@@ -27,6 +27,10 @@ public class DataHolder {
     public ArrayList<Jogo> getJogos() {return jogos;}
     public void setJogos(ArrayList<Jogo> jogos) {this.jogos = jogos;}
 
+    private ArrayList<Jogo>  chaveamento = new ArrayList<>();
+    public ArrayList<Jogo> getChaveamento() {return chaveamento;}
+    public void setChaveamento(ArrayList<Jogo> chaveamento) {this.chaveamento = chaveamento;}
+
     private ArrayList<Onibus>  onibus = new ArrayList<>();
     public ArrayList<Onibus> getOnibus() {
         return onibus;
