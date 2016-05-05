@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.mutti.interusp_android.DetalheOnibus;
+import com.example.mutti.interusp_android.GritosAtletica;
 import com.example.mutti.interusp_android.Mais.Historico;
 import com.example.mutti.interusp_android.Mais.InterUspInfo;
 import com.example.mutti.interusp_android.Atualizar.AtualizarLogin;
@@ -21,8 +22,8 @@ import com.example.mutti.interusp_android.Manager.GetTorcida;
 import com.example.mutti.interusp_android.PontuacaoGeral;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Mais.Torcidometro;
-import com.example.mutti.interusp_android.Mais.GritosAtletica;
 import com.example.mutti.interusp_android.SelecionarAtletica;
+import com.example.mutti.interusp_android.Sobre;
 import com.example.mutti.interusp_android.Utils.Constants;
 
 /**
@@ -33,7 +34,7 @@ public class Mais extends Fragment {
     Activity activity;
     Context context;
 
-    TextView txtPontuacao, txtAdm, txtInterUsp, gritos, torcidometro, historico, trocarAtletica;
+    TextView txtPontuacao, txtAdm, txtInterUsp, gritos, torcidometro, historico, trocarAtletica, sobre;
 
 
     private BroadcastReceiver receiver_torcidas = new BroadcastReceiver() {
@@ -128,6 +129,15 @@ public class Mais extends Fragment {
             }
         });
 
+
+        sobre = (TextView) rootview.findViewById(R.id.txtSobre);
+        sobre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, Sobre.class);
+                startActivity(intent);
+            }
+        });
 
         return rootview;
     }

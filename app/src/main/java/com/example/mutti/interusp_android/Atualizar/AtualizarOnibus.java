@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.Manager.EditOnibus;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
 import com.example.mutti.interusp_android.Utils.StatusBarColor;
@@ -47,28 +48,23 @@ public class AtualizarOnibus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atualizar_onibus);
 
-        EditText placa_edt = (EditText) findViewById(R.id.onibus_placa);
-        EditText info_edt = (EditText) findViewById(R.id.onibus_info);
+        final EditText info_edt = (EditText) findViewById(R.id.onibus_info);
+        final EditText placa_edt = (EditText) findViewById(R.id.onibus_placa);
 
         ArrayList list = new ArrayList();
         list.addAll(Arrays.asList(getResources().getStringArray(R.array.faculdade)));
-        Spinner onibus_facul = (Spinner) findViewById(R.id.onibus_facul_spinner);
+        final Spinner onibus_facul = (Spinner) findViewById(R.id.onibus_facul_spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         onibus_facul.setAdapter(adapter);
 
         ArrayList datas = new ArrayList();
         datas.addAll(Arrays.asList(getResources().getStringArray(R.array.datas_jogos)));
-        Spinner atualizar_data = (Spinner) findViewById(R.id.onibus_data);
+        final Spinner atualizar_data = (Spinner) findViewById(R.id.onibus_data);
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, datas);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         atualizar_data.setAdapter(adapter3);
 
-        String placa = placa_edt.getText().toString();
-        String info = info_edt.getText().toString();
-
-        String data = atualizar_data.getSelectedItem().toString();
-        String facul = onibus_facul.getSelectedItem().toString();
 
 
         Button atualizar = (Button) findViewById(R.id.onibus_atualizar);
@@ -76,12 +72,22 @@ public class AtualizarOnibus extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Atualizar onibus
+
+                final String placa = placa_edt.getText().toString();
+                final String info = info_edt.getText().toString();
+
+                final String data = atualizar_data.getSelectedItem().toString();
+                final String facul = String.valueOf(onibus_facul.getSelectedItemPosition());
+
+                EditOnibus editOnibus = new EditOnibus(context);
+                editOnibus.sendRequest(facul, data + "\n\n" + info, placa);
+
             }
         });
 
         //ACTION BAR
         SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        StatusBarColor.setColorStatusBar(activity, sharedpreferences.getString("cor1", "#000000"));
         action_title = (TextView) findViewById(R.id.txtActionBar);
         action_title.setText("Atualizar Ônibus");
         action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));

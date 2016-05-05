@@ -30,7 +30,7 @@ public class DetalheInformacao extends AppCompatActivity {
     Activity activity = this;
     ImageView imgFoto;
     Button btnJogos, btnMapa;
-    TextView txtTitulo, txtInfo, txtEnderecos;
+    TextView txtTitulo, txtInfo;
     TextView action_title;
 
     @Override
@@ -48,11 +48,9 @@ public class DetalheInformacao extends AppCompatActivity {
 
         txtTitulo = (TextView) findViewById(R.id.txtTitulo);
         txtInfo = (TextView) findViewById(R.id.txtInfo);
-        txtEnderecos = (TextView) findViewById(R.id.txtEndereco);
 
         txtTitulo.setText(locais.getNome());
         txtInfo.setText(locais.getPrincipaisModalidades());
-        txtEnderecos.setText(locais.getEndereco());
 
         // UNIVERSAL IMAGE LOADER SETUP
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()

@@ -5,23 +5,32 @@ package com.example.mutti.interusp_android.Model;
  */
 public class Jogo {
 
-    String id_modalidade;
+    String modalidade_id;
     String nome;
-    String participantes;
-    boolean isProva;
-    String colocacao;//1 ganhou 2 perdeu
-    String placar;
+    boolean is_prova;
     String data;
-    String hora;
-    String local_id;
+    String local;
+    String mandante;
+    String faculdade_1;
+    String faculdade_2;
     String chaveamento;//posicao na chave
+    boolean is_vencendor;
+    int dia;
 
-    public String getId_modalidade() {
-        return id_modalidade;
+    public int getDia() {
+        return dia;
     }
 
-    public void setId_modalidade(String id_modalidade) {
-        this.id_modalidade = id_modalidade;
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+
+    public String getModalidade_id() {
+        return modalidade_id;
+    }
+
+    public void setModalidade_id(String modalidade_id) {
+        this.modalidade_id = modalidade_id;
     }
 
     public String getNome() {
@@ -32,36 +41,12 @@ public class Jogo {
         this.nome = nome;
     }
 
-    public String getParticipantes() {
-        return participantes;
+    public boolean is_prova() {
+        return is_prova;
     }
 
-    public void setParticipantes(String participantes) {
-        this.participantes = participantes;
-    }
-
-    public boolean isProva() {
-        return isProva;
-    }
-
-    public void setProva(boolean prova) {
-        isProva = prova;
-    }
-
-    public String getColocacao() {
-        return colocacao;
-    }
-
-    public void setColocacao(String colocacao) {
-        this.colocacao = colocacao;
-    }
-
-    public String getPlacar() {
-        return placar;
-    }
-
-    public void setPlacar(String placar) {
-        this.placar = placar;
+    public void setIs_prova(boolean is_prova) {
+        this.is_prova = is_prova;
     }
 
     public String getData() {
@@ -72,12 +57,36 @@ public class Jogo {
         this.data = data;
     }
 
-    public String getLocal_id() {
-        return local_id;
+    public String getLocal() {
+        return local;
     }
 
-    public void setLocal_id(String local_id) {
-        this.local_id = local_id;
+    public void setLocal(String local) {
+        this.local = local;
+    }
+
+    public String getMandante() {
+        return mandante;
+    }
+
+    public void setMandante(String mandante) {
+        this.mandante = mandante;
+    }
+
+    public String getFaculdade_1() {
+        return faculdade_1;
+    }
+
+    public void setFaculdade_1(String faculdade_1) {
+        this.faculdade_1 = faculdade_1;
+    }
+
+    public String getFaculdade_2() {
+        return faculdade_2;
+    }
+
+    public void setFaculdade_2(String faculdade_2) {
+        this.faculdade_2 = faculdade_2;
     }
 
     public String getChaveamento() {
@@ -88,11 +97,12 @@ public class Jogo {
         this.chaveamento = chaveamento;
     }
 
-    public String getHora() {
-        return hora;
+    public boolean is_vencendor() {
+        return is_vencendor;
     }
 
-    public void setHora(String hora) {
-        this.hora = hora;
+    public void setIs_vencendor(boolean is_vencendor) {
+        this.is_vencendor = is_vencendor;
     }
+
 }

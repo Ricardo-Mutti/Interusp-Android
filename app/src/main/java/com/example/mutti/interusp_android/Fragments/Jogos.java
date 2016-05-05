@@ -46,27 +46,30 @@ public class Jogos extends Fragment {
     Button filtroAtletica;
     Button filtroLocal;
 
-    String stringDiaToFilter;
-    String stringModalidadeToFilter;
-    String stringAtleticaToFilter;
-    String stringLocalToFilter;
+    int DiaToFilter;
+    String stringModalidadeToFilter = null;
+    int AtleticaToFilter = 0;
+    String stringLocalToFilter = null;
 
     RelativeLayout containerFilter;
 
-    public static final String MyPREFERENCES = "MyPrefs" ;
+    ArrayList<Jogo> aux = new ArrayList<>();
+
+    public static final String MyPREFERENCES = "MyPrefs";
     public static final String cor1 = "cor1";
     public static final String cor2 = "cor2";
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-
-            jogoAdapter.jogos.clear();
-            jogoAdapter.jogos = DataHolder.getInstance().getJogos();
+            setData();
+            aux.clear();
+            aux.addAll(DataHolder.getInstance().getJogos());
             jogoAdapter.notifyDataSetChanged();
         }
     };
 
+    final ArrayList<String> filters_lugar = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -81,7 +84,7 @@ public class Jogos extends Fragment {
         activity = getActivity();
         context = getContext();
 
-        View rootview =  inflater.inflate(R.layout.fragment_jogos, container, false);
+        View rootview = inflater.inflate(R.layout.fragment_jogos, container, false);
 
         containerFilter = (RelativeLayout) rootview.findViewById(R.id.containerFilter);
         containerFilter.setVisibility(View.GONE);
@@ -93,40 +96,40 @@ public class Jogos extends Fragment {
         });
 
         filtroDia = (Button) rootview.findViewById(R.id.jogos_btn_dia);
-//        filtroDia.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showFiltroDia();
-//            }
-//        });
-//
+        filtroDia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showFiltroDia();
+            }
+        });
+
         filtroModalidade = (Button) rootview.findViewById(R.id.jogos_btn_modalidade);
-//        filtroModalidade.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showFiltroModalidade();
-//            }
-//        });
-//
+        filtroModalidade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showFiltroModalidade();
+            }
+        });
+
         filtroAtletica = (Button) rootview.findViewById(R.id.jogos_btn_atletica);
-//        filtroAtletica.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showFiltroAtletica();
-//            }
-//        });
-//
+        filtroAtletica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showFiltroAtletica();
+            }
+        });
+
         filtroLocal = (Button) rootview.findViewById(R.id.jogos_btn_local);
-//        filtroLocal.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showFiltroLocal();
-//            }
-//        });
+        filtroLocal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showFiltroLocal();
+            }
+        });
 
         filterListView = (ListView) rootview.findViewById(R.id.listFilter);
         listView = (ListView) rootview.findViewById(R.id.list);
-        jogoAdapter = new JogoAdapter(getActivity(), DataHolder.getInstance().getJogos());
+        jogoAdapter = new JogoAdapter(getActivity(), aux);
         listView.setAdapter(jogoAdapter);
 
         SharedPreferences sharedpreferences = getActivity().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
@@ -142,153 +145,153 @@ public class Jogos extends Fragment {
         return rootview;
     }
 
-//    public void showFiltroDia () {
-//
-//        final ArrayList<String> filters = new ArrayList<String>(Arrays.asList(Constants.kFiltroJogoDia));
-//        filterAdapter = new FilterAdapter(getActivity(), filters);
-//        filterListView.setAdapter(filterAdapter);
-//        containerFilter.setVisibility(View.VISIBLE);
-//        filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                containerFilter.setVisibility(View.GONE);
-//                String chosen = filters.get(position);
-//                if (chosen.equals("Todos")) {
-//                    filtroDia.setText("Dia");
-//                    stringDiaToFilter = null;
-//                } else {
-//                    filtroDia.setText(chosen);
-//                    stringDiaToFilter = chosen;
-//                }
-//                filterList();
-//            }
-//        });
-//
-//    }
-//
-//    public void showFiltroModalidade () {
-//
+    public void showFiltroDia() {
+
+        final ArrayList<String> filters = new ArrayList<>(Arrays.asList(Constants.kFiltroJogoDia));
+        filterAdapter = new FilterAdapter(getActivity(), filters);
+        filterListView.setAdapter(filterAdapter);
+        containerFilter.setVisibility(View.VISIBLE);
+        filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                containerFilter.setVisibility(View.GONE);
+                String chosen = filters.get(position);
+                if (chosen.equals("Todos")) {
+                    filtroDia.setText("Dia");
+                    DiaToFilter = 0;
+                } else {
+                    filtroDia.setText(chosen);
+                    DiaToFilter = position;
+                }
+                filterList();
+            }
+        });
+
+    }
+
+    public void showFiltroModalidade() {
+
 //        final ArrayList<String> filters = new ArrayList<String>(Arrays.asList(Constants.kFiltroJogoModalidade));
-//        filterAdapter = new FilterAdapter(getActivity(), filters);
-//        filterListView.setAdapter(filterAdapter);
-//        containerFilter.setVisibility(View.VISIBLE);
-//        filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                containerFilter.setVisibility(View.GONE);
-//                String chosen = filters.get(position);
-//                if (chosen.equals("Todos")) {
-//                    filtroModalidade.setText("Modalidade");
-//                    stringModalidadeToFilter = null;
-//                } else {
-//                    filtroModalidade.setText(chosen);
-//                    stringModalidadeToFilter = chosen;
-//                }
-//                filterList();
-//            }
-//        });
-//
-//    }
-//
-//    public void showFiltroAtletica () {
-//
-//        final ArrayList<String> filters = new ArrayList<String>(Arrays.asList(Constants.kFiltroJogoAtletica));
-//        filterAdapter = new FilterAdapter(getActivity(), filters);
-//        filterListView.setAdapter(filterAdapter);
-//        containerFilter.setVisibility(View.VISIBLE);
-//        filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                containerFilter.setVisibility(View.GONE);
-//                String chosen = filters.get(position);
-//                if (chosen.equals("Todos")) {
-//                    filtroAtletica.setText("Atletica");
-//                    stringAtleticaToFilter = null;
-//                } else {
-//                    filtroAtletica.setText(chosen);
-//                    stringAtleticaToFilter = chosen;
-//                }
-//                filterList();
-//            }
-//        });
-//
-//    }
-//
-//    public void showFiltroLocal () {
-//
-//        final ArrayList<String> filters = new ArrayList<String>(Arrays.asList(Constants.kFiltroJogoLocal));
-//        filterAdapter = new FilterAdapter(getActivity(), filters);
-//        filterListView.setAdapter(filterAdapter);
-//        containerFilter.setVisibility(View.VISIBLE);
-//        filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                containerFilter.setVisibility(View.GONE);
-//                String chosen = filters.get(position);
-//                if (chosen.equals("Todos")) {
-//                    filtroLocal.setText("Locais");
-//                    stringLocalToFilter = null;
-//                } else {
-//                    filtroLocal.setText(chosen);
-//                    stringLocalToFilter = chosen;
-//                }
-//                filterList();
-//            }
-//        });
-//
-//    }
-//
-//    public void filterList() {
-//        ArrayList<TipoJogo> listToFilter = TipoJogo.getJogosHardcoded();
-//        ArrayList<TipoJogo> listFinal = new ArrayList<>();
-//
-//        if (stringDiaToFilter != null) {
-//            for (TipoJogo jogo : listToFilter) {
-//                if (jogo.getDataString().equals(stringDiaToFilter)) {
-//                    listFinal.add(jogo);
-//                }
-//            }
-//            listToFilter.clear();
-//            listToFilter = listFinal;
-//        }
-//
-//        if (stringModalidadeToFilter != null) {
-//            for (TipoJogo jogo : listToFilter) {
-//                if (jogo.getModalidade().equals(stringModalidadeToFilter)) {
-//                    listFinal.add(jogo);
-//                }
-//            }
-//            listToFilter.clear();
-//            listToFilter = listFinal;
-//        }
-//
-//        if (stringAtleticaToFilter != null) {
-//            for (TipoJogo jogo : listToFilter) {
-//                for (String participant : jogo.getParticipantes()) {
-//                    if (participant.equals(stringAtleticaToFilter)) {
-//                        listFinal.add(jogo);
-//                    }
-//                }
-//            }
-//            listToFilter.clear();
-//            listToFilter = listFinal;
-//        }
-//
-//        if (stringLocalToFilter != null) {
-//            for (TipoJogo jogo : listToFilter) {
-//                if (jogo.getLocal().equals(stringLocalToFilter)) {
-//                    listFinal.add(jogo);
-//                }
-//            }
-//            listToFilter.clear();
-//            listToFilter = listFinal;
-//        }
-//
-//        jogoAdapter.jogos.clear();
-//        jogoAdapter.jogos = listToFilter;
-//        jogoAdapter.notifyDataSetChanged();
-//
-//    }
+        final ArrayList<String> filters = new ArrayList<>();
+        filters.add("Todos");
+        filters.addAll(Arrays.asList(getResources().getStringArray(R.array.modalidades)));
+        filterAdapter = new FilterAdapter(getActivity(), filters);
+
+        filterListView.setAdapter(filterAdapter);
+        containerFilter.setVisibility(View.VISIBLE);
+        filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                containerFilter.setVisibility(View.GONE);
+                String chosen = String.valueOf(position - 1);
+                String label = filters.get(position);
+                if (label.equals("Todos")) {
+                    filtroModalidade.setText("Modalidade");
+                    stringModalidadeToFilter = null;
+                } else {
+                    filtroModalidade.setText(label);
+                    stringModalidadeToFilter = chosen;
+                }
+                filterList();
+            }
+        });
+
+    }
+
+    public void showFiltroAtletica() {
+
+        final ArrayList<String> filters = new ArrayList<>();
+        filters.add("Todos");
+        filters.addAll(Arrays.asList(getResources().getStringArray(R.array.facul_torcida)));
+        filterAdapter = new FilterAdapter(getActivity(), filters);
+        filterListView.setAdapter(filterAdapter);
+        containerFilter.setVisibility(View.VISIBLE);
+        filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                containerFilter.setVisibility(View.GONE);
+                String chosen = filters.get(position);
+                if (chosen.equals("Todos")) {
+                    filtroAtletica.setText("Atlética");
+                    AtleticaToFilter = 0;
+                } else {
+                    filtroAtletica.setText(chosen);
+                    AtleticaToFilter = position - 1;
+                }
+                filterList();
+            }
+        });
+
+    }
+
+    public void showFiltroLocal() {
+
+
+
+        filterAdapter = new FilterAdapter(getActivity(), filters_lugar);
+        filterListView.setAdapter(filterAdapter);
+        containerFilter.setVisibility(View.VISIBLE);
+        filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                containerFilter.setVisibility(View.GONE);
+                String chosen = filters_lugar.get(position);
+                if (chosen.equals("Todos")) {
+                    filtroLocal.setText("Locais");
+                    stringLocalToFilter = null;
+                } else {
+                    filtroLocal.setText(chosen);
+                    stringLocalToFilter = chosen;
+                }
+                filterList();
+            }
+        });
+
+    }
+
+    public void filterList() {
+        aux.clear();
+        aux.addAll(DataHolder.getInstance().getJogos());
+
+        if (DiaToFilter != 0) {
+            for (int i = aux.size() - 1; i >= 0; i--) {
+                Jogo jogo = aux.get(i);
+                if (jogo.getDia() != DiaToFilter) {
+                    aux.remove(jogo);
+                }
+            }
+        }
+
+        if (stringModalidadeToFilter != null) {
+            for (int i = aux.size() - 1; i >= 0; i--) {
+                Jogo jogo = aux.get(i);
+                if (!jogo.getModalidade_id().equals(stringModalidadeToFilter)) {
+                    aux.remove(jogo);
+                }
+            }
+        }
+
+
+        if (stringModalidadeToFilter != null) {
+            for (int i = aux.size() - 1; i >= 0; i--) {
+                Jogo jogo = aux.get(i);
+                if (jogo.getFaculdade_1().equals(String.valueOf(AtleticaToFilter))) {
+                    aux.remove(jogo);
+                }
+            }
+        }
+
+        if (stringLocalToFilter != null) {
+            for (int i = aux.size() - 1; i >= 0; i--) {
+                Jogo jogo = aux.get(i);
+                if (!jogo.getLocal().equals(stringLocalToFilter)) {
+                    aux.remove(jogo);
+                }
+            }
+        }
+
+        jogoAdapter.notifyDataSetChanged();
+    }
 
 
     @Override
@@ -303,6 +306,47 @@ public class Jogos extends Fragment {
         activity.unregisterReceiver(receiver);
     }
 
+    public void setData() {
+
+        int k = 0;
+        filters_lugar.add(0,"Todos");
+
+        for (Jogo jogo : DataHolder.getInstance().getJogos()) {
+
+            //        2012-03-18T05:50:34.000Z
+            String[] parts = jogo.getData().split("-");
+            String aux = parts[2];
+            String[] aux1 = aux.split("T");
+            String dia = aux1[0];
+
+            switch (dia) {
+                case "26":
+                    jogo.setDia(1);
+                    break;
+                case "27":
+                    jogo.setDia(2);
+                    break;
+                case "28":
+                    jogo.setDia(3);
+                    break;
+                case "29":
+                    jogo.setDia(4);
+                    break;
+                default:
+                    jogo.setDia(4);
+                    break;
+            }
+
+
+            if (!jogo.getLocal().equals(filters_lugar.get(k))) {
+
+                filters_lugar.add(jogo.getLocal());
+                k++;
+            }
+
+
+        }
+    }
 
 
 }

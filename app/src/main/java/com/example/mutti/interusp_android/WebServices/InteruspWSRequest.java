@@ -53,12 +53,12 @@ public class InteruspWSRequest extends StringRequest {
         return this.params;
     }
 
-//    @Override
-//    public Map<String, String> getHeaders() throws AuthFailureError {
-//        SharedPreferences settings = context.getSharedPreferences(Constants.MY_PREFS_NAME, 0);
-//        String  token = settings.getString("token", null);
-//        Map<String, String> headers = new HashMap<>();
-//        headers.put(Constants.TOKEN_KEY, token );
-//        return headers;
-//    }
+    @Override
+    public Map<String, String> getHeaders() throws AuthFailureError {
+        SharedPreferences settings = context.getSharedPreferences(Constants.MY_PREFS_NAME, 0);
+        String  token = settings.getString("token", null);
+        Map<String, String> headers = new HashMap<>();
+        headers.put(Constants.TOKEN_KEY, token );
+        return headers;
+    }
 }

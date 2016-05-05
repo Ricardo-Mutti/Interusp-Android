@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.Manager.AddTorcida;
 import com.example.mutti.interusp_android.Manager.GetTorcida;
 import com.example.mutti.interusp_android.Utils.Constants;
 import com.example.mutti.interusp_android.Utils.StatusBarColor;
@@ -53,7 +54,8 @@ public class SelecionarAtletica extends AppCompatActivity {
                 editor.putInt("facul_id", 4);
                 //So contabiliza pro torcidometro uma vez
                 if(!sharedpreferences.getBoolean("selecionado",false)){
-
+                    AddTorcida addTorcida = new AddTorcida(context);
+                    addTorcida.addTorcida("4");
                 }
                 editor.putBoolean("selecionado", true);
                 editor.commit();
@@ -72,6 +74,11 @@ public class SelecionarAtletica extends AppCompatActivity {
                 editor.putString(cor1, Constants.kCorPoli1);
                 editor.putString(cor2, Constants.kCorPoli2);
                 editor.putInt("facul_id", 1);
+                //So contabiliza pro torcidometro uma vez
+                if(!sharedpreferences.getBoolean("selecionado",false)){
+                    AddTorcida addTorcida = new AddTorcida(context);
+                    addTorcida.addTorcida("4");
+                }
                 editor.putBoolean("selecionado", true);
                 editor.commit();
                 activity.finish();

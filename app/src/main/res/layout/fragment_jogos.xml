@@ -17,8 +17,9 @@
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="Dia"
                 android:textAllCaps="false"
                 android:textSize="12sp"
@@ -28,9 +29,10 @@
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Modalidade"
+                android:gravity="center"
                 android:textAllCaps="false"
                 android:textSize="12sp"
                 android:background="#000000"
@@ -39,8 +41,9 @@
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="Atletica"
                 android:textAllCaps="false"
                 android:textSize="12sp"
@@ -50,9 +53,10 @@
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Local"
+                android:gravity="center"
                 android:textAllCaps="false"
                 android:textSize="12sp"
                 android:background="#000000"

@@ -11,6 +11,7 @@ import com.example.mutti.interusp_android.Model.Jogo;
 import com.example.mutti.interusp_android.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by Gabriel on 5/1/16.
@@ -24,6 +25,10 @@ public class JogoAdapter extends BaseAdapter{
         this.context = context;
         this.jogos = jogos;
     }
+
+    String competidor_1;
+    String competidor_2;
+    String dia_semana;
 
     @Override
     public int getCount() {
@@ -54,9 +59,55 @@ public class JogoAdapter extends BaseAdapter{
         TextView jogos_competidores = (TextView) convertView.findViewById(R.id.jogos_competidores);
         TextView jogos_nome = (TextView) convertView.findViewById(R.id.jogos_nome);
 
-        jogos_informacoes.setText(jogo.getId_modalidade());
-        jogos_competidores.setText(jogo.getParticipantes());
-        jogos_nome.setText(jogo.getNome());
+        ArrayList list = new ArrayList();
+        list.addAll(Arrays.asList(context.getResources().getStringArray(R.array.facul_torcida)));
+
+//        2012-03-18T05:50:34.000Z
+        String[] parts = jogo.getData().split("-");
+        String aux = parts[2];
+        String[] aux1 = aux.split("T");
+        String dia = aux1[0];
+        String aux2[] = aux1[1].split(":");
+        String horario = aux2[0] +":"+ aux2[1];
+
+        switch (dia){
+
+            case "26":
+                dia_semana="Quinta-feira";
+                break;
+            case "27":
+                dia_semana="Sexta-feira";
+                break;
+            case "28":
+                dia_semana="Sábado";
+                break;
+            case "29":
+                dia_semana="Domingo";
+                break;
+            default:
+                dia_semana="Domingo";
+                break;
+        }
+
+        ArrayList modalidades = new ArrayList();
+        modalidades.addAll(Arrays.asList(context.getResources().getStringArray(R.array.modalidades)));
+
+        jogos_informacoes.setText(dia_semana+" - "+dia+"/05"+" - "+horario+" - "+jogo.getLocal());
+
+
+        if(jogo.getFaculdade_1()==null){
+            competidor_1="---";
+        }else{
+            competidor_1=list.get(Integer.parseInt(jogo.getFaculdade_1())-1).toString();
+        }
+
+        if(jogo.getFaculdade_2()==null){
+            competidor_2="---";
+        }else{
+            competidor_2=list.get(Integer.parseInt(jogo.getFaculdade_2())-1).toString();
+        }
+        jogos_competidores.setText(competidor_1+" X "+competidor_2);
+        jogos_nome.setText(modalidades.get(Integer.parseInt(jogo.getModalidade_id()))+" - "+jogo.getNome());
 
         return convertView;
     }

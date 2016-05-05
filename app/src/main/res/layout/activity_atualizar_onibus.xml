@@ -38,7 +38,6 @@
                 android:id="@+id/onibus_placa"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
                 android:layout_marginBottom="20dp"/>
 
             <TextView

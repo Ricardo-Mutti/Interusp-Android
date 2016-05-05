@@ -169,4 +169,35 @@
         <item>Domingo</item>
     </string-array>
 
+
+    <string-array name="colaboradores">
+        <item>Victor Kazuyuki Shinya</item>
+        <item>Joao Sisanoski</item>
+        <item>Gabriel Oliveira</item>
+        <item>Camila Yumi Mizutani</item>
+        <item>Luciano Naganawa</item>
+        <item>Caio Massaki Souza Naganawa</item>
+        <item>Ricardo Mutti</item>
+        <item>Rafael Camargos Santos</item>
+        <item>Agnaldo Bernegozzi</item>
+        <item>Luis Felipe Viveiros Fusco</item>
+        <item>Yargo Vó Tessaro</item>
+        <item>Fernando Nassif</item>
+        <item>Diego Fabri Abrahão</item>
+        <item>Felipe Gonçalves Marques</item>
+        <item>Wendler Boaventura Eis</item>
+        <item>André Wada Gromann</item>
+        <item>Bruno Arakaki</item>
+        <item>Mauricio Casanova Nogueria de Moraes</item>
+        <item>Bruno Galvao</item>
+        <item>Daniel Fabri Abrahão</item>
+        <item>Rafael Hiroki Yoshimura Kamada</item>
+        <item>Alexandre Ciuffatelli</item><item>Guilherme Adissy</item>
+        <item>Michel Chieregato</item>
+        <item>Camila Miyuki</item>
+        <item>Gabriel Moreira Minossi</item>
+        <item>Rafael Brandão</item>
+
+    </string-array>
+
 </resources>

@@ -76,16 +76,13 @@ public class WebServiceAPI { private Context context;
         Log.d("Request:",request.toString());
     }
 
-//TODO comecei e nao terminei
     public void getJogos( Response.Listener successListener) {
 
-        Map<String, String> params = new HashMap<>();
+        String url = Constants.kServiceURL + Constants.kServiceGetJogos;
 
-        String url = Constants.kServiceURL + Constants.kServiceLogin;
-
-        Request request = new InteruspWSRequest(Request.Method.POST, this.context,
+        Request request = new InteruspWSRequest(Request.Method.GET, this.context,
                 url,
-                params, successListener);
+                null, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
         Log.d("Request:",request.toString());
@@ -96,6 +93,54 @@ public class WebServiceAPI { private Context context;
     public void getOnibus( Response.Listener successListener) {
 
         String url = Constants.kServiceURL + Constants.kServiceGetOnibus;
+
+        Request request = new InteruspWSRequest(Request.Method.GET, this.context,
+                url,
+                null, successListener);
+
+        WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
+        Log.d("Request:",request.toString());
+    }
+
+
+    public void addTorcida( String facul_id, Response.Listener successListener) {
+
+        Map<String, String> params = new HashMap<>();
+        params.put("facul_id", facul_id);
+
+
+        String url = Constants.kServiceURL + Constants.kServiceGetTorcidas;
+
+        Request request = new InteruspWSRequest(Request.Method.POST, this.context,
+                url,
+                params, successListener);
+
+        WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
+        Log.d("Request:",request.toString());
+    }
+
+    public void editOnibus( String facul_id, String placa, String informacoes, Response.Listener successListener) {
+
+        Map<String, String> params = new HashMap<>();
+        params.put("facul_id", facul_id);
+        params.put("placa", placa);
+        params.put("informacoes", informacoes);
+
+
+        String url = Constants.kServiceURL + Constants.kServiceEditOnibus;
+
+        Request request = new InteruspWSRequest(Request.Method.POST, this.context,
+                url,
+                params, successListener);
+
+        WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
+        Log.d("Request:",request.toString());
+    }
+
+
+    public void getModalidades( Response.Listener successListener) {
+
+        String url = Constants.kServiceURL + Constants.kServiceGetModalidades;
 
         Request request = new InteruspWSRequest(Request.Method.GET, this.context,
                 url,

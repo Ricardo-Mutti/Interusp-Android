@@ -7,10 +7,10 @@ public class Modalidade {
 
     int id;
     String nome;
-    FaculdadePosicaoPontuacao[] pontuacao_total;
-    FaculdadePontuacao[] pontuacao_max;
-    FaculdadePontuacao[] pontuacao_min;
     boolean is_chaveamento;
+    FaculdadePontuacao[] pontuacao_min;
+    FaculdadePontuacao[] pontuacao_max;
+   // FaculdadePosicaoPontuacao[] pontuacao_total;
 
     public int getId() {
         return id;
@@ -28,13 +28,13 @@ public class Modalidade {
         this.nome = nome;
     }
 
-    public FaculdadePosicaoPontuacao[] getPontuacao_total() {
-        return pontuacao_total;
-    }
-
-    public void setPontuacao_total(FaculdadePosicaoPontuacao[] pontuacao_total) {
-        this.pontuacao_total = pontuacao_total;
-    }
+//    public FaculdadePosicaoPontuacao[] getPontuacao_total() {
+//        return pontuacao_total;
+//    }
+//
+//    public void setPontuacao_total(FaculdadePosicaoPontuacao[] pontuacao_total) {
+//        this.pontuacao_total = pontuacao_total;
+//    }
 
     public FaculdadePontuacao[] getPontuacao_max() {
         return pontuacao_max;

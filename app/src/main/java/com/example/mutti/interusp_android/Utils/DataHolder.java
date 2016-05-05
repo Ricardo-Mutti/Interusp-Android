@@ -1,7 +1,10 @@
 package com.example.mutti.interusp_android.Utils;
 
+import android.widget.ArrayAdapter;
+
 import com.example.mutti.interusp_android.Model.Jogo;
 import com.example.mutti.interusp_android.Model.Locais;
+import com.example.mutti.interusp_android.Model.Modalidade;
 import com.example.mutti.interusp_android.Model.Onibus;
 import com.example.mutti.interusp_android.Model.OnibusArray;
 import com.example.mutti.interusp_android.Model.Torcida;
@@ -40,9 +43,12 @@ public class DataHolder {
         this.torcidas = torcidas;
     }
 
-
-
-
-
+    private ArrayList<Modalidade> modalidades = new ArrayList<>();
+    public ArrayList<Modalidade> getModalidades() {
+        return modalidades;
+    }
+    public void setModalidades(ArrayList<Modalidade> modalidades) {
+        this.modalidades = modalidades;
+    }
 
 }

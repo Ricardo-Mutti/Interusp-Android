@@ -19,7 +19,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class SelecaoAtletica extends AppCompatActivity {
+public class GritosAtletica extends AppCompatActivity {
 
     Activity activity = this;
     Context context = this;

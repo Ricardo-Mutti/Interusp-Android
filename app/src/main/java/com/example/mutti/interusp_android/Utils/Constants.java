@@ -15,8 +15,29 @@ public class Constants {
     public static final String kServiceGetLocation = "/v1/locais/";
     public static final String kServiceGetOnibus = "/v1/onibus/";
     public static final String kServiceLogin = "/v1/user/login";
-    public static final String kServiceGetJogos = "/jogo";
+
     public static final String kServiceUpdateJogos = "/jogo/getTodos";
+
+    //END POINT
+    public static final String kGetTorcidaDone = "com.appsimples.interusp.torcidas-done";
+    public static final String kServiceGetTorcidas = "/v1/tracking/";
+
+    public static final String kGetModalidadesDone = "com.appsimples.interusp.modalidade-done";
+    public static final String kServiceGetModalidades = "/v1/modalidade/";
+
+    public static final String kServiceGetJogos = "/v1/jogo/";
+    public static final String kJogosDone = "com.appsimples.interusp.jogos-done";
+
+    public static final String kServiceEditOnibus = "/v1/onibus/";
+    public static final String kEditOnibusDone = "com.appsimples.interusp.edit-onibus-done";
+
+
+    public static final String TOKEN_KEY = "x-access-token";
+
+
+
+
+
 
     //Keys de jogo
     public static final String kTipoJogoHorario = "tipo.jogo.horario";
@@ -29,9 +50,7 @@ public class Constants {
     public static final String kTipoJogoModalidade = "tipo.jogo.modalidade";
 
     //FILTROS DE JOGOS
-    public static final String[] kFiltroJogoDia = {"Todos","26/05","27/05","28/05","29/05"};
-    public static final String[] kFiltroJogoModalidade = {"Todos","ATL","BQM","BQF","FC","FSM", "FSF", "HM",
-            "HF", "JUDO", "KRT", "NTM","NTF","PA","RGF","RGM","SB","TCM","TCF","TMM","TMF","VM","VF","XDZ"};
+    public static final String[] kFiltroJogoDia = {"Todos","Quinta - 26/05","Sexta - 27/05","Sábado - 28/05","Domingo - 29/05"};
     public static final String[] kFiltroJogoAtletica = {"Todos","POLI","FEA","ODONTO","MED RIBEIRÃO","POLI",
             "FEA","ODONTO","MED PINHEIROS"};
     public static final String[] kFiltroJogoLocal = {"G1","G2","G3"};
@@ -63,17 +82,12 @@ public class Constants {
     //DONE
     public static final String kLoginDone = "com.appsimples.interusp.login-done";
     public static final String kGetOnibusDone = "com.appsimples.interusp.getonibus-done";
-    public static final String kJogosDone = "com.appsimples.interusp.jogos-done";
     public static final String kProvasNatacaoDone = "com.appsimples.interusp.provasnatacao-done";
     public static final String kProvasAtletismoDone = "com.appsimples.interusp.provasatletismo-done";
     public static final String kModalidadesDone = "com.appsimples.interusp.modalidades-done";
     public static final String kOnibusDone = "com.appsimples.interusp.onibus-done";
     public static final String kProvasDone = "com.appsimples.interusp.provas-done";
     public static final String kGetLocaisDone = "com.appsimples.interusp.login-done";
-
-    //END POINT
-    public static final String kGetTorcidaDone = "com.appsimples.interusp.torcidas-done";
-    public static final String kServiceGetTorcidas = "/v1/tracking/";
 
 
     //ICONES DAS ATLETICAS

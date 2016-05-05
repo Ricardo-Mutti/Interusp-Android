@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.Manager.GetJogos;
 import com.example.mutti.interusp_android.Utils.SelectFragment;
 import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
@@ -91,6 +92,8 @@ public class TabsMain extends FragmentActivity {
         jogos_tab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                GetJogos getJogos = new GetJogos(context);
+                getJogos.GetJogos();
                 SelectFragment.open(3, fragmentManager, activity);
             }
         });

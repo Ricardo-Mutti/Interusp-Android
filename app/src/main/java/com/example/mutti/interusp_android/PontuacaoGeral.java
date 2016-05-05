@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.mutti.interusp_android.Adapter.PontuacaoGeralAdapter;
+import com.example.mutti.interusp_android.Manager.GetModalidades;
 import com.example.mutti.interusp_android.Model.Faculdade;
 import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
@@ -33,6 +34,9 @@ public class PontuacaoGeral extends AppCompatActivity {
         setContentView(R.layout.activity_pontuacao_geral);
 
         listPontuacao = (ListView) findViewById(R.id.listPontuacao);
+
+        GetModalidades getModalidades = new GetModalidades(context);
+        getModalidades.getModalidades();
 
         ArrayList<Faculdade> list = new ArrayList<>();
 
