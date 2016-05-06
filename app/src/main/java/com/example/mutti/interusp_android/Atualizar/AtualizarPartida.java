@@ -14,8 +14,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mutti.interusp_android.Adapter.AtualizarPartidaAdapter;
@@ -26,6 +29,7 @@ import com.example.mutti.interusp_android.Model.Jogo;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
 import com.example.mutti.interusp_android.Utils.DataHolder;
+import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -54,6 +58,8 @@ public class AtualizarPartida extends AppCompatActivity {
 
     ArrayList<Jogo> aux = new ArrayList<>();
     final ArrayList<String> filters_lugar = new ArrayList<>();
+
+    TextView action_title;
 
     public static final String MyPREFERENCES = "MyPrefs";
     public static final String cor1 = "cor1";
@@ -155,6 +161,21 @@ public class AtualizarPartida extends AppCompatActivity {
         });
 
         SharedPreferences sharedpreferences = activity.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        //ACTION BAR
+        StatusBarColor.setColorStatusBar(activity, sharedpreferences.getString(cor1, "#000000"));
+        action_title = (TextView) findViewById(R.id.txtActionBar);
+        action_title.setText("Atualizar Partida");
+        action_title.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
+        LinearLayout action_bar = (LinearLayout) findViewById(R.id.action_bar);
+        action_bar.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
+        final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
+        back_button.setVisibility(View.VISIBLE);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.finish();
+            }
+        });
         filtroDia.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
         filtroDia.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
         filtroModalidade.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
