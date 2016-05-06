@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:id="@+id/filterBar">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Dia"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:background="#000000"
+                android:textColor="#ffffff"
+                android:id="@+id/jogos_btn_dia" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Modalidade"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:background="#000000"
+                android:textColor="#ffffff"
+                android:id="@+id/jogos_btn_modalidade"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Atletica"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:background="#000000"
+                android:textColor="#ffffff"
+                android:id="@+id/jogos_btn_atletica"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Local"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:background="#000000"
+                android:textColor="#ffffff"
+                android:id="@+id/jogos_btn_local"/>
+
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/list"
+            android:layout_below="@+id/filterBar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#99000000"
+            android:id="@+id/containerFilter">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/listFilter"
+                android:layout_centerVertical="true">
+
+            </ListView>
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
