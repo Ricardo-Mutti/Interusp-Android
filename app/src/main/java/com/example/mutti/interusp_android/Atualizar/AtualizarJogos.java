@@ -12,9 +12,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -31,6 +33,11 @@ public class AtualizarJogos extends AppCompatActivity {
     Context context = this;
 
     TextView action_title;
+    CheckBox checkVencedor1;
+    CheckBox checkVencedor2;
+
+    boolean check1 = false;
+    boolean check2 = false;
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
@@ -62,6 +69,48 @@ public class AtualizarJogos extends AppCompatActivity {
         EditText local_edt = (EditText) findViewById(R.id.atualizar_jogo_local);
         EditText horario_edt = (EditText) findViewById(R.id.atualizar_jogo_horario);
 
+        checkVencedor1 = (CheckBox) findViewById(R.id.checkVencedor1);
+        check1 = checkVencedor1.isChecked();
+        checkVencedor2 = (CheckBox) findViewById(R.id.checkVencedor2);
+        check2 = checkVencedor2.isChecked();
+        checkVencedor1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!check1 && !check2) {
+                    check1 = true;
+                    checkVencedor1.setChecked(true);
+                } else if (check2) {
+                    check2 = false;
+                    checkVencedor2.setChecked(false);
+                    check1 = true;
+                    checkVencedor1.setChecked(true);
+                } else {
+                    if (check1) {
+                        check1 = false;
+                        checkVencedor1.setChecked(false);
+                    }
+                }
+            }
+        });
+        checkVencedor2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!check1 && !check2) {
+                    check2 = true;
+                    checkVencedor2.setChecked(true);
+                } else if (check1) {
+                    check1 = false;
+                    checkVencedor1.setChecked(false);
+                    check2 = true;
+                    checkVencedor2.setChecked(true);
+                } else {
+                    if (check2) {
+                        check2 = false;
+                        checkVencedor2.setChecked(false);
+                    }
+                }
+            }
+        });
         ArrayList list = new ArrayList();
         list.addAll(Arrays.asList(getResources().getStringArray(R.array.datas_jogos)));
         Spinner atualizar_data = (Spinner) findViewById(R.id.atualizar_jogo_data);
@@ -109,8 +158,6 @@ public class AtualizarJogos extends AppCompatActivity {
         });
 
     }
-
-
 
     @Override
     protected void onResume() {
