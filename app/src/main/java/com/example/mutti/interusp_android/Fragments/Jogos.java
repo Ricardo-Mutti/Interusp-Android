@@ -216,7 +216,7 @@ public class Jogos extends Fragment {
                     AtleticaToFilter = 0;
                 } else {
                     filtroAtletica.setText(chosen);
-                    AtleticaToFilter = position - 1;
+                    AtleticaToFilter = position;
                 }
                 filterList();
             }
@@ -271,7 +271,7 @@ public class Jogos extends Fragment {
         }
 
 
-        if (stringModalidadeToFilter != null) {
+        if (AtleticaToFilter != 0) {
             for (int i = aux.size() - 1; i >= 0; i--) {
                 Jogo jogo = aux.get(i);
 
@@ -354,7 +354,6 @@ public class Jogos extends Fragment {
             if (novo_lugar) {
                 filters_lugar.add(jogo.getLocal());
             }
-
 
         }
     }
