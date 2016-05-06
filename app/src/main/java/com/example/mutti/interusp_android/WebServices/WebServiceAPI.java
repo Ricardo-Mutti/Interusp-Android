@@ -9,7 +9,9 @@ import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.example.mutti.interusp_android.Model.Modalidade;
 import com.example.mutti.interusp_android.Utils.Constants;
+import com.google.gson.Gson;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -142,6 +144,28 @@ public class WebServiceAPI { private Context context;
 
 
         String url = Constants.kServiceURL + Constants.kServiceEditOnibus;
+
+        Request request = new InteruspWSRequest(Request.Method.POST, this.context,
+                url,
+                params, successListener);
+
+        WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
+        Log.d("Request:",request.toString());
+    }
+
+    public void updateModalidade(Modalidade modalidade, Response.Listener successListener) {
+
+        Map<String, String> params = new HashMap<>();
+        Gson gson = new Gson();
+        String pontuacao_total = gson.toJson(modalidade.getPontuacao_total());
+        String pontuacao_max = gson.toJson(modalidade.getPontuacao_max());
+        String pontuacao_min = gson.toJson(modalidade.getPontuacao_min());
+        params.put("id", String.valueOf(modalidade.getId()));
+        params.put("pontuacao_total", pontuacao_total);
+        params.put("pontuacao_max", pontuacao_max);
+        params.put("pontuacao_min", pontuacao_min);
+
+        String url = Constants.kServiceURL + Constants.kServiceUpdateModalidade;
 
         Request request = new InteruspWSRequest(Request.Method.POST, this.context,
                 url,

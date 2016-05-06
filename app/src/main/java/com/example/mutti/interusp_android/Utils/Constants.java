@@ -32,6 +32,8 @@ public class Constants {
     public static final String kServiceEditOnibus = "/v1/onibus/";
     public static final String kEditOnibusDone = "com.appsimples.interusp.edit-onibus-done";
 
+    public static final String kServiceUpdateModalidade = "/v1/modalidade/update-modalidade/";
+    public static final String kUpdateModalidadeDone = "com.appsimples.interusp.update-modalidade-done";
 
     public static final String TOKEN_KEY = "x-access-token";
 
