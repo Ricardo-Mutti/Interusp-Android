@@ -1,7 +1,10 @@
 package com.example.mutti.interusp_android;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -11,56 +14,85 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.Adapter.PontuacaoFaculdadeAdapter;
+import com.example.mutti.interusp_android.Adapter.PontuacaoGeralAdapter;
+import com.example.mutti.interusp_android.Manager.GetPontosAtletica;
+import com.example.mutti.interusp_android.Model.Faculdade;
+import com.example.mutti.interusp_android.Model.Modalidade;
+import com.example.mutti.interusp_android.Model.ModalidadeFaculdade;
+import com.example.mutti.interusp_android.Utils.Constants;
+import com.example.mutti.interusp_android.Utils.DataHolder;
 import com.example.mutti.interusp_android.Utils.StatusBarColor;
+
+import java.util.ArrayList;
 
 public class PontuacaoFaculdade extends AppCompatActivity {
 
     Activity activity = this;
     Context context = this;
 
-    ListView listPontuacao;
+    int facul_id;
 
+    ListView listPontuacao_atletica;
+    ImageView logo_atletica;
     TextView action_title;
+    PontuacaoFaculdadeAdapter adapter;
+
+    ArrayList<ModalidadeFaculdade> modalidades = new ArrayList<>();
+
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            listPontuacao_atletica = (ListView) findViewById(R.id.listPontuacao_atletica);
+            modalidades = DataHolder.getInstance().getModalidadesFaculdade();
+            adapter = new PontuacaoFaculdadeAdapter(context, modalidades);
+            listPontuacao_atletica.setAdapter(adapter);
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pontuacao_atletica);
 
-        listPontuacao = (ListView) findViewById(R.id.listPontuacao);
-//        ArrayList<com.example.mutti.interusp_android.Model.PontuacaoAtletica> list = new ArrayList<>();
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(0, "Atletismo", 1, 180));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(1, "Futebol de Campo", 2, 160));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(2, "Futebol Futsal masculino", 3, 120));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(3, "Basquete masculino", 4, 120));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(4, "Natação masculino", 5, 119));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(5, "Handebol masculino", 6, 100));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(6, "Judô", 7, 99));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(7, "Karate", 8, 99));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(8, "Polo", 9, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(9, "Rugby masculino", 10, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(10, "Basebol", 11, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(11, "Volei masculino", 12, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(12, "Tênis masculino", 13, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(13, "Tênis de Mesa masculino", 14, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(14, "Xadrez", 15, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(15, "Futebol Futsal feminino", 16, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(16, "Basquete feminino", 17, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(17, "Natação feminino", 18, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(18, "Handebol feminino", 19, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(19, "Rugby feminino", 20, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(20, "Softbol", 21, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(21, "Volei feminino", 22, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(22, "Tênis feminino", 23, 95));
-//        list.add(new com.example.mutti.interusp_android.Model.PontuacaoAtletica(23, "Tênis de Mesa feminino", 24, 95));
-//
-//        PontuacaoFaculdadeAdapter adapter = new PontuacaoFaculdadeAdapter(this, list);
-//        listPontuacao.setAdapter(adapter);
+        facul_id = getIntent().getIntExtra("facul_id", 0);
 
+        GetPontosAtletica getPontosAtletica = new GetPontosAtletica(context);
+        getPontosAtletica.sendRequest(String.valueOf(facul_id));
+
+        logo_atletica = (ImageView) findViewById(R.id.pontuacao_atletica_logo);
+
+        switch (facul_id) {
+            case 1:
+                logo_atletica.setImageResource(R.drawable.icon_poli);
+                break;
+            case 2:
+                logo_atletica.setImageResource(R.drawable.icon_fea);
+                break;
+            case 3:
+                logo_atletica.setImageResource(R.drawable.icon_farma);
+                break;
+            case 4:
+                logo_atletica.setImageResource(R.drawable.icon_esalq);
+                break;
+            case 5:
+                logo_atletica.setImageResource(R.drawable.icon_riberao);
+                break;
+            case 6:
+                logo_atletica.setImageResource(R.drawable.icon_sanfran);
+                break;
+            case 7:
+                logo_atletica.setImageResource(R.drawable.icon_odonto);
+                break;
+            case 8:
+                logo_atletica.setImageResource(R.drawable.icon_pinheiros);
+                break;
+        }
 
         //ACTION BAR
         SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        StatusBarColor.setColorStatusBar(activity, sharedpreferences.getString("cor1", "#000000"));
         action_title = (TextView) findViewById(R.id.txtActionBar);
         action_title.setText("Pontuação Atlética");
         action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
@@ -73,4 +105,18 @@ public class PontuacaoFaculdade extends AppCompatActivity {
             }
         });
     }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        activity.registerReceiver(receiver, new IntentFilter(Constants.kGetPontosFaculdadeDone));
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        activity.unregisterReceiver(receiver);
+    }
+
 }

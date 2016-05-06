@@ -9,6 +9,7 @@
     <include layout="@layout/action_bar" />
 
     <ImageView
+        android:id="@+id/pontuacao_atletica_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/icon_poli"
@@ -59,7 +60,7 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/listPontuacao"
+        android:id="@+id/listPontuacao_atletica"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

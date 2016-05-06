@@ -30,7 +30,7 @@
                 android:id="@+id/atletismo_feminino"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/corrida_rosa"
+                android:src="@drawable/modalidade_atletismo_fem"
                 android:layout_weight="1" />
 
             <ImageView
@@ -44,7 +44,7 @@
                 android:id="@+id/basquete_feminino"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/basquete_rosa"
+                android:src="@drawable/modalidade_basquete_fem"
                 android:layout_weight="1" />
 
             <ImageView
@@ -58,7 +58,7 @@
                 android:id="@+id/softbol"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/soft_rosa"
+                android:src="@drawable/modalidade_soft"
                 android:layout_weight="1" />
 
         </LinearLayout>
@@ -74,7 +74,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/modalidade_soft" />
+                android:src="@drawable/modalidade_beisebol" />
 
             <ImageView
                 android:id="@+id/campo"
@@ -87,7 +87,7 @@
                 android:id="@+id/futsal_feminino"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/futsal_rosa"
+                android:src="@drawable/modalidade_futsal_fem"
                 android:layout_weight="1" />
 
             <ImageView
@@ -101,7 +101,7 @@
                 android:id="@+id/handebol_feminino"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/handball_rosa"
+                android:src="@drawable/modalidade_handball_fem"
                 android:layout_weight="1" />
 
 
@@ -138,7 +138,7 @@
                 android:id="@+id/natacao_feminino"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/natacao_rosa"
+                android:src="@drawable/modalidade_natacao_fem"
                 android:layout_weight="1" />
 
             <ImageView
@@ -167,7 +167,7 @@
                 android:id="@+id/rugby_feminino"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/rugby_rosa"
+                android:src="@drawable/modalidade_rugby_fem"
                 android:layout_weight="1" />
 
             <ImageView
@@ -181,7 +181,7 @@
                 android:id="@+id/tenis_feminino"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/tenis_rosa"
+                android:src="@drawable/modalidade_tenis_fem"
                 android:layout_weight="1" />
 
             <ImageView
@@ -203,7 +203,7 @@
                 android:id="@+id/tenis_mesa_feminino"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/tenismesa_rosa"
+                android:src="@drawable/modalidade_tenismesa_fem"
                 android:layout_weight="1" />
 
             <ImageView
@@ -217,7 +217,7 @@
                 android:id="@+id/volei_feminino"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/volei_rosa"
+                android:src="@drawable/modalidade_volei_fem"
                 android:layout_weight="1" />
 
             <ImageView

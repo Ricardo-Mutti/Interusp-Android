@@ -32,11 +32,16 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
         this.list = list;
     }
 
+    @Override
+    public int getCount() {
+        return 9;//oito faculdades mas a celula de modalidades
+    }
+
     //Logica pra retornar o layout
     @Override
     public int getItemViewType(int position) {
         int type = 0;
-        if (position == 7) {
+        if (position == 8) {
             type = 1;
         }
 
@@ -52,13 +57,13 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        Faculdade pontuacao = list.get(position);
+
         int type = getItemViewType(position);
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             if (type == 0) {//Placar Geral
-
+                Faculdade pontuacao = list.get(position);
                 convertView = inflater.inflate(R.layout.item_pontuacao_geral, null);
                 SetListAtletica.setCell(convertView, context, pontuacao);
 
@@ -97,6 +102,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", true);
+                        intent.putExtra("modalidade_id", 1);
                         intent.putExtra("modalidade", "atletismo");
                         activity.startActivity(intent);
                     }
@@ -106,6 +112,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 2);
                         intent.putExtra("modalidade", "atletismo");
                         activity.startActivity(intent);
                     }
@@ -115,6 +122,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", true);
+                        intent.putExtra("modalidade_id", 3);
                         intent.putExtra("modalidade", "basquete");
                         activity.startActivity(intent);
                     }
@@ -124,6 +132,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 4);
                         intent.putExtra("modalidade", "basquete");
                         activity.startActivity(intent);
                     }
@@ -133,6 +142,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", true);
+                        intent.putExtra("modalidade_id", 17);
                         intent.putExtra("modalidade", "softbol");
                         activity.startActivity(intent);
                     }
@@ -142,6 +152,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 5);
                         intent.putExtra("modalidade", "beisebol");
                         activity.startActivity(intent);
                     }
@@ -151,6 +162,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 6);
                         intent.putExtra("modalidade", "futebol de campo");
                         activity.startActivity(intent);
                     }
@@ -160,6 +172,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", true);
+                        intent.putExtra("modalidade_id", 7);
                         intent.putExtra("modalidade", "futsal");
                         activity.startActivity(intent);
                     }
@@ -169,6 +182,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 8);
                         intent.putExtra("modalidade", "futsal");
                         activity.startActivity(intent);
                     }
@@ -178,6 +192,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", true);
+                        intent.putExtra("modalidade_id", 9);
                         intent.putExtra("modalidade", "handebol");
                         activity.startActivity(intent);
                     }
@@ -187,6 +202,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 10);
                         intent.putExtra("modalidade", "handebol");
                         activity.startActivity(intent);
                     }
@@ -196,6 +212,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 11);
                         intent.putExtra("modalidade", "judô");
                         activity.startActivity(intent);
                     }
@@ -205,6 +222,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 12);
                         intent.putExtra("modalidade", "karatê");
                         activity.startActivity(intent);
                     }
@@ -214,6 +232,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", true);
+                        intent.putExtra("modalidade_id", 13);
                         intent.putExtra("modalidade", "natação");
                         activity.startActivity(intent);
                     }
@@ -223,6 +242,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 14);
                         intent.putExtra("modalidade", "natação");
                         activity.startActivity(intent);
                     }
@@ -232,6 +252,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 15);
                         intent.putExtra("modalidade", "pólo");
                         activity.startActivity(intent);
                     }
@@ -241,6 +262,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", true);
+                        intent.putExtra("modalidade_id", 25);
                         intent.putExtra("modalidade", "rugby");
                         activity.startActivity(intent);
                     }
@@ -250,6 +272,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 16);
                         intent.putExtra("modalidade", "rugby");
                         activity.startActivity(intent);
                     }
@@ -259,6 +282,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", true);
+                        intent.putExtra("modalidade_id", 17);
                         intent.putExtra("modalidade", "tênis");
                         activity.startActivity(intent);
                     }
@@ -268,6 +292,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 18);
                         intent.putExtra("modalidade", "tênis");
                         activity.startActivity(intent);
                     }
@@ -277,6 +302,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", true);
+                        intent.putExtra("modalidade_id", 20);
                         intent.putExtra("modalidade", "tênis de mesa");
                         activity.startActivity(intent);
                     }
@@ -286,6 +312,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 21);
                         intent.putExtra("modalidade", "tênis de mesa");
                         activity.startActivity(intent);
                     }
@@ -295,6 +322,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", true);
+                        intent.putExtra("modalidade_id", 22);
                         intent.putExtra("modalidade", "vôlei");
                         activity.startActivity(intent);
                     }
@@ -304,6 +332,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 23);
                         intent.putExtra("modalidade", "vôlei");
                         activity.startActivity(intent);
                     }
@@ -313,6 +342,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                     public void onClick(View view) {
                         Intent intent = new Intent(activity, PontuacaoModalidade.class);
                         intent.putExtra("feminino", false);
+                        intent.putExtra("modalidade_id", 24);
                         intent.putExtra("modalidade", "xadrez");
                         activity.startActivity(intent);
                     }

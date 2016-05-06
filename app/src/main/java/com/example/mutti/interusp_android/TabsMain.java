@@ -92,8 +92,6 @@ public class TabsMain extends FragmentActivity {
         jogos_tab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GetJogos getJogos = new GetJogos(context);
-                getJogos.GetJogos();
                 SelectFragment.open(3, fragmentManager, activity);
             }
         });

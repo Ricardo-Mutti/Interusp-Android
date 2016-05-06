@@ -23,7 +23,7 @@ public class Constants {
     public static final String kServiceGetTorcidas = "/v1/tracking/";
 
     public static final String kGetModalidadesDone = "com.appsimples.interusp.modalidade-done";
-    public static final String kServiceGetModalidades = "/v1/modalidade/";
+    public static final String kServiceGetModalidades = "/v1/modalidade?id=";
 
     public static final String kServiceGetJogos = "/v1/jogo/";
     public static final String kJogosDone = "com.appsimples.interusp.jogos-done";
@@ -32,12 +32,19 @@ public class Constants {
     public static final String kServiceEditOnibus = "/v1/onibus/";
     public static final String kEditOnibusDone = "com.appsimples.interusp.edit-onibus-done";
 
+    public static final String kServiceGetFaculdades = "/v1/faculdade/";
+    public static final String kGetFaculdadesDone = "com.appsimples.interusp.edit-faculdades-done";
+
+    public static final String kServiceGetPontosFacul = "/v1/modalidade/faculdade=";
+    public static final String kGetPontosFaculdadeDone = "com.appsimples.interusp.edit-pontos-faculdades-done";
+
+    public static final String kServiceEditLocal = "/v1/locais/";
+    public static final String kEditLocalDone = "com.appsimples.interusp.edit-local-done";
+
+    public static final String kServiceUpdateModalidade = "/v1/modalidade/update-modalidade/";
+    public static final String kUpdateModalidadeDone = "com.appsimples.interusp.update-modalidade-done";
 
     public static final String TOKEN_KEY = "x-access-token";
-
-
-
-
 
 
     //Keys de jogo

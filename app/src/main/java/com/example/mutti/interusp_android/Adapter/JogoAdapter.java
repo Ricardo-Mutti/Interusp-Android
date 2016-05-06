@@ -106,7 +106,12 @@ public class JogoAdapter extends BaseAdapter{
         }else{
             competidor_2=list.get(Integer.parseInt(jogo.getFaculdade_2())-1).toString();
         }
-        jogos_competidores.setText(competidor_1+" X "+competidor_2);
+        if(jogo.is_prova()){
+            jogos_competidores.setText("Todos");
+        }else{
+            jogos_competidores.setText(competidor_1+" X "+competidor_2);
+        }
+
         jogos_nome.setText(modalidades.get(Integer.parseInt(jogo.getModalidade_id()))+" - "+jogo.getNome());
 
         return convertView;

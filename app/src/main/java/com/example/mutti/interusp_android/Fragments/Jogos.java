@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 
 import com.example.mutti.interusp_android.Adapter.FilterAdapter;
 import com.example.mutti.interusp_android.Adapter.JogoAdapter;
+import com.example.mutti.interusp_android.Manager.GetJogos;
 import com.example.mutti.interusp_android.Model.Jogo;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
@@ -83,6 +84,9 @@ public class Jogos extends Fragment {
 
         activity = getActivity();
         context = getContext();
+
+        GetJogos getJogos = new GetJogos(context);
+        getJogos.GetJogos();
 
         View rootview = inflater.inflate(R.layout.fragment_jogos, container, false);
 
@@ -216,7 +220,7 @@ public class Jogos extends Fragment {
                     AtleticaToFilter = 0;
                 } else {
                     filtroAtletica.setText(chosen);
-                    AtleticaToFilter = position - 1;
+                    AtleticaToFilter = position;
                 }
                 filterList();
             }
@@ -271,7 +275,7 @@ public class Jogos extends Fragment {
         }
 
 
-        if (stringModalidadeToFilter != null) {
+        if (AtleticaToFilter != 0) {
             for (int i = aux.size() - 1; i >= 0; i--) {
                 Jogo jogo = aux.get(i);
 
@@ -354,7 +358,6 @@ public class Jogos extends Fragment {
             if (novo_lugar) {
                 filters_lugar.add(jogo.getLocal());
             }
-
 
         }
     }

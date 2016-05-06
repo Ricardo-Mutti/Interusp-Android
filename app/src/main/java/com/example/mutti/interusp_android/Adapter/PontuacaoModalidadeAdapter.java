@@ -45,8 +45,8 @@ public class PontuacaoModalidadeAdapter extends ArrayAdapter<FaculdadePosicaoPon
         ImageView imgAtletica = (ImageView) convertView.findViewById(R.id.imgAtletica);
         TextView txtPonto = (TextView) convertView.findViewById(R.id.txtPonto);
 
-        txtPosicao.setText(""+faculdade.getPosicao());
-        txtPonto.setText(""+faculdade.getPontuacao());
+        txtPosicao.setText(String.valueOf(faculdade.getPosicao()));
+        txtPonto.setText(String.valueOf(faculdade.getPontuacao()));
 
         switch (faculdade.getFaculdade()) {
             case 0:
