@@ -12,24 +12,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_horizontal">
+        android:padding="10dp"
+        android:gravity="center"
+        >
 
         <ImageView
             android:id="@+id/imgModalidade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/modalidade_basquete"
-            android:padding="20dp"/>
+            />
 
         <TextView
             android:id="@+id/txtEsporte"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Tênis"
             android:textColor="@color/azul_tema"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 

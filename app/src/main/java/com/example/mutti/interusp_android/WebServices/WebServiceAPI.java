@@ -102,7 +102,29 @@ public class WebServiceAPI { private Context context;
         Log.d("Request:",request.toString());
     }
 
+    public void getFaculdades( Response.Listener successListener) {
 
+        String url = Constants.kServiceURL + Constants.kServiceGetFaculdades;
+
+        Request request = new InteruspWSRequest(Request.Method.GET, this.context,
+                url,
+                null, successListener);
+
+        WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
+        Log.d("Request:",request.toString());
+    }
+
+    public void getPontosFaculdades(String facul_id, Response.Listener successListener) {
+
+        String url = Constants.kServiceURL + Constants.kServiceGetPontosFacul+facul_id;
+
+        Request request = new InteruspWSRequest(Request.Method.GET, this.context,
+                url,
+                null, successListener);
+
+        WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
+        Log.d("Request:",request.toString());
+    }
 
     public void getOnibus( Response.Listener successListener) {
 
@@ -152,9 +174,9 @@ public class WebServiceAPI { private Context context;
     }
 
 
-    public void getModalidades( Response.Listener successListener) {
+    public void getModalidades( String modalidade_id, Response.Listener successListener) {
 
-        String url = Constants.kServiceURL + Constants.kServiceGetModalidades;
+        String url = Constants.kServiceURL + Constants.kServiceGetModalidades+modalidade_id;
 
         Request request = new InteruspWSRequest(Request.Method.GET, this.context,
                 url,

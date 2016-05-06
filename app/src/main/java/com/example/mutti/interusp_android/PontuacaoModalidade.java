@@ -1,7 +1,10 @@
 package com.example.mutti.interusp_android;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -11,12 +14,19 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.Adapter.PontuacaoFaculdadeAdapter;
 import com.example.mutti.interusp_android.Adapter.PontuacaoModalidadeAdapter;
+import com.example.mutti.interusp_android.Manager.GetModalidades;
 import com.example.mutti.interusp_android.Model.FaculdadePosicaoPontuacao;
 import com.example.mutti.interusp_android.Model.Modalidade;
+import com.example.mutti.interusp_android.Model.ModalidadeFaculdade;
+import com.example.mutti.interusp_android.Utils.Constants;
+import com.example.mutti.interusp_android.Utils.DataHolder;
 import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PontuacaoModalidade extends AppCompatActivity {
 
@@ -26,6 +36,22 @@ public class PontuacaoModalidade extends AppCompatActivity {
     ListView listModalidade;
     TextView action_title;
 
+
+
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            listModalidade = (ListView) findViewById(R.id.listPontuacaoModalidade);
+
+            ArrayList<FaculdadePosicaoPontuacao> faculs = new ArrayList<>(Arrays.asList(DataHolder.getInstance().getModalidade().getPontuacao_total()));
+
+            PontuacaoModalidadeAdapter adapter = new PontuacaoModalidadeAdapter(context, faculs);
+            listModalidade.setAdapter(adapter);
+
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,59 +59,100 @@ public class PontuacaoModalidade extends AppCompatActivity {
 
         boolean isFem = getIntent().getBooleanExtra("feminino", false);
         String esporte = getIntent().getStringExtra("modalidade");
+        int modalidade_id = getIntent().getIntExtra("modalidade_id", 0);
 
         //PEGA PRO INTENT QUAL MODALIDADE
         ImageView imgModalidade = (ImageView) findViewById(R.id.imgModalidade);
         TextView txtEsporte = (TextView) findViewById(R.id.txtEsporte);
 
+        GetModalidades getModalidades = new GetModalidades(context);
+        getModalidades.getModalidades(String.valueOf(modalidade_id));
+
+
         switch (esporte) {
             case "atletismo":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_atletismo));
+                if(isFem){
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_atletismo_fem));
+                }else{
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_atletismo));
+                }
                 break;
             case "basquete":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_basquete));
+                if(isFem){
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_basquete_fem));
+                }else{
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_basquete));
+                }
                 break;
             case "beisebol":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_soft));
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_beisebol));
                 break;
             case "softbol":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_soft));
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_soft));
                 break;
             case "futebol de campo":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_campo));
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_campo));
                 break;
             case "futsal":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_futsal));
+                if(isFem){
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_futsal_fem));
+                }else{
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_futsal));
+                }
                 break;
             case "handebol":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_handball));
+                if(isFem){
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_handball_fem));
+                }else{
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_handball));
+                }
                 break;
             case "judô":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_judo));
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_judo));
                 break;
             case "karatê":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_karate));
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_karate));
                 break;
             case "natação":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_natacao));
+                if(isFem){
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_natacao_fem));
+                }else{
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_natacao));
+                }
                 break;
             case "pólo":
                 imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_polo));
                 break;
             case "rugby":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_rugby));
+                if(isFem){
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_rugby_fem));
+                }else{
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_rugby));
+                }
                 break;
             case "tênis":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_tenis));
+                if(isFem){
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_tenis_fem));
+                }else{
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_tenis));
+                }
                 break;
             case "tênis de mesa":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_tenismesa));
+                if(isFem){
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_tenismesa_fem));
+                }else{
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_tenismesa));
+                }
                 break;
             case "vôlei":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_volei));
+                if(isFem){
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_volei_fem));
+                }else{
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_volei));
+                }
                 break;
             case "xadrez":
-                imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_xadrez));
+                    imgModalidade.setImageDrawable(getResources().getDrawable(R.drawable.modalidade_xadrez));
                 break;
         }
         txtEsporte.setText(esporte);
@@ -93,27 +160,6 @@ public class PontuacaoModalidade extends AppCompatActivity {
         if (isFem) {
             txtEsporte.setTextColor(getResources().getColor(R.color.rosa_tema));
         }
-
-        listModalidade = (ListView) findViewById(R.id.listPontuacaoModalidade);
-
-        Modalidade modalidade = new Modalidade();
-        //modalidade= DATAHOLDER
-
-
-        ArrayList<FaculdadePosicaoPontuacao> list = new ArrayList<>();
-
-//        list = modalidade.getPontuacao_total()
-
-        list.add(new FaculdadePosicaoPontuacao(2, 1, 160));
-        list.add(new FaculdadePosicaoPontuacao(3, 2, 120));
-        list.add(new FaculdadePosicaoPontuacao(4, 3, 120));
-        list.add(new FaculdadePosicaoPontuacao(5, 4, 119));
-        list.add(new FaculdadePosicaoPontuacao(6, 5, 100));
-        list.add(new FaculdadePosicaoPontuacao(7, 6, 99));
-        list.add(new FaculdadePosicaoPontuacao(8, 7, 99));
-
-        PontuacaoModalidadeAdapter adapter = new PontuacaoModalidadeAdapter(this, list);
-        listModalidade.setAdapter(adapter);
 
         //ACTION BAR
         SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
@@ -130,4 +176,20 @@ public class PontuacaoModalidade extends AppCompatActivity {
             }
         });
     }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        activity.registerReceiver(receiver, new IntentFilter(Constants.kGetModalidadesDone));
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        activity.unregisterReceiver(receiver);
+    }
+
+
+
 }

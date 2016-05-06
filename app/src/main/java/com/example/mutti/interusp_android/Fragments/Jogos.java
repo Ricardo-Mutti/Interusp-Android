@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 
 import com.example.mutti.interusp_android.Adapter.FilterAdapter;
 import com.example.mutti.interusp_android.Adapter.JogoAdapter;
+import com.example.mutti.interusp_android.Manager.GetJogos;
 import com.example.mutti.interusp_android.Model.Jogo;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
@@ -83,6 +84,9 @@ public class Jogos extends Fragment {
 
         activity = getActivity();
         context = getContext();
+
+        GetJogos getJogos = new GetJogos(context);
+        getJogos.GetJogos();
 
         View rootview = inflater.inflate(R.layout.fragment_jogos, container, false);
 

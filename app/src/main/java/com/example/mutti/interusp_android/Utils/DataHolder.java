@@ -2,9 +2,11 @@ package com.example.mutti.interusp_android.Utils;
 
 import android.widget.ArrayAdapter;
 
+import com.example.mutti.interusp_android.Model.Faculdade;
 import com.example.mutti.interusp_android.Model.Jogo;
 import com.example.mutti.interusp_android.Model.Locais;
 import com.example.mutti.interusp_android.Model.Modalidade;
+import com.example.mutti.interusp_android.Model.ModalidadeFaculdade;
 import com.example.mutti.interusp_android.Model.Onibus;
 import com.example.mutti.interusp_android.Model.OnibusArray;
 import com.example.mutti.interusp_android.Model.Torcida;
@@ -47,12 +49,28 @@ public class DataHolder {
         this.torcidas = torcidas;
     }
 
-    private ArrayList<Modalidade> modalidades = new ArrayList<>();
-    public ArrayList<Modalidade> getModalidades() {
-        return modalidades;
+    private  ArrayList<Faculdade> faculdades = new ArrayList<>();
+    public ArrayList<Faculdade> getFaculdades() {
+        return faculdades;
     }
-    public void setModalidades(ArrayList<Modalidade> modalidades) {
-        this.modalidades = modalidades;
+    public void setFaculdades(ArrayList<Faculdade> faculdades) {
+        this.faculdades = faculdades;
+    }
+
+    private ArrayList<ModalidadeFaculdade> modalidadesFaculdade = new ArrayList<>();
+    public ArrayList<ModalidadeFaculdade> getModalidadesFaculdade() {
+        return modalidadesFaculdade;
+    }
+    public void setModalidadesFaculdade(ArrayList<ModalidadeFaculdade> modalidadesFaculdade) {
+        this.modalidadesFaculdade = modalidadesFaculdade;
+    }
+
+    private  Modalidade modalidade = new Modalidade();
+    public Modalidade getModalidade() {
+        return modalidade;
+    }
+    public void setModalidade(Modalidade modalidade) {
+        this.modalidade = modalidade;
     }
 
 }

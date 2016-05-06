@@ -5,10 +5,8 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import com.android.volley.Response;
-import com.example.mutti.interusp_android.Model.Locais;
-import com.example.mutti.interusp_android.Model.LocaisArray;
-import com.example.mutti.interusp_android.Model.Modalidade;
-import com.example.mutti.interusp_android.Model.ModalidadeArray;
+import com.example.mutti.interusp_android.Model.ModalidadeFaculdade;
+import com.example.mutti.interusp_android.Model.ModalidadeFaculdadeArray;
 import com.example.mutti.interusp_android.Model.ServerResponse;
 import com.example.mutti.interusp_android.Utils.Constants;
 import com.example.mutti.interusp_android.Utils.DataHolder;
@@ -19,32 +17,35 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Created by Mutti on 05/05/16.
+ * Created by Mutti on 06/05/16.
  */
-public class GetModalidades {
+public class GetPontosAtletica {
+
+//PEGA AS MODALIDADES PELA FACULDADE PONTO TOTAIS E POSICAO
 
     private WebServiceAPI wsAPI;
     Context context;
 
-    public GetModalidades(Context context) {
+    public GetPontosAtletica(Context context) {
         this.context = context;
     }
 
-    public void getModalidades(String modalidade_id) {
+    public void sendRequest(String facul_id) {
         wsAPI = new WebServiceAPI(context);
 
-        wsAPI.getModalidades(modalidade_id,new Response.Listener<String>() {
+        wsAPI.getPontosFaculdades(facul_id, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {//Callback da resposta  pode ser um erro
                 Gson gson = new Gson();
                 ServerResponse serverResponse = gson.fromJson(response, ServerResponse.class);//Parse do json segundo o modelo SeverResponse
 
                 if (serverResponse.isSuccess()) {
-                    ModalidadeArray modalidadeArray = gson.fromJson(serverResponse.getResponse(), ModalidadeArray.class);
-                    ArrayList<Modalidade> modalidades = new ArrayList<Modalidade>(Arrays.asList(modalidadeArray.getModalidades()));
-                    DataHolder.getInstance().setModalidade(modalidades.get(0));
 
-                    Intent intent = new Intent(Constants.kGetModalidadesDone);
+                    ModalidadeFaculdadeArray modalidadeArray = gson.fromJson(serverResponse.getResponse(), ModalidadeFaculdadeArray.class);
+                    ArrayList<ModalidadeFaculdade> modalidades = new ArrayList<>(Arrays.asList(modalidadeArray.getModalidades()));
+                    DataHolder.getInstance().setModalidadesFaculdade(modalidades);
+
+                    Intent intent = new Intent(Constants.kGetPontosFaculdadeDone);
                     context.sendBroadcast(intent);
 
                 } else {
@@ -55,5 +56,4 @@ public class GetModalidades {
         });
 
     }
-
 }
