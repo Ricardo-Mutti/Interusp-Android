@@ -11,6 +11,8 @@ import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -60,6 +62,7 @@ public class AtualizarPartida extends AppCompatActivity {
     final ArrayList<String> filters_lugar = new ArrayList<>();
 
     TextView action_title;
+    boolean setHide = false;
 
     public static final String MyPREFERENCES = "MyPrefs";
     public static final String cor1 = "cor1";
@@ -186,16 +189,30 @@ public class AtualizarPartida extends AppCompatActivity {
         filtroLocal.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (setHide) {
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
+                // start new Activity here
+                containerFilter.setVisibility(View.GONE);
+                return false;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
     public void showFiltroDia() {
 
         final ArrayList<String> filters = new ArrayList<>(Arrays.asList(Constants.kFiltroJogoDia));
         filterAdapter = new FilterAdapter(activity, filters);
         filterListView.setAdapter(filterAdapter);
         containerFilter.setVisibility(View.VISIBLE);
+        setHide = true;
         filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 containerFilter.setVisibility(View.GONE);
+                setHide = false;
                 String chosen = filters.get(position);
                 if (chosen.equals("Todos")) {
                     filtroDia.setText("Dia");
@@ -218,10 +235,12 @@ public class AtualizarPartida extends AppCompatActivity {
 
         filterListView.setAdapter(filterAdapter);
         containerFilter.setVisibility(View.VISIBLE);
+        setHide = true;
         filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 containerFilter.setVisibility(View.GONE);
+                setHide = false;
                 String chosen = String.valueOf(position - 1);
                 String label = filters.get(position);
                 if (label.equals("Todos")) {
@@ -244,10 +263,12 @@ public class AtualizarPartida extends AppCompatActivity {
         filterAdapter = new FilterAdapter(activity, filters);
         filterListView.setAdapter(filterAdapter);
         containerFilter.setVisibility(View.VISIBLE);
+        setHide = true;
         filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 containerFilter.setVisibility(View.GONE);
+                setHide = false;
                 String chosen = filters.get(position);
                 if (chosen.equals("Todos")) {
                     filtroAtletica.setText("Atlética");
@@ -266,10 +287,12 @@ public class AtualizarPartida extends AppCompatActivity {
         filterAdapter = new FilterAdapter(activity, filters_lugar);
         filterListView.setAdapter(filterAdapter);
         containerFilter.setVisibility(View.VISIBLE);
+        setHide = true;
         filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 containerFilter.setVisibility(View.GONE);
+                setHide = false;
                 String chosen = filters_lugar.get(position);
                 if (chosen.equals("Todos")) {
                     filtroLocal.setText("Locais");
