@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -46,6 +47,15 @@ public class AtualizarJogos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atualizar_jogos);
 
+        LinearLayout placar = (LinearLayout) findViewById(R.id.placar);
+        LinearLayout info = (LinearLayout) findViewById(R.id.info);
+
+        boolean isPlacar = getIntent().getBooleanExtra("placar", false);
+
+        if (!isPlacar) {
+            placar.setVisibility(View.GONE);
+            info.setVisibility(View.VISIBLE);
+        }
 
         EditText placar1_edt = (EditText) findViewById(R.id.atualizar_jogo_placar1);
         EditText placar2_edt = (EditText) findViewById(R.id.atualizar_jogo_placar2);

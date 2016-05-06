@@ -38,6 +38,12 @@ public class Constants {
     public static final String kServiceGetPontosFacul = "/v1/modalidade/faculdade=";
     public static final String kGetPontosFaculdadeDone = "com.appsimples.interusp.edit-pontos-faculdades-done";
 
+    public static final String kServiceEditLocal = "/v1/locais/";
+    public static final String kEditLocalDone = "com.appsimples.interusp.edit-local-done";
+
+    public static final String kServiceUpdateModalidade = "/v1/modalidade/update-modalidade/";
+    public static final String kUpdateModalidadeDone = "com.appsimples.interusp.update-modalidade-done";
+
     public static final String TOKEN_KEY = "x-access-token";
 
 

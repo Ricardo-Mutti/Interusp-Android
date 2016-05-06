@@ -35,7 +35,7 @@ public class AtualizarMenu extends AppCompatActivity {
         jogos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(activity, AtualizarJogos.class);
+                Intent intent1 = new Intent(activity, AtualizarPartida.class);
                 startActivity(intent1);
             }
         });

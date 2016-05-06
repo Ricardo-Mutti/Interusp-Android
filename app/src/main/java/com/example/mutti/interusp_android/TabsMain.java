@@ -113,6 +113,5 @@ public class TabsMain extends FragmentActivity {
         title.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
         actionBar.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
         StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString(cor1, "#000000"));
-        SelectFragment.open(tab, fragmentManager, activity);
     }
 }
