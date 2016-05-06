@@ -49,12 +49,12 @@
                     android:textAlignment="center"
                     android:textSize="25dp" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/imgTime1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/icon_poli" />
@@ -67,16 +67,28 @@
                         android:layout_marginTop="20dp"
                         android:gravity="center"
                         android:inputType="number"
-                        android:maxLength="4" />
-                </LinearLayout>
+                        android:maxLength="4"
+                        android:layout_toRightOf="@+id/imgTime1"/>
 
-                <LinearLayout
+                    <CheckBox
+                        android:id="@+id/checkVencedor1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:padding="20dp"
+                        android:gravity="center"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:paddingTop="10dp">
 
                     <ImageView
+                        android:id="@+id/imgTime2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/icon_farma" />
@@ -89,8 +101,20 @@
                         android:layout_marginTop="20dp"
                         android:gravity="center"
                         android:inputType="number"
-                        android:maxLength="4" />
-                </LinearLayout>
+                        android:maxLength="4"
+                        android:layout_toRightOf="@+id/imgTime2"/>
+
+                    <CheckBox
+                        android:id="@+id/checkVencedor2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:padding="20dp"
+                        android:gravity="center"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
 
             </LinearLayout>
 

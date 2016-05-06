@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.example.mutti.interusp_android.Adapter.FilterAdapter;
 import com.example.mutti.interusp_android.Adapter.JogoAdapter;
@@ -55,6 +57,8 @@ public class Jogos extends Fragment {
     RelativeLayout containerFilter;
 
     ArrayList<Jogo> aux = new ArrayList<>();
+
+    boolean setHide = false;
 
     public static final String MyPREFERENCES = "MyPrefs";
     public static final String cor1 = "cor1";
@@ -155,10 +159,12 @@ public class Jogos extends Fragment {
         filterAdapter = new FilterAdapter(getActivity(), filters);
         filterListView.setAdapter(filterAdapter);
         containerFilter.setVisibility(View.VISIBLE);
+        setHide = true;
         filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 containerFilter.setVisibility(View.GONE);
+                setHide = false;
                 String chosen = filters.get(position);
                 if (chosen.equals("Todos")) {
                     filtroDia.setText("Dia");
@@ -183,10 +189,12 @@ public class Jogos extends Fragment {
 
         filterListView.setAdapter(filterAdapter);
         containerFilter.setVisibility(View.VISIBLE);
+        setHide = true;
         filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 containerFilter.setVisibility(View.GONE);
+                setHide = false;
                 String chosen = String.valueOf(position - 1);
                 String label = filters.get(position);
                 if (label.equals("Todos")) {
@@ -210,10 +218,12 @@ public class Jogos extends Fragment {
         filterAdapter = new FilterAdapter(getActivity(), filters);
         filterListView.setAdapter(filterAdapter);
         containerFilter.setVisibility(View.VISIBLE);
+        setHide = true;
         filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 containerFilter.setVisibility(View.GONE);
+                setHide = false;
                 String chosen = filters.get(position);
                 if (chosen.equals("Todos")) {
                     filtroAtletica.setText("Atlética");
@@ -234,10 +244,12 @@ public class Jogos extends Fragment {
         filterAdapter = new FilterAdapter(getActivity(), filters_lugar);
         filterListView.setAdapter(filterAdapter);
         containerFilter.setVisibility(View.VISIBLE);
+        setHide = true;
         filterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 containerFilter.setVisibility(View.GONE);
+                setHide = false;
                 String chosen = filters_lugar.get(position);
                 if (chosen.equals("Todos")) {
                     filtroLocal.setText("Locais");
@@ -302,6 +314,23 @@ public class Jogos extends Fragment {
     public void onResume() {
         super.onResume();
         activity.registerReceiver(receiver, new IntentFilter(Constants.kJogosDone));
+
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (setHide) {
+                    if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+                        // handle back button's click listener
+                        containerFilter.setVisibility(View.GONE);
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+        });
     }
 
     @Override
