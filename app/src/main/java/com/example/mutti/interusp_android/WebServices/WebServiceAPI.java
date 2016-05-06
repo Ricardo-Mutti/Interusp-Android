@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.example.mutti.interusp_android.Model.Locais;
 import com.example.mutti.interusp_android.Model.Modalidade;
 import com.example.mutti.interusp_android.Utils.Constants;
 import com.google.gson.Gson;
@@ -144,6 +145,40 @@ public class WebServiceAPI { private Context context;
 
 
         String url = Constants.kServiceURL + Constants.kServiceEditOnibus;
+
+        Request request = new InteruspWSRequest(Request.Method.POST, this.context,
+                url,
+                params, successListener);
+
+        WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
+        Log.d("Request:",request.toString());
+    }
+
+    public void editLocal(Locais local, Response.Listener successListener) {
+        Gson gson = new Gson();
+
+        Map<String, String> params = new HashMap<>();
+        if(local.getId()!=null) {
+            params.put("_id", local.getId());
+        }
+        if(local.getNome()!=null) {
+            params.put("nome", local.getNome());
+        }
+        if(local.getDescricao()!=null) {
+            params.put("descricao", local.getDescricao());
+        }
+        if(local.getFoto()!=null) {
+            params.put("foto", local.getFoto());
+        }
+        if(local.getCoordenadas()!=null) {
+            String coordenadas = gson.toJson(local.getCoordenadas());
+            params.put("coodenadas", coordenadas);
+        }
+        if(local.getTipo()!=0) {
+            params.put("tipo", String.valueOf(local.getTipo()));
+        }
+
+        String url = Constants.kServiceURL + Constants.kServiceEditLocal;
 
         Request request = new InteruspWSRequest(Request.Method.POST, this.context,
                 url,

@@ -8,7 +8,7 @@ import android.os.Parcelable;
  */
 public class Locais implements Parcelable {
 
-    private String id;
+    private String _id;
     private String nome;
     private String foto;
     private String descricao;
@@ -16,8 +16,8 @@ public class Locais implements Parcelable {
     private int tipo;
     private String principaisModalidades;
 
-    public String getId() {return id;}
-    public void setId(String id) {this.id = id;}
+    public String getId() {return _id;}
+    public void setId(String id) {this._id = id;}
 
     public String getNome() {return nome;}
     public void setNome(String nome) {this.nome = nome;}
@@ -50,7 +50,7 @@ public class Locais implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(id);
+        dest.writeString(_id);
         dest.writeString(nome);
         dest.writeString(foto);
         dest.writeString(descricao);
@@ -72,7 +72,7 @@ public class Locais implements Parcelable {
 
     // example constructor that takes a Parcel and gives you an object populated with it's values
     private Locais(Parcel in) {
-        id = in.readString();
+        _id = in.readString();
         nome = in.readString();
         foto = in.readString();
         descricao = in.readString();
