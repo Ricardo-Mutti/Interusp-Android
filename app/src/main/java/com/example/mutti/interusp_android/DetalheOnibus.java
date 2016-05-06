@@ -1,8 +1,12 @@
 package com.example.mutti.interusp_android;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -12,12 +16,16 @@ import com.example.mutti.interusp_android.Model.Locais;
 import com.example.mutti.interusp_android.Model.Onibus;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.DataHolder;
+import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
 import java.util.ArrayList;
 
 public class DetalheOnibus extends AppCompatActivity {
 
+    Activity activity = this;
     Context context = this;
+
+    TextView action_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +82,19 @@ public class DetalheOnibus extends AppCompatActivity {
         }
 
 
-
+        //ACTION BAR
+        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        StatusBarColor.setColorStatusBar(activity, sharedpreferences.getString("cor1", "#000000"));
+        action_title = (TextView) findViewById(R.id.txtActionBar);
+        action_title.setText("Atualizar Ônibus");
+        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
+        final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
+        back_button.setVisibility(View.VISIBLE);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.finish();
+            }
+        });
     }
 }
