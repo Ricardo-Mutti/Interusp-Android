@@ -28,9 +28,6 @@ public class AtualizarMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_adm);
 
-        TextView label = (TextView) findViewById(R.id.txtActionBar);
-        label.setText("Edição dos Resultados");
-
         Button jogos = (Button) findViewById(R.id.btnJogos_adm);
         jogos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +64,15 @@ public class AtualizarMenu extends AppCompatActivity {
 
             }
         });
+        Button locais = (Button) findViewById(R.id.btnLocais);
+        locais.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(activity, AtualizarLocal.class);
+                startActivity(intent1);
+
+            }
+        });
         Button onibus = (Button) findViewById(R.id.btnOnibus_adm);
         onibus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +97,7 @@ public class AtualizarMenu extends AppCompatActivity {
         SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
         action_title = (TextView) findViewById(R.id.txtActionBar);
-        action_title.setText("Menu");
+        action_title.setText("Menu Administrador");
         action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
         final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
         back_button.setVisibility(View.VISIBLE);

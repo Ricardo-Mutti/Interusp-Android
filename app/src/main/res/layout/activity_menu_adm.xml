@@ -37,6 +37,15 @@
         android:layout_marginTop="15dp"
         android:text="Modalidade" />
 
+
+    <Button
+        android:id="@+id/btnLocais"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:text="Locais" />
+
     <Button
         android:id="@+id/btnOnibus_adm"
         android:layout_width="match_parent"

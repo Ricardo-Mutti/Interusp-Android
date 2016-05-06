@@ -10,8 +10,8 @@ public class Locais implements Parcelable {
 
     private String _id;
     private String nome;
-    private String foto;
     private String descricao;
+    private String foto;
     private double coordenadas[];
     private int tipo;
     private String principaisModalidades;
@@ -40,6 +40,14 @@ public class Locais implements Parcelable {
 
     public Locais() {
 
+    }
+
+    public Locais(String nome, String descricao, String foto, double[] coordenadas, int tipo) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.foto = foto;
+        this.coordenadas = coordenadas;
+        this.tipo = tipo;
     }
 
     //Funções de parcialização

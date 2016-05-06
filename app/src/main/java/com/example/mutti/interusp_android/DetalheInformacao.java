@@ -100,6 +100,7 @@ public class DetalheInformacao extends AppCompatActivity {
             btnJogos.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    activity.finish();
                     Intent intent = new Intent(activity, TabsMain.class);
                     intent.putExtra("tab", 3);
                     startActivity(intent);
