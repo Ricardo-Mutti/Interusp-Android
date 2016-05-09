@@ -61,31 +61,31 @@ public class SetListModalidade {
                 drawable_id = R.drawable.modalidade_rugby;
                 break;
             case 17:
-                drawable_id = R.drawable.modalidade_rugby_fem;
-                break;
-            case 18:
                 drawable_id = R.drawable.modalidade_soft;
                 break;
-            case 19:
+            case 18:
                 drawable_id = R.drawable.modalidade_tenis_fem;
                 break;
-            case 20:
+            case 19:
                 drawable_id = R.drawable.modalidade_tenis;
                 break;
-            case 21:
+            case 20:
                 drawable_id = R.drawable.modalidade_tenismesa_fem;
                 break;
-            case 22:
+            case 21:
                 drawable_id = R.drawable.modalidade_tenismesa;
                 break;
-            case 23:
+            case 22:
                 drawable_id = R.drawable.modalidade_volei_fem;
                 break;
-            case 24:
+            case 23:
                 drawable_id = R.drawable.modalidade_volei;
                 break;
-            case 25:
+            case 24:
                 drawable_id = R.drawable.modalidade_xadrez;
+                break;
+            case 25:
+                drawable_id = R.drawable.modalidade_rugby_fem;
                 break;
             default:
                 break;

@@ -124,6 +124,7 @@ public class AtualizarListaEdicao extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(activity, AtualizarModalidade.class);
                         intent.putExtra("nomeModalidade", String.valueOf(list.get(position)));
+                        intent.putExtra("id_modalidae", position+1);
                         startActivity(intent);
                     }
                 });

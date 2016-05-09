@@ -42,11 +42,8 @@ public class AtualizarLocal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atualizar_local);
 
-        final Locais local = getIntent().getParcelableExtra("locais");
 
         boolean novo_lugar = getIntent().getBooleanExtra("novo_lugar", false);
-
-        double[] coordenadas = local.getCoordenadas();
 
         final ImageView icon = (ImageView) findViewById(R.id.icon_lugar);
         final EditText nome = (EditText) findViewById(R.id.lugar_nome_edt);
@@ -65,6 +62,8 @@ public class AtualizarLocal extends AppCompatActivity {
         tipo_lugar.setAdapter(adapter3);
 
         if(!novo_lugar) {
+            final Locais local = getIntent().getParcelableExtra("locais");
+            double[] coordenadas = local.getCoordenadas();
             setIcon(local.getTipo(), icon);
             nome.setText(local.getNome());
             descricao.setText(local.getDescricao());

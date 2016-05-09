@@ -192,10 +192,14 @@ public class WebServiceAPI { private Context context;
         if(local.getFoto()!=null) {
             params.put("foto", local.getFoto());
         }
-        if(local.getCoordenadas()!=null) {
-            String coordenadas = gson.toJson(local.getCoordenadas());
-            params.put("coordenadas", coordenadas);
-        }
+//        if(local.getCoordenadas()!=null) {
+//            String[] s = new String[2];
+//            double[] d = local.getCoordenadas();
+//            for (int i = 0; i < s.length; i++)
+//                s[i] = String.valueOf(d[i]);
+//            String coordenadas = gson.toJson(s);
+//            params.put("coordenadas", coordenadas);
+//        }
         if(local.getTipo()!=0) {
             params.put("tipo", String.valueOf(local.getTipo()));
         }

@@ -80,8 +80,7 @@
         <item>Handebol Feminino</item>
         <item>Handebol Masculino</item>
         <item>Judô</item>
-        <item>Karatê Kata</item>
-        <item>Karatê Kumite</item>
+        <item>Karatê</item>
         <item>Natação Feminino</item>
         <item>Natação Masculino</item>
         <item>Polo Aquático</item>
@@ -219,19 +218,25 @@
     </string-array>
 
     <string-array name="provas_atletismo">
-        <item>100 metros rasos</item>
-        <item>400 metros rasos</item>
-        <item>1500 metros rasos</item>
+        <item>100 metros rasos feminino</item>
+        <item>100 metros rasos masculino</item>
+        <item>400 metros rasos feminino</item>
+        <item>400 metros rasos masculino</item>
+        <item>1500 metros rasos feminino</item>
+        <item>1500 metros rasos masculino</item>
         <item>5000 metros rasos</item>
-        <item>Salto em altura</item>
-        <item>Salto em extensão</item>
+        <item>Salto em altura feminino</item>
+        <item>Salto em altura masculino</item>
+        <item>Salto em extensão feminino</item>
+        <item>Salto em extensão masculino</item>
         <item>Salto triplo</item>
         <item>Lançamento de dardo</item>
         <item>Lançamento de disco de 1.0 Kg </item>
         <item>Lançamento de disco de 2.0 Kg </item>
         <item>Arremesso de peso de 7.26 Kg</item>
         <item>Arremesso de peso de 4.0 Kg</item>
-        <item>Revezamento 4x100 metros rasos</item>
+        <item>Revezamento 4x100 metros rasos feminino</item>
+        <item>Revezamento 4x100 metros rasos masculino</item>
         <item>Revezamento 4x400 metros rasos</item>
     </string-array>
 

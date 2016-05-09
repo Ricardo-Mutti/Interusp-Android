@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
+import com.example.mutti.interusp_android.Utils.SetListModalidade;
 import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
 public class AtualizarModalidade extends AppCompatActivity {
@@ -48,6 +49,11 @@ public class AtualizarModalidade extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atualizar_modalidade);
+
+        int modalidade_id = getIntent().getIntExtra("modalidade_id",0);
+
+        ImageView icon = (ImageView) findViewById(R.id.atualizar_modalidade_icon);
+        icon.setImageResource( SetListModalidade.Drawable(String.valueOf(modalidade_id)));
 
         final EditText colocacao_poli_edt = (EditText) findViewById(R.id.modalidade_colocacao_poli);
         final EditText colocacao_fea_edt = (EditText) findViewById(R.id.modalidade_colocacao_fea);
