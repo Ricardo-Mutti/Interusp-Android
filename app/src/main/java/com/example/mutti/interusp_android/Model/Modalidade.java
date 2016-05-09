@@ -12,6 +12,10 @@ public class Modalidade {
     FaculdadePontuacao[] pontuacao_max;
     FaculdadePosicaoPontuacao[] pontuacao_total;
 
+    public Modalidade(){
+
+    }
+
     public int getId() {
         return id;
     }
