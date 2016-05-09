@@ -32,7 +32,7 @@ public class AtualizarMenu extends AppCompatActivity {
         jogos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(activity, AtualizarPartida.class);
+                Intent intent1 = new Intent(activity, AtualizarSelecionarJogo.class);
                 startActivity(intent1);
             }
         });
@@ -41,7 +41,8 @@ public class AtualizarMenu extends AppCompatActivity {
         natacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(activity, AtualizarProvas.class);
+                Intent intent1 = new Intent(activity, AtualizarListaEdicao.class);
+                intent1.putExtra("tipo_edicao", "Natacao");
                 startActivity(intent1);
             }
         });
@@ -49,35 +50,35 @@ public class AtualizarMenu extends AppCompatActivity {
         atletismo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent1 = new Intent(activity, AtualizarProvas.class);
+                Intent intent1 = new Intent(activity, AtualizarListaEdicao.class);
+                intent1.putExtra("tipo_edicao", "Atletismo");
                 startActivity(intent1);
-
             }
         });
         Button modalidade = (Button) findViewById(R.id.btnModalidade);
         modalidade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(activity, AtualizarModalidade.class);
+                Intent intent1 = new Intent(activity, AtualizarListaEdicao.class);
+                intent1.putExtra("tipo_edicao", "Modalidades");
                 startActivity(intent1);
-
             }
         });
         Button locais = (Button) findViewById(R.id.btnLocais);
         locais.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(activity, AtualizarLocal.class);
+                Intent intent1 = new Intent(activity, AtualizarListaEdicao.class);
+                intent1.putExtra("tipo_edicao", "Locais");
                 startActivity(intent1);
-
             }
         });
         Button onibus = (Button) findViewById(R.id.btnOnibus_adm);
         onibus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(activity, AtualizarOnibus.class);
+                Intent intent1 = new Intent(activity, AtualizarListaEdicao.class);
+                intent1.putExtra("tipo_edicao", "Onibus");
                 startActivity(intent1);
 
             }
@@ -94,11 +95,9 @@ public class AtualizarMenu extends AppCompatActivity {
 
 
         //ACTION BAR
-        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        StatusBarColor.setColorStatusBar(activity,"#000033");
         action_title = (TextView) findViewById(R.id.txtActionBar);
         action_title.setText("Menu Administrador");
-        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
         final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
         back_button.setVisibility(View.VISIBLE);
         back_button.setOnClickListener(new View.OnClickListener() {
@@ -109,11 +108,4 @@ public class AtualizarMenu extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
-        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
-    }
 }

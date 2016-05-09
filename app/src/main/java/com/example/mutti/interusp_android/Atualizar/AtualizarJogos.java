@@ -20,8 +20,12 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.Model.Jogo;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
+import com.example.mutti.interusp_android.Utils.DataHolder;
+import com.example.mutti.interusp_android.Utils.SetFaculImage;
+import com.example.mutti.interusp_android.Utils.SetListModalidade;
 import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
 import java.util.ArrayList;
@@ -39,6 +43,9 @@ public class AtualizarJogos extends AppCompatActivity {
     boolean check1 = false;
     boolean check2 = false;
 
+    ArrayList<Jogo> jogos = DataHolder.getInstance().getJogos();
+    Jogo jogo_selecionado = new Jogo();
+
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -54,20 +61,40 @@ public class AtualizarJogos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atualizar_jogos);
 
+        boolean isPlacar = getIntent().getBooleanExtra("placar", false);
+        String  jogo_id = getIntent().getStringExtra("jogo_id");
+
         LinearLayout placar = (LinearLayout) findViewById(R.id.placar);
         LinearLayout info = (LinearLayout) findViewById(R.id.info);
 
-        boolean isPlacar = getIntent().getBooleanExtra("placar", false);
+        ImageView modalidade = (ImageView) findViewById(R.id.atualizar_jogo_modalidade);
+        ImageView competidor_1 = (ImageView) findViewById(R.id.imgTime1);
+        ImageView competidor_2 = (ImageView) findViewById(R.id.imgTime2);
+
+        TextView nome_jogo = (TextView) findViewById(R.id.atualizar_jogo_jogo);
+
+        EditText placar1_edt = (EditText) findViewById(R.id.atualizar_jogo_placar1);
+        EditText placar2_edt = (EditText) findViewById(R.id.atualizar_jogo_placar2);
+        EditText local_edt = (EditText) findViewById(R.id.atualizar_jogo_local);
+        EditText horario_edt = (EditText) findViewById(R.id.atualizar_jogo_horario);
 
         if (!isPlacar) {
             placar.setVisibility(View.GONE);
             info.setVisibility(View.VISIBLE);
         }
 
-        EditText placar1_edt = (EditText) findViewById(R.id.atualizar_jogo_placar1);
-        EditText placar2_edt = (EditText) findViewById(R.id.atualizar_jogo_placar2);
-        EditText local_edt = (EditText) findViewById(R.id.atualizar_jogo_local);
-        EditText horario_edt = (EditText) findViewById(R.id.atualizar_jogo_horario);
+        for(Jogo jogo : jogos){
+            if(jogo.get_id().equals(jogo_id)){
+                jogo_selecionado=jogo;
+            }
+        }
+
+        nome_jogo.setText(jogo_selecionado.getNome());
+        if(jogo_selecionado.getFaculdade_1() != null && jogo_selecionado.getFaculdade_1() !=null) {
+            competidor_1.setImageResource(SetFaculImage.Drawable(jogo_selecionado.getFaculdade_1()));
+            competidor_2.setImageResource(SetFaculImage.Drawable(jogo_selecionado.getFaculdade_2()));
+        }
+        modalidade.setImageResource(SetListModalidade.Drawable(jogo_selecionado.getModalidade_id()));
 
         checkVencedor1 = (CheckBox) findViewById(R.id.checkVencedor1);
         check1 = checkVencedor1.isChecked();
@@ -143,11 +170,9 @@ public class AtualizarJogos extends AppCompatActivity {
         });
 
         //ACTION BAR
-        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        StatusBarColor.setColorStatusBar(activity,"#000033");
         action_title = (TextView) findViewById(R.id.txtActionBar);
-        action_title.setText("Atualizar Jogos");
-        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
+        action_title.setText("Atualizar Jogo");
         final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
         back_button.setVisibility(View.VISIBLE);
         back_button.setOnClickListener(new View.OnClickListener() {

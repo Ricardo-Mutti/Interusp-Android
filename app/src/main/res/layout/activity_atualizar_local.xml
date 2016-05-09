@@ -19,11 +19,12 @@
             android:layout_margin="15dp">
 
             <ImageView
+                android:id="@+id/icon_lugar"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="10dp"
-                android:src="@drawable/tabicon_azul_info" />
+                android:src="@drawable/tabicon_azul_mapa" />
 
 
             <TextView

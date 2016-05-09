@@ -63,11 +63,9 @@ public class AtualizarLogin extends AppCompatActivity {
 
 
         //ACTION BAR
-        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        StatusBarColor.setColorStatusBar(activity,"#000033");
         action_title = (TextView) findViewById(R.id.txtActionBar);
         action_title.setText("Login");
-        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
         final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
         back_button.setVisibility(View.VISIBLE);
         back_button.setOnClickListener(new View.OnClickListener() {

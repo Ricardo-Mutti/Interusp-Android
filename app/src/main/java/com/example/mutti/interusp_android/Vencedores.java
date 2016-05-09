@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -77,6 +78,8 @@ public class Vencedores extends AppCompatActivity {
         StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
         action_title = (TextView) findViewById(R.id.txtActionBar);
         action_title.setText("Campeões Anteriores");
+        LinearLayout action_bar = (LinearLayout) findViewById(R.id.action_bar);
+        action_bar.setBackgroundColor(Color.parseColor(sharedpreferences.getString("cor1", "#000000")));
         action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
         final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
         back_button.setVisibility(View.VISIBLE);

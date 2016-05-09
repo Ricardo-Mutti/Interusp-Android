@@ -17,7 +17,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.example.mutti.interusp_android.Adapter.FilterAdapter;
 import com.example.mutti.interusp_android.Adapter.JogoAdapter;
@@ -41,7 +40,7 @@ public class Jogos extends Fragment {
     FilterAdapter filterAdapter;
     ListView filterListView;
 
-    JogoAdapter jogoAdapter;
+    JogoAdapter adapter;
     ListView listView;
 
     Button filtroDia;
@@ -57,6 +56,7 @@ public class Jogos extends Fragment {
     RelativeLayout containerFilter;
 
     ArrayList<Jogo> aux = new ArrayList<>();
+    final ArrayList<String> filters_lugar = new ArrayList<>();
 
     boolean setHide = false;
 
@@ -70,11 +70,10 @@ public class Jogos extends Fragment {
             setData();
             aux.clear();
             aux.addAll(DataHolder.getInstance().getJogos());
-            jogoAdapter.notifyDataSetChanged();
+            adapter.notifyDataSetChanged();
         }
     };
 
-    final ArrayList<String> filters_lugar = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -137,8 +136,8 @@ public class Jogos extends Fragment {
 
         filterListView = (ListView) rootview.findViewById(R.id.listFilter);
         listView = (ListView) rootview.findViewById(R.id.list);
-        jogoAdapter = new JogoAdapter(getActivity(), aux);
-        listView.setAdapter(jogoAdapter);
+        adapter = new JogoAdapter(getActivity(), aux);
+        listView.setAdapter(adapter);
 
         SharedPreferences sharedpreferences = getActivity().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         filtroDia.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
@@ -306,7 +305,7 @@ public class Jogos extends Fragment {
             }
         }
 
-        jogoAdapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged();
     }
 
 

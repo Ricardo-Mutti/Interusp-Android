@@ -39,9 +39,6 @@ public class AddTorcida {
 
                 if (serverResponse.isSuccess()) {
 
-                    Toast.makeText(context, serverResponse.getMessage(),
-                            Toast.LENGTH_LONG).show();
-
                 } else {
                     Toast.makeText(context, serverResponse.getMessage(),
                             Toast.LENGTH_LONG).show();

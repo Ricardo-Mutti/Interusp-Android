@@ -46,103 +46,88 @@ public class PontuacaoFaculdadeAdapter extends ArrayAdapter {
         TextView txtPonto = (TextView) convertView.findViewById(R.id.txtPonto);
         ImageView imgModalidade = (ImageView) convertView.findViewById(R.id.imgModalidade);
 
-        txtPosicao.setText(""+ modalidade.getPosicao());
-        txtPonto.setText(""+ modalidade.getPontuacao_total());
+        txtPosicao.setText("" + modalidade.getPosicao());
+        txtPonto.setText("" + modalidade.getPontuacao_total());
 
         switch (Integer.parseInt(modalidade.getId())) {
-          case 0:
-        imgModalidade.setImageResource(R.drawable.modalidade_atletismo);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 1:
-        imgModalidade.setImageResource(R.drawable.modalidade_campo);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 2:
-        imgModalidade.setImageResource(R.drawable.modalidade_futsal);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 3:
-        imgModalidade.setImageResource(R.drawable.modalidade_basquete);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 4:
-        imgModalidade.setImageResource(R.drawable.modalidade_natacao);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 5:
-        imgModalidade.setImageResource(R.drawable.modalidade_handball);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 6:
-        imgModalidade.setImageResource(R.drawable.modalidade_judo);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 7:
-        imgModalidade.setImageResource(R.drawable.modalidade_karate);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 8:
-        imgModalidade.setImageResource(R.drawable.modalidade_polo);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 9:
-        imgModalidade.setImageResource(R.drawable.modalidade_rugby);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 10:
-        imgModalidade.setImageResource(R.drawable.modalidade_beisebol);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 11:
-        imgModalidade.setImageResource(R.drawable.modalidade_volei);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 12:
-        imgModalidade.setImageResource(R.drawable.modalidade_tenis);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 13:
-        imgModalidade.setImageResource(R.drawable.modalidade_tenismesa);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 14:
-        imgModalidade.setImageResource(R.drawable.modalidade_xadrez);
-        imgModalidade.setBackgroundResource(R.color.transparente);
-        break;
-        case 15:
-        imgModalidade.setImageResource(R.drawable.modalidade_atletismo_fem);
-        break;
-        case 16:
-        imgModalidade.setImageResource(R.drawable.modalidade_futsal_fem);
-        break;
-        case 17:
-        imgModalidade.setImageResource(R.drawable.modalidade_basquete_fem);
-        break;
-        case 18:
-        imgModalidade.setImageResource(R.drawable.modalidade_natacao_fem);
-        break;
-        case 19:
-        imgModalidade.setImageResource(R.drawable.modalidade_handball_fem);
-        break;
-        case 20:
-        imgModalidade.setImageResource(R.drawable.modalidade_rugby_fem);
-        break;
-        case 21:
-        imgModalidade.setImageResource(R.drawable.modalidade_soft);
-        break;
-        case 22:
-        imgModalidade.setImageResource(R.drawable.modalidade_volei_fem);
-        break;
-        case 23:
-        imgModalidade.setImageResource(R.drawable.modalidade_tenis_fem);
-        break;
-        case 24:
-        imgModalidade.setImageResource(R.drawable.modalidade_tenismesa_fem);
-        break;
-        default:
-        break;
-    }
+            case 1:
+                imgModalidade.setImageResource(R.drawable.modalidade_atletismo_fem);
+                break;
+            case 2:
+                imgModalidade.setImageResource(R.drawable.modalidade_atletismo);
+                break;
+            case 3:
+                imgModalidade.setImageResource(R.drawable.modalidade_basquete_fem);
+                break;
+            case 4:
+                imgModalidade.setImageResource(R.drawable.modalidade_basquete);
+                break;
+            case 5:
+                imgModalidade.setImageResource(R.drawable.modalidade_beisebol);
+                break;
+            case 6:
+                imgModalidade.setImageResource(R.drawable.modalidade_campo);
+                break;
+            case 7:
+                imgModalidade.setImageResource(R.drawable.modalidade_futsal_fem);
+                break;
+            case 8:
+                imgModalidade.setImageResource(R.drawable.modalidade_futsal);
+                break;
+            case 9:
+                imgModalidade.setImageResource(R.drawable.modalidade_handball_fem);
+                break;
+            case 10:
+                imgModalidade.setImageResource(R.drawable.modalidade_handball);
+                break;
+            case 11:
+                imgModalidade.setImageResource(R.drawable.modalidade_judo);
+                break;
+            case 12:
+                imgModalidade.setImageResource(R.drawable.modalidade_karate);
+                break;
+            case 13:
+                imgModalidade.setImageResource(R.drawable.modalidade_natacao_fem);
+                break;
+            case 14:
+                imgModalidade.setImageResource(R.drawable.modalidade_natacao);
+                break;
+            case 15:
+                imgModalidade.setImageResource(R.drawable.modalidade_polo);
+                break;
+            case 16:
+                imgModalidade.setImageResource(R.drawable.modalidade_rugby);
+                break;
+            case 17:
+                imgModalidade.setImageResource(R.drawable.modalidade_soft);
+                break;
+            case 18:
+                imgModalidade.setImageResource(R.drawable.modalidade_tenis_fem);
+                break;
+            case 19:
+                imgModalidade.setImageResource(R.drawable.modalidade_tenis);
+                break;
+            case 20:
+                imgModalidade.setImageResource(R.drawable.modalidade_tenismesa_fem);
+                break;
+            case 21:
+                imgModalidade.setImageResource(R.drawable.modalidade_tenismesa);
+                break;
+            case 22:
+                imgModalidade.setImageResource(R.drawable.modalidade_volei_fem);
+                break;
+            case 23:
+                imgModalidade.setImageResource(R.drawable.modalidade_volei);
+                break;
+            case 24:
+                imgModalidade.setImageResource(R.drawable.modalidade_xadrez);
+                break;
+            case 25:
+                imgModalidade.setImageResource(R.drawable.modalidade_rugby_fem);
+                break;
+            default:
+                break;
+        }
         return convertView;
     }
 }

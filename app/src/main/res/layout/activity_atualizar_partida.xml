@@ -4,93 +4,93 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/action_bar" />
+    <include layout="@layout/action_bar"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
+
+            android:id="@+id/filterBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="4"
-            android:id="@+id/filterBar">
+            android:weightSum="4">
 
             <Button
+                android:id="@+id/jogos_btn_dia"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/azul_tema"
                 android:gravity="center"
                 android:text="Dia"
                 android:textAllCaps="false"
-                android:textSize="12sp"
-                android:background="#000000"
                 android:textColor="#ffffff"
-                android:id="@+id/jogos_btn_dia" />
+                android:textSize="12sp" />
 
             <Button
+                android:id="@+id/jogos_btn_modalidade"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Modalidade"
+                android:background="@color/azul_tema"
                 android:gravity="center"
+                android:text="Modalidade"
                 android:textAllCaps="false"
-                android:textSize="12sp"
-                android:background="#000000"
                 android:textColor="#ffffff"
-                android:id="@+id/jogos_btn_modalidade"/>
+                android:textSize="12sp" />
 
             <Button
+                android:id="@+id/jogos_btn_atletica"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/azul_tema"
                 android:gravity="center"
                 android:text="Atletica"
                 android:textAllCaps="false"
-                android:textSize="12sp"
-                android:background="#000000"
                 android:textColor="#ffffff"
-                android:id="@+id/jogos_btn_atletica"/>
+                android:textSize="12sp" />
 
             <Button
+                android:id="@+id/jogos_btn_local"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Local"
+                android:background="@color/azul_tema"
                 android:gravity="center"
+                android:text="Local"
                 android:textAllCaps="false"
-                android:textSize="12sp"
-                android:background="#000000"
                 android:textColor="#ffffff"
-                android:id="@+id/jogos_btn_local"/>
+                android:textSize="12sp" />
 
         </LinearLayout>
 
         <ListView
+            android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:id="@+id/list"
-            android:layout_below="@+id/filterBar"/>
+            android:layout_below="@+id/filterBar" />
 
         <RelativeLayout
+            android:id="@+id/containerFilter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#99000000"
-            android:id="@+id/containerFilter">
+            android:background="#99000000">
 
             <ListView
+                android:id="@+id/listFilter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:id="@+id/listFilter"
-                android:layout_centerVertical="true">
+                android:layout_marginTop="10dp">
 
             </ListView>
-
 
 
         </RelativeLayout>

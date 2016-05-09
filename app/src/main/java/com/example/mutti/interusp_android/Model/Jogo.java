@@ -5,6 +5,7 @@ package com.example.mutti.interusp_android.Model;
  */
 public class Jogo {
 
+    String _id;
     String modalidade_id;
     String nome;
     boolean is_prova;
@@ -115,4 +116,11 @@ public class Jogo {
         this.is_vencendor = is_vencendor;
     }
 
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
 }

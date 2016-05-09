@@ -11,9 +11,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.Atualizar.AtualizarLocal;
 import com.example.mutti.interusp_android.Model.Locais;
 import com.example.mutti.interusp_android.Model.Onibus;
 import com.example.mutti.interusp_android.Utils.DataHolder;
@@ -42,9 +44,9 @@ public class ListaLocais extends AppCompatActivity {
         setContentView(R.layout.activity_lista_locais);
 
         todos_locais = DataHolder.getInstance().getLocaisSalvos();
-        onibuses=DataHolder.getInstance().getOnibus();
+        onibuses = DataHolder.getInstance().getOnibus();
 
-
+        final boolean edicao = getIntent().getBooleanExtra("edicao", false);
 
         final TextView local = (TextView) findViewById(R.id.local_title);
         ImageView info_icon = (ImageView) findViewById(R.id.icon_info);
@@ -63,13 +65,13 @@ public class ListaLocais extends AppCompatActivity {
         locais_nome.clear();
 
 
-            //Procura todos os locais desse tipo
-            for (Locais local1 : todos_locais) {
-                if  ( local1.getTipo() == info_id) {
-                    locais.add(local1);
-                    locais_nome.add(local1.getNome());
-                }
+        //Procura todos os locais desse tipo
+        for (Locais local1 : todos_locais) {
+            if (local1.getTipo() == info_id) {
+                locais.add(local1);
+                locais_nome.add(local1.getNome());
             }
+        }
 
 
         ArrayAdapter<String> adapter3 = new ArrayAdapter<>(this, R.layout.item_locais, locais_nome);
@@ -79,23 +81,31 @@ public class ListaLocais extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 //Procura o local selecionado na lista de locais
-                    for (Locais local : locais) {
-                        if (local.getNome().equals(locais_nome.get(position))) {
-                            local_selecionado=local;
+                for (Locais local : locais) {
+                    if (local.getNome().equals(locais_nome.get(position))) {
+                        local_selecionado = local;
 
-                        }
                     }
-                    Intent intent = new Intent(activity, DetalheInformacao.class);
-                    intent.putExtra("locais", local_selecionado);
-                    startActivity(intent);
+                }
+
+                Intent intent;
+                if (edicao) {
+                    intent = new Intent(activity, AtualizarLocal.class);
+                } else {
+                    intent = new Intent(activity, DetalheInformacao.class);
+                }
+                intent.putExtra("locais", local_selecionado);
+                startActivity(intent);
             }
         });
 
         //ACTION BAR
         SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        StatusBarColor.setColorStatusBar(activity, sharedpreferences.getString("cor1", "#000000"));
         action_title = (TextView) findViewById(R.id.txtActionBar);
         action_title.setText("Informações");
+        LinearLayout action_bar = (LinearLayout) findViewById(R.id.action_bar);
+        action_bar.setBackgroundColor(Color.parseColor(sharedpreferences.getString("cor1", "#000000")));
         action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
         final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
         back_button.setVisibility(View.VISIBLE);
@@ -105,6 +115,10 @@ public class ListaLocais extends AppCompatActivity {
                 activity.finish();
             }
         });
+        if(edicao){
+            StatusBarColor.setColorStatusBar(activity,"#000033");
+            action_bar.setBackgroundColor(Color.parseColor("#000033"));
+        }
     }
 
     public void setIcon(int id, ImageView icon) {

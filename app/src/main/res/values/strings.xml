@@ -120,18 +120,6 @@
         <item>Rugby Feminino</item>
     </string-array>
 
-    <string-array name="provas_natacao">
-        <item> </item>
-        <item>Poli</item>
-        <item>Farmácia</item>
-        <item>FEA</item>
-        <item>Odonto</item>
-        <item>SanFran</item>
-        <item>MedUsp</item>
-        <item>MedRib</item>
-        <item>ESALQ</item>
-    </string-array>
-
     <string-array name="facul_torcida">
         <item>POLI</item>
         <item>FEA</item>
@@ -169,10 +157,20 @@
     </string-array>
 
     <string-array name="tipo_locais">
+        <item>Adicionar novo local</item>
         <item>Lugar de Jogos</item>
         <item>Tenda</item>
         <item>Balada</item>
-        <item>Onibus</item>
+        <item>Alojamento</item>
+        <item>Hospital</item>
+        <item>Delegacia</item>
+        <item>Restaurante</item>
+    </string-array>
+
+    <string-array name="tipo_locais1">
+        <item>Lugar de Jogos</item>
+        <item>Tenda</item>
+        <item>Balada</item>
         <item>Alojamento</item>
         <item>Hospital</item>
         <item>Delegacia</item>
@@ -209,5 +207,33 @@
         <item>Gabriel Moreira Minossi</item>
         <item>Rafael Brandão</item>
     </string-array>
+
+    <string-array name="provas_natacao">
+        <item>50 metros livre</item>
+        <item>50 metros costas</item>
+        <item>50 metros costas</item>
+        <item>50 metros borboleta</item>
+        <item>100 metros medley</item>
+        <item>Revezamento 4x50 metro livre</item>
+        <item>Revezamento 4x50 metro medley</item>
+    </string-array>
+
+    <string-array name="provas_atletismo">
+        <item>100 metros rasos</item>
+        <item>400 metros rasos</item>
+        <item>1500 metros rasos</item>
+        <item>5000 metros rasos</item>
+        <item>Salto em altura</item>
+        <item>Salto em extensão</item>
+        <item>Salto triplo</item>
+        <item>Lançamento de dardo</item>
+        <item>Lançamento de disco de 1.0 Kg </item>
+        <item>Lançamento de disco de 2.0 Kg </item>
+        <item>Arremesso de peso de 7.26 Kg</item>
+        <item>Arremesso de peso de 4.0 Kg</item>
+        <item>Revezamento 4x100 metros rasos</item>
+        <item>Revezamento 4x400 metros rasos</item>
+    </string-array>
+
 
 </resources>

@@ -60,6 +60,7 @@
     </LinearLayout>
 
     <ListView
+        android:listSelector="@android:color/transparent"
         android:id="@+id/listPontuacao_atletica"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

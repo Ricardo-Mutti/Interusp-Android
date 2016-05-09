@@ -167,40 +167,42 @@ public class Mapa extends Fragment  {
     public void criarMarkers () {
         //Criador de markers
         for (Locais locais : this.locais) {
-            MarkerOptions marker = new MarkerOptions().position(
-                    new LatLng(locais.getCoordenadas()[1], locais.getCoordenadas()[0]))
-                    .title(locais.getNome());
 
-            switch (locais.getTipo()) {
-                case 1:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_ginasios));
-                    break;
-                case 2:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_tenda));
-                    break;
-                case 3:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_baladas));
-                    break;
-                case 5:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_alojamento));
-                    break;
-                case 6:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_hospital));
-                    break;
-                case 7:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_delegacia));
-                    break;
-                case 8:
-                    marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_restaurantes));
-                    break;
-                default:
-                    break;
+            if (locais.getCoordenadas() != null) {
+                MarkerOptions marker = new MarkerOptions().position(
+                        new LatLng(locais.getCoordenadas()[1], locais.getCoordenadas()[0]))
+                        .title(locais.getNome());
+
+                switch (locais.getTipo()) {
+                    case 1:
+                        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_ginasios));
+                        break;
+                    case 2:
+                        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_tenda));
+                        break;
+                    case 3:
+                        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_baladas));
+                        break;
+                    case 5:
+                        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_alojamento));
+                        break;
+                    case 6:
+                        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_hospital));
+                        break;
+                    case 7:
+                        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_delegacia));
+                        break;
+                    case 8:
+                        marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.info_restaurantes));
+                        break;
+                    default:
+                        break;
+                }
+
+                map.addMarker(marker);
             }
 
-            map.addMarker(marker);
         }
-
-
     }
 
 }

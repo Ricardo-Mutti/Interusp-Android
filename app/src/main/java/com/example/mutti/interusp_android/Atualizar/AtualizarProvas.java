@@ -46,8 +46,14 @@ public class AtualizarProvas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atualizar_colocacao_jogos);
 
+        String nomeModalide = getIntent().getStringExtra("nomeModalidade");
+
+        TextView nome_prova = (TextView) findViewById(R.id.provas_nome);
+
         EditText local_edt = (EditText) findViewById(R.id.prova_local);
         EditText horario_edt = (EditText) findViewById(R.id.prova_horario);
+
+        nome_prova.setText(nomeModalide);
 
         ArrayList list = new ArrayList();
         list.addAll(Arrays.asList(getResources().getStringArray(R.array.faculdade)));
@@ -118,7 +124,6 @@ public class AtualizarProvas extends AppCompatActivity {
         String posicao_8 = spinner8.getSelectedItem().toString();
 
 
-
         Button atualizar = (Button) findViewById(R.id.atualizar_prova);
         atualizar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,11 +133,9 @@ public class AtualizarProvas extends AppCompatActivity {
         });
 
         //ACTION BAR
-        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        StatusBarColor.setColorStatusBar(activity,sharedpreferences.getString("cor1", "#000000"));
+        StatusBarColor.setColorStatusBar(activity, "#000033");
         action_title = (TextView) findViewById(R.id.txtActionBar);
         action_title.setText("Atualizar Provas");
-        action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
         final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
         back_button.setVisibility(View.VISIBLE);
         back_button.setOnClickListener(new View.OnClickListener() {

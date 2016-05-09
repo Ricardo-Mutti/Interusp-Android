@@ -23,7 +23,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.mutti.interusp_android.Adapter.AtualizarPartidaAdapter;
 import com.example.mutti.interusp_android.Adapter.FilterAdapter;
 import com.example.mutti.interusp_android.Adapter.JogoAdapter;
 import com.example.mutti.interusp_android.Manager.GetJogos;
@@ -36,15 +35,16 @@ import com.example.mutti.interusp_android.Utils.StatusBarColor;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class AtualizarPartida extends AppCompatActivity {
+public class AtualizarSelecionarJogo extends AppCompatActivity {
 
     Activity activity = this;
     Context context = this;
 
     FilterAdapter filterAdapter;
     ListView filterListView;
+
+    JogoAdapter adapter;
     ListView listView;
-    AtualizarPartidaAdapter adapter;
 
     Button filtroDia;
     Button filtroModalidade;
@@ -61,7 +61,6 @@ public class AtualizarPartida extends AppCompatActivity {
     ArrayList<Jogo> aux = new ArrayList<>();
     final ArrayList<String> filters_lugar = new ArrayList<>();
 
-    TextView action_title;
     boolean setHide = false;
 
     public static final String MyPREFERENCES = "MyPrefs";
@@ -130,13 +129,13 @@ public class AtualizarPartida extends AppCompatActivity {
 
         filterListView = (ListView) findViewById(R.id.listFilter);
         listView = (ListView) findViewById(R.id.list);
-        adapter = new AtualizarPartidaAdapter(context, aux);
+        adapter = new JogoAdapter(activity, aux);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(final AdapterView<?> parent, View view, final int position, long id) {
-                final Jogo object = (Jogo) parent.getItemAtPosition(position);
+                final Jogo jogo_selecionado = (Jogo) parent.getItemAtPosition(position);
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setTitle("Selecione uma opção");
                 builder.setItems(new CharSequence[]
@@ -149,11 +148,13 @@ public class AtualizarPartida extends AppCompatActivity {
                                     case 0:
                                         Intent intent = new Intent(context, AtualizarJogos.class);
                                         intent.putExtra("placar", true);
+                                        intent.putExtra("jogo_id", jogo_selecionado.get_id());
                                         startActivity(intent);
                                         break;
                                     case 1:
                                         Intent intent1 = new Intent(context, AtualizarJogos.class);
                                         intent1.putExtra("placar", false);
+                                        intent1.putExtra("jogo_id", jogo_selecionado.get_id());
                                         startActivity(intent1);
                                         break;
                                 }
@@ -163,14 +164,11 @@ public class AtualizarPartida extends AppCompatActivity {
             }
         });
 
-        SharedPreferences sharedpreferences = activity.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+
         //ACTION BAR
-        StatusBarColor.setColorStatusBar(activity, sharedpreferences.getString(cor1, "#000000"));
-        action_title = (TextView) findViewById(R.id.txtActionBar);
-        action_title.setText("Atualizar Partida");
-        action_title.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
-        LinearLayout action_bar = (LinearLayout) findViewById(R.id.action_bar);
-        action_bar.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
+        StatusBarColor.setColorStatusBar(activity,"#000033");
+        TextView action_title = (TextView) findViewById(R.id.txtActionBar);
+        action_title.setText("Atualizar Jogos");
         final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
         back_button.setVisibility(View.VISIBLE);
         back_button.setOnClickListener(new View.OnClickListener() {
@@ -179,14 +177,6 @@ public class AtualizarPartida extends AppCompatActivity {
                 activity.finish();
             }
         });
-        filtroDia.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
-        filtroDia.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
-        filtroModalidade.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
-        filtroModalidade.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
-        filtroAtletica.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
-        filtroAtletica.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
-        filtroLocal.setTextColor(Color.parseColor(sharedpreferences.getString(cor2, "#000000")));
-        filtroLocal.setBackgroundColor(Color.parseColor(sharedpreferences.getString(cor1, "#000000")));
     }
 
     @Override
@@ -228,6 +218,8 @@ public class AtualizarPartida extends AppCompatActivity {
     }
 
     public void showFiltroModalidade() {
+
+//        final ArrayList<String> filters = new ArrayList<String>(Arrays.asList(Constants.kFiltroJogoModalidade));
         final ArrayList<String> filters = new ArrayList<>();
         filters.add("Todos");
         filters.addAll(Arrays.asList(getResources().getStringArray(R.array.modalidades)));
@@ -257,6 +249,7 @@ public class AtualizarPartida extends AppCompatActivity {
     }
 
     public void showFiltroAtletica() {
+
         final ArrayList<String> filters = new ArrayList<>();
         filters.add("Todos");
         filters.addAll(Arrays.asList(getResources().getStringArray(R.array.facul_torcida)));
@@ -275,7 +268,7 @@ public class AtualizarPartida extends AppCompatActivity {
                     AtleticaToFilter = 0;
                 } else {
                     filtroAtletica.setText(chosen);
-                    AtleticaToFilter = position - 1;
+                    AtleticaToFilter = position;
                 }
                 filterList();
             }
@@ -330,7 +323,7 @@ public class AtualizarPartida extends AppCompatActivity {
         }
 
 
-        if (stringModalidadeToFilter != null) {
+        if (AtleticaToFilter != 0) {
             for (int i = aux.size() - 1; i >= 0; i--) {
                 Jogo jogo = aux.get(i);
 

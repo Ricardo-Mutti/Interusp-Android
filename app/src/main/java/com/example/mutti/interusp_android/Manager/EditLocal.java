@@ -32,6 +32,8 @@ public class EditLocal {
                 ServerResponse serverResponse = gson.fromJson(response, ServerResponse.class);//Parse do json segundo o modelo SeverResponse
 
                 if (serverResponse.isSuccess()) {
+                    Toast.makeText(context, serverResponse.getMessage(),
+                            Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(Constants.kEditLocalDone);
                     context.sendBroadcast(intent);
                 }

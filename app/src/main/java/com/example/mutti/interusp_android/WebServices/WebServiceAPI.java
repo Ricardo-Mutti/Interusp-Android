@@ -194,7 +194,7 @@ public class WebServiceAPI { private Context context;
         }
         if(local.getCoordenadas()!=null) {
             String coordenadas = gson.toJson(local.getCoordenadas());
-            params.put("coodenadas", coordenadas);
+            params.put("coordenadas", coordenadas);
         }
         if(local.getTipo()!=0) {
             params.put("tipo", String.valueOf(local.getTipo()));

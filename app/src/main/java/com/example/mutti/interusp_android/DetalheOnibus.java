@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -85,6 +86,8 @@ public class DetalheOnibus extends AppCompatActivity {
         //ACTION BAR
         SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         StatusBarColor.setColorStatusBar(activity, sharedpreferences.getString("cor1", "#000000"));
+        LinearLayout action_bar = (LinearLayout) findViewById(R.id.action_bar);
+        action_bar.setBackgroundColor(Color.parseColor(sharedpreferences.getString("cor1", "#000000")));
         action_title = (TextView) findViewById(R.id.txtActionBar);
         action_title.setText("Atualizar Ônibus");
         action_title.setTextColor(Color.parseColor(sharedpreferences.getString("cor2", "#000000")));
