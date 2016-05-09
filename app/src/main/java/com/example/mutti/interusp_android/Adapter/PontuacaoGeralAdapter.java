@@ -62,14 +62,19 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            if (type == 0) {//Placar Geral
+                convertView = inflater.inflate(R.layout.item_pontuacao_geral, null);
+            } else {//Modalidades
+                convertView = inflater.inflate(R.layout.layout_modalidades_placar, null);
+            }
+
+        }
+
             if (type == 0) {//Placar Geral
                 Faculdade pontuacao = list.get(position);
-                convertView = inflater.inflate(R.layout.item_pontuacao_geral, null);
                 SetListAtletica.setCell(convertView, context, pontuacao);
-
             } else {//Modalidades
-
-                convertView = inflater.inflate(R.layout.layout_modalidades_placar, null);
 
                 ImageView atletismo_feminino = (ImageView) convertView.findViewById(R.id.atletismo_feminino);
                 ImageView atletismo = (ImageView) convertView.findViewById(R.id.atletismo);
@@ -349,7 +354,7 @@ public class PontuacaoGeralAdapter extends ArrayAdapter<Faculdade> {
                 });
             }
 
-        }
+
 
         return convertView;
     }
