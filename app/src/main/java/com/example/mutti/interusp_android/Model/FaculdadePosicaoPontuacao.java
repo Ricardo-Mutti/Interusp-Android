@@ -15,6 +15,10 @@ public class FaculdadePosicaoPontuacao {
         this.pontuacao = pontuacao;
     }
 
+    public FaculdadePosicaoPontuacao(){
+
+    }
+
     public int getFaculdade() {
         return faculdade;
     }

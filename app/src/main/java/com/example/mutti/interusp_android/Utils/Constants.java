@@ -11,6 +11,7 @@ import java.util.Date;
 public class Constants {
 
     public static final String kServiceURL = "http://ec2-52-201-135-248.compute-1.amazonaws.com:3000";
+//  public static final String kServiceURL = "http://localhost:3000";
 
     public static final String kServiceGetLocation = "/v1/locais/";
     public static final String kServiceGetOnibus = "/v1/onibus/";

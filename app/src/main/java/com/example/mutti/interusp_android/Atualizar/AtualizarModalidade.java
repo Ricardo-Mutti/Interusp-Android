@@ -17,6 +17,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.Manager.UpdateModalidade;
+import com.example.mutti.interusp_android.Model.FaculdadePontuacao;
+import com.example.mutti.interusp_android.Model.FaculdadePosicaoPontuacao;
+import com.example.mutti.interusp_android.Model.Modalidade;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
 import com.example.mutti.interusp_android.Utils.SetListModalidade;
@@ -50,7 +54,7 @@ public class AtualizarModalidade extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atualizar_modalidade);
 
-        int modalidade_id = getIntent().getIntExtra("modalidade_id",0);
+        final int modalidade_id = getIntent().getIntExtra("modalidade_id",0);
 
         ImageView icon = (ImageView) findViewById(R.id.atualizar_modalidade_icon);
         icon.setImageResource( SetListModalidade.Drawable(String.valueOf(modalidade_id)));
@@ -184,50 +188,196 @@ public class AtualizarModalidade extends AppCompatActivity {
         });
 
         Button atualizar = (Button) findViewById(R.id.modalidade_atualizar);
-        atualizar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Requisicao pra atualizar
+        if(atualizar!=null) {
+            atualizar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //Requisicao pra atualizar
+                    Modalidade modalidade = new Modalidade();
+                    modalidade.setId(modalidade_id);
 
-                max_poli = max_poli_edt.getText().toString();
-                max_fea = max_fea_edt.getText().toString();
-                max_farma = max_farma_edt.getText().toString();
-                max_esalq = max_esalq_edt.getText().toString();
-                max_riberao = max_riberao_edt.getText().toString();
-                max_sanfran = max_sanfran_edt.getText().toString();
-                max_odonto = max_odonto_edt.getText().toString();
-                max_pinheiros = max_pinheiros_edt.getText().toString();
+                    FaculdadePontuacao[] max = new FaculdadePontuacao[8];
+                    FaculdadePontuacao[] min = new FaculdadePontuacao[8];
+                    FaculdadePosicaoPontuacao[] total = new FaculdadePosicaoPontuacao[8];
 
-                min_poli = min_poli_edt.getText().toString();
-                min_fea = min_fea_edt.getText().toString();
-                min_farma = min_farma_edt.getText().toString();
-                min_esalq = min_esalq_edt.getText().toString();
-                min_riberao = min_riberao_edt.getText().toString();
-                min_sanfran = min_sanfran_edt.getText().toString();
-                min_odonto = min_odonto_edt.getText().toString();
-                min_pinheiros = min_pinheiros_edt.getText().toString();
+//                    Maximos
+                    max_poli = max_poli_edt.getText().toString();
+                    FaculdadePontuacao maxPoli = new FaculdadePontuacao();
+                    maxPoli.setFaculdade(1);
+                    maxPoli.setPontuacao(Integer.valueOf(max_poli));
+                    max[0] = maxPoli;
 
-                final_poli = final_poli_edt.getText().toString();
-                final_fea = final_fea_edt.getText().toString();
-                final_farma = final_farma_edt.getText().toString();
-                final_esalq = final_esalq_edt.getText().toString();
-                final_riberao = final_riberao_edt.getText().toString();
-                final_sanfran = final_sanfran_edt.getText().toString();
-                final_odonto = final_odonto_edt.getText().toString();
-                final_pinheiros = final_pinheiros_edt.getText().toString();
+                    max_fea = max_fea_edt.getText().toString();
+                    FaculdadePontuacao maxFea = new FaculdadePontuacao();
+                    maxFea.setFaculdade(2);
+                    maxFea.setPontuacao(Integer.valueOf(max_fea));
+                    max[1] = maxFea;
 
-                colocacao_poli = colocacao_poli_edt.getText().toString();
-                colocacao_fea = colocacao_fea_edt.getText().toString();
-                colocacao_farma = colocacao_farma_edt.getText().toString();
-                colocacao_esalq = colocacao_esalq_edt.getText().toString();
-                colocacao_riberao = colocacao_riberao_edt.getText().toString();
-                colocacao_sanfran = colocacao_sanfran_edt.getText().toString();
-                colocacao_odonto = colocacao_odonto_edt.getText().toString();
-                colocacao_pinheiros = colocacao_pinheiros_edt.getText().toString();
+                    max_farma = max_farma_edt.getText().toString();
+                    FaculdadePontuacao maxFarma = new FaculdadePontuacao();
+                    maxFarma.setFaculdade(3);
+                    maxFarma.setPontuacao(Integer.valueOf(max_farma));
+                    max[2] = maxFarma;
 
+                    max_esalq = max_esalq_edt.getText().toString();
+                    FaculdadePontuacao maxEsalq = new FaculdadePontuacao();
+                    maxEsalq.setFaculdade(4);
+                    maxEsalq.setPontuacao(Integer.valueOf(max_esalq));
+                    max[3] = maxEsalq;
 
-            }
-        });
+                    max_riberao = max_riberao_edt.getText().toString();
+                    FaculdadePontuacao maxRibeirao = new FaculdadePontuacao();
+                    maxRibeirao.setFaculdade(5);
+                    maxRibeirao.setPontuacao(Integer.valueOf(max_riberao));
+                    max[4] = maxRibeirao;
+
+                    max_sanfran = max_sanfran_edt.getText().toString();
+                    FaculdadePontuacao maxSanfran = new FaculdadePontuacao();
+                    maxSanfran.setFaculdade(6);
+                    maxSanfran.setPontuacao(Integer.valueOf(max_sanfran));
+                    max[5] = maxSanfran;
+
+                    max_odonto = max_odonto_edt.getText().toString();
+                    FaculdadePontuacao maxOdonto = new FaculdadePontuacao();
+                    maxOdonto.setFaculdade(7);
+                    maxOdonto.setPontuacao(Integer.valueOf(max_odonto));
+                    max[6] = maxOdonto;
+
+                    max_pinheiros = max_pinheiros_edt.getText().toString();
+                    FaculdadePontuacao maxPinheiros = new FaculdadePontuacao();
+                    maxPinheiros.setFaculdade(8);
+                    maxPinheiros.setPontuacao(Integer.valueOf(max_pinheiros));
+                    max[7] = maxPinheiros;
+
+                    modalidade.setPontuacao_max(max);
+
+//                    Minimo
+                    min_poli = min_poli_edt.getText().toString();
+                    FaculdadePontuacao minPoli = new FaculdadePontuacao();
+                    minPoli.setFaculdade(1);
+                    minPoli.setPontuacao(Integer.valueOf(min_poli));
+                    min[0] = minPoli;
+
+                    min_fea = min_fea_edt.getText().toString();
+                    FaculdadePontuacao minFea = new FaculdadePontuacao();
+                    minFea.setFaculdade(2);
+                    minFea.setPontuacao(Integer.valueOf(min_fea));
+                    min[1] = minFea;
+
+                    min_farma = min_farma_edt.getText().toString();
+                    FaculdadePontuacao minFarma = new FaculdadePontuacao();
+                    minFarma.setFaculdade(3);
+                    minFarma.setPontuacao(Integer.valueOf(min_farma));
+                    min[2] = minPoli;
+
+                    min_esalq = min_esalq_edt.getText().toString();
+                    FaculdadePontuacao minEsalq = new FaculdadePontuacao();
+                    minEsalq.setFaculdade(4);
+                    minEsalq.setPontuacao(Integer.valueOf(min_esalq));
+                    min[3] = minEsalq;
+
+                    min_riberao = min_riberao_edt.getText().toString();
+                    FaculdadePontuacao minRiberao = new FaculdadePontuacao();
+                    minRiberao.setFaculdade(5);
+                    minRiberao.setPontuacao(Integer.valueOf(min_riberao));
+                    min[4] = minRiberao;
+
+                    min_sanfran = min_sanfran_edt.getText().toString();
+                    FaculdadePontuacao minSanfran = new FaculdadePontuacao();
+                    minSanfran.setFaculdade(6);
+                    minSanfran.setPontuacao(Integer.valueOf(min_sanfran));
+                    min[5] = minSanfran;
+
+                    min_odonto = min_odonto_edt.getText().toString();
+                    FaculdadePontuacao minOdonto = new FaculdadePontuacao();
+                    minOdonto.setFaculdade(7);
+                    minOdonto.setPontuacao(Integer.valueOf(min_odonto));
+                    min[6] = minOdonto;
+
+                    min_pinheiros = min_pinheiros_edt.getText().toString();
+                    FaculdadePontuacao minPinheiros = new FaculdadePontuacao();
+                    minPinheiros.setFaculdade(8);
+                    minPinheiros.setPontuacao(Integer.valueOf(min_poli));
+                    min[7] = minPinheiros;
+
+                    modalidade.setPontuacao_min(min);
+
+//                    Total
+                    if (btn_pressed) {
+                        final_poli = final_poli_edt.getText().toString();
+                        final_fea = final_fea_edt.getText().toString();
+                        final_farma = final_farma_edt.getText().toString();
+                        final_esalq = final_esalq_edt.getText().toString();
+                        final_riberao = final_riberao_edt.getText().toString();
+                        final_sanfran = final_sanfran_edt.getText().toString();
+                        final_odonto = final_odonto_edt.getText().toString();
+                        final_pinheiros = final_pinheiros_edt.getText().toString();
+
+                        colocacao_poli = colocacao_poli_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalPoli = new FaculdadePosicaoPontuacao();
+                        totalPoli.setFaculdade(1);
+                        totalPoli.setPontuacao(Integer.valueOf(final_poli));
+                        totalPoli.setPosicao(Integer.valueOf(colocacao_poli));
+                        total[0] = totalPoli;
+
+                        colocacao_fea = colocacao_fea_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalFea = new FaculdadePosicaoPontuacao();
+                        totalFea.setFaculdade(2);
+                        totalFea.setPontuacao(Integer.valueOf(final_fea));
+                        totalFea.setPosicao(Integer.valueOf(colocacao_fea));
+                        total[1] = totalFea;
+
+                        colocacao_farma = colocacao_farma_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalFarma = new FaculdadePosicaoPontuacao();
+                        totalFarma.setFaculdade(3);
+                        totalFarma.setPontuacao(Integer.valueOf(final_farma));
+                        totalFarma.setPosicao(Integer.valueOf(colocacao_farma));
+                        total[2] = totalFarma;
+
+                        colocacao_esalq = colocacao_esalq_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalEsalq = new FaculdadePosicaoPontuacao();
+                        totalEsalq.setFaculdade(4);
+                        totalEsalq.setPontuacao(Integer.valueOf(final_esalq));
+                        totalEsalq.setPosicao(Integer.valueOf(colocacao_esalq));
+                        total[3] = totalEsalq;
+
+                        colocacao_riberao = colocacao_riberao_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalRiberao = new FaculdadePosicaoPontuacao();
+                        totalRiberao.setFaculdade(5);
+                        totalRiberao.setPontuacao(Integer.valueOf(final_riberao));
+                        totalRiberao.setPosicao(Integer.valueOf(colocacao_riberao));
+                        total[4] = totalRiberao;
+
+                        colocacao_sanfran = colocacao_sanfran_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalSanfran = new FaculdadePosicaoPontuacao();
+                        totalSanfran.setFaculdade(6);
+                        totalSanfran.setPontuacao(Integer.valueOf(final_sanfran));
+                        totalSanfran.setPosicao(Integer.valueOf(colocacao_sanfran));
+                        total[5] = totalSanfran;
+
+                        colocacao_odonto = colocacao_odonto_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalOdonto = new FaculdadePosicaoPontuacao();
+                        totalOdonto.setFaculdade(7);
+                        totalOdonto.setPontuacao(Integer.valueOf(final_odonto));
+                        totalOdonto.setPosicao(Integer.valueOf(colocacao_odonto));
+                        total[6] = totalOdonto;
+
+                        colocacao_pinheiros = colocacao_pinheiros_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalPinheiros = new FaculdadePosicaoPontuacao();
+                        totalPinheiros.setFaculdade(8);
+                        totalPinheiros.setPontuacao(Integer.valueOf(final_pinheiros));
+                        totalPinheiros.setPosicao(Integer.valueOf(colocacao_pinheiros));
+                        total[7] = totalPinheiros;
+
+                        modalidade.setPontuacao_total(total);
+
+                    }
+
+                    UpdateModalidade update = new UpdateModalidade(context);
+                    update.UpdateModalidade(modalidade);
+                }
+            });
+        }
 
         //ACTION BAR
         StatusBarColor.setColorStatusBar(activity,"#000033");
@@ -247,7 +397,7 @@ public class AtualizarModalidade extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        activity.registerReceiver(receiver, new IntentFilter(Constants.kModalidadesDone));
+        activity.registerReceiver(receiver, new IntentFilter(Constants.kUpdateModalidadeDone));
     }
 
     @Override

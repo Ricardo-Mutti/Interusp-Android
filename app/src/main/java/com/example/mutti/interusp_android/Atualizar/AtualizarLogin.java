@@ -20,6 +20,9 @@ import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
 import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class AtualizarLogin extends AppCompatActivity {
 
     Activity activity = this;
@@ -48,18 +51,19 @@ public class AtualizarLogin extends AppCompatActivity {
 
         Button login = (Button) findViewById(R.id.btnEntrar);
 
-
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!username.getText().toString().isEmpty() && !senha.getText().toString().isEmpty()) {
-                    String username_txt = username.getText().toString();
-                    String senha_txt = senha.getText().toString();
-                    Login login1 = new Login(context);
-                    login1.user(username_txt, senha_txt);
+        if(login!=null){
+            login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (!username.getText().toString().isEmpty() && !senha.getText().toString().isEmpty()) {
+                        String username_txt = username.getText().toString();
+                        String password = MD5(senha.getText().toString());
+                        Login login1 = new Login(context);
+                        login1.user(username_txt, password);
+                    }
                 }
-            }
-        });
+            });
+        }
 
 
         //ACTION BAR
@@ -87,6 +91,31 @@ public class AtualizarLogin extends AppCompatActivity {
     public void onStop() {
         super.onStop();
         activity.unregisterReceiver(receiver);
+    }
+
+    public static final String MD5(final String s) {
+        final String MD5 = "MD5";
+        try {
+            // Create MD5 Hash
+            MessageDigest digest = java.security.MessageDigest
+                    .getInstance(MD5);
+            digest.update(s.getBytes());
+            byte messageDigest[] = digest.digest();
+
+            // Create Hex String
+            StringBuilder hexString = new StringBuilder();
+            for (byte aMessageDigest : messageDigest) {
+                String h = Integer.toHexString(0xFF & aMessageDigest);
+                while (h.length() < 2)
+                    h = "0" + h;
+                hexString.append(h);
+            }
+            return hexString.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
 
