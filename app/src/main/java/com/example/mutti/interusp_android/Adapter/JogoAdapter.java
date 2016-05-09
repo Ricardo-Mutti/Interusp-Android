@@ -1,6 +1,7 @@
 package com.example.mutti.interusp_android.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -98,13 +99,18 @@ public class JogoAdapter extends BaseAdapter{
         if(jogo.getFaculdade_1().equals("---")){
             competidor_1="---";
         }else{
-            competidor_1=list.get(Integer.parseInt(jogo.getFaculdade_1())-1).toString();
+            if ((Integer.parseInt(jogo.getFaculdade_1())-1) > 0) {
+                competidor_1=list.get(Integer.parseInt(jogo.getFaculdade_1())-1).toString();
+            }
         }
 
         if(jogo.getFaculdade_2().equals("---")){
             competidor_2="---";
         }else{
-            competidor_2=list.get(Integer.parseInt(jogo.getFaculdade_2())-1).toString();
+            Log.d("JOGO FACULDADE", jogo.getNome()+" - "+jogo.getFaculdade_2());
+            if ((Integer.parseInt(jogo.getFaculdade_2())-1) > 0) {
+                competidor_2=list.get(Integer.parseInt(jogo.getFaculdade_2())-1).toString();
+            }
         }
         if(jogo.is_prova()){
             jogos_competidores.setText("Todos");
@@ -112,7 +118,7 @@ public class JogoAdapter extends BaseAdapter{
             jogos_competidores.setText(competidor_1+" X "+competidor_2);
         }
 
-        jogos_nome.setText(modalidades.get(Integer.parseInt(jogo.getModalidade_id()))+" - "+jogo.getNome());
+        jogos_nome.setText(modalidades.get(Integer.parseInt(jogo.getModalidade_id())-1)+" - "+jogo.getNome());
 
         return convertView;
     }
