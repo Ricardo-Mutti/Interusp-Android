@@ -54,7 +54,7 @@ public class AtualizarModalidade extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atualizar_modalidade);
 
-        int modalidade_id = getIntent().getIntExtra("modalidade_id",0);
+        final int modalidade_id = getIntent().getIntExtra("modalidade_id",0);
 
         ImageView icon = (ImageView) findViewById(R.id.atualizar_modalidade_icon);
         icon.setImageResource( SetListModalidade.Drawable(String.valueOf(modalidade_id)));
@@ -194,6 +194,7 @@ public class AtualizarModalidade extends AppCompatActivity {
                 public void onClick(View view) {
                     //Requisicao pra atualizar
                     Modalidade modalidade = new Modalidade();
+                    modalidade.setId(modalidade_id);
 
                     FaculdadePontuacao[] max = new FaculdadePontuacao[8];
                     FaculdadePontuacao[] min = new FaculdadePontuacao[8];

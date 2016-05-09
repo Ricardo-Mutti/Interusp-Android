@@ -217,14 +217,36 @@ public class WebServiceAPI { private Context context;
     public void updateModalidade(Modalidade modalidade, Response.Listener successListener) {
 
         Map<String, String> params = new HashMap<>();
-        Gson gson = new Gson();
-        String pontuacao_total = gson.toJson(modalidade.getPontuacao_total());
-        String pontuacao_max = gson.toJson(modalidade.getPontuacao_max());
-        String pontuacao_min = gson.toJson(modalidade.getPontuacao_min());
+
         params.put("id", String.valueOf(modalidade.getId()));
-        params.put("pontuacao_total", pontuacao_total);
-        params.put("pontuacao_max", pontuacao_max);
-        params.put("pontuacao_min", pontuacao_min);
+        if(modalidade.getPontuacao_total()!=null) {
+            params.put("total1", String.valueOf(modalidade.getPontuacao_total()[0]));
+            params.put("total2", String.valueOf(modalidade.getPontuacao_total()[1]));
+            params.put("total3", String.valueOf(modalidade.getPontuacao_total()[2]));
+            params.put("total4", String.valueOf(modalidade.getPontuacao_total()[3]));
+            params.put("total5", String.valueOf(modalidade.getPontuacao_total()[4]));
+            params.put("total6", String.valueOf(modalidade.getPontuacao_total()[5]));
+            params.put("total7", String.valueOf(modalidade.getPontuacao_total()[6]));
+            params.put("total8", String.valueOf(modalidade.getPontuacao_total()[7]));
+        }
+
+        params.put("max1", String.valueOf(modalidade.getPontuacao_max()[0]));
+        params.put("max2", String.valueOf(modalidade.getPontuacao_max()[1]));
+        params.put("max3", String.valueOf(modalidade.getPontuacao_max()[2]));
+        params.put("max4", String.valueOf(modalidade.getPontuacao_max()[3]));
+        params.put("max5", String.valueOf(modalidade.getPontuacao_max()[4]));
+        params.put("max6", String.valueOf(modalidade.getPontuacao_max()[5]));
+        params.put("max7", String.valueOf(modalidade.getPontuacao_max()[6]));
+        params.put("max8", String.valueOf(modalidade.getPontuacao_max()[7]));
+
+        params.put("min1", String.valueOf(modalidade.getPontuacao_min()[0]));
+        params.put("min2", String.valueOf(modalidade.getPontuacao_min()[1]));
+        params.put("min3", String.valueOf(modalidade.getPontuacao_min()[2]));
+        params.put("min4", String.valueOf(modalidade.getPontuacao_min()[3]));
+        params.put("min5", String.valueOf(modalidade.getPontuacao_min()[4]));
+        params.put("min6", String.valueOf(modalidade.getPontuacao_min()[5]));
+        params.put("min7", String.valueOf(modalidade.getPontuacao_min()[6]));
+        params.put("min8", String.valueOf(modalidade.getPontuacao_min()[7]));
 
         String url = Constants.kServiceURL + Constants.kServiceUpdateModalidade;
 

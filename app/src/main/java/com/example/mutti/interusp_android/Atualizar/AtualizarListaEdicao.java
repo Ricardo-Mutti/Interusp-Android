@@ -114,7 +114,7 @@ public class AtualizarListaEdicao extends AppCompatActivity {
                 break;
 
             case "Modalidades":
-                list.addAll(Arrays.asList(getResources().getStringArray(R.array.modalidades_com_chaveamento)));
+                list.addAll(Arrays.asList(getResources().getStringArray(R.array.modalidades)));
                 ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(activity, android.R.layout.simple_spinner_dropdown_item, list);
                 list_info.setAdapter(adapter5);
                 nome_edicao.setText("Edição de modalidades");
@@ -124,7 +124,7 @@ public class AtualizarListaEdicao extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(activity, AtualizarModalidade.class);
                         intent.putExtra("nomeModalidade", String.valueOf(list.get(position)));
-                        intent.putExtra("id_modalidae", position+1);
+                        intent.putExtra("modalidade_id", position+1);
                         startActivity(intent);
                     }
                 });
