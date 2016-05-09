@@ -193,6 +193,8 @@ public class AtualizarModalidade extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     //Requisicao pra atualizar
+                    Modalidade modalidade = new Modalidade();
+
                     FaculdadePontuacao[] max = new FaculdadePontuacao[8];
                     FaculdadePontuacao[] min = new FaculdadePontuacao[8];
                     FaculdadePosicaoPontuacao[] total = new FaculdadePosicaoPontuacao[8];
@@ -246,6 +248,8 @@ public class AtualizarModalidade extends AppCompatActivity {
                     maxPinheiros.setPontuacao(Integer.valueOf(max_pinheiros));
                     max[7] = maxPinheiros;
 
+                    modalidade.setPontuacao_max(max);
+
 //                    Minimo
                     min_poli = min_poli_edt.getText().toString();
                     FaculdadePontuacao minPoli = new FaculdadePontuacao();
@@ -295,77 +299,79 @@ public class AtualizarModalidade extends AppCompatActivity {
                     minPinheiros.setPontuacao(Integer.valueOf(min_poli));
                     min[7] = minPinheiros;
 
-//                    Total
-                    final_poli = final_poli_edt.getText().toString();
-                    final_fea = final_fea_edt.getText().toString();
-                    final_farma = final_farma_edt.getText().toString();
-                    final_esalq = final_esalq_edt.getText().toString();
-                    final_riberao = final_riberao_edt.getText().toString();
-                    final_sanfran = final_sanfran_edt.getText().toString();
-                    final_odonto = final_odonto_edt.getText().toString();
-                    final_pinheiros = final_pinheiros_edt.getText().toString();
-
-                    colocacao_poli = colocacao_poli_edt.getText().toString();
-                    FaculdadePosicaoPontuacao totalPoli = new FaculdadePosicaoPontuacao();
-                    totalPoli.setFaculdade(1);
-                    totalPoli.setPontuacao(Integer.valueOf(final_poli));
-                    totalPoli.setPosicao(Integer.valueOf(colocacao_poli));
-                    total[0] = totalPoli;
-
-                    colocacao_fea = colocacao_fea_edt.getText().toString();
-                    FaculdadePosicaoPontuacao totalFea = new FaculdadePosicaoPontuacao();
-                    totalFea.setFaculdade(2);
-                    totalFea.setPontuacao(Integer.valueOf(final_fea));
-                    totalFea.setPosicao(Integer.valueOf(colocacao_fea));
-                    total[1] = totalFea;
-
-                    colocacao_farma = colocacao_farma_edt.getText().toString();
-                    FaculdadePosicaoPontuacao totalFarma = new FaculdadePosicaoPontuacao();
-                    totalFarma.setFaculdade(3);
-                    totalFarma.setPontuacao(Integer.valueOf(final_farma));
-                    totalFarma.setPosicao(Integer.valueOf(colocacao_farma));
-                    total[2] = totalFarma;
-
-                    colocacao_esalq = colocacao_esalq_edt.getText().toString();
-                    FaculdadePosicaoPontuacao totalEsalq = new FaculdadePosicaoPontuacao();
-                    totalEsalq.setFaculdade(4);
-                    totalEsalq.setPontuacao(Integer.valueOf(final_esalq));
-                    totalEsalq.setPosicao(Integer.valueOf(colocacao_esalq));
-                    total[3] = totalEsalq;
-
-                    colocacao_riberao = colocacao_riberao_edt.getText().toString();
-                    FaculdadePosicaoPontuacao totalRiberao = new FaculdadePosicaoPontuacao();
-                    totalRiberao.setFaculdade(5);
-                    totalRiberao.setPontuacao(Integer.valueOf(final_riberao));
-                    totalRiberao.setPosicao(Integer.valueOf(colocacao_riberao));
-                    total[4] = totalRiberao;
-
-                    colocacao_sanfran = colocacao_sanfran_edt.getText().toString();
-                    FaculdadePosicaoPontuacao totalSanfran = new FaculdadePosicaoPontuacao();
-                    totalSanfran.setFaculdade(6);
-                    totalSanfran.setPontuacao(Integer.valueOf(final_sanfran));
-                    totalSanfran.setPosicao(Integer.valueOf(colocacao_sanfran));
-                    total[5] = totalSanfran;
-
-                    colocacao_odonto = colocacao_odonto_edt.getText().toString();
-                    FaculdadePosicaoPontuacao totalOdonto = new FaculdadePosicaoPontuacao();
-                    totalOdonto.setFaculdade(7);
-                    totalOdonto.setPontuacao(Integer.valueOf(final_odonto));
-                    totalOdonto.setPosicao(Integer.valueOf(colocacao_odonto));
-                    total[6] = totalOdonto;
-
-                    colocacao_pinheiros = colocacao_pinheiros_edt.getText().toString();
-                    FaculdadePosicaoPontuacao totalPinheiros = new FaculdadePosicaoPontuacao();
-                    totalPinheiros.setFaculdade(8);
-                    totalPinheiros.setPontuacao(Integer.valueOf(final_pinheiros));
-                    totalPinheiros.setPosicao(Integer.valueOf(colocacao_pinheiros));
-                    total[7] = totalPinheiros;
-
-
-                    Modalidade modalidade = new Modalidade();
-                    modalidade.setPontuacao_max(max);
                     modalidade.setPontuacao_min(min);
-                    modalidade.setPontuacao_total(total);
+
+//                    Total
+                    if (btn_pressed) {
+                        final_poli = final_poli_edt.getText().toString();
+                        final_fea = final_fea_edt.getText().toString();
+                        final_farma = final_farma_edt.getText().toString();
+                        final_esalq = final_esalq_edt.getText().toString();
+                        final_riberao = final_riberao_edt.getText().toString();
+                        final_sanfran = final_sanfran_edt.getText().toString();
+                        final_odonto = final_odonto_edt.getText().toString();
+                        final_pinheiros = final_pinheiros_edt.getText().toString();
+
+                        colocacao_poli = colocacao_poli_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalPoli = new FaculdadePosicaoPontuacao();
+                        totalPoli.setFaculdade(1);
+                        totalPoli.setPontuacao(Integer.valueOf(final_poli));
+                        totalPoli.setPosicao(Integer.valueOf(colocacao_poli));
+                        total[0] = totalPoli;
+
+                        colocacao_fea = colocacao_fea_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalFea = new FaculdadePosicaoPontuacao();
+                        totalFea.setFaculdade(2);
+                        totalFea.setPontuacao(Integer.valueOf(final_fea));
+                        totalFea.setPosicao(Integer.valueOf(colocacao_fea));
+                        total[1] = totalFea;
+
+                        colocacao_farma = colocacao_farma_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalFarma = new FaculdadePosicaoPontuacao();
+                        totalFarma.setFaculdade(3);
+                        totalFarma.setPontuacao(Integer.valueOf(final_farma));
+                        totalFarma.setPosicao(Integer.valueOf(colocacao_farma));
+                        total[2] = totalFarma;
+
+                        colocacao_esalq = colocacao_esalq_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalEsalq = new FaculdadePosicaoPontuacao();
+                        totalEsalq.setFaculdade(4);
+                        totalEsalq.setPontuacao(Integer.valueOf(final_esalq));
+                        totalEsalq.setPosicao(Integer.valueOf(colocacao_esalq));
+                        total[3] = totalEsalq;
+
+                        colocacao_riberao = colocacao_riberao_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalRiberao = new FaculdadePosicaoPontuacao();
+                        totalRiberao.setFaculdade(5);
+                        totalRiberao.setPontuacao(Integer.valueOf(final_riberao));
+                        totalRiberao.setPosicao(Integer.valueOf(colocacao_riberao));
+                        total[4] = totalRiberao;
+
+                        colocacao_sanfran = colocacao_sanfran_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalSanfran = new FaculdadePosicaoPontuacao();
+                        totalSanfran.setFaculdade(6);
+                        totalSanfran.setPontuacao(Integer.valueOf(final_sanfran));
+                        totalSanfran.setPosicao(Integer.valueOf(colocacao_sanfran));
+                        total[5] = totalSanfran;
+
+                        colocacao_odonto = colocacao_odonto_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalOdonto = new FaculdadePosicaoPontuacao();
+                        totalOdonto.setFaculdade(7);
+                        totalOdonto.setPontuacao(Integer.valueOf(final_odonto));
+                        totalOdonto.setPosicao(Integer.valueOf(colocacao_odonto));
+                        total[6] = totalOdonto;
+
+                        colocacao_pinheiros = colocacao_pinheiros_edt.getText().toString();
+                        FaculdadePosicaoPontuacao totalPinheiros = new FaculdadePosicaoPontuacao();
+                        totalPinheiros.setFaculdade(8);
+                        totalPinheiros.setPontuacao(Integer.valueOf(final_pinheiros));
+                        totalPinheiros.setPosicao(Integer.valueOf(colocacao_pinheiros));
+                        total[7] = totalPinheiros;
+
+                        modalidade.setPontuacao_total(total);
+
+
+                    }
 
                     UpdateModalidade update = new UpdateModalidade(context);
                     update.UpdateModalidade(modalidade);
