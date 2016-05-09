@@ -66,7 +66,7 @@ public class WebServiceAPI { private Context context;
     public void userLogin (String username, String password, Response.Listener successListener) {
 
         Map<String, String> params = new HashMap<>();
-        params.put("username", username);
+        params.put("login", username);
         params.put("password", password);
 
         String url = Constants.kServiceURL + Constants.kServiceLogin;

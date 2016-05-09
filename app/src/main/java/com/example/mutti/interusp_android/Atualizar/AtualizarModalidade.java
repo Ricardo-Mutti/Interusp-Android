@@ -371,7 +371,6 @@ public class AtualizarModalidade extends AppCompatActivity {
 
                         modalidade.setPontuacao_total(total);
 
-
                     }
 
                     UpdateModalidade update = new UpdateModalidade(context);
