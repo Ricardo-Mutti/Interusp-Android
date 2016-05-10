@@ -282,9 +282,9 @@ public class AtualizarJogos extends AppCompatActivity {
                     jogo_selecionado.setPlacar_1(placar1);
                     jogo_selecionado.setPlacar_2(placar2);
                     if(checkVencedor1.isChecked()){
-                        jogo_selecionado.setGanhador(1);
+                        jogo_selecionado.setGanhador(Integer.parseInt(jogo_selecionado.getFaculdade_1()));
                     }else{
-                        jogo_selecionado.setGanhador(2);
+                        jogo_selecionado.setGanhador(Integer.parseInt(jogo_selecionado.getFaculdade_2()));
                     }
                     EditJogoPlacar editJogoPlacar = new EditJogoPlacar(context);
                     editJogoPlacar.updateJogo(jogo_selecionado);

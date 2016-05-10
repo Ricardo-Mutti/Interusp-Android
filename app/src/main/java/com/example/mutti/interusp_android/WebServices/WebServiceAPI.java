@@ -88,11 +88,10 @@ public class WebServiceAPI {
         String placar_1 = jogo.getPlacar_1();
         String placar_2 = jogo.getPlacar_2();
 
-        String jogo_placar = "\"jogo\": { \"placar_1\":" + placar_1 + ", \"placar_2\":" + placar_2 + "}";
-
+        params.put("placar_1",placar_1);
+        params.put("placar_2",placar_2);
         params.put("_id", jogo.get_id());
         params.put("ganhador", String.valueOf(jogo.getGanhador()));
-        params.put("jogo", jogo_placar);
 
         String url = Constants.kServiceURL + Constants.getkServiceUpdateJogosPlacar;
 
