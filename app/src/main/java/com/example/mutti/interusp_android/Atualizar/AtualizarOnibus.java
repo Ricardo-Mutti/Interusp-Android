@@ -18,8 +18,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.mutti.interusp_android.Manager.EditOnibus;
+import com.example.mutti.interusp_android.Model.Onibus;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
+import com.example.mutti.interusp_android.Utils.DataHolder;
 import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
 import java.util.ArrayList;
@@ -30,7 +32,10 @@ public class AtualizarOnibus extends AppCompatActivity {
     Activity activity = this;
     Context context = this;
 
+    Onibus onibus_selecionado = new Onibus();
+
     TextView action_title;
+    String info1;
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
@@ -47,6 +52,10 @@ public class AtualizarOnibus extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atualizar_onibus);
+
+        String placa = getIntent().getStringExtra("placa");
+        ArrayList<Onibus> onibuses = DataHolder.getInstance().getOnibus();
+
 
         final EditText info_edt = (EditText) findViewById(R.id.onibus_info);
         final EditText placa_edt = (EditText) findViewById(R.id.onibus_placa);
@@ -66,6 +75,40 @@ public class AtualizarOnibus extends AppCompatActivity {
         atualizar_data.setAdapter(adapter3);
 
 
+        if (!placa.equals("Novo onibus")) {
+            for (Onibus onibus : onibuses) {
+                if (onibus.getPlaca().equals(placa)) {
+                    onibus_selecionado = onibus;
+                }
+            }
+            placa_edt.setText(onibus_selecionado.getPlaca());
+
+            onibus_facul.setSelection(Integer.parseInt(onibus_selecionado.getFacul_id()));
+            String[] infos = onibus_selecionado.getInformacoes().split("\n");
+            String data = infos[0];
+            info1 = infos[2];
+            info_edt.setText(info1);
+            int position=0;
+            switch (data) {
+
+                case "Quinta-feira":
+                    position = 1;
+                    break;
+                case "Sexta-feira":
+                    position = 2;
+                    break;
+                case "Sábado":
+                    position = 3;
+                    break;
+                case "Domingo":
+                    position = 4;
+                    break;
+            }
+
+            atualizar_data.setSelection(position);
+
+        }
+
 
         Button atualizar = (Button) findViewById(R.id.onibus_atualizar);
         atualizar.setOnClickListener(new View.OnClickListener() {
@@ -81,12 +124,11 @@ public class AtualizarOnibus extends AppCompatActivity {
 
                 EditOnibus editOnibus = new EditOnibus(context);
                 editOnibus.sendRequest(facul, data + "\n\n" + info, placa);
-
             }
         });
 
         //ACTION BAR
-        StatusBarColor.setColorStatusBar(activity,"#000033");
+        StatusBarColor.setColorStatusBar(activity, "#000033");
         action_title = (TextView) findViewById(R.id.txtActionBar);
         action_title.setText("Atualizar Ônibus");
         final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
@@ -95,6 +137,8 @@ public class AtualizarOnibus extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 activity.finish();
+                Intent intent = new Intent(activity, AtualizarMenu.class);
+                startActivity(intent);
             }
         });
 

@@ -27,9 +27,7 @@ public class JogoAdapter extends BaseAdapter{
         this.jogos = jogos;
     }
 
-    String competidor_1;
-    String competidor_2;
-    String dia_semana;
+
 
     @Override
     public int getCount() {
@@ -50,6 +48,10 @@ public class JogoAdapter extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
 
         Jogo jogo = (Jogo) getItem(position);
+
+         String competidor_1 = "---";
+         String competidor_2 = "---";
+         String dia_semana;
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -99,7 +101,7 @@ public class JogoAdapter extends BaseAdapter{
         if(jogo.getFaculdade_1().equals("---")){
             competidor_1="---";
         }else{
-            if ((Integer.parseInt(jogo.getFaculdade_1())-1) > 0) {
+            if ((Integer.parseInt(jogo.getFaculdade_1())) > 0) {
                 competidor_1=list.get(Integer.parseInt(jogo.getFaculdade_1())-1).toString();
             }
         }
@@ -107,8 +109,7 @@ public class JogoAdapter extends BaseAdapter{
         if(jogo.getFaculdade_2().equals("---")){
             competidor_2="---";
         }else{
-            Log.d("JOGO FACULDADE", jogo.getNome()+" - "+jogo.getFaculdade_2());
-            if ((Integer.parseInt(jogo.getFaculdade_2())-1) > 0) {
+            if ((Integer.parseInt(jogo.getFaculdade_2())) > 0) {
                 competidor_2=list.get(Integer.parseInt(jogo.getFaculdade_2())-1).toString();
             }
         }

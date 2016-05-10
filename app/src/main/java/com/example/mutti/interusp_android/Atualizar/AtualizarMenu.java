@@ -1,8 +1,10 @@
 package com.example.mutti.interusp_android.Atualizar;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -12,8 +14,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.Manager.GetOnibus;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.TabsMain;
+import com.example.mutti.interusp_android.Utils.Constants;
 import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
 public class AtualizarMenu extends AppCompatActivity {
@@ -22,6 +26,17 @@ public class AtualizarMenu extends AppCompatActivity {
     Context context = this;
 
     TextView action_title;
+
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Intent intent1 = new Intent(activity, AtualizarListaEdicao.class);
+            intent1.putExtra("tipo_edicao", "Onibus");
+            startActivity(intent1);
+        }
+    };
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,24 +52,24 @@ public class AtualizarMenu extends AppCompatActivity {
             }
         });
 
-        Button natacao = (Button) findViewById(R.id.btnNatacao_adm);
-        natacao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent(activity, AtualizarListaEdicao.class);
-                intent1.putExtra("tipo_edicao", "Natacao");
-                startActivity(intent1);
-            }
-        });
-        Button atletismo = (Button) findViewById(R.id.btnAtletismo_adm);
-        atletismo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent(activity, AtualizarListaEdicao.class);
-                intent1.putExtra("tipo_edicao", "Atletismo");
-                startActivity(intent1);
-            }
-        });
+//        Button natacao = (Button) findViewById(R.id.btnNatacao_adm);
+//        natacao.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent1 = new Intent(activity, AtualizarListaEdicao.class);
+//                intent1.putExtra("tipo_edicao", "Natacao");
+//                startActivity(intent1);
+//            }
+//        });
+//        Button atletismo = (Button) findViewById(R.id.btnAtletismo_adm);
+//        atletismo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent1 = new Intent(activity, AtualizarListaEdicao.class);
+//                intent1.putExtra("tipo_edicao", "Atletismo");
+//                startActivity(intent1);
+//            }
+//        });
         Button modalidade = (Button) findViewById(R.id.btnModalidade);
         modalidade.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,9 +92,8 @@ public class AtualizarMenu extends AppCompatActivity {
         onibus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(activity, AtualizarListaEdicao.class);
-                intent1.putExtra("tipo_edicao", "Onibus");
-                startActivity(intent1);
+                GetOnibus getOnibus = new GetOnibus(context);
+                getOnibus.GetOnibus();
 
             }
         });
@@ -106,6 +120,20 @@ public class AtualizarMenu extends AppCompatActivity {
                 activity.finish();
             }
         });
+    }
+
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        activity.registerReceiver(receiver, new IntentFilter(Constants.kGetOnibusDone));
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        activity.unregisterReceiver(receiver);
     }
 
 }

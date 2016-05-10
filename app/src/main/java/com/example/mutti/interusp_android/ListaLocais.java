@@ -91,6 +91,7 @@ public class ListaLocais extends AppCompatActivity {
                 Intent intent;
                 if (edicao) {
                     intent = new Intent(activity, AtualizarLocal.class);
+                    activity.finish();
                 } else {
                     intent = new Intent(activity, DetalheInformacao.class);
                 }

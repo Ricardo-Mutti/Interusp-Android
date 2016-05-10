@@ -102,9 +102,6 @@ public class Mais extends Fragment {
             public void onClick(View v) {
                 GetTorcida getTorcida = new GetTorcida(context);
                 getTorcida.getTrocida();
-
-                Intent intent = new Intent(activity, Torcidometro.class);
-                startActivity(intent);
             }
         });
 

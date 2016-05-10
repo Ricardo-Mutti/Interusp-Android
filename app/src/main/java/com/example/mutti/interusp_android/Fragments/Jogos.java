@@ -194,7 +194,7 @@ public class Jogos extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 containerFilter.setVisibility(View.GONE);
                 setHide = false;
-                String chosen = String.valueOf(position - 1);
+                String chosen = String.valueOf(position);
                 String label = filters.get(position);
                 if (label.equals("Todos")) {
                     filtroModalidade.setText("Modalidade");

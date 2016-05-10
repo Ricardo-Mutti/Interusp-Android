@@ -42,7 +42,7 @@
             android:id="@+id/torcidometro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Trocidômetro"
+            android:text="Torcidômetro"
             android:textSize="20sp"
             android:textColor="@android:color/black"
             android:padding="10dp"/>

@@ -21,6 +21,7 @@ import com.example.mutti.interusp_android.Utils.StatusBarColor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class AtualizarListaEdicao extends AppCompatActivity {
 
@@ -75,12 +76,14 @@ public class AtualizarListaEdicao extends AppCompatActivity {
                 for (Onibus onibus : onibuses) {
                     list.add(onibus.getPlaca());
                 }
+                Collections.sort(list);
                 ArrayAdapter<String> adapter3 = new ArrayAdapter<>(activity, android.R.layout.simple_spinner_dropdown_item, list);
                 list_info.setAdapter(adapter3);
 
                 list_info.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(activity, AtualizarOnibus.class);
+                        intent.putExtra("placa", list.get(position));
                         startActivity(intent);
                     }
                 });
@@ -118,7 +121,6 @@ public class AtualizarListaEdicao extends AppCompatActivity {
                 ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(activity, android.R.layout.simple_spinner_dropdown_item, list);
                 list_info.setAdapter(adapter5);
                 nome_edicao.setText("Edição de modalidades");
-
 
                 list_info.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

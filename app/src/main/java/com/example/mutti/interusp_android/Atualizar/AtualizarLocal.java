@@ -16,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.mutti.interusp_android.Manager.EditLocal;
+import com.example.mutti.interusp_android.Manager.GetLocal;
 import com.example.mutti.interusp_android.Model.Locais;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
@@ -29,6 +30,8 @@ public class AtualizarLocal extends AppCompatActivity {
 
     Context context = this;
     Activity activity = this;
+
+    String _id;
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
@@ -61,8 +64,9 @@ public class AtualizarLocal extends AppCompatActivity {
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tipo_lugar.setAdapter(adapter3);
 
-        if(!novo_lugar) {
+        if (!novo_lugar) {
             final Locais local = getIntent().getParcelableExtra("locais");
+            _id = local.getId();
             double[] coordenadas = local.getCoordenadas();
             setIcon(local.getTipo(), icon);
             nome.setText(local.getNome());
@@ -70,7 +74,7 @@ public class AtualizarLocal extends AppCompatActivity {
             url.setText(local.getFoto());
             latitude.setText(String.valueOf(coordenadas[1]));
             longitude.setText(String.valueOf(coordenadas[0]));
-            tipo_lugar.setSelection(local.getTipo()-1);
+            tipo_lugar.setSelection(local.getTipo() - 1);
         }
 
         atualizar.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +87,7 @@ public class AtualizarLocal extends AppCompatActivity {
                 coordenadas[0] = Double.parseDouble(latitude.getText().toString());
                 coordenadas[1] = Double.parseDouble(longitude.getText().toString());
                 Locais local = new Locais(nome.getText().toString(), descricao.getText().toString(), url.getText().toString(), coordenadas, tipo);
-
+                local.setId(_id);
                 EditLocal editLocal = new EditLocal(context);
                 editLocal.EditLocal(local);
             }
@@ -92,9 +96,9 @@ public class AtualizarLocal extends AppCompatActivity {
         //ACTION BAR
         StatusBarColor.setColorStatusBar(activity, "#000033");
         TextView action_title = (TextView) findViewById(R.id.txtActionBar);
-        if(novo_lugar) {
+        if (novo_lugar) {
             action_title.setText("Atualiza Local");
-        }else{
+        } else {
             action_title.setText("Adicionar Local");
         }
         final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
@@ -110,7 +114,7 @@ public class AtualizarLocal extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        activity.registerReceiver(receiver, new IntentFilter(Constants.kEditLocalDone));
+        activity.registerReceiver(receiver, new IntentFilter(Constants.kGetLocaisDone));
     }
 
     @Override

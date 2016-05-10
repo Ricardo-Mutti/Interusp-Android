@@ -17,7 +17,7 @@ public class Jogo {
     String placar_1;
     String placar_2;
     String chaveamento;//posicao na chave
-    boolean is_vencendor;
+    int ganhador;
     int dia;
 
     public int getDia() {
@@ -108,19 +108,19 @@ public class Jogo {
         this.chaveamento = chaveamento;
     }
 
-    public boolean is_vencendor() {
-        return is_vencendor;
-    }
-
-    public void setIs_vencendor(boolean is_vencendor) {
-        this.is_vencendor = is_vencendor;
-    }
-
     public String get_id() {
         return _id;
     }
 
     public void set_id(String _id) {
         this._id = _id;
+    }
+
+    public int getGanhador() {
+        return ganhador;
+    }
+
+    public void setGanhador(int ganhador) {
+        this.ganhador = ganhador;
     }
 }

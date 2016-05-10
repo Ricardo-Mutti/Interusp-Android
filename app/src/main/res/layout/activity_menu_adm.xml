@@ -16,20 +16,6 @@
         android:text="Jogos" />
 
     <Button
-        android:id="@+id/btnNatacao_adm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Provas de Natação" />
-
-    <Button
-        android:id="@+id/btnAtletismo_adm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Provas de Atletismo" />
-
-    <Button
         android:id="@+id/btnModalidade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

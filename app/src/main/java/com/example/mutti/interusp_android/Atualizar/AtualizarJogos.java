@@ -20,6 +20,8 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.mutti.interusp_android.Manager.EditJogoInfos;
+import com.example.mutti.interusp_android.Manager.EditJogoPlacar;
 import com.example.mutti.interusp_android.Model.Jogo;
 import com.example.mutti.interusp_android.R;
 import com.example.mutti.interusp_android.Utils.Constants;
@@ -43,6 +45,11 @@ public class AtualizarJogos extends AppCompatActivity {
     boolean check1 = false;
     boolean check2 = false;
 
+    String placar1  = "---";
+    String placar2 = "---";
+    String local = "---";
+    String horario = "---";
+
     ArrayList<Jogo> jogos = DataHolder.getInstance().getJogos();
     Jogo jogo_selecionado = new Jogo();
 
@@ -61,10 +68,10 @@ public class AtualizarJogos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atualizar_jogos);
 
-        boolean isPlacar = getIntent().getBooleanExtra("placar", false);
+        final boolean isPlacar = getIntent().getBooleanExtra("placar", false);
         String  jogo_id = getIntent().getStringExtra("jogo_id");
 
-        LinearLayout placar = (LinearLayout) findViewById(R.id.placar);
+        final LinearLayout placar = (LinearLayout) findViewById(R.id.placar);
         LinearLayout info = (LinearLayout) findViewById(R.id.info);
 
         ImageView modalidade = (ImageView) findViewById(R.id.atualizar_jogo_modalidade);
@@ -73,14 +80,15 @@ public class AtualizarJogos extends AppCompatActivity {
 
         TextView nome_jogo = (TextView) findViewById(R.id.atualizar_jogo_jogo);
 
-        EditText placar1_edt = (EditText) findViewById(R.id.atualizar_jogo_placar1);
-        EditText placar2_edt = (EditText) findViewById(R.id.atualizar_jogo_placar2);
-        EditText local_edt = (EditText) findViewById(R.id.atualizar_jogo_local);
-        EditText horario_edt = (EditText) findViewById(R.id.atualizar_jogo_horario);
+       final EditText placar1_edt = (EditText) findViewById(R.id.atualizar_jogo_placar1);
+       final EditText placar2_edt = (EditText) findViewById(R.id.atualizar_jogo_placar2);
+       final EditText local_edt = (EditText) findViewById(R.id.atualizar_jogo_local);
+       final EditText horario_edt = (EditText) findViewById(R.id.atualizar_jogo_horario);
 
         if (!isPlacar) {
             placar.setVisibility(View.GONE);
             info.setVisibility(View.VISIBLE);
+
         }
 
         for(Jogo jogo : jogos){
@@ -89,7 +97,17 @@ public class AtualizarJogos extends AppCompatActivity {
             }
         }
 
+        //Sun, 18 Mar 2012 05:51:34 GMT
+        String[] parts = jogo_selecionado.getData().split("-");
+        String aux = parts[2];
+        String[] aux1 = aux.split("T");
+        String aux2[] = aux1[1].split(":");
+        String horario1 = aux2[0] +":"+ aux2[1];
+
         nome_jogo.setText(jogo_selecionado.getNome());
+        local_edt.setText(jogo_selecionado.getLocal());
+        horario_edt.setText(horario1);
+
         if(jogo_selecionado.getFaculdade_1() != null && jogo_selecionado.getFaculdade_1() !=null) {
             competidor_1.setImageResource(SetFaculImage.Drawable(jogo_selecionado.getFaculdade_1()));
             competidor_2.setImageResource(SetFaculImage.Drawable(jogo_selecionado.getFaculdade_2()));
@@ -140,32 +158,88 @@ public class AtualizarJogos extends AppCompatActivity {
         });
         ArrayList list = new ArrayList();
         list.addAll(Arrays.asList(getResources().getStringArray(R.array.datas_jogos)));
-        Spinner atualizar_data = (Spinner) findViewById(R.id.atualizar_jogo_data);
+        final Spinner atualizar_data = (Spinner) findViewById(R.id.atualizar_jogo_data);
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, list);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         atualizar_data.setAdapter(adapter3);
 
-        String data = atualizar_data.getSelectedItem().toString();
 
-        if (placar1_edt.getText() != null) {
-            String placar1 = placar1_edt.getText().toString();
-        }
-        if (placar2_edt.getText() != null) {
-            String placar2 = placar2_edt.getText().toString();
-        }
-        if (local_edt.getText() != null) {
-            String local = local_edt.getText().toString();
-        }
-        if (horario_edt.getText() != null) {
-            String horario = horario_edt.getText().toString();
+        String dia = aux1[0];
+        int position = 0;
+
+        switch (dia){
+
+            case "26":
+                position=1;
+                break;
+            case "27":
+                position=2;
+                break;
+            case "28":
+                position=3;
+                break;
+            case "29":
+                position=4;
+                break;
         }
 
+        atualizar_data.setSelection(position);
 
         Button atualizar = (Button) findViewById(R.id.atualizar_jogo_atualizar);
         atualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                final String data = atualizar_data.getSelectedItem().toString();
+
+                if (placar1_edt.getText() != null) {
+                    placar1= placar1_edt.getText().toString();
+                }
+                if (placar2_edt.getText() != null) {
+                    placar2= placar2_edt.getText().toString();
+                }
+                if (local_edt.getText() != null) {
+                    local = local_edt.getText().toString();
+                }
+                if (horario_edt.getText() != null) {
+                    horario = horario_edt.getText().toString();
+                }
+
                 //Atualizar jogo
+                if(isPlacar){
+                    jogo_selecionado.setPlacar_1(placar1);
+                    jogo_selecionado.setPlacar_2(placar2);
+                    if(checkVencedor1.isChecked()){
+                        jogo_selecionado.setGanhador(1);
+                    }else{
+                        jogo_selecionado.setGanhador(2);
+                    }
+                    EditJogoPlacar editJogoPlacar = new EditJogoPlacar(context);
+                    editJogoPlacar.updateJogo(jogo_selecionado);
+                }else{
+                    jogo_selecionado.setLocal(local);
+                    String dataStr = jogo_selecionado.getData();
+                    //Sun, 18 Mar 2012 05:51:34 GMT
+                   switch (data){
+                       case"Quinta-feira":
+                           dataStr="Thu, 26 May 2016 "+horario+":00 GMT";
+                           break;
+                       case"Sexta-feira":
+                           dataStr="Fri, 27 May 2016 "+horario+":00 GMT";
+                           break;
+                       case"Sábado":
+                           dataStr="Sat, 28 May 2016 "+horario+":00 GMT";
+                           break;
+                       case"Domingo":
+                           dataStr="Sun, 29 May 2016 "+horario+":00 GMT";
+                           break;
+                   }
+                    jogo_selecionado.setData(dataStr);
+                    EditJogoInfos editJogoInfos = new EditJogoInfos(context);
+                    editJogoInfos.updateJogo(jogo_selecionado);
+
+                }
+
             }
         });
 

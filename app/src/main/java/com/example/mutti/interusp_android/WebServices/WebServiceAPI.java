@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.example.mutti.interusp_android.Model.Jogo;
 import com.example.mutti.interusp_android.Model.Locais;
 import com.example.mutti.interusp_android.Model.Modalidade;
 import com.example.mutti.interusp_android.Utils.Constants;
@@ -29,7 +30,8 @@ import java.util.Map;
 /**
  * Created by Mutti on 01/05/16.
  */
-public class WebServiceAPI { private Context context;
+public class WebServiceAPI {
+    private Context context;
 
     public WebServiceAPI(Context context) {
         this.context = context;
@@ -48,7 +50,7 @@ public class WebServiceAPI { private Context context;
 //        Log.d("Request:",request.toString());
 //    }
 
-    public void getLocais (Response.Listener successListener) {
+    public void getLocais(Response.Listener successListener) {
 
         Map<String, String> params = new HashMap<>();
 
@@ -59,11 +61,11 @@ public class WebServiceAPI { private Context context;
                 params, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
-        Log.d("Request:",request.toString());
+        Log.d("Request:", request.toString());
     }
 
 
-    public void userLogin (String username, String password, Response.Listener successListener) {
+    public void userLogin(String username, String password, Response.Listener successListener) {
 
         Map<String, String> params = new HashMap<>();
         params.put("login", username);
@@ -76,10 +78,52 @@ public class WebServiceAPI { private Context context;
                 params, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
-        Log.d("Request:",request.toString());
+        Log.d("Request:", request.toString());
     }
 
-    public void getJogos( Response.Listener successListener) {
+
+    public void placar(Jogo jogo, Response.Listener successListener) {
+
+        Map<String, String> params = new HashMap<>();
+        String placar_1 = jogo.getPlacar_1();
+        String placar_2 = jogo.getPlacar_2();
+
+        String jogo_placar = "\"jogo\": { \"placar_1\":" + placar_1 + ", \"placar_2\":" + placar_2 + "}";
+
+        params.put("_id", jogo.get_id());
+        params.put("ganhador", String.valueOf(jogo.getGanhador()));
+        params.put("jogo", jogo_placar);
+
+        String url = Constants.kServiceURL + Constants.getkServiceUpdateJogosPlacar;
+
+        Request request = new InteruspWSRequest(Request.Method.POST, this.context,
+                url,
+                params, successListener);
+
+        WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
+        Log.d("Request:", request.toString());
+    }
+
+    public void infos(Jogo jogo, Response.Listener successListener) {
+
+        Map<String, String> params = new HashMap<>();
+
+        params.put("_id", jogo.get_id());
+        params.put("data", jogo.getData());
+        params.put("local", jogo.getLocal());
+
+        String url = Constants.kServiceURL + Constants.getkServiceUpdateJogosInfo;
+
+        Request request = new InteruspWSRequest(Request.Method.POST, this.context,
+                url,
+                params, successListener);
+
+        WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
+        Log.d("Request:", request.toString());
+    }
+
+
+    public void getJogos(Response.Listener successListener) {
 
         String url = Constants.kServiceURL + Constants.kServiceGetJogos;
 
@@ -88,7 +132,7 @@ public class WebServiceAPI { private Context context;
                 null, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
-        Log.d("Request:",request.toString());
+        Log.d("Request:", request.toString());
     }
 
     public void getChaveamento(int modalidade, Response.Listener successListener) {
@@ -102,10 +146,10 @@ public class WebServiceAPI { private Context context;
                 null, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
-        Log.d("Request:",request.toString());
+        Log.d("Request:", request.toString());
     }
 
-    public void getFaculdades( Response.Listener successListener) {
+    public void getFaculdades(Response.Listener successListener) {
 
         String url = Constants.kServiceURL + Constants.kServiceGetFaculdades;
 
@@ -114,22 +158,22 @@ public class WebServiceAPI { private Context context;
                 null, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
-        Log.d("Request:",request.toString());
+        Log.d("Request:", request.toString());
     }
 
     public void getPontosFaculdades(String facul_id, Response.Listener successListener) {
 
-        String url = Constants.kServiceURL + Constants.kServiceGetPontosFacul+facul_id;
+        String url = Constants.kServiceURL + Constants.kServiceGetPontosFacul + facul_id;
 
         Request request = new InteruspWSRequest(Request.Method.GET, this.context,
                 url,
                 null, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
-        Log.d("Request:",request.toString());
+        Log.d("Request:", request.toString());
     }
 
-    public void getOnibus( Response.Listener successListener) {
+    public void getOnibus(Response.Listener successListener) {
 
         String url = Constants.kServiceURL + Constants.kServiceGetOnibus;
 
@@ -138,11 +182,11 @@ public class WebServiceAPI { private Context context;
                 null, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
-        Log.d("Request:",request.toString());
+        Log.d("Request:", request.toString());
     }
 
 
-    public void addTorcida( String facul_id, Response.Listener successListener) {
+    public void addTorcida(String facul_id, Response.Listener successListener) {
 
         Map<String, String> params = new HashMap<>();
         params.put("facul_id", facul_id);
@@ -155,10 +199,10 @@ public class WebServiceAPI { private Context context;
                 params, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
-        Log.d("Request:",request.toString());
+        Log.d("Request:", request.toString());
     }
 
-    public void editOnibus( String facul_id, String placa, String informacoes, Response.Listener successListener) {
+    public void editOnibus(String facul_id, String placa, String informacoes, Response.Listener successListener) {
 
         Map<String, String> params = new HashMap<>();
         params.put("facul_id", facul_id);
@@ -173,34 +217,30 @@ public class WebServiceAPI { private Context context;
                 params, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
-        Log.d("Request:",request.toString());
+        Log.d("Request:", request.toString());
     }
 
     public void editLocal(Locais local, Response.Listener successListener) {
-        Gson gson = new Gson();
 
         Map<String, String> params = new HashMap<>();
-        if(local.getId()!=null) {
+        if (local.getId() != null) {
             params.put("_id", local.getId());
         }
-        if(local.getNome()!=null) {
+        if (local.getNome() != null) {
             params.put("nome", local.getNome());
         }
-        if(local.getDescricao()!=null) {
+        if (local.getDescricao() != null) {
             params.put("descricao", local.getDescricao());
         }
-        if(local.getFoto()!=null) {
+        if (local.getFoto() != null) {
             params.put("foto", local.getFoto());
         }
-//        if(local.getCoordenadas()!=null) {
-//            String[] s = new String[2];
-//            double[] d = local.getCoordenadas();
-//            for (int i = 0; i < s.length; i++)
-//                s[i] = String.valueOf(d[i]);
-//            String coordenadas = gson.toJson(s);
-//            params.put("coordenadas", coordenadas);
-//        }
-        if(local.getTipo()!=0) {
+        if (local.getCoordenadas() != null) {
+            double[] d = local.getCoordenadas();
+            params.put("latitude", String.valueOf(d[0]));
+            params.put("longitude", String.valueOf(d[1]));
+        }
+        if (local.getTipo() != 0) {
             params.put("tipo", String.valueOf(local.getTipo()));
         }
 
@@ -211,7 +251,7 @@ public class WebServiceAPI { private Context context;
                 params, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
-        Log.d("Request:",request.toString());
+        Log.d("Request:", request.toString());
     }
 
     public void updateModalidade(Modalidade modalidade, Response.Listener successListener) {
@@ -255,24 +295,24 @@ public class WebServiceAPI { private Context context;
                 params, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
-        Log.d("Request:",request.toString());
+        Log.d("Request:", request.toString());
     }
 
 
-    public void getModalidades( String modalidade_id, Response.Listener successListener) {
+    public void getModalidades(String modalidade_id, Response.Listener successListener) {
 
-        String url = Constants.kServiceURL + Constants.kServiceGetModalidades+modalidade_id;
+        String url = Constants.kServiceURL + Constants.kServiceGetModalidades + modalidade_id;
 
         Request request = new InteruspWSRequest(Request.Method.GET, this.context,
                 url,
                 null, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
-        Log.d("Request:",request.toString());
+        Log.d("Request:", request.toString());
     }
 
 
-    public void getTorcida( Response.Listener successListener) {
+    public void getTorcida(Response.Listener successListener) {
 
         String url = Constants.kServiceURL + Constants.kServiceGetTorcidas;
 
@@ -281,20 +321,8 @@ public class WebServiceAPI { private Context context;
                 null, successListener);
 
         WebServiceSingleton.getInstance(this.context).addToRequestQueue(request);
-        Log.d("Request:",request.toString());
+        Log.d("Request:", request.toString());
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     public void sendRequest(String url, RequestCallback callback) {
@@ -396,6 +424,7 @@ public class WebServiceAPI { private Context context;
                 return "erro";
             }
         }
+
         // onPostExecute displays the results of the AsyncTask.
         @Override
         protected void onPostExecute(String result) {

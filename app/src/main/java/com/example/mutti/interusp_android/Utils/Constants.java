@@ -45,6 +45,11 @@ public class Constants {
     public static final String kServiceUpdateModalidade = "/v1/modalidade/update-modalidade/";
     public static final String kUpdateModalidadeDone = "com.appsimples.interusp.update-modalidade-done";
 
+    public static final String getkServiceUpdateJogosInfo = "/v1/jogo/update-info/";
+
+    public static final String getkServiceUpdateJogosPlacar = "/v1/jogo/update-placar/";
+
+
     public static final String TOKEN_KEY = "x-access-token";
 
 

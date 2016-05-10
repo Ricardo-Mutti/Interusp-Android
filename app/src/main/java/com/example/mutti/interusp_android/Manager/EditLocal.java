@@ -34,8 +34,8 @@ public class EditLocal {
                 if (serverResponse.isSuccess()) {
                     Toast.makeText(context, serverResponse.getMessage(),
                             Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(Constants.kEditLocalDone);
-                    context.sendBroadcast(intent);
+                    GetLocal getLocal = new GetLocal(context);
+                    getLocal.getLocais();
                 }
                 else{
                     Toast.makeText(context, serverResponse.getMessage(),
