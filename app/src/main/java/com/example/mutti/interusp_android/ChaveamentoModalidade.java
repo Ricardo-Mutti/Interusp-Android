@@ -148,9 +148,69 @@ public class ChaveamentoModalidade extends AppCompatActivity {
         if(jogos.get(5).getFaculdade_2()!=null) setDrawable(chave_12, jogos.get(5).getFaculdade_2());
         if(jogos.get(6).getFaculdade_1()!=null) setDrawable(chave_13, jogos.get(6).getFaculdade_1());
         if(jogos.get(6).getFaculdade_2()!=null) setDrawable(chave_14, jogos.get(6).getFaculdade_2());
-        if(jogos.size()>7) {
-            if (jogos.get(7).getFaculdade_1() != null) setDrawable(chave_15, jogos.get(7).getFaculdade_1());
+        if(jogos.size()>7) {if (jogos.get(7).getFaculdade_1() != null) setDrawable(chave_15, jogos.get(7).getFaculdade_1());}
+
+
+        if(jogos.get(0).getMandante()!=null) {
+            if (jogos.get(0).getMandante().equals("1")) {
+                chave_1.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
+            } else {
+                chave_2.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
+            }
         }
+
+        if(jogos.get(1).getMandante()!=null) {
+            if (jogos.get(1).getMandante().equals("1")) {
+                chave_3.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
+            } else {
+                chave_4.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
+            }
+        }
+
+
+        if(jogos.get(2).getMandante()!=null) {
+            if (jogos.get(2).getMandante().equals("1")) {
+                chave_5.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
+            } else {
+                chave_6.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
+            }
+        }
+
+
+        if(jogos.get(3).getMandante()!=null) {
+            if (jogos.get(3).getMandante().equals("1")) {
+                chave_7.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
+            } else {
+                chave_8.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
+            }
+        }
+
+        if(jogos.get(4).getMandante()!=null) {
+            if (jogos.get(4).getMandante().equals("1")) {
+                chave_9.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
+            } else {
+                chave_10.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
+            }
+        }
+
+        if(jogos.get(5).getMandante()!=null) {
+            if (jogos.get(5).getMandante().equals("1")) {
+                chave_11.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
+            } else {
+                chave_12.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
+            }
+        }
+
+        if(jogos.get(6).getMandante()!=null) {
+            if (jogos.get(6).getMandante().equals("1")) {
+                chave_13.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
+            } else {
+                chave_14.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
+            }
+        }
+
+
+
 
         if(jogos.get(0).getPlacar_1()!=null) {
             chave_1_txt.setText(jogos.get(0).getPlacar_1());

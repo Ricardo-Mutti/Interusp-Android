@@ -42,6 +42,9 @@ public class AtualizarJogos extends AppCompatActivity {
     CheckBox checkVencedor1;
     CheckBox checkVencedor2;
 
+    CheckBox checkMandante1;
+    CheckBox checkMandante2;
+
     boolean check1 = false;
     boolean check2 = false;
 
@@ -57,8 +60,6 @@ public class AtualizarJogos extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             activity.finish();
-            Intent intent1 = new Intent(activity, AtualizarMenu.class);
-            startActivity(intent1);
 
         }
     };
@@ -85,10 +86,39 @@ public class AtualizarJogos extends AppCompatActivity {
        final EditText local_edt = (EditText) findViewById(R.id.atualizar_jogo_local);
        final EditText horario_edt = (EditText) findViewById(R.id.atualizar_jogo_horario);
 
-        if (!isPlacar) {
-            placar.setVisibility(View.GONE);
-            info.setVisibility(View.VISIBLE);
+        TextView mandante =  (TextView) findViewById(R.id.mandante);
+        TextView placar_tv = (TextView) findViewById(R.id.placar_label);
+        TextView vencendor = (TextView) findViewById(R.id.vencedor);
 
+        checkMandante1 = (CheckBox) findViewById(R.id.checkMandante1);
+        checkMandante2 = (CheckBox) findViewById(R.id.checkMandante2);
+
+        checkVencedor1 = (CheckBox) findViewById(R.id.checkVencedor1);
+        checkVencedor2 = (CheckBox) findViewById(R.id.checkVencedor2);
+
+
+        if (isPlacar) {
+            placar.setVisibility(View.VISIBLE);
+            checkMandante1.setVisibility(View.GONE);
+            checkMandante2.setVisibility(View.GONE);
+            mandante.setVisibility(View.GONE);
+            info.setVisibility(View.GONE);
+            placar1_edt.setVisibility(View.VISIBLE);
+            placar1_edt.setLeft(15);
+            placar2_edt.setVisibility(View.VISIBLE);
+            placar2_edt.setLeft(15);
+            placar_tv.setVisibility(View.VISIBLE);
+            checkVencedor1.setVisibility(View.VISIBLE);
+            checkVencedor2.setVisibility(View.VISIBLE);
+            vencendor.setVisibility(View.VISIBLE);
+        }else{
+            placar1_edt.setVisibility(View.GONE);
+            placar2_edt.setVisibility(View.GONE);
+            placar_tv.setVisibility(View.GONE);
+            checkVencedor1.setVisibility(View.GONE);
+            checkVencedor2.setVisibility(View.GONE);
+            vencendor.setVisibility(View.GONE);
+            mandante.setLeft(12);
         }
 
         for(Jogo jogo : jogos){
@@ -114,9 +144,7 @@ public class AtualizarJogos extends AppCompatActivity {
         }
         modalidade.setImageResource(SetListModalidade.Drawable(jogo_selecionado.getModalidade_id()));
 
-        checkVencedor1 = (CheckBox) findViewById(R.id.checkVencedor1);
         check1 = checkVencedor1.isChecked();
-        checkVencedor2 = (CheckBox) findViewById(R.id.checkVencedor2);
         check2 = checkVencedor2.isChecked();
         checkVencedor1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,6 +184,50 @@ public class AtualizarJogos extends AppCompatActivity {
                 }
             }
         });
+
+
+        check1 = checkMandante1.isChecked();
+        check2 = checkMandante2.isChecked();
+        checkMandante1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!check1 && !check2) {
+                    check1 = true;
+                    checkMandante1.setChecked(true);
+                } else if (check2) {
+                    check2 = false;
+                    checkMandante2.setChecked(false);
+                    check1 = true;
+                    checkMandante1.setChecked(true);
+                } else {
+                    if (check1) {
+                        check1 = false;
+                        checkMandante1.setChecked(false);
+                    }
+                }
+            }
+        });
+        checkMandante2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!check1 && !check2) {
+                    check2 = true;
+                    checkMandante2.setChecked(true);
+                } else if (check1) {
+                    check1 = false;
+                    checkMandante1.setChecked(false);
+                    check2 = true;
+                    checkMandante2.setChecked(true);
+                } else {
+                    if (check2) {
+                        check2 = false;
+                        checkMandante2.setChecked(false);
+                    }
+                }
+            }
+        });
+
+
         ArrayList list = new ArrayList();
         list.addAll(Arrays.asList(getResources().getStringArray(R.array.datas_jogos)));
         final Spinner atualizar_data = (Spinner) findViewById(R.id.atualizar_jogo_data);
@@ -218,6 +290,11 @@ public class AtualizarJogos extends AppCompatActivity {
                     editJogoPlacar.updateJogo(jogo_selecionado);
                 }else{
                     jogo_selecionado.setLocal(local);
+                    if(checkMandante1.isChecked()){
+                        jogo_selecionado.setMandante("1");
+                    }else{
+                        jogo_selecionado.setMandante("2");
+                    }
                     String dataStr = jogo_selecionado.getData();
                     //Sun, 18 Mar 2012 05:51:34 GMT
                    switch (data){

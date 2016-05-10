@@ -111,6 +111,7 @@ public class WebServiceAPI {
         params.put("_id", jogo.get_id());
         params.put("data", jogo.getData());
         params.put("local", jogo.getLocal());
+        params.put("mandante", jogo.getMandante());
 
         String url = Constants.kServiceURL + Constants.getkServiceUpdateJogosInfo;
 
