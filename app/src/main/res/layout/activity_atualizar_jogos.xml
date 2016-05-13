@@ -188,7 +188,7 @@
                     android:textAlignment="gravity"
                     android:textSize="25dp" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/atualizar_jogo_local"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />

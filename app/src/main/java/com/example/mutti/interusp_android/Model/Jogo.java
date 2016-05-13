@@ -11,12 +11,12 @@ public class Jogo {
     boolean is_prova;
     String data;
     String local;
+    String chaveamento;//posicao na chave
     String mandante;
     String faculdade_1;
     String faculdade_2;
     String placar_1;
     String placar_2;
-    String chaveamento;//posicao na chave
     int ganhador;
     int dia;
 
@@ -123,4 +123,6 @@ public class Jogo {
     public void setGanhador(int ganhador) {
         this.ganhador = ganhador;
     }
+
+
 }

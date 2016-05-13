@@ -84,12 +84,14 @@ public class AtualizarLocal extends AppCompatActivity {
                 int tipo = tipo_lugar.getSelectedItemPosition() + 1;
 
                 double[] coordenadas = new double[2];
-                coordenadas[0] = Double.parseDouble(latitude.getText().toString());
-                coordenadas[1] = Double.parseDouble(longitude.getText().toString());
-                Locais local = new Locais(nome.getText().toString(), descricao.getText().toString(), url.getText().toString(), coordenadas, tipo);
-                local.setId(_id);
-                EditLocal editLocal = new EditLocal(context);
-                editLocal.EditLocal(local);
+                if(latitude.getText().length()>0&&longitude.getText().length()>0) {
+                    coordenadas[0] = Double.parseDouble(latitude.getText().toString());
+                    coordenadas[1] = Double.parseDouble(longitude.getText().toString());
+                    Locais local = new Locais(nome.getText().toString(), descricao.getText().toString(), url.getText().toString(), coordenadas, tipo);
+                    local.setId(_id);
+                    EditLocal editLocal = new EditLocal(context);
+                    editLocal.EditLocal(local);
+                }
             }
         });
 

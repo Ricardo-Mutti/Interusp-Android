@@ -146,12 +146,14 @@ public class AtualizarSelecionarJogo extends AppCompatActivity {
                                 // of the selected item
                                 switch (which) {
                                     case 0:
+                                        activity.finish();
                                         Intent intent = new Intent(context, AtualizarJogos.class);
                                         intent.putExtra("placar", true);
                                         intent.putExtra("jogo_id", jogo_selecionado.get_id());
                                         startActivity(intent);
                                         break;
                                     case 1:
+                                        activity.finish();
                                         Intent intent1 = new Intent(context, AtualizarJogos.class);
                                         intent1.putExtra("placar", false);
                                         intent1.putExtra("jogo_id", jogo_selecionado.get_id());

@@ -52,6 +52,7 @@ public class Jogos extends Fragment {
     String stringModalidadeToFilter = null;
     int AtleticaToFilter = 0;
     String stringLocalToFilter = null;
+    String local_detalhe;//Caso ele chegue nessa tela pelo botao jogos do detalhe informacao
 
     RelativeLayout containerFilter;
 
@@ -68,9 +69,14 @@ public class Jogos extends Fragment {
         @Override
         public void onReceive(Context context, Intent intent) {
             setData();
-            aux.clear();
-            aux.addAll(DataHolder.getInstance().getJogos());
-            adapter.notifyDataSetChanged();
+            if(local_detalhe!=null){
+                stringLocalToFilter=local_detalhe;
+                filterList();
+            }else{
+                aux.clear();
+                aux.addAll(DataHolder.getInstance().getJogos());
+                adapter.notifyDataSetChanged();
+            }
         }
     };
 
@@ -87,6 +93,8 @@ public class Jogos extends Fragment {
 
         activity = getActivity();
         context = getContext();
+
+        local_detalhe = activity.getIntent().getStringExtra("local");
 
         GetJogos getJogos = new GetJogos(context);
         getJogos.GetJogos();
@@ -133,6 +141,10 @@ public class Jogos extends Fragment {
                 showFiltroLocal();
             }
         });
+
+        if(local_detalhe!=null){
+            filtroLocal.setText(local_detalhe);
+        }
 
         filterListView = (ListView) rootview.findViewById(R.id.listFilter);
         listView = (ListView) rootview.findViewById(R.id.list);
@@ -290,7 +302,7 @@ public class Jogos extends Fragment {
             for (int i = aux.size() - 1; i >= 0; i--) {
                 Jogo jogo = aux.get(i);
 
-                if (!jogo.getFaculdade_1().equals(String.valueOf(AtleticaToFilter)) && !jogo.getFaculdade_2().equals(String.valueOf(AtleticaToFilter)) ) {
+                if (!jogo.getFaculdade_1().equals(String.valueOf(AtleticaToFilter)) && !jogo.getFaculdade_2().equals(String.valueOf(AtleticaToFilter))) {
                     aux.remove(jogo);
                 }
             }
@@ -320,7 +332,7 @@ public class Jogos extends Fragment {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (setHide) {
-                    if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+                    if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
                         // handle back button's click listener
                         containerFilter.setVisibility(View.GONE);
                         return true;
@@ -368,11 +380,11 @@ public class Jogos extends Fragment {
                     break;
             }
 
-            if(jogo.getFaculdade_1()==null){
+            if (jogo.getFaculdade_1() == null) {
                 jogo.setFaculdade_1("---");
             }
 
-            if(jogo.getFaculdade_2()==null){
+            if (jogo.getFaculdade_2() == null) {
                 jogo.setFaculdade_2("---");
             }
 

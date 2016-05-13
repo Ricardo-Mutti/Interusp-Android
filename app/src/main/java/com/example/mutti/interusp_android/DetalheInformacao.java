@@ -103,6 +103,7 @@ public class DetalheInformacao extends AppCompatActivity {
                     activity.finish();
                     Intent intent = new Intent(activity, TabsMain.class);
                     intent.putExtra("tab", 3);
+                    intent.putExtra("local", locais.getNome());
                     startActivity(intent);
                 }
             });
