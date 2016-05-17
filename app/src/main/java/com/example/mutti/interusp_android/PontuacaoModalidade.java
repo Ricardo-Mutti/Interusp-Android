@@ -28,6 +28,8 @@ import com.example.mutti.interusp_android.Utils.StatusBarColor;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class PontuacaoModalidade extends AppCompatActivity {
 
@@ -45,8 +47,16 @@ public class PontuacaoModalidade extends AppCompatActivity {
 
             listModalidade = (ListView) findViewById(R.id.listPontuacaoModalidade);
 
-            ArrayList<FaculdadePosicaoPontuacao> faculs = new ArrayList<>(Arrays.asList(DataHolder.getInstance().getModalidade().getPontuacao_total()));
+            ArrayList<FaculdadePosicaoPontuacao> faculs;
 
+            if(DataHolder.getInstance().getModalidade().getPontuacao_total().length==0) {
+             faculs = new ArrayList<>(Arrays.asList(DataHolder.getInstance().getModalidade().getPontuacao_min()));
+            }else{
+                faculs = new ArrayList<>(Arrays.asList(DataHolder.getInstance().getModalidade().getPontuacao_total()));
+
+            }
+
+            Collections.sort(faculs, new Sorting_pontuacao());
             PontuacaoModalidadeAdapter adapter = new PontuacaoModalidadeAdapter(context, faculs);
             listModalidade.setAdapter(adapter);
 
@@ -192,6 +202,19 @@ public class PontuacaoModalidade extends AppCompatActivity {
         super.onStop();
         activity.unregisterReceiver(receiver);
     }
+
+    public class Sorting_pontuacao implements Comparator<FaculdadePosicaoPontuacao> {
+        public int compare(FaculdadePosicaoPontuacao faculdadePosicaoPontuacao1, FaculdadePosicaoPontuacao faculdadePosicaoPontuacao2) {
+
+            Integer x1 = faculdadePosicaoPontuacao1.getPontuacao();
+            Integer x2 = faculdadePosicaoPontuacao2.getPontuacao();
+
+                return x2.compareTo(x1);
+
+        }
+    }
+
+
 
 
 

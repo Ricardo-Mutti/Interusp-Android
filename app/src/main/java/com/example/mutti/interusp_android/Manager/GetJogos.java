@@ -46,7 +46,13 @@ public class GetJogos {
                 if (serverResponse.isSuccess()) {
 
                     JogoArray jogoArray = gson.fromJson(serverResponse.getResponse(), JogoArray.class);
-                    ArrayList<Jogo> jogos = new ArrayList<Jogo>(Arrays.asList(jogoArray.getJogos()));
+                    ArrayList<Jogo> todos_jogos = new ArrayList<>(Arrays.asList(jogoArray.getJogos()));//jogos com o oitavo jogo
+                    ArrayList<Jogo> jogos = new ArrayList<>();
+                    for(Jogo jogo : todos_jogos){
+                        if(!jogo.is_vencedor()){
+                         jogos.add(jogo);
+                        }
+                    }
                     DataHolder.getInstance().setJogos(jogos);
 
                     Intent intent = new Intent(Constants.kJogosDone);

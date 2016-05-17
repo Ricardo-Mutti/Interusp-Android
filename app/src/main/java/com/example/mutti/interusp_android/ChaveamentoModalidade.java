@@ -148,7 +148,7 @@ public class ChaveamentoModalidade extends AppCompatActivity {
         if(jogos.get(5).getFaculdade_2()!=null) setDrawable(chave_12, jogos.get(5).getFaculdade_2());
         if(jogos.get(6).getFaculdade_1()!=null) setDrawable(chave_13, jogos.get(6).getFaculdade_1());
         if(jogos.get(6).getFaculdade_2()!=null) setDrawable(chave_14, jogos.get(6).getFaculdade_2());
-        if(jogos.size()>7) {if (jogos.get(7).getFaculdade_1() != null) setDrawable(chave_15, jogos.get(7).getFaculdade_1());}
+        if(jogos.size()>6) {if (jogos.get(7).getFaculdade_1() != null) setDrawable(chave_15, jogos.get(7).getFaculdade_1());}
 
 
         if(jogos.get(0).getMandante()!=null) {

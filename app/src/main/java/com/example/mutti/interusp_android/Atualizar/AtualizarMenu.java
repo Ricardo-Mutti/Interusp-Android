@@ -25,6 +25,12 @@ public class AtualizarMenu extends AppCompatActivity {
     Activity activity = this;
     Context context = this;
 
+    Button jogos;
+    Button modalidade;
+    Button logout;
+    Button locais;
+    Button onibus;
+
     TextView action_title;
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -33,6 +39,7 @@ public class AtualizarMenu extends AppCompatActivity {
             Intent intent1 = new Intent(activity, AtualizarListaEdicao.class);
             intent1.putExtra("tipo_edicao", "Onibus");
             startActivity(intent1);
+            onibus.setEnabled(true);
         }
     };
 
@@ -43,7 +50,7 @@ public class AtualizarMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_adm);
 
-        Button jogos = (Button) findViewById(R.id.btnJogos_adm);
+      jogos = (Button) findViewById(R.id.btnJogos_adm);
         jogos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,7 +77,7 @@ public class AtualizarMenu extends AppCompatActivity {
 //                startActivity(intent1);
 //            }
 //        });
-        Button modalidade = (Button) findViewById(R.id.btnModalidade);
+       modalidade = (Button) findViewById(R.id.btnModalidade);
         modalidade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,7 +86,7 @@ public class AtualizarMenu extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
-        Button locais = (Button) findViewById(R.id.btnLocais);
+        locais = (Button) findViewById(R.id.btnLocais);
         locais.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,16 +95,17 @@ public class AtualizarMenu extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
-        Button onibus = (Button) findViewById(R.id.btnOnibus_adm);
+       onibus = (Button) findViewById(R.id.btnOnibus_adm);
         onibus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 GetOnibus getOnibus = new GetOnibus(context);
                 getOnibus.GetOnibus();
+                onibus.setEnabled(false);
 
             }
         });
-        Button logout = (Button) findViewById(R.id.btnLogout_adm);
+       logout = (Button) findViewById(R.id.btnLogout_adm);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

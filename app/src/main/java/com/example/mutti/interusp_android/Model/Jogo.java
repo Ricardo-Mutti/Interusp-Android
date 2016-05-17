@@ -9,6 +9,7 @@ public class Jogo {
     String modalidade_id;
     String nome;
     boolean is_prova;
+    boolean is_vencedor;
     String data;
     String local;
     String chaveamento;//posicao na chave
@@ -124,5 +125,11 @@ public class Jogo {
         this.ganhador = ganhador;
     }
 
+    public boolean is_vencedor() {
+        return is_vencedor;
+    }
 
+    public void setIs_vencedor(boolean is_vencedor) {
+        this.is_vencedor = is_vencedor;
+    }
 }

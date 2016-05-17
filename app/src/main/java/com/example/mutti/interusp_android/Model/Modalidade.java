@@ -8,7 +8,7 @@ public class Modalidade {
     int id;
     String nome;
     boolean is_chaveamento;
-    FaculdadePontuacao[] pontuacao_min;
+    FaculdadePosicaoPontuacao[] pontuacao_min;
     FaculdadePontuacao[] pontuacao_max;
     FaculdadePosicaoPontuacao[] pontuacao_total;
 
@@ -48,11 +48,11 @@ public class Modalidade {
         this.pontuacao_max = pontuacao_max;
     }
 
-    public FaculdadePontuacao[] getPontuacao_min() {
+    public FaculdadePosicaoPontuacao[] getPontuacao_min() {
         return pontuacao_min;
     }
 
-    public void setPontuacao_min(FaculdadePontuacao[] pontuacao_min) {
+    public void setPontuacao_min(FaculdadePosicaoPontuacao[] pontuacao_min) {
         this.pontuacao_min = pontuacao_min;
     }
 

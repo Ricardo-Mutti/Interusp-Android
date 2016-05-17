@@ -197,7 +197,7 @@ public class AtualizarModalidade extends AppCompatActivity {
                     modalidade.setId(modalidade_id);
 
                     FaculdadePontuacao[] max = new FaculdadePontuacao[8];
-                    FaculdadePontuacao[] min = new FaculdadePontuacao[8];
+                    FaculdadePosicaoPontuacao[] min = new FaculdadePosicaoPontuacao[8];
                     FaculdadePosicaoPontuacao[] total = new FaculdadePosicaoPontuacao[8];
 
 //                    Maximos
@@ -253,49 +253,49 @@ public class AtualizarModalidade extends AppCompatActivity {
 
 //                    Minimo
                     min_poli = min_poli_edt.getText().toString();
-                    FaculdadePontuacao minPoli = new FaculdadePontuacao();
+                    FaculdadePosicaoPontuacao minPoli = new FaculdadePosicaoPontuacao();
                     minPoli.setFaculdade(1);
                     minPoli.setPontuacao(Integer.valueOf(min_poli));
                     min[0] = minPoli;
 
                     min_fea = min_fea_edt.getText().toString();
-                    FaculdadePontuacao minFea = new FaculdadePontuacao();
+                    FaculdadePosicaoPontuacao minFea = new FaculdadePosicaoPontuacao();
                     minFea.setFaculdade(2);
                     minFea.setPontuacao(Integer.valueOf(min_fea));
                     min[1] = minFea;
 
                     min_farma = min_farma_edt.getText().toString();
-                    FaculdadePontuacao minFarma = new FaculdadePontuacao();
+                    FaculdadePosicaoPontuacao minFarma = new FaculdadePosicaoPontuacao();
                     minFarma.setFaculdade(3);
                     minFarma.setPontuacao(Integer.valueOf(min_farma));
                     min[2] = minPoli;
 
                     min_esalq = min_esalq_edt.getText().toString();
-                    FaculdadePontuacao minEsalq = new FaculdadePontuacao();
+                    FaculdadePosicaoPontuacao minEsalq = new FaculdadePosicaoPontuacao();
                     minEsalq.setFaculdade(4);
                     minEsalq.setPontuacao(Integer.valueOf(min_esalq));
                     min[3] = minEsalq;
 
                     min_riberao = min_riberao_edt.getText().toString();
-                    FaculdadePontuacao minRiberao = new FaculdadePontuacao();
+                    FaculdadePosicaoPontuacao minRiberao = new FaculdadePosicaoPontuacao();
                     minRiberao.setFaculdade(5);
                     minRiberao.setPontuacao(Integer.valueOf(min_riberao));
                     min[4] = minRiberao;
 
                     min_sanfran = min_sanfran_edt.getText().toString();
-                    FaculdadePontuacao minSanfran = new FaculdadePontuacao();
+                    FaculdadePosicaoPontuacao minSanfran = new FaculdadePosicaoPontuacao();
                     minSanfran.setFaculdade(6);
                     minSanfran.setPontuacao(Integer.valueOf(min_sanfran));
                     min[5] = minSanfran;
 
                     min_odonto = min_odonto_edt.getText().toString();
-                    FaculdadePontuacao minOdonto = new FaculdadePontuacao();
+                    FaculdadePosicaoPontuacao minOdonto = new FaculdadePosicaoPontuacao();
                     minOdonto.setFaculdade(7);
                     minOdonto.setPontuacao(Integer.valueOf(min_odonto));
                     min[6] = minOdonto;
 
                     min_pinheiros = min_pinheiros_edt.getText().toString();
-                    FaculdadePontuacao minPinheiros = new FaculdadePontuacao();
+                    FaculdadePosicaoPontuacao minPinheiros = new FaculdadePosicaoPontuacao();
                     minPinheiros.setFaculdade(8);
                     minPinheiros.setPontuacao(Integer.valueOf(min_poli));
                     min[7] = minPinheiros;

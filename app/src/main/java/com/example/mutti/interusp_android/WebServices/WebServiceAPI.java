@@ -268,6 +268,15 @@ public class WebServiceAPI {
             params.put("total6", String.valueOf(modalidade.getPontuacao_total()[5].getPontuacao()));
             params.put("total7", String.valueOf(modalidade.getPontuacao_total()[6].getPontuacao()));
             params.put("total8", String.valueOf(modalidade.getPontuacao_total()[7].getPontuacao()));
+
+            params.put("posicao1", String.valueOf(modalidade.getPontuacao_total()[0].getPosicao()));
+            params.put("posicao2", String.valueOf(modalidade.getPontuacao_total()[1].getPosicao()));
+            params.put("posicao3", String.valueOf(modalidade.getPontuacao_total()[2].getPosicao()));
+            params.put("posicao4", String.valueOf(modalidade.getPontuacao_total()[3].getPosicao()));
+            params.put("posicao5", String.valueOf(modalidade.getPontuacao_total()[4].getPosicao()));
+            params.put("posicao6", String.valueOf(modalidade.getPontuacao_total()[5].getPosicao()));
+            params.put("posicao7", String.valueOf(modalidade.getPontuacao_total()[6].getPosicao()));
+            params.put("posicao8", String.valueOf(modalidade.getPontuacao_total()[7].getPosicao()));
         }
 
         params.put("max1", String.valueOf(modalidade.getPontuacao_max()[0].getPontuacao()));

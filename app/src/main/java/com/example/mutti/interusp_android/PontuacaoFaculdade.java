@@ -122,4 +122,5 @@ public class PontuacaoFaculdade extends AppCompatActivity {
         activity.unregisterReceiver(receiver);
     }
 
+
 }

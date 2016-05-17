@@ -61,9 +61,6 @@ public class AtualizarJogos extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             activity.finish();
-            Intent intent1 = new Intent(activity, AtualizarSelecionarJogo.class);
-            startActivity(intent1);
-
         }
     };
 
@@ -200,13 +197,15 @@ public class AtualizarJogos extends AppCompatActivity {
             }
         });
 
-        switch (jogo_selecionado.getMandante()) {
-            case "1":
-                checkMandante1.setChecked(true);
-                break;
-            case "2":
-                checkMandante2.setChecked(true);
-                break;
+        if(jogo_selecionado.getMandante()!=null) {
+            switch (jogo_selecionado.getMandante()) {
+                case "1":
+                    checkMandante1.setChecked(true);
+                    break;
+                case "2":
+                    checkMandante2.setChecked(true);
+                    break;
+            }
         }
 
 
@@ -370,6 +369,11 @@ public class AtualizarJogos extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        activity.finish();
     }
 
     @Override

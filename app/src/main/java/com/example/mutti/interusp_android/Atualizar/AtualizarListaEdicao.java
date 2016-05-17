@@ -22,6 +22,8 @@ import com.example.mutti.interusp_android.Utils.StatusBarColor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.StringTokenizer;
 
 public class AtualizarListaEdicao extends AppCompatActivity {
 
@@ -74,16 +76,33 @@ public class AtualizarListaEdicao extends AppCompatActivity {
                 ArrayList<Onibus> onibuses = DataHolder.getInstance().getOnibus();
                 nome_edicao.setText("Edição do onibus da sua faculdade");
                 for (Onibus onibus : onibuses) {
-                    list.add(onibus.getPlaca());
+                    final ArrayList<String> faculdades = new ArrayList<>();
+                    faculdades.addAll(Arrays.asList(getResources().getStringArray(R.array.facul_torcida)));
+                    list.add(onibus.getPlaca()+" - "+faculdades.get(Integer.parseInt(onibus.getFacul_id())-1));
                 }
-                Collections.sort(list);
+                Collections.sort(list,
+                        new Comparator<String>() {
+                            public int compare(String f1, String f2) {
+                                return f1.compareTo(f2);
+                            }
+                        });
+                list.add(0, "Adicionar novo onibus");
                 ArrayAdapter<String> adapter3 = new ArrayAdapter<>(activity, android.R.layout.simple_spinner_dropdown_item, list);
                 list_info.setAdapter(adapter3);
 
                 list_info.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(activity, AtualizarOnibus.class);
-                        intent.putExtra("placa", list.get(position));
+                        String placa_nome[] = list.get(position).split(" ");
+                        if(!placa_nome[0].equals("Adicionar")){
+                        String placa = placa_nome[0];
+                        intent.putExtra("placa", placa);
+                            activity.finish();
+                        }
+                        else{
+                            intent.putExtra("placa", "Novo onibus");
+                            activity.finish();
+                        }
                         startActivity(intent);
                     }
                 });
@@ -91,7 +110,7 @@ public class AtualizarListaEdicao extends AppCompatActivity {
 
             case "Locais":
                 list.addAll(Arrays.asList(getResources().getStringArray(R.array.tipo_locais)));
-                ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(activity, android.R.layout.simple_spinner_dropdown_item, list);
+                ArrayAdapter<String> adapter4 = new ArrayAdapter<>(activity, android.R.layout.simple_spinner_dropdown_item, list);
                 list_info.setAdapter(adapter4);
                 nome_edicao.setText("Edição de locais");
 
@@ -126,7 +145,7 @@ public class AtualizarListaEdicao extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(activity, AtualizarModalidade.class);
                         intent.putExtra("nomeModalidade", String.valueOf(list.get(position)));
-                        intent.putExtra("modalidade_id", position+1);
+                        intent.putExtra("modalidade_id", position + 1);
                         startActivity(intent);
                     }
                 });

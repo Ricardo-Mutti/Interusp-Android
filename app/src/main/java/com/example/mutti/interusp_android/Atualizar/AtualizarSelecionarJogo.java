@@ -71,9 +71,7 @@ public class AtualizarSelecionarJogo extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             setData();
-            aux.clear();
-            aux.addAll(DataHolder.getInstance().getJogos());
-            adapter.notifyDataSetChanged();
+            filterList();
         }
     };
 
@@ -82,9 +80,6 @@ public class AtualizarSelecionarJogo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atualizar_partida);
 
-
-        GetJogos getJogos = new GetJogos(context);
-        getJogos.GetJogos();
 
         containerFilter = (RelativeLayout) findViewById(R.id.containerFilter);
         containerFilter.setVisibility(View.GONE);
@@ -146,14 +141,12 @@ public class AtualizarSelecionarJogo extends AppCompatActivity {
                                 // of the selected item
                                 switch (which) {
                                     case 0:
-                                        activity.finish();
                                         Intent intent = new Intent(context, AtualizarJogos.class);
                                         intent.putExtra("placar", true);
                                         intent.putExtra("jogo_id", jogo_selecionado.get_id());
                                         startActivity(intent);
                                         break;
                                     case 1:
-                                        activity.finish();
                                         Intent intent1 = new Intent(context, AtualizarJogos.class);
                                         intent1.putExtra("placar", false);
                                         intent1.putExtra("jogo_id", jogo_selecionado.get_id());
@@ -168,7 +161,7 @@ public class AtualizarSelecionarJogo extends AppCompatActivity {
 
 
         //ACTION BAR
-        StatusBarColor.setColorStatusBar(activity,"#000033");
+        StatusBarColor.setColorStatusBar(activity, "#000033");
         TextView action_title = (TextView) findViewById(R.id.txtActionBar);
         action_title.setText("Atualizar Jogos");
         final ImageView back_button = (ImageView) findViewById(R.id.btnVoltar);
@@ -324,12 +317,11 @@ public class AtualizarSelecionarJogo extends AppCompatActivity {
             }
         }
 
-
         if (AtleticaToFilter != 0) {
             for (int i = aux.size() - 1; i >= 0; i--) {
                 Jogo jogo = aux.get(i);
 
-                if (!jogo.getFaculdade_1().equals(String.valueOf(AtleticaToFilter)) && !jogo.getFaculdade_2().equals(String.valueOf(AtleticaToFilter)) ) {
+                if (!jogo.getFaculdade_1().equals(String.valueOf(AtleticaToFilter)) && !jogo.getFaculdade_2().equals(String.valueOf(AtleticaToFilter))) {
                     aux.remove(jogo);
                 }
             }
@@ -350,6 +342,8 @@ public class AtualizarSelecionarJogo extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
+        GetJogos getJogos = new GetJogos(context);
+        getJogos.GetJogos();
         activity.registerReceiver(receiver, new IntentFilter(Constants.kJogosDone));
     }
 
@@ -389,11 +383,11 @@ public class AtualizarSelecionarJogo extends AppCompatActivity {
                     break;
             }
 
-            if(jogo.getFaculdade_1()==null){
+            if (jogo.getFaculdade_1() == null) {
                 jogo.setFaculdade_1("---");
             }
 
-            if(jogo.getFaculdade_2()==null){
+            if (jogo.getFaculdade_2() == null) {
                 jogo.setFaculdade_2("---");
             }
 

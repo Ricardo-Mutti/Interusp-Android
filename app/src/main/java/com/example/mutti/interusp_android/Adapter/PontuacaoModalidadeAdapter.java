@@ -11,8 +11,10 @@ import android.widget.TextView;
 import com.example.mutti.interusp_android.Model.FaculdadePosicaoPontuacao;
 import com.example.mutti.interusp_android.Model.Modalidade;
 import com.example.mutti.interusp_android.R;
+import com.example.mutti.interusp_android.Utils.SetFaculImage;
 
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 /**
  * Created by Victor on 01/05/2016.
@@ -48,32 +50,7 @@ public class PontuacaoModalidadeAdapter extends ArrayAdapter<FaculdadePosicaoPon
         txtPosicao.setText(String.valueOf(faculdade.getPosicao()));
         txtPonto.setText(String.valueOf(faculdade.getPontuacao()));
 
-        switch (faculdade.getFaculdade()) {
-            case 0:
-                imgAtletica.setImageResource(R.drawable.icon_poli);
-                break;
-            case 1:
-                imgAtletica.setImageResource(R.drawable.icon_esalq);
-                break;
-            case 2:
-                imgAtletica.setImageResource(R.drawable.icon_farma);
-                break;
-            case 3:
-                imgAtletica.setImageResource(R.drawable.icon_riberao);
-                break;
-            case 4:
-                imgAtletica.setImageResource(R.drawable.icon_odonto);
-                break;
-            case 5:
-                imgAtletica.setImageResource(R.drawable.icon_fea);
-                break;
-            case 6:
-                imgAtletica.setImageResource(R.drawable.icon_sanfran);
-                break;
-            case 7:
-                imgAtletica.setImageResource(R.drawable.icon_pinheiros);
-                break;
-        }
+        imgAtletica.setImageResource(SetFaculImage.Drawable(String.valueOf(faculdade.getFaculdade())));
 
         return convertView;
     }

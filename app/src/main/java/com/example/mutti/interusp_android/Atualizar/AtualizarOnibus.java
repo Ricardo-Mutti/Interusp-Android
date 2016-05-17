@@ -145,6 +145,13 @@ public class AtualizarOnibus extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        activity.finish();
+        Intent intent1 = new Intent(activity, AtualizarSelecionarJogo.class);
+        startActivity(intent1);
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         activity.registerReceiver(receiver, new IntentFilter(Constants.kOnibusDone));

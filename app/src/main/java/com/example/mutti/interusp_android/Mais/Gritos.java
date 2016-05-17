@@ -116,35 +116,19 @@ public class Gritos extends AppCompatActivity {
                 break;
             case "ESALQ":
                 titulo1.setText((getResources().getString(R.string.titulo1Esalq)));
-                titulo2.setText((getResources().getString(R.string.titulo2Esalq)));
-                titulo3.setText((getResources().getString(R.string.titulo3Esalq)));
-                titulo4.setText((getResources().getString(R.string.titulo4Esalq)));
                 texto1.setText((getResources().getString(R.string.texto1Esalq)));
-                texto2.setText((getResources().getString(R.string.texto2Esalq)));
-                texto3.setText((getResources().getString(R.string.texto3Esalq)));
-                texto4.setText((getResources().getString(R.string.texto4Esalq)));
                 botao.setImageResource(R.drawable.icon_esalq);
                 break;
             case "Odontologia":
                 titulo1.setText((getResources().getString(R.string.titulo1Odonto)));
                 titulo2.setText((getResources().getString(R.string.titulo2Odonto)));
-                titulo3.setText((getResources().getString(R.string.titulo3Odonto)));
-                titulo4.setText((getResources().getString(R.string.titulo4Odonto)));
                 texto1.setText((getResources().getString(R.string.texto1Odonto)));
                 texto2.setText((getResources().getString(R.string.texto2Odonto)));
-                texto3.setText((getResources().getString(R.string.texto3Odonto)));
-                texto4.setText((getResources().getString(R.string.texto4Odonto)));
                 botao.setImageResource(R.drawable.icon_odonto);
                 break;
             case "Farmácia":
                 titulo1.setText((getResources().getString(R.string.titulo1Farma)));
-                titulo2.setText((getResources().getString(R.string.titulo2Farma)));
-                titulo3.setText((getResources().getString(R.string.titulo3Farma)));
-                titulo4.setText((getResources().getString(R.string.titulo4Farma)));
                 texto1.setText((getResources().getString(R.string.texto1Farma)));
-                texto2.setText((getResources().getString(R.string.texto2Farma)));
-                texto3.setText((getResources().getString(R.string.texto3Farma)));
-                texto4.setText((getResources().getString(R.string.texto4Farma)));
                 botao.setImageResource(R.drawable.icon_farma);
                 break;
             case "Medicina - Pinheiros":

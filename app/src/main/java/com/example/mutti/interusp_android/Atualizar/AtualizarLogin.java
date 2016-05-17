@@ -29,6 +29,7 @@ public class AtualizarLogin extends AppCompatActivity {
     Context context = this;
 
     TextView action_title;
+    Button login;
 
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -37,6 +38,7 @@ public class AtualizarLogin extends AppCompatActivity {
             activity.finish();
             Intent intent1 = new Intent(activity, AtualizarMenu.class);
             startActivity(intent1);
+            login.setEnabled(false);
 
         }
     };
@@ -49,7 +51,7 @@ public class AtualizarLogin extends AppCompatActivity {
         final EditText username = (EditText) findViewById(R.id.edtLogin);
         final EditText senha = (EditText) findViewById(R.id.edtSenha);
 
-        Button login = (Button) findViewById(R.id.btnEntrar);
+       login = (Button) findViewById(R.id.btnEntrar);
 
         if(login!=null){
             login.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +62,7 @@ public class AtualizarLogin extends AppCompatActivity {
                         String password = MD5(senha.getText().toString());
                         Login login1 = new Login(context);
                         login1.user(username_txt, password);
+                        view.setEnabled(false);
                     }
                 }
             });

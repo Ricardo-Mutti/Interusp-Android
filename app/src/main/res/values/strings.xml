@@ -19,29 +19,13 @@
     <string name="texto3Fea">Ô, tralalalaô\nÔ, tralalalaô\nÔ, tralalalala, hey\nTralalalala, hey, tralalalalaô\nAs flores já não crescem mais\nAté o alecrim murchou\nA sapo se mandou\nO lambari morreu\nPorque o ribeirão secou</string>
     <string name="texto4Fea">FEA-USP Maravilhosa, cheia de encantos mil\nFEA-USP Maravilhosa, melhor escola do Brasil (x2)\n\nEssa é a escola que todos desejam\nMas nem todos podem entrar\nVocê que tentou\nE não conseguiu\nQue vá pra p*** que o pariu</string>
     <string name="titulo1Esalq">Hino do Agricolão</string>
-    <string name="titulo2Esalq">titulo2esalq(provisório)</string>
-    <string name="titulo3Esalq">titulo3esalq(provisório(</string>
-    <string name="titulo4Esalq">titulo4esalq(provisório)</string>
     <string name="texto1Esalq">Nós somos da agronomia\nFiés paus d’água\nQue porcaria\nAndamos sempre de bonde\nCom o juízo não sei aonde\nMas quando as coisas se apertam\nE nós pensamos no amanhã\nA turma toda padece\nQuando floresce\nO flamboyant!\nPã rã pã pã\n\nA pinga queremos com limão!\nMulheres, com muita animação!\nPorém se a Pátria amada\nPrecisar do Agricolão\nAi ai ai que papelão!\nPã rã pã pã\n\nComo é sublime bebe uma Brahma\nE depois fumar uma palha\nnuma bela duma grama\nAMOR FEBRIL, Ô Ô Ô Ô\nPelo barril, ôôôô\nNão há quem possa\nCom a turma nossa!\n\nA Pinga queremos com fervor\nMulheres! com muito mais amor\nPorém se a Patria amada\nPrecisar de agricolada\nPuta merda que cagada!\n \nArei, gradeei, aduba que adubando dá! ESALQ! ESALQ! Rá rá rá! (2x</string>
-    <string name="texto2Esalq">texto2esalq(provisório)</string>
-    <string name="texto3Esalq">texto3esalq(provisório)</string>
-    <string name="texto4Esalq">texto4esalq(provisório)</string>
     <string name="titulo1Odonto">FOUSP Maravilhosa</string>
     <string name="titulo2Odonto">Odonto Minha Paixão</string>
-    <string name="titulo3Odonto">titulo3odonto(provisório)</string>
-    <string name="titulo4Odonto">titulo4odonto(provisório)</string>
     <string name="texto1Odonto">FOUSP maravilhosa\nCheia de encantos mil\nFOUSP maravilhosa\nMelhor escola do Brasil!\n\nEssa é a escola\nQue todos desejam\nMas poucos podem entrar\nVocê que tentou \nE não conseguiu\nVai pra p*** que pariu!</string>
     <string name="texto2Odonto">Odonto\nEstaremos contigo \nSomos uma nação \nNão importa onde esteja\nSempre levarei comigo\n\nO meu manto sagrado \nE a cachaça na mão \nA torcida me espera \nPra começar a festa \n\nXa laia laia, xa laia laia, xa laia laia\nOdonto minha paixao (2x)\n</string>
-    <string name="texto3Odonto">texto3odonto(provisório)</string>
-    <string name="texto4Odonto">texto4odonto(provisório)</string>
     <string name="titulo1Farma">Ami</string>
-    <string name="titulo2Farma">titulo2farma(provisório)</string>
-    <string name="titulo3Farma">titulo3farma(provisório)</string>
-    <string name="titulo4Farma">titulo4farma(provisório)</string>
     <string name="texto1Farma">Miiiiiiii....\nVamos nessa\nVamos beber essa cerveja\nFarmácia mi, farmácia mi, farmacia miiiii (2x)\n\nVamos beber essa cerveja\nÉ testa é mi, é nariz mi, é boca é mi, é queixo é mi, é peito é mi, é sexo é mi, É GULA!</string>
-    <string name="texto2Farma">texto2farma(provisório)</string>
-    <string name="texto3Farma">texto3farma(provisório)</string>
-    <string name="texto4Farma">texto4farma(provisório)</string>
     <string name="titulo1Pinheiros">titulo1pinheiros(provisorio)</string>
     <string name="titulo2Pinheiros">titulo2pinheiros(provisório)</string>
     <string name="titulo3Pinheiros">titulo3pinheiros(provisório)</string>
@@ -137,13 +121,13 @@
     <string-array name="faculdade">
         <item> </item>
         <item>Politécnica</item>
-        <item>Farmácia</item>
         <item>FEA</item>
-        <item>Odontologia</item>
-        <item>São Francisco</item>
-        <item>Medicina - Pinheiros</item>
-        <item>Medicina - Ribeirão Preto</item>
+        <item>Farmácia</item>
         <item>ESALQ</item>
+        <item>Medicina - Ribeirão Preto</item>
+        <item>São Francisco</item>
+        <item>Odontologia</item>
+        <item>Medicina - Pinheiros</item>
     </string-array>
 
     <string-array name="datas_jogos">
