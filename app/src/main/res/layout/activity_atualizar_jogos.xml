@@ -58,20 +58,14 @@
                         android:text="Placar"
                         android:textSize="20dp" />
 
-                    <TextView
-                        android:id="@+id/mandante"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Mandante"
-                        android:textAlignment="center"
-                        android:layout_gravity="center"
-                        android:textSize="20dp" />
+
 
                     <TextView
                         android:id="@+id/vencedor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Vencedor"
+                        android:layout_marginLeft="40dp"
                         android:textAlignment="center"
                         android:textSize="20dp" />
 
@@ -97,8 +91,8 @@
                         android:layout_marginTop="20dp"
                         android:layout_toRightOf="@+id/imgTime1"
                         android:gravity="center"
-                        android:inputType="number"
-                        android:maxLength="4" />
+                        android:inputType="phone"
+                        android:maxLength="6" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -107,12 +101,7 @@
                         android:gravity="center"
                         >
 
-                        <CheckBox
-                            android:id="@+id/checkMandante1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="80dp"
-                            android:gravity="center_horizontal" />
+
 
                         <CheckBox
                             android:id="@+id/checkVencedor1"
@@ -145,8 +134,8 @@
                         android:layout_marginTop="20dp"
                         android:layout_toRightOf="@+id/imgTime2"
                         android:gravity="center"
-                        android:inputType="number"
-                        android:maxLength="4" />
+                        android:inputType="phone"
+                        android:maxLength="6" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -154,13 +143,6 @@
                         android:orientation="horizontal"
                         android:gravity="center"
                         >
-
-                    <CheckBox
-                        android:id="@+id/checkMandante2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="80dp"
-                        android:gravity="center_horizontal" />
 
                     <CheckBox
                         android:id="@+id/checkVencedor2"

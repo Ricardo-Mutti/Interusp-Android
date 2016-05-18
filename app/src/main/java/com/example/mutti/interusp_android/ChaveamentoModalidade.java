@@ -151,151 +151,178 @@ public class ChaveamentoModalidade extends AppCompatActivity {
         if(jogos.size()>6) {if (jogos.get(7).getFaculdade_1() != null) setDrawable(chave_15, jogos.get(7).getFaculdade_1());}
 
 
-        if(jogos.get(0).getMandante()!=null) {
-            if (jogos.get(0).getMandante().equals("1")) {
-                chave_1.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
-            } else {
-                chave_2.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
-            }
-        }
-
-        if(jogos.get(1).getMandante()!=null) {
-            if (jogos.get(1).getMandante().equals("1")) {
-                chave_3.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
-            } else {
-                chave_4.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
-            }
-        }
-
-
-        if(jogos.get(2).getMandante()!=null) {
-            if (jogos.get(2).getMandante().equals("1")) {
-                chave_5.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
-            } else {
-                chave_6.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
-            }
-        }
-
-
-        if(jogos.get(3).getMandante()!=null) {
-            if (jogos.get(3).getMandante().equals("1")) {
-                chave_7.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
-            } else {
-                chave_8.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
-            }
-        }
-
-        if(jogos.get(4).getMandante()!=null) {
-            if (jogos.get(4).getMandante().equals("1")) {
-                chave_9.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
-            } else {
-                chave_10.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
-            }
-        }
-
-        if(jogos.get(5).getMandante()!=null) {
-            if (jogos.get(5).getMandante().equals("1")) {
-                chave_11.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
-            } else {
-                chave_12.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
-            }
-        }
-
-        if(jogos.get(6).getMandante()!=null) {
-            if (jogos.get(6).getMandante().equals("1")) {
-                chave_13.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
-            } else {
-                chave_14.setBackgroundDrawable(getResources().getDrawable(R.drawable.borda_mandante));
-            }
-        }
-
-
-
-
         if(jogos.get(0).getPlacar_1()!=null) {
-            chave_1_txt.setText(jogos.get(0).getPlacar_1());
-            if(Integer.valueOf(jogos.get(0).getPlacar_1())>99){
+            String placar = jogos.get(0).getPlacar_1();
+            if(jogos.get(0).getPlacar_1().length()>2){
                 chave_1_txt.setTextSize(11);
             }
+            if(jogos.get(0).getPlacar_1().contains("(")){
+                String[] penaltis = jogos.get(0).getPlacar_1().split("[\\(]");
+                placar  = penaltis[0]+"\n("+ penaltis[1];
+            }
+            chave_1_txt.setText(placar);
         }
+
         if(jogos.get(0).getPlacar_2()!=null) {
-            chave_2_txt.setText(jogos.get(0).getPlacar_2());
-            if(Integer.valueOf(jogos.get(0).getPlacar_2())>99){
+            String placar = jogos.get(0).getPlacar_2();
+            if(jogos.get(0).getPlacar_2().length()>2){
                 chave_2_txt.setTextSize(11);
             }
+            if(jogos.get(0).getPlacar_2().contains("(")){
+                String[] penaltis = jogos.get(0).getPlacar_2().split("[\\(]");
+                placar  = penaltis[0]+"\n("+ penaltis[1];
+            }
+            chave_2_txt.setText(placar);
         }
+
         if(jogos.get(1).getPlacar_1()!=null) {
-            chave_3_txt.setText(jogos.get(1).getPlacar_1());
-            if(Integer.valueOf(jogos.get(1).getPlacar_1())>99){
+            String placar = jogos.get(1).getPlacar_1();
+            if(jogos.get(1).getPlacar_1().length()>2){
                 chave_3_txt.setTextSize(11);
             }
+            if(jogos.get(1).getPlacar_1().contains("(")){
+                String[] penaltis = jogos.get(1).getPlacar_1().split("[\\(]");
+                placar  = penaltis[0]+"\n("+ penaltis[1];
+            }
+            chave_3_txt.setText(placar);
         }
+
+
         if(jogos.get(1).getPlacar_2()!=null) {
-            chave_4_txt.setText(jogos.get(1).getPlacar_2());
-            if(Integer.valueOf(jogos.get(1).getPlacar_2())>99){
+            String placar = jogos.get(1).getPlacar_2();
+            if(jogos.get(1).getPlacar_2().length()>2){
                 chave_4_txt.setTextSize(11);
             }
+            if(jogos.get(1).getPlacar_2().contains("(")){
+                String[] penaltis = jogos.get(1).getPlacar_2().split("[\\(]");
+                placar  = penaltis[0]+"\n("+ penaltis[1];
+            }
+            chave_4_txt.setText(placar);
         }
+
         if(jogos.get(2).getPlacar_1()!=null) {
-            chave_5_txt.setText(jogos.get(2).getPlacar_1());
-            if(Integer.valueOf(jogos.get(2).getPlacar_1())>99){
+            String placar = jogos.get(2).getPlacar_1();
+            if(jogos.get(2).getPlacar_1().length()>2){
                 chave_5_txt.setTextSize(11);
             }
+            if(jogos.get(2).getPlacar_1().contains("(")){
+                String[] penaltis = jogos.get(2).getPlacar_1().split("[\\(]");
+                placar  = penaltis[0]+"\n("+ penaltis[1];
+            }
+            chave_5_txt.setText(placar);
         }
+
         if(jogos.get(2).getPlacar_2()!=null) {
-            chave_6_txt.setText(jogos.get(2).getPlacar_2());
-            if(Integer.valueOf(jogos.get(2).getPlacar_2())>99){
+            String placar = jogos.get(2).getPlacar_2();
+            if(jogos.get(2).getPlacar_2().length()>2){
                 chave_6_txt.setTextSize(11);
             }
+            if(jogos.get(2).getPlacar_2().contains("(")){
+                String[] penaltis = jogos.get(2).getPlacar_2().split("[\\(]");
+                placar  = penaltis[0]+"\n("+ penaltis[1];
+            }
+            chave_6_txt.setText(placar);
         }
+
         if(jogos.get(3).getPlacar_1()!=null) {
-            chave_7_txt.setText(jogos.get(3).getPlacar_1());
-            if(Integer.valueOf(jogos.get(3).getPlacar_1())>99){
+            String placar = jogos.get(3).getPlacar_1();
+            if(jogos.get(3).getPlacar_1().length()>2){
                 chave_7_txt.setTextSize(11);
             }
+            if(jogos.get(3).getPlacar_1().contains("(")){
+                String[] penaltis = jogos.get(3).getPlacar_1().split("[\\(]");
+                placar  = penaltis[0]+"\n("+ penaltis[1];
+            }
+            chave_7_txt.setText(placar);
         }
+
         if(jogos.get(3).getPlacar_2()!=null) {
-            chave_8_txt.setText(jogos.get(3).getPlacar_2());
-            if(Integer.valueOf(jogos.get(3).getPlacar_2())>99){
+            String placar = jogos.get(3).getPlacar_2();
+            if(jogos.get(3).getPlacar_2().length()>2){
                 chave_8_txt.setTextSize(11);
             }
+            if(jogos.get(3).getPlacar_2().contains("(")){
+                String[] penaltis = jogos.get(3).getPlacar_2().split("[\\(]");
+                placar  = penaltis[0]+"\n("+ penaltis[1];
+            }
+            chave_8_txt.setText(placar);
         }
+
+
         if(jogos.get(4).getPlacar_1()!=null) {
-            chave_9_txt.setText(jogos.get(4).getPlacar_1());
-            if(Integer.valueOf(jogos.get(4).getPlacar_1())>99){
+            String placar = jogos.get(4).getPlacar_1();
+            if(jogos.get(4).getPlacar_1().length()>2){
                 chave_9_txt.setTextSize(11);
             }
+            if(jogos.get(4).getPlacar_1().contains("(")){
+                String[] penaltis = jogos.get(4).getPlacar_1().split("[\\(]");
+                placar  = penaltis[0]+"\n("+ penaltis[1];
+            }
+            chave_9_txt.setText(placar);
         }
+
         if(jogos.get(4).getPlacar_2()!=null) {
-            chave_10_txt.setText(jogos.get(4).getPlacar_2());
-            if(Integer.valueOf(jogos.get(4).getPlacar_2())>99){
+            String placar = jogos.get(4).getPlacar_2();
+            if(jogos.get(4).getPlacar_2().length()>2){
                 chave_10_txt.setTextSize(11);
             }
+            if(jogos.get(4).getPlacar_2().contains("(")){
+                String[] penaltis = jogos.get(4).getPlacar_2().split("[\\(]");
+                placar  = penaltis[0]+"\n("+ penaltis[1];
+            }
+            chave_10_txt.setText(placar);
         }
+
+
         if(jogos.get(5).getPlacar_1()!=null) {
-            chave_11_txt.setText(jogos.get(5).getPlacar_1());
-            if(Integer.valueOf(jogos.get(5).getPlacar_1())>99){
+            String placar = jogos.get(5).getPlacar_1();
+            if(jogos.get(5).getPlacar_1().length()>2){
                 chave_11_txt.setTextSize(11);
             }
+            if(jogos.get(5).getPlacar_1().contains("(")){
+                String[] penaltis = jogos.get(5).getPlacar_1().split("[\\(]");
+                placar  = penaltis[0]+"\n("+ penaltis[1];
+            }
+            chave_11_txt.setText(placar);
         }
+
         if(jogos.get(5).getPlacar_2()!=null) {
-            chave_12_txt.setText(jogos.get(5).getPlacar_2());
-            if(Integer.valueOf(jogos.get(5).getPlacar_2())>99){
+            String placar = jogos.get(5).getPlacar_2();
+            if(jogos.get(5).getPlacar_2().length()>2){
                 chave_12_txt.setTextSize(11);
             }
+            if(jogos.get(5).getPlacar_2().contains("(")){
+                String[] penaltis = jogos.get(5).getPlacar_2().split("[\\(]");
+                placar  = penaltis[0]+"\n("+ penaltis[1];
+            }
+            chave_12_txt.setText(placar);
         }
+
+
         if(jogos.get(6).getPlacar_1()!=null) {
-            chave_13_txt.setText(jogos.get(6).getPlacar_1());
-            if(Integer.valueOf(jogos.get(6).getPlacar_1())>99){
+            String placar = jogos.get(6).getPlacar_1();
+            if(jogos.get(6).getPlacar_1().length()>2){
                 chave_13_txt.setTextSize(11);
             }
+            if(jogos.get(6).getPlacar_1().contains("(")){
+                String[] penaltis = jogos.get(6).getPlacar_1().split("[\\(]");
+                placar  = penaltis[0]+"\n("+ penaltis[1];
+            }
+            chave_13_txt.setText(placar);
         }
+
         if(jogos.get(6).getPlacar_2()!=null) {
-            chave_14_txt.setText(jogos.get(6).getPlacar_2());
-            if(Integer.valueOf(jogos.get(6).getPlacar_2())>99){
+            String placar = jogos.get(6).getPlacar_2();
+            if(jogos.get(6).getPlacar_2().length()>2){
                 chave_14_txt.setTextSize(11);
             }
+            if(jogos.get(6).getPlacar_2().contains("(")){
+                String[] penaltis = jogos.get(6).getPlacar_2().split("[\\(]");
+                placar  = penaltis[0]+"\n("+ penaltis[1];
+            }
+            chave_14_txt.setText(placar);
         }
+
     }
 
     private void setDrawable(ImageView imgView, String faculdade){

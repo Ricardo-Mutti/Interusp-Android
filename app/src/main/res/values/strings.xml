@@ -130,6 +130,15 @@
         <item>Medicina - Pinheiros</item>
     </string-array>
 
+    <string-array name="faculdadecomgrito">
+        <item> </item>
+        <item>Politécnica</item>
+        <item>FEA</item>
+        <item>Farmácia</item>
+        <item>ESALQ</item>
+        <item>Odontologia</item>
+    </string-array>
+
     <string-array name="datas_jogos">
         <item> </item>
         <item>Quinta-feira</item>

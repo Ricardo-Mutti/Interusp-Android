@@ -32,7 +32,7 @@ public class GritosAtletica extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selecao_atletica);
 
-        ArrayList atleticaList = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.faculdade)));
+        ArrayList atleticaList = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.faculdadecomgrito)));
 
         if (atleticaList != null) {
             atleticaList.remove(0);

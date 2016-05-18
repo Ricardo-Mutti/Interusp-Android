@@ -57,24 +57,25 @@ public class DetalheInformacao extends AppCompatActivity {
         }
         txtInfo.setText(locais.getDescricao());
 
-        // UNIVERSAL IMAGE LOADER SETUP
-        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
-                .cacheOnDisc(true).cacheInMemory(true)
-                .imageScaleType(ImageScaleType.EXACTLY)
-                .displayer(new FadeInBitmapDisplayer(300)).build();
+        if(!locais.getFoto().equals("")) {
+            // UNIVERSAL IMAGE LOADER SETUP
+            DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
+                    .cacheOnDisc(true).cacheInMemory(true)
+                    .imageScaleType(ImageScaleType.EXACTLY)
+                    .displayer(new FadeInBitmapDisplayer(300)).build();
 
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
-                getApplicationContext())
-                .defaultDisplayImageOptions(defaultOptions)
-                .memoryCache(new WeakMemoryCache())
-                .discCacheSize(100 * 1024 * 1024).build();
+            ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
+                    getApplicationContext())
+                    .defaultDisplayImageOptions(defaultOptions)
+                    .memoryCache(new WeakMemoryCache())
+                    .discCacheSize(100 * 1024 * 1024).build();
 
-        ImageLoader.getInstance().init(config);
-        // END - UNIVERSAL IMAGE LOADER SETUP
+            ImageLoader.getInstance().init(config);
+            // END - UNIVERSAL IMAGE LOADER SETUP
 
 
-        ImageLoader.getInstance().displayImage(locais.getFoto(), imgFoto);
-
+            ImageLoader.getInstance().displayImage(locais.getFoto(), imgFoto);
+        }
         if (btnMapa != null) {
             btnMapa.setOnClickListener(new View.OnClickListener() {
                 @Override

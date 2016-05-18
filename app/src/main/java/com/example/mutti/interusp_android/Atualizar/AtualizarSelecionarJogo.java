@@ -133,20 +133,25 @@ public class AtualizarSelecionarJogo extends AppCompatActivity {
                 final Jogo jogo_selecionado = (Jogo) parent.getItemAtPosition(position);
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setTitle("Selecione uma opção");
-                builder.setItems(new CharSequence[]
-                                {"Placar", "Informações"},
+                final String[] opcoes;
+                if(!jogo_selecionado.is_prova()) {
+                    opcoes = new String[]{"Placar", "Informações"};
+                }else {
+                    opcoes = new String[]{"Informações"};
+                }
+                builder.setItems(opcoes,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 // The 'which' argument contains the index position
                                 // of the selected item
-                                switch (which) {
-                                    case 0:
+                                switch (opcoes[which]) {
+                                    case "Placar":
                                         Intent intent = new Intent(context, AtualizarJogos.class);
                                         intent.putExtra("placar", true);
                                         intent.putExtra("jogo_id", jogo_selecionado.get_id());
                                         startActivity(intent);
                                         break;
-                                    case 1:
+                                    case "Informações":
                                         Intent intent1 = new Intent(context, AtualizarJogos.class);
                                         intent1.putExtra("placar", false);
                                         intent1.putExtra("jogo_id", jogo_selecionado.get_id());
@@ -355,7 +360,7 @@ public class AtualizarSelecionarJogo extends AppCompatActivity {
 
     public void setData() {
 
-        filters_lugar.add(0, "Todos");
+        if(!filters_lugar.contains("Todos")) filters_lugar.add(0, "Todos");
 
         for (Jogo jogo : DataHolder.getInstance().getJogos()) {
 

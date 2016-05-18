@@ -100,6 +100,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/min_poli"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -116,8 +117,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -139,12 +140,13 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/max_poli"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -161,8 +163,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -221,6 +223,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/min_fea"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -237,8 +240,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -260,12 +263,13 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/max_fea"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -282,8 +286,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -342,6 +346,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/min_pinheiros"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -358,8 +363,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -381,12 +386,13 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/max_pinheiros"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -403,8 +409,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -463,6 +469,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/min_farma"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -479,8 +486,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -502,12 +509,13 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/max_farma"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -524,8 +532,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -584,6 +592,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/min_esalq"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -600,8 +609,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -623,12 +632,13 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/max_esalq"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -645,8 +655,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -705,6 +715,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/min_riberao"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -721,8 +732,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -744,12 +755,13 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/max_riberao"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -766,8 +778,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -826,6 +838,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/min_sanfran"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -842,8 +855,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -865,12 +878,13 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/max_sanfran"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -887,8 +901,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -947,6 +961,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/min_odonto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -963,8 +978,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
@@ -986,12 +1001,13 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/max_odonto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -1008,8 +1024,8 @@
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="2" />
+                            android:inputType="numberSigned"
+                            android:maxLength="3" />
 
                     </LinearLayout>
 

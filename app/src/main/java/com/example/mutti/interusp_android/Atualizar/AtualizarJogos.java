@@ -43,9 +43,6 @@ public class AtualizarJogos extends AppCompatActivity {
     CheckBox checkVencedor1;
     CheckBox checkVencedor2;
 
-    CheckBox checkMandante1;
-    CheckBox checkMandante2;
-
     boolean check1 = false;
     boolean check2 = false;
 
@@ -85,12 +82,9 @@ public class AtualizarJogos extends AppCompatActivity {
         final EditText placar2_edt = (EditText) findViewById(R.id.atualizar_jogo_placar2);
         final EditText horario_edt = (EditText) findViewById(R.id.atualizar_jogo_horario);
 
-        TextView mandante = (TextView) findViewById(R.id.mandante);
+
         TextView placar_tv = (TextView) findViewById(R.id.placar_label);
         TextView vencendor = (TextView) findViewById(R.id.vencedor);
-
-        checkMandante1 = (CheckBox) findViewById(R.id.checkMandante1);
-        checkMandante2 = (CheckBox) findViewById(R.id.checkMandante2);
 
         checkVencedor1 = (CheckBox) findViewById(R.id.checkVencedor1);
         checkVencedor2 = (CheckBox) findViewById(R.id.checkVencedor2);
@@ -98,9 +92,6 @@ public class AtualizarJogos extends AppCompatActivity {
 
         if (isPlacar) {
             placar.setVisibility(View.VISIBLE);
-            checkMandante1.setVisibility(View.GONE);
-            checkMandante2.setVisibility(View.GONE);
-            mandante.setVisibility(View.GONE);
             info.setVisibility(View.GONE);
             placar1_edt.setVisibility(View.VISIBLE);
             placar1_edt.setLeft(15);
@@ -110,6 +101,8 @@ public class AtualizarJogos extends AppCompatActivity {
             checkVencedor1.setVisibility(View.VISIBLE);
             checkVencedor2.setVisibility(View.VISIBLE);
             vencendor.setVisibility(View.VISIBLE);
+            competidor_1.setVisibility(View.VISIBLE);
+            competidor_2.setVisibility(View.VISIBLE);
         } else {
             placar1_edt.setVisibility(View.GONE);
             placar2_edt.setVisibility(View.GONE);
@@ -117,7 +110,8 @@ public class AtualizarJogos extends AppCompatActivity {
             checkVencedor1.setVisibility(View.GONE);
             checkVencedor2.setVisibility(View.GONE);
             vencendor.setVisibility(View.GONE);
-            mandante.setLeft(12);
+            competidor_1.setVisibility(View.GONE);
+            competidor_2.setVisibility(View.GONE);
         }
 
 
@@ -130,7 +124,6 @@ public class AtualizarJogos extends AppCompatActivity {
                 jogo_selecionado.setData(jogo.getData());
                 jogo_selecionado.setLocal(jogo.getLocal());
                 jogo_selecionado.setChaveamento(jogo.getChaveamento());
-                jogo_selecionado.setMandante(jogo.getMandante());
                 jogo_selecionado.setFaculdade_1(jogo.getFaculdade_1());
                 jogo_selecionado.setFaculdade_2(jogo.getFaculdade_2());
                 jogo_selecionado.setPlacar_1(jogo.getPlacar_1());
@@ -197,65 +190,18 @@ public class AtualizarJogos extends AppCompatActivity {
             }
         });
 
-        if(jogo_selecionado.getMandante()!=null) {
-            switch (jogo_selecionado.getMandante()) {
-                case "1":
-                    checkMandante1.setChecked(true);
-                    break;
-                case "2":
-                    checkMandante2.setChecked(true);
-                    break;
-            }
+        if(jogo_selecionado.getPlacar_1()!=null){
+            placar1_edt.setText(jogo_selecionado.getPlacar_1());
         }
-
-
-        check1 = checkMandante1.isChecked();
-        check2 = checkMandante2.isChecked();
-        checkMandante1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!check1 && !check2) {
-                    check1 = true;
-                    checkMandante1.setChecked(true);
-                } else if (check2) {
-                    check2 = false;
-                    checkMandante2.setChecked(false);
-                    check1 = true;
-                    checkMandante1.setChecked(true);
-                } else {
-                    if (check1) {
-                        check1 = false;
-                        checkMandante1.setChecked(false);
-                    }
-                }
-            }
-        });
-        checkMandante2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!check1 && !check2) {
-                    check2 = true;
-                    checkMandante2.setChecked(true);
-                } else if (check1) {
-                    check1 = false;
-                    checkMandante1.setChecked(false);
-                    check2 = true;
-                    checkMandante2.setChecked(true);
-                } else {
-                    if (check2) {
-                        check2 = false;
-                        checkMandante2.setChecked(false);
-                    }
-                }
-            }
-        });
-
+        if(jogo_selecionado.getPlacar_2()!=null){
+            placar2_edt.setText(jogo_selecionado.getPlacar_2());
+        }
 
         //spinner dos locais
         ArrayList<String> locais = new ArrayList<>();
         for (Locais lugarDeJogos : DataHolder.getInstance().getLocaisSalvos()) {
-            if(lugarDeJogos.getTipo()==1){
-               locais.add(lugarDeJogos.getNome());
+            if (lugarDeJogos.getTipo() == 1) {
+                locais.add(lugarDeJogos.getNome());
             }
         }
         final Spinner atualizar_local = (Spinner) findViewById(R.id.atualizar_jogo_local);
@@ -325,11 +271,6 @@ public class AtualizarJogos extends AppCompatActivity {
                         editJogoPlacar.updateJogo(jogo_selecionado);
                     } else {
                         jogo_selecionado.setLocal(local);
-                        if (checkMandante1.isChecked()) {
-                            jogo_selecionado.setMandante("1");
-                        } else {
-                            jogo_selecionado.setMandante("2");
-                        }
                         String dataStr = jogo_selecionado.getData();
                         //Sun, 18 Mar 2012 05:51:34 GMT
                         switch (data) {

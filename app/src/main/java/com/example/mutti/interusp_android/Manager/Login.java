@@ -45,12 +45,14 @@ public class Login {
                     android.content.SharedPreferences.Editor editor = settings.edit();
                     editor.putString("token", token.getToken());
                     editor.commit();
-
+                    intent.putExtra("sucess", true);
                     context.sendBroadcast(intent);
 
                 } else {
                     Toast.makeText(context, serverResponse.getMessage(),
                             Toast.LENGTH_LONG).show();
+
+                    context.sendBroadcast(intent);
                 }
             }
         });

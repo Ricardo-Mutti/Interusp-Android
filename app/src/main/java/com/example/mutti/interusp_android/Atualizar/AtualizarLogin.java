@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,10 +36,12 @@ public class AtualizarLogin extends AppCompatActivity {
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            activity.finish();
-            Intent intent1 = new Intent(activity, AtualizarMenu.class);
-            startActivity(intent1);
-            login.setEnabled(false);
+            if(intent.getBooleanExtra("sucess", false)) {
+                activity.finish();
+                Intent intent1 = new Intent(activity, AtualizarMenu.class);
+                startActivity(intent1);
+            }
+            login.setEnabled(true);
 
         }
     };

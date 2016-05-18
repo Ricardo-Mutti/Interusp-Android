@@ -36,11 +36,13 @@ public class AtualizarOnibus extends AppCompatActivity {
 
     TextView action_title;
     String info1;
+    Button atualizar;
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             activity.finish();
+            atualizar.setEnabled(true);
             Intent intent1 = new Intent(activity, AtualizarMenu.class);
             startActivity(intent1);
 
@@ -110,7 +112,7 @@ public class AtualizarOnibus extends AppCompatActivity {
         }
 
 
-        Button atualizar = (Button) findViewById(R.id.onibus_atualizar);
+       atualizar = (Button) findViewById(R.id.onibus_atualizar);
         atualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,6 +126,8 @@ public class AtualizarOnibus extends AppCompatActivity {
 
                 EditOnibus editOnibus = new EditOnibus(context);
                 editOnibus.sendRequest(facul, data + "\n\n" + info, placa);
+
+                atualizar.setEnabled(false);
             }
         });
 

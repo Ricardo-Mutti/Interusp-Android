@@ -13,7 +13,6 @@ public class Jogo {
     String data;
     String local;
     String chaveamento;//posicao na chave
-    String mandante;
     String faculdade_1;
     String faculdade_2;
     String placar_1;
@@ -69,13 +68,6 @@ public class Jogo {
         this.local = local;
     }
 
-    public String getMandante() {
-        return mandante;
-    }
-
-    public void setMandante(String mandante) {
-        this.mandante = mandante;
-    }
 
     public String getFaculdade_1() {
         return faculdade_1;
