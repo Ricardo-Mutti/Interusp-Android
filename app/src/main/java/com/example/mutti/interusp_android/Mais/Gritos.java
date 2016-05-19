@@ -87,7 +87,7 @@ public class Gritos extends AppCompatActivity {
         final TextView titulo3 = (TextView) findViewById(R.id.textView6);
         final TextView texto3 = (TextView) findViewById(R.id.textView7);
         final TextView titulo4 = (TextView) findViewById(R.id.textView8);
-        final TextView texto4 = (TextView) findViewById(R.id.textView9);
+        final TextView texto4 = (TextView) findViewById(R.id.textView9);;
         scroll = (ScrollView) findViewById(R.id.scrollView);
         botao = (ImageView) findViewById(R.id.button50);
         switch (atletica){

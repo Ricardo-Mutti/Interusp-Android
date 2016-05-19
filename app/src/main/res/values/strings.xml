@@ -26,14 +26,48 @@
     <string name="texto2Odonto">Odonto\nEstaremos contigo \nSomos uma nação \nNão importa onde esteja\nSempre levarei comigo\n\nO meu manto sagrado \nE a cachaça na mão \nA torcida me espera \nPra começar a festa \n\nXa laia laia, xa laia laia, xa laia laia\nOdonto minha paixao (2x)\n</string>
     <string name="titulo1Farma">Ami</string>
     <string name="texto1Farma">Miiiiiiii....\nVamos nessa\nVamos beber essa cerveja\nFarmácia mi, farmácia mi, farmacia miiiii (2x)\n\nVamos beber essa cerveja\nÉ testa é mi, é nariz mi, é boca é mi, é queixo é mi, é peito é mi, é sexo é mi, É GULA!</string>
-    <string name="titulo1Pinheiros">titulo1pinheiros(provisorio)</string>
-    <string name="titulo2Pinheiros">titulo2pinheiros(provisório)</string>
-    <string name="titulo3Pinheiros">titulo3pinheiros(provisório)</string>
-    <string name="titulo4Pinheiros">titulo4pinheiros(provisório)</string>
-    <string name="texto1Pinheiros">texto1pinheiros(provisório)</string>
-    <string name="texto2Pinheiros">texto2pinheiros(provisório)</string>
-    <string name="texto3Pinheiros">texto3pinheiros(provisório)</string>
-    <string name="texto4Pinheiros">texto4pinheiros(provisório)</string>
+    <string name="titulo1Pinheiros">Quem vem aí</string>
+    <string name="titulo2Pinheiros">A porcada é guerreira</string>
+    <string name="titulo3Pinheiros">Aqui tem um bando de porco</string>
+    <string name="titulo4Pinheiros">Uma vez caveira</string>
+    <string name="texto1Pinheiros">Quem vem aí\nÉ o porcão\nÔ abre ala\nPro campeão\n\nO-o o-o\nO-o o-o\nO-o o-o\nO-o o-o\nPorco, porco</string>
+    <string name="texto2Pinheiros">A porcada é guerreira\nO meu time é vencedor\nA torcida é um terror\nEu sou pinheiros\n\n
+A porcada é guerreira\nO meu time é vencedor\nA torcida é um terror\nPor isso eu canto\n
+\nE dá-lhe, dá-lhe porco\nE dá-lhe, dá-lhe porco\nE dá-lhe, dá-lhe porco\nE dá-lhe porco\n
+\nE dá-lhe, dá-lhe porco\nE dá-lhe, dá-lhe porco\nE dá-lhe, dá-lhe porco\nE dá-lhe porco</string>
+    <string name="texto3Pinheiros">Aqui tem um bando de porco
+\nPorco da Medicina
+\nPra aqueles que acham que é pouco
+\nA gente passa por cima
+\nEu canto até ficar rouco
+\nEu canto pra te empurrar
+\nPorque eu te amo
+\nVamo, vamo vê, porcada
+\nVamo vê, porcada
+\nNum para de lutar\n
+\n(O que é que tem?)</string>
+    <string name="texto4Pinheiros">Uma vez caveira
+\nSempre caveira
+\nCaveira sempre eu hei de ser
+\nÉ o maior prazer
+\nVê-la brilhar
+\nSeja na terra
+\nSeja no mar
+\nVencer, vencer, vencer
+\nUma vez caveira
+\nCaveira até morrer\n
+\n1, 2, 3
+\nUma vez caveira
+\nSempre caveira
+\nCaveira sempre eu hei de ser
+\nÉ o maior prazer
+\nVê-la brilhar
+\nSeja na terra
+\nSeja no mar
+\nVencer, vencer, vencer
+\nUma vez caveira
+\nCaveira até morrer</string>
+
     <string name="titulo1Ribeirao">titulo1ribeirao(provisorio)</string>
     <string name="titulo2Ribeirao">titulo2ribeirao(provisório)</string>
     <string name="titulo3Ribeirao">titulo3ribeirao(provisório)</string>
@@ -136,6 +170,7 @@
         <item>FEA</item>
         <item>Farmácia</item>
         <item>ESALQ</item>
+        <item>Medicina - Pinheiros</item>
         <item>Odontologia</item>
     </string-array>
 
