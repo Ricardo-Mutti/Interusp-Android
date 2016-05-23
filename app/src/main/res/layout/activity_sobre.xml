@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/azul_tema"
     android:orientation="vertical"
-    tools:context="com.example.mutti.interusp_android.Sobre">
+    tools:context="com.appsimples.mutti.interusp_android.Sobre">
 
     <ImageView
         android:layout_width="wrap_content"

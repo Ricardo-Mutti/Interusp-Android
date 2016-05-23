@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mutti.interusp_android">
+    package="com.appsimples.mutti.interusp_android">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Splash"
+            android:name="com.appsimples.mutti.interusp_android.Splash"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden">
@@ -26,126 +26,126 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SelecionarAtletica"
+            android:name="com.appsimples.mutti.interusp_android.SelecionarAtletica"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".PontuacaoFaculdade"
+            android:name="com.appsimples.mutti.interusp_android.PontuacaoFaculdade"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Mais.Historico"
+            android:name="com.appsimples.mutti.interusp_android.Mais.Historico"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Vencedores"
+            android:name="com.appsimples.mutti.interusp_android.Vencedores"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Mais.Torcidometro"
+            android:name="com.appsimples.mutti.interusp_android.Mais.Torcidometro"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".TabsMain"
+            android:name="com.appsimples.mutti.interusp_android.TabsMain"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Atualizar.AtualizarLogin"
+            android:name="com.appsimples.mutti.interusp_android.Atualizar.AtualizarLogin"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".ListaLocais"
+            android:name="com.appsimples.mutti.interusp_android.ListaLocais"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Mais.Gritos"
+            android:name="com.appsimples.mutti.interusp_android.Mais.Gritos"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".PontuacaoModalidade"
+            android:name="com.appsimples.mutti.interusp_android.PontuacaoModalidade"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".PontuacaoGeral"
+            android:name="com.appsimples.mutti.interusp_android.PontuacaoGeral"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".DetalheInformacao"
+            android:name="com.appsimples.mutti.interusp_android.DetalheInformacao"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Atualizar.AtualizarMenu"
+            android:name="com.appsimples.mutti.interusp_android.Atualizar.AtualizarMenu"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Atualizar.AtualizarJogos"
+            android:name="com.appsimples.mutti.interusp_android.Atualizar.AtualizarJogos"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Atualizar.AtualizarProvas"
+            android:name="com.appsimples.mutti.interusp_android.Atualizar.AtualizarProvas"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Mais.InterUspInfo"
+            android:name="com.appsimples.mutti.interusp_android.Mais.InterUspInfo"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".ChaveamentoModalidade"
+            android:name="com.appsimples.mutti.interusp_android.ChaveamentoModalidade"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Atualizar.AtualizarModalidade"
+            android:name="com.appsimples.mutti.interusp_android.Atualizar.AtualizarModalidade"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Atualizar.AtualizarOnibus"
+            android:name="com.appsimples.mutti.interusp_android.Atualizar.AtualizarOnibus"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".GritosAtletica"
+            android:name="com.appsimples.mutti.interusp_android.GritosAtletica"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".DetalheOnibus"
+            android:name="com.appsimples.mutti.interusp_android.DetalheOnibus"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Sobre"
+            android:name="com.appsimples.mutti.interusp_android.Sobre"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Atualizar.AtualizarSelecionarJogo"
+            android:name="com.appsimples.mutti.interusp_android.Atualizar.AtualizarSelecionarJogo"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Atualizar.AtualizarLocal"
+            android:name="com.appsimples.mutti.interusp_android.Atualizar.AtualizarLocal"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".Atualizar.AtualizarListaEdicao"
+        <activity android:name="com.appsimples.mutti.interusp_android.Atualizar.AtualizarListaEdicao"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden"

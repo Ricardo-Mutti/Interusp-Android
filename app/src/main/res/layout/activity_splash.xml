@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azul_tema"
-    tools:context="com.example.mutti.interusp_android.Splash">
+    tools:context="com.appsimples.mutti.interusp_android.Splash">
 
     <ImageView
         android:id="@+id/logo"

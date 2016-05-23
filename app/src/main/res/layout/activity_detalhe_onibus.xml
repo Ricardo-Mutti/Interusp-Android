@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.mutti.interusp_android.DetalheOnibus"
+    tools:context="com.appsimples.mutti.interusp_android.DetalheOnibus"
     android:orientation="vertical">
 
     <include layout="@layout/action_bar" />
@@ -31,7 +31,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="14dp"
-                android:src="@drawable/icon_sanfran" />
+                android:src="@drawable/logo_iusp_splash" />
         </FrameLayout>
 
         <ListView
